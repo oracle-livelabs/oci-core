@@ -1,0 +1,39 @@
+{
+    "workshoptitle": "The Essentials of Cloud Observability",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Getting Started",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Setup the Environment",
+            "filename": "../../setup/setup.md"
+        },
+        {
+            "title": "Lab 2: Enable Service Logs",
+            "filename": "../../infralog/infralog.md"
+        },
+        {
+            "title": "Lab 3: Create Custom Application Logs",
+            "filename": "../../applog/applog.md"
+        },
+        {
+            "title": "Lab 4: Search Your Logs",
+            "filename": "../../search/search.md"
+        },
+        {
+            "title": "Lab 5: Export Log Content to Object Storage",
+            "filename": "../../export/export.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
+        }
+    ]
+}

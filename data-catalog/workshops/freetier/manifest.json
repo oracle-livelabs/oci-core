@@ -1,0 +1,66 @@
+
+{
+      "workshoptitle": "Get started with Oracle Cloud Infrastructure Data Catalog",
+      "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+      {
+          "title": "Get started with Oracle Cloud Infrastructure Data Catalog",
+          "description": "Get started with Oracle Cloud Infrastructure Data Catalog, learn the basics!",
+          "filename": "./../../introduction/introduction.md"
+      }
+      ,
+      {
+         "title": "Get Started",
+         "description": "Get a Free Trial",
+         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/register-free-tier-account.md"
+      }
+      ,
+	  {
+            "title": "Lab 0: Prerequisites",
+            "description": "This lab walks you through the Prerequisites for Data Catalog workshop",
+            "filename": "./../../prerequisites/prerequisites.md"
+      }
+      ,
+      {
+            "title": "Lab 1: Create a data catalog",
+            "description": "This lab walks you through the steps required for you to create a Data Catalog instance",
+            "filename": "./../../create-data-catalog/create-data-catalog.md"
+      }
+      ,
+      {
+            "title": "Lab 2: Harvest metadata from Autonomous Database",
+            "description": "This lab walks you through the steps of how to Harvest the metadata from Databases.",
+            "filename": "./../../harvest-metadata-database/harvest-metadata-database.md"
+      }
+      ,
+      {
+            "title": "Lab 3: Harvest metadata from  Oracle Object Storage",
+            "description": "This lab shows you how to Harvest the metadata from Oracle Object Storage.",
+            "filename": "./../../harvest-object-store/harvest-object-store.md"
+      }
+      ,
+      {
+            "title": "Lab 4: Create a Business Glossary and Custom Property",
+            "description": "This lab shows you how to associate business terms to the metadata.",
+            "filename": "./../../business-glossary/business-glossary.md"
+      }
+      ,
+      {
+            "title": "Lab 5: Enrich metadata",
+            "description": "This lab shows you how to define some additional information to the metadata",
+            "filename": "./../../enrich-metadata/enrich-metadata.md"
+      }
+      ,
+      {
+            "title": "Lab 6: Search and Discover your data",
+            "description": "This lab shows you how to Search, filter and discover your data.",
+            "filename": "./../../search-discover/search-discover.md"
+      }
+      ,
+	{
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      }
+   ] 
+}

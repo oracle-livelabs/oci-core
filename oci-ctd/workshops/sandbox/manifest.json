@@ -1,0 +1,39 @@
+{
+    "workshoptitle": "Getting Started in OCI - CTD Edition",
+      "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../intro/intro-sandbox.md"
+        },
+          {
+              "title": "Lab 1: Getting Access OCI Console",
+              "filename": "./../../lab1-access-oci-console/intro.md"
+          },
+          {
+              "title": "Lab 2: Create Your Own Compartment",
+              "filename": "./../../lab2-create-compartment/create-compartment.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 3: Create a Virtual Cloud Network",
+              "filename": "./../../lab3-create-vcn/create-vcn.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 4: Create Linux based Compute VM",
+              "filename": "./../../lab4-create-vm-and-webserver/create-linux-vm.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Lab 5: Create Windows based Compute VM",
+              "filename": "./../../lab5-create-windows-vm/create-windows-vm.md",
+              "type": "livelabs"
+          },
+          {
+              "title": "Summary",
+              "filename": "./../../summary/summary.md",
+              "type": "livelabs"
+          }
+      ]
+  }
+  
