@@ -31,7 +31,7 @@ If you are not the administrator, you have to request the admin to give you perm
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Stacks**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
+	![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/developer-resmgr-stacks.png " ")
 
 2. Click **Create Stack**.
 

@@ -8,7 +8,7 @@
         },
         {
             "title": "Lab 1: Generate SSH Keys",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell-sandbox.md"
+            "filename": "https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell-sandbox.md"
         },
         {
             "title": "Lab 2: Configuring Auto Scaling",

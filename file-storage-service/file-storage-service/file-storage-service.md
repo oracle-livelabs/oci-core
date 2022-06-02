@@ -24,7 +24,7 @@ This lab assumes you have:
 1. Sign in using your cloud tenant name, user name, and password. Use the login option under **Oracle Cloud Infrastructure**.
 
 2. In your OCI Console (homepage), click navigation menu on the top-left corner. From OCI Services menu, under **Networking**, click **Virtual Cloud Networks**.
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/networking-vcn.png " ")
+    ![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/networking-vcn.png " ")
 
     Select the compartment assigned to you from drop-down menu on left, and click **Start VCN Wizard**.
 
@@ -91,7 +91,7 @@ This lab assumes you have:
 In this section, we will create File System Storage.
 
 1. Click navigation button to open OCI Services menu. Click **Storage**, under **File Storage**, click **File Systems**.
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-file-systems.png " ")
+    ![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/storage-file-systems.png " ")
 
 2. Click **Create File System**.
     ![](images/file-s2p2.png " ")
@@ -121,7 +121,7 @@ We now have a File System Storage created. Next we will use your SSH key pair to
 You are assumed to have generated your SSH Keys in the *Cloud Shell*.
 
 1. In your OCI console, click the navigation button. Under **Compute**, click **Instances**.
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+    ![](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/compute-instances.png " ")
 
 2. On the left sidebar, select the **Compartment** in which you placed your VCN under **List Scope**. Click **Create Instance**.
    	![](images/quickstart-s2p2.png " ")
