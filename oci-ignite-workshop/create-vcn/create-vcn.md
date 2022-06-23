@@ -20,7 +20,7 @@ If you prefer to use your own tenancy (**recommended**) please have your **usern
 In this lab, you will:
 - Create a virtual cloud network
 
-<if type="livelabs">
+<if type="tenancy">
 **You are running this workshop in a LiveLabs environment. Our LiveLabs environments use a pre-configured Virtual Cloud Network (VCN), so you will not create a VCN in this workshop.**
 
 However, you can see how a VCN is created in Oracle Cloud Infrastructure by watching this short video:
@@ -28,7 +28,7 @@ However, you can see how a VCN is created in Oracle Cloud Infrastructure by watc
  [](youtube:lxQYHuvipx8)
  </if>
 
-<if type="freetier">
+<if type="sandbox">
 
 ## Task 1: Create Your VCN
 
