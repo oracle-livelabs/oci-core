@@ -28,7 +28,7 @@ The purpose of this lab is to give you an overview of the Object Service and an 
 
 
 * Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
+If you prefer to use your tenancy (**recommended**) please have your **username** and **password** ready to log in for the event.
 
 
 ## Task 1: Create Object Storage Bucket

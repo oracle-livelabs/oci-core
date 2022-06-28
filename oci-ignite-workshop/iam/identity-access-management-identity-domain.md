@@ -17,14 +17,14 @@ In this lab, you will:
 ### Optional
 - Create a user
 - Create a group
-- Create a policy associated to the group
+- Create a policy associated with the group
 - Add user to the group
 
 ### Prerequisites
 
 
 * Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
+If you prefer to use your tenancy (**recommended**) please have your **username** and **password** ready to log in for the event.
 
 
 
@@ -32,7 +32,7 @@ If you prefer to use your own tenancy (**recommended**) please have your **usern
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (i.e. when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security**, and select **Compartments**.
 
  ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
 
