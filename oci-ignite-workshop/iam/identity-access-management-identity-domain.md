@@ -205,7 +205,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
       e) Click the **Navigation Menu**. click **Identity & Security** and select **Groups**.
 
-      f) The message **“Authorization failed or requested resource not found”** appears. This is expected, since your user has no permission to modify groups.
+      f) The message **“Authorization failed or requested resource not found”** appears. This is expected since your user has no permission to modify groups.
       >**Note:** You may instead get the "An unexpected error occurred" message instead. That is also fine.
 
       ![](images/group-error.png)
