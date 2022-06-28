@@ -7,7 +7,12 @@ Oracle Cloud Infrastructure (OCI) Object Storage service is an Internet-scale, h
 With Object Storage, you can safely and securely store or retrieve data directly from the Internet or from within the cloud platform. Object Storage offers multiple management interfaces that let you easily manage storage at scale.
 
 Object Storage is a regional service and is not tied to any specific compute instances. You can access data from anywhere inside or outside the context of Oracle Cloud Infrastructure.
+### Objectives
 
+In this lab, you will:
+- Create an Object Storage Bucket
+- Upload a sample Object to the Storage Bucket
+- Create a pre-authenticated link to access that Object
 Estimated Time: 15 minutes
 
 [](youtube:ci-U-174T_8)
@@ -19,18 +24,11 @@ Estimated Time: 15 minutes
 2. Use *Archive* for data to which you seldom or rarely access, but that must be retained and preserved for long periods of time. The cost efficiency of the Archive Storage tier offsets the long lead time required to access the data
 
 The purpose of this lab is to give you an overview of the Object Service and an example scenario to help you understand how the service works.
-### **<font color="red">Prerequisites</font>**
+### Prerequisites
 
 
-Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-
+* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
 If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
-### Objectives
-
-In this lab, you will:
-- Create an Object Storage Bucket
-- Upload a sample Object to the Storage Bucket
-- Create a pre-authenticated link to access that Object
 
 
 ## Task 1: Create Object Storage Bucket

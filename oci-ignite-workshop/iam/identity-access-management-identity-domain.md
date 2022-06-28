@@ -14,17 +14,16 @@ In this lab, you will:
 
 - Create a compartment
 
-**<font color="blue">Optional</font>**:
+### Optional
 - Create a user
 - Create a group
 - Create a policy associated to the group
 - Add user to the group
 
-### **<font color="red">Prerequisites</font>**
+### Prerequisites
 
 
-Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-
+* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
 If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
 
 

@@ -8,6 +8,13 @@ If you already have an SSH key pair, you may use that to connect to your environ
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
+### Prerequisites
+
+
+* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
+
+If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
+
 ### LiveLabs (Green Button) Reservations - Please Read
 If you are creating an SSH Key for a workshop that will be running *inside a LiveLabs tenancy*, do not select Oracle Cloud Shell.  Select the options that correspond to the OS running on your local laptop.  You will be pasting your key into the LiveLabs reservation page so that we can pre-create your instance for you.
 

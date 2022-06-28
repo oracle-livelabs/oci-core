@@ -17,16 +17,15 @@ In this workshop, you will:
 - Generate a pair of SSH keys
 - Create and attach a Block Volume
 
-**<font color="blue">Optional</font>**:
+### Optional
  - Learn how to grant access to users
  - Create an Object Storage bucket
 
 
-### **<font color="red">Prerequisites</font>**
+### Prerequisites
 
 
-Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-
+* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
 If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
 
 

@@ -5,21 +5,20 @@
 Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances. You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
 
 Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bestpracticescompute.htm) for important information about working with your Oracle Cloud Infrastructure Compute instance.
-### **<font color="red">Prerequisites</font>**
-
-
-Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-
-If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
-
-[](youtube:09kahbIF0Ew)
-
-Estimated Time: 30 minutes
-
 ### Objectives
 In this lab, you will:
 - Create a compute instance
 - Connect to the compute instance
+
+[](youtube:09kahbIF0Ew)
+
+Estimated Time: 30 minutes
+### Prerequisites
+
+
+* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
+If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
+
 
 
 

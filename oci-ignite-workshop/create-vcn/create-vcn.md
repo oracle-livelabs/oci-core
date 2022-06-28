@@ -10,15 +10,16 @@ Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Co
 
 Estimated Time: 15 minutes
 
-### **<font color="red">Prerequisites</font>**
 
-
-Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-
-If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
 ### Objectives
 In this lab, you will:
 - Create a virtual cloud network
+
+### Prerequisites
+
+
+* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
+If you prefer to use your own tenancy (**recommended**) please have your **username** and **password** ready to login for the event.
 
 <if type="tenancy">
 **You are running this workshop in a LiveLabs environment. Our LiveLabs environments use a pre-configured Virtual Cloud Network (VCN), so you will not create a VCN in this workshop.**
@@ -29,6 +30,8 @@ However, you can see how a VCN is created in Oracle Cloud Infrastructure by watc
  </if>
 
 <if type="sandbox">
+
+
 
 ## Task 1: Create Your VCN
 
