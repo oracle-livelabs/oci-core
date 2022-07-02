@@ -26,7 +26,7 @@ Estimated Time: 50 minutes
 
 2. From the OCI Services menu, click **Networking** -> **Virtual Cloud Networks**. 
 
-    ![Click Virtual Cloud Network](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/networking-vcn.png)
+    ![Click Virtual Cloud Network](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png)
 
     Select the compartment assigned to you from drop down menu on left side of the screen, and click **Create VCN**.
 
@@ -144,7 +144,7 @@ Estimated Time: 50 minutes
 
 1. From OCI services menu, click **Compute** -> **Instances**.
 
-    ![Click Instances](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/compute-instances.png)
+    ![Click Instances](https://oracle-livelabs.github.io/common/images/console/compute-instances.png)
 
 2. Click **Create Instance**. Fill out the dialog box:
 
@@ -342,7 +342,7 @@ Estimated Time: 50 minutes
 
 2. If your compute instances are not displayed, from OCI services menu, click **Instances** under **Compute**.
 
-    ![Click Instances](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/compute-instances.png)
+    ![Click Instances](https://oracle-livelabs.github.io/common/images/console/compute-instances.png)
 
 3. Locate your compute instances. Click Action icon and then **Terminate**.
 
@@ -356,7 +356,7 @@ Estimated Time: 50 minutes
 
 6. From OCI services menu, click **Virtual Cloud Networks** under **Networking**. A list of all VCNs will appear.
 
-    ![Click Virtual Cloud Networks](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/networking-vcn.png)
+    ![Click Virtual Cloud Networks](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png)
 
 7. Locate your VCN. Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
 
