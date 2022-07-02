@@ -13,7 +13,7 @@ Estimated time: 30 minutes
 
 1. First, we will create a Notification topic and subscribe to this topic. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Notifications**.
 
-	![Navigate to Notifications](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/developer-application-notification.png " ")
+	![Navigate to Notifications](https://oracle-livelabs.github.io/common/images/console/developer-application-notification.png " ")
 
 2. Click **Create Topic** and fill out the dialog box:
 
@@ -187,7 +187,7 @@ We have now configured Notification service and tied events to it with a specifi
 
 8. Click the **Navigation Menu** in the upper left, navigate to **Developer Services**, and select **Notifications**.
 
-	![Navigate to Notifications](https://objectstorage.us-phoenix-1.oraclecloud.com/p/SJgQwcGUvQ4LqtQ9xGsxRcgoSN19Wip9vSdk-D_lBzi7bhDP6eG1zMBl0I21Qvaz/n/c4u02/b/common/o/images/console/developer-application-notification.png " ")
+	![Navigate to Notifications](https://oracle-livelabs.github.io/common/images/console/developer-application-notification.png " ")
 
 9. Click your Topic name. 
 
