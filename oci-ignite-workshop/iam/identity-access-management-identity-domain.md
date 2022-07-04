@@ -57,15 +57,15 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
 For IAM with Identity Domains, what was identified before as IAM users and groups, now is under the default domain.
 
-   ![](images/id-domains.png)
+   ![Navigation Menu -> Identity & Security -> Domains](images/id-domains.png)
 
 1. Select the default domain
 
-   ![](images/id-domains-default.png)
+   ![Click on the default domain](images/id-domains-default.png)
 
 1. Select **Groups**
 
-   ![](images/id-domains-groups.png)
+   ![Navigate to Groups](images/id-domains-groups.png)
 
 1. Click **Create Group**.
 
@@ -138,7 +138,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    c) After you have selected the **Demo** compartment, click **Create Policy**.
       
-      ![](images/id-domain-create-policy.png)
+      ![Click on Create Policy](images/id-domain-create-policy.png)
 
    d) Enter a unique **Name** for your policy (for example, "Policy-for-oci-group").
       >**Note:** the name can NOT contain spaces.
@@ -157,13 +157,13 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    h) Click **Create**.
 
-   ![Create](images/create-policy.png)
+   ![Fill in the details and click on Create](images/create-policy.png)
 
 8. Verify user permissions.
 
    a) Click the **Navigation Menu** in the upper left. Click **Compute** and then click **Instances**.
 
-   ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+   ![Navigation Menu -> Compute -> Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
    b) Try to select any compartment from the left menu.
 
@@ -177,12 +177,12 @@ For IAM with Identity Domains, what was identified before as IAM users and group
       a) Sign back in with the ***admin*** account.
 
       b) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Users**. From the **Users** list, click the user account that you just created (for example, `User01`)  to go to the User Details page.
-         ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-users.png " ")
+         ![Navigation Menu -> Identity & Security -> Users](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-users.png " ")
 
       c) Under the **Resources** menu on the left, click **Groups**, if it's not already selected.
 
       d) Click **Add User to Group**.
-         ![](images/image020.png)
+         ![Add User to Group](images/image020.png)
 
       e) From the **Groups** drop-down list, select the **oci-group** that you created.
 
@@ -208,7 +208,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
       f) The message **“Authorization failed or requested resource not found”** appears. This is expected since your user has no permission to modify groups.
       >**Note:** You may instead get the "An unexpected error occurred" message instead. That is also fine.
 
-      ![](images/group-error.png)
+      ![Error message can be ignored](images/group-error.png)
 
       g) Sign out.
 
