@@ -101,5 +101,5 @@ _Congratulations! You have successfully completed the lab._
 
 - **Author** - Flavio Pereira, Larry Beausoleil 
 - **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, May 2022
+- **Last Updated By/Date** - Cristian Manea, Radu Chiru, July 2022
 

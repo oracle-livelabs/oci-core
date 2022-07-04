@@ -362,5 +362,5 @@ You may now proceed to the next lab or paste it in the LiveLabs reservation page
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
 * **Contributors** - LiveLabs Team, Kamryn Vinson, Anil Nair
-* **Last Updated By/Date** - Madhusudhan Rao, Apr 2022
+* **Last Updated By/Date** - Cristian Manea, July 2022
 

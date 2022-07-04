@@ -217,4 +217,4 @@ _Congratulations! You have successfully completed the lab._
 ## Acknowledgements
 
 - **Author** - Orlando Gentil
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, May 2022
+- **Last Updated By/Date** - Cristian Manea, Radu Chiru, July 2022

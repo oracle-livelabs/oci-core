@@ -48,6 +48,6 @@ Click on the next lab in this workshop to get started.
 
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, May 2022
+- **Last Updated By/Date** - Cristian Manea, Radu Chiru, July 2022
 
 
