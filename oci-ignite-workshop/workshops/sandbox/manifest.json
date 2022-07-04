@@ -1,0 +1,45 @@
+{
+    "workshoptitle": "Ignite your Oracle Cloud Infrastructure Services",
+    "help": "livelabs-help-oci_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "./../../intro/intro.md"
+        },
+        {
+            "title": "Get Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+        },
+        {
+            "title": "Lab 1: Create a Compartment",
+            "filename": "../../../oci-ignite-workshop/iam/identity-access-management-identity-domain.md"
+        },
+        {
+            "title": "Lab 2: Create a Virtual Cloud Network",
+            "type": "sandbox",
+            "filename": "../../../oci-ignite-workshop/create-vcn/create-vcn.md"
+        },
+        {
+            "title": "Lab 3: Generate SSH Keys",
+            "filename": "../../../oci-ignite-workshop/generate-ssh-key/generate-ssh-keys.md"
+        },        
+        {
+            "title": "Lab 4: Create a Compute Service",
+            "filename": "../../../oci-ignite-workshop/create-compute/create-compute.md"
+        },    
+        {
+            "title": "Lab 5: Create and Attach a Block Volume",
+            "filename": "../../../oci-ignite-workshop/create-bv/bv/block-volume.md"
+        },
+        {
+            "title": "Lab 6 (Optional): Create an Object Storage",
+            "filename": "../../../oci-ignite-workshop/create-object-storage/object-storage/object-storage.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier"
+        }
+    ]
+}
