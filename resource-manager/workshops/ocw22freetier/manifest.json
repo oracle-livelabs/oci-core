@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Introdcution to Resource Manager and Terraform",
+    "workshoptitle": "Introduction to Resource Manager and Terraform",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -12,7 +12,7 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
         },
         {
-            "title": "Lab 2: Introdcution to Resource Manager and Terraform",
+            "title": "Lab 2: Introduction to Resource Manager and Terraform",
             "filename": "./../../ocw-2022-oci6-session60/resource-manager-terraform.md"
         },
         {

@@ -154,7 +154,7 @@ Estimated time: 2 hours
 
 	![Instance Name](./images/task4/instance-name.png " ")
 
-4. In the **Add SSH keys** section, drop the public SSH Key **cloudshellkey.pub** you created earlier in **Task 4: Use the Oracle Cloud Shell to Create SSH keys** of the **Introduction to OCI** Lab
+4. In the **Add SSH keys** section, drop the public SSH Key **cloudshellkey.pub** you created earlier in **Lab 1: Create SSH Key**
 
 	![SSH Keys](./images/task4/ssh-keys.png " ")
 
