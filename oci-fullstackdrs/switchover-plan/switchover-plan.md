@@ -1,4 +1,4 @@
-# Title of the Lab
+# Verify the Mushop Application
 
 ## Introduction
 

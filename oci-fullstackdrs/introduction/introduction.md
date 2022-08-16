@@ -17,9 +17,13 @@ While monitoring the progress of disaster recovery operations, you can take appr
 Below are some of the key functionalities of Full Stack Disaster Recovery Service 
 
     Create and automate DR run books and make them more flexible.
+
     Manage DR operations using a single pane of glass.
+
     Provide comprehensive logs with error management and recovery.
+
     Perform pre-checks before the DR execution plan.
+
     Provide a framework to customize DR operations.
 
 
@@ -28,56 +32,63 @@ Below are some of the key functionalities of Full Stack Disaster Recovery Servic
 Disaster Recovery Service provides multiple benefits in the area of business continuity.
 
     Integrates with Active Data Guard and Data Guard APIs in the various database services (DBCS, ExaCS, ExaCC, and ADB).
+
     Provides comprehensive disaster protection for your entire Oracle stack that includes databases, VMs, attached volumes, storage, and applications across different OCI regions.
+
     Minimizes Recovery Time Objectives (RTO).
+
     Automates disaster recovery operations.
+
     Eliminates the need for domain specialists and dedicated administrators for disaster recovery.
+
     Provides highly flexible and customized disaster recovery plans. You can integrate your own custom automation into the DR workflow.
+
     Provides a comprehensive dashboard for monitoring disaster recovery readiness and for launching DR workflows.
+
     Executes scalable and reliable full stack switchover and failover operations with the push of a button.
+
     Operates at the service level instead of requiring the customer to manually failover VMs, databases, middleware, applications, storage and load balancers.
 
 ## About the Workshop
 
-In this workshop we will see how easily you can automate the Full Stack Disaster Recovery orchestration like Switchover or Failover operations for a Cloud-native Application deployed in OCI across two regions using OCI Full Stack Disaster Recovery Service (FSDRS). We will be using Mushop application and its underlying resources for performing the Switchover operations across regions. 
+In this workshop we will see how easily you can automate the Full Stack Disaster Recovery orchestration like Switchover or Failover operations for a Cloud-native Application deployed in OCI across two regions using OCI Full Stack Disaster Recovery Service (FSDRS). We will be using MuShop application and its underlying resources for performing the Switchover operations across regions. 
 
-MuShop is a microservices demo application purpose-built to showcase interoperable Cloud Native services on Oracle Cloud Infrastructure, and to demonstrate a number of cloud native methodologies.The premise of MuShop is an e-commerce website offering a variety of cat products. It represents a polyglot microservices application, with actual use case scenarios for many Oracle Cloud Infrastructure services.
-
-Each microservice in MuShop is designed to highlight its own, or common high-level subject in Oracle Cloud Infrastructure, using the context of the overall demo application.
+MuShop is a demo application purpose-built to showcase interoperable various cloud services on Oracle Cloud Infrastructure.The premise of MuShop is an e-commerce website offering a variety of cat product and it is a 3-tier web application.
 
 ![](./images/mushop.png)
 
 
-### Workshop Architeture:
+## Workshop Architecture:
 
 ![](./images/mushop-fsdrs.png)
 
-### Environment details:
+## Environment details:
 
-- Two VM's dbserver and wlsdr will be created
-- As per the architecture diagram dbserver is designated as Primary Site and wlsdr is designated as Disaster Recovery site
-- dbserver has Oracle Enterprise manager 13.5 (Site Guard),Oracle Database 19c with Data guard ( Primary DB), Oracle Weblogic 12c  (Application)
-- wlsdr has Oracle Database 19c with Dataguard ( Standby DB), Oracle Weblogic 12c(Application)
-- Various Site Guard configurations such as creating sites, credentials, plans are already pre-created. For additional information how to do that you can refer the Site guard documentation in the reference links section.
+-  Ashburn is Primary region and Phoenix is Standby region.
+-  All the mentioned infrastructure resources as per the workshop Architecture diagram as shown above will be created. Replication for Applicaitons (Block Volume), Database ( Data Guard) will be configured automatically. 
+-  Provisioned environments will be ready to test out the features of FSDRS.
 
 
-### Workshop Objectives:
+## Workshop Objectives:
 
-- By using Start operation type in Site Guard to start Weblogic application in dbserver
-- By using Switchover operation type in Site Guard to switchover Full Stack of Weblogic App and Database from dbserver to wlsdr
-- By using Switchover operation type in Site Guard  to switchover Full Stack of Weblogic App and Database from wlsdr to dbserver
-- By using Stop operation type in Site Guard to stop Weblogic application in dbserver
+- Verify the Mushop application from Ashburn (Primary) region.
+- Create DR Protection groups (DRPG) in Ashburn (Primary) and Phoenix (Standby) regions. 
+- Associate Ashburn DRPG as Primary and Phoenix DRPG as Standby.
+- Add members to Ashburn DRPG. Application VM's, Volume groups, Primary Database will be added as members.
+- Add member to Phoenix DRPG. Standby Database will be added as member.
+- Create DR Switchover Plan in Phoenix( Standby) DRPG
+- Run DR Switchover Pre-checks in Phoenix( Standby) DRPG
+- Run DR Switchover Plan in Phoenix( Standby) DRPG
+- Verify the Mushop application from Phoenix (New Primary) region.
 
-### Reference links:
 
-* [Oracle Enterprise manager](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.5/emcon/enterprise-manager-cloud-control-architecture.html#GUID-C846F54D-5A14-47BB-869D-AC0265169FE3)
+## Reference links:
 
-* [Oracle Site Guard documentation](https://docs.oracle.com/en/enterprise-manager/cloud-control/enterprise-manager-cloud-control/13.4/guard/site-guard-administrators-guide.pdf)
-
+* [Mushop Application](https://github.com/oracle-quickstart/oci-cloudnative/tree/master/deploy/basic)
 
 Estimated Workshop Time: 3 Hours
 
-### Prerequisites:
+## Prerequisites:
 
 - An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
