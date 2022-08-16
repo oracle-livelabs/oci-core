@@ -1,6 +1,6 @@
 # Protect your business using Oracle Full Stack Disaster Recovery Service
 
-## **OCI Full Stack Disaster Recovery Service**
+## OCI Full Stack Disaster Recovery Service
 
 Oracle Full Stack Disaster Recovery Service is an OCI native and full managed Service. It provides full-stack disaster recovery orchestration for Oracle applications, Oracle Database,Compute Instance,Storage, networking, across **OCI regions**.
 
@@ -58,37 +58,37 @@ MuShop is a demo application purpose-built to showcase interoperable various clo
 ![](./images/mushop.png)
 
 
-## Workshop Architecture:
+## Workshop Architecture
 
 ![](./images/mushop-fsdrs.png)
 
-## Environment details:
+## Environment details
 
 -  Ashburn is Primary region and Phoenix is Standby region.
 -  All the mentioned infrastructure resources as per the workshop Architecture diagram as shown above will be created. Replication for Applicaitons (Block Volume), Database ( Data Guard) will be configured automatically. 
 -  Provisioned environments will be ready to test out the features of FSDRS.
 
 
-## Workshop Objectives:
+## Workshop Objectives
 
 - Verify the Mushop application from Ashburn (Primary) region.
 - Create DR Protection groups (DRPG) in Ashburn (Primary) and Phoenix (Standby) regions. 
 - Associate Ashburn DRPG as Primary and Phoenix DRPG as Standby.
 - Add members to Ashburn DRPG. Application VM's, Volume groups, Primary Database will be added as members.
-- Add member to Phoenix DRPG. Standby Database will be added as member.
-- Create DR Switchover Plan in Phoenix( Standby) DRPG
+- Add members to Phoenix DRPG. Standby Database will be added as member.
+- Create and Customize DR Switchover Plan in Phoenix( Standby) DRPG
 - Run DR Switchover Pre-checks in Phoenix( Standby) DRPG
 - Run DR Switchover Plan in Phoenix( Standby) DRPG
 - Verify the Mushop application from Phoenix (New Primary) region.
 
 
-## Reference links:
+## Reference links
 
 * [Mushop Application](https://github.com/oracle-quickstart/oci-cloudnative/tree/master/deploy/basic)
 
 Estimated Workshop Time: 3 Hours
 
-## Prerequisites:
+## Prerequisites
 
 - An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
 
