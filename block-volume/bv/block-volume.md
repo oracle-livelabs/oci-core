@@ -31,7 +31,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Storage**, and click **Block Storage**.
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-block-storage.png " ")
+    ![](https://oracle-livelabs.github.io/common/images/console/storage-block-storage.png " ")
 
 2. In Block Volume service, click **Create Block Volume** and provide the following details:
 
