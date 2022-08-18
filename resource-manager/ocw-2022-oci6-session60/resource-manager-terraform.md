@@ -8,27 +8,28 @@ Please take a couple minutes to watch the following Introduction to Resource Man
 
 [](youtube:ghOW03Dkrdg)
 
-Estimated time: 2 hours
+Estimated time: 90 minutes
 
 ### Objectives
 
 -   Create a VCN using the Quick Start Template
 -   Create a Compute Instance ORM Stack using the Instances Compute Console
 -   Create an ORM Stack using the Template Feature
--   Download an ORM Stack, Review and Enhance it
+-   Download an ORM Stack, review and enhance it
 -   Explore the remote-exec feature
 -   Destroy all OCI Resources 
 
 ### Prerequisites
 
 -   Access to an OCI tenancy, preferably a new, clean Free Trial.
--	Compartment **CareClinic**
-	-  Any compartmemt will work.  To match the instructions below, create a new compartment with the name **CareClinic**
+	-  If you require an Oracle Cloud Free Trial, please refer to the **Get Started** section above
+-	Compartment **CareClinics**
+	-  Any compartmemt will work.  To match the instructions below, create a new compartment with the name **CareClinics**
 -	SSH Public/Private Key Pair
 	-  Please see the instructions in Lab 1 for details on how to generate a SSH Public/Private Key Pair
 -   Access to a text editor and compression software (7-zip, winzip, etc.)
 
-## Task 1: Sign in to the Cloud 
+## Task 1: Sign in to the Cloud and Create a Compartment
 
 1. Sign in to the Oracle Cloud from <https://www.oracle.com> , click on **View Accounts** then **Sign in to Cloud**
 
@@ -50,6 +51,17 @@ Estimated time: 2 hours
 
 	![OCI Console](./images/task1/cloud-console.png " ")
 
+6. Compartments are the primary means to organize, segregate, and manage access to OCI resources.  Every tenancy has a root compartment under which you create additional sub-compartments and sub-sub compartments (maximum six levels deep).  Compartments are tenancy-wide across regions. When you create a compartment, it is available in every region that your tenancy is subscribed to. You can get a cross-region view of your resources in a specific compartment with the tenancy explorer. See [Viewing All Resources in a Compartment](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/compartmentexplorer.htm#Viewing_All_Resources_in_a_Compartment).  We will create a compartment called **CareClinics** for this course/workshop and create all related services in this compartment.  Navigate to the menu in the upper left and select **Identity & Security** then **Compartments**.
+
+    ![Navigate to Compartments](./images/task1/navigate-to-compartments.png " ")
+
+7. Click **Create Compartment**
+
+    ![Create Compartment](./images/task1/create-compartment.png " ")
+
+8. Enter the name **CareClinics** and click **Create Compartment**
+
+    ![Enter Name and Create](./images/task1/enter-name-create.png " ")
 
 ## Task 2: Access Oracle Resource Manager
 
