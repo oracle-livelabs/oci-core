@@ -13,9 +13,9 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Verify the MuShop Application",
-      "description": "Verify MuShop Application",
-      "filename": "../../verify-app/pre-switchover.md"
+      "title": "Lab 1: Prepare the environments and Pre-check the MuShop Application",
+      "description": "Prepare the environments and Pre-check the MuShop Application",
+      "filename": "../../pre-switchover/pre-switchover.md"
     },
     {
       "title": "Lab 2: Create and Associate the DR Protection groups",
