@@ -211,7 +211,7 @@ Replace `publicipnode0` and `publicipnode1` with the real public IP address of b
 
 We have created an outage to a working Mushop application, in next set of labs we will use Full Stack DR service to initate the Switchover of the Full Stack (App VM's/Database/Application Customization) from Ashburn to Phoenix region.
 
-This concludes this lab. Now you can move to Lab 2
+This concludes this Lab 1. Now you can move to Lab 2
 
 ## Acknowledgements
 

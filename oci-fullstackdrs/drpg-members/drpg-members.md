@@ -1,94 +1,110 @@
-# Verify the Mushop Application
+# Add members to the DR Protection groups
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this lab, we will add members to the DR Protection groups which was created and associated in previous lab. Ashburn is primary region and Phoenix is standby region.
 
-Estimated Time: -- minutes
+Estimated Lab Time: 10 Minutes
 
-### About <Product/Technology> (Optional)
-Enter background information here about the technology/feature or product used in this lab - no need to repeat what you covered in the introduction. Keep this section fairly concise. If you find yourself needing more than to sections/paragraphs, please utilize the "Learn More" section.
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:6Dp49VXqjtQ)
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
-In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
-
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
+- Add members to Ashburn DRPG (Primary)
+- Add members to Phoenix DRPG (Standby)
 
 
-*This is the "fold" - below items are collapsed by default*
+## Task 1: Add members to Ashburn DRPG (Primary)
 
-## Task 1: Concise Step Description
+<if type="livelabs">
 
-(optional) Step 1 opening paragraph.
+1. Login into OCI Console with your provided Credentials. Primary region should be **Ashburn**.
 
-1. Sub step 1
+  ![](./images/ashburn-region.png)
 
-	![Image alt text](images/sample1.png)
+  Open another browser tab and select region as **Phoenix** (Standby Region)
 
-	> **Note:** Use this format for notes, hints, tips. Only use one "Note" at a time in a step.
+  ![](./images/phoenix-region.png)
 
-2. Sub step 2
+2.From the Hamburger menu, select **Migration and Disaster Recovery**, then **Disaster Recovery Protection Groups**.Verify the region in **Ashburn**
 
-  ![Image alt text](images/sample1.png)
+  ![](./images/ashburn-drpgpage.png)
 
-4. Example with inline navigation icon ![Image alt text](images/sample2.png) click **Navigation**.
+3.From the Hamburger menu, select **Migration and Disaster Recovery**, then **Disaster Recovery Protection Groups**.Verify the region in **Phoenix**
 
-5. Example with bold **text**.
+  ![](./images/phoenix-drpgpage.png)
 
-   If you add another paragraph, add 3 spaces before the line.
+4.You will land up in the Disaster Recovery Protection group home page, make sure to have two tabs opened for Ashburn and Phoenix region.
 
-## Task 2: Concise Step Description
+  ![](./images/ashburn-drpg.png)
+  ![](./images/phoenix-drpg.png)
 
-1. Sub step 1 - tables sample
+5. In the Ashburn region DRPG page,add the members required in the **muhsop-ashburn** DRPG. *We will be adding ATP Primary Database, two mushop compute VM's, two volume groups for the boot volumes of mushop compute VM's*. Let's add those details. 
 
-  Use tables sparingly:
+  a. Add ATP Primary Database 
+   
+- We will be adding ATP Primary Database, two mushop compute VM's, two volume groups for the boot volumes of mushop compute VM's.
+- Enter name as **muhsop-ashburn**
+- Select the compartment assigned to you
+- In the object storage bucket, use the drop down option and select **mushop-xxxxx** (mushop-12345)
+- In role, leave it as non configured
+- Ignore add member
+- Verify and hit create
 
-  | Column 1 | Column 2 | Column 3 |
-  | --- | --- | --- |
-  | 1 | Some text or a link | More text  |
-  | 2 |Some text or a link | More text |
-  | 3 | Some text or a link | More text |
+  ![](./images/ashburn-drpgcreate.png)
 
-2. You can also include bulleted lists - make sure to indent 4 spaces:
+Navigate back to DR Protection group page, the state of DRPG will change from creating to active in few seconds.
 
-    - List item 1
-    - List item 2
+  ![](./images/ashburn-drpgactive.png)
 
-3. Code examples
+6. Create DRPG in the Phoenix region. Select Create DR Protection group in the Phoenix region browser tab and follow the below instructions.
 
-    ```
-    Adding code examples
-  	Indentation is important for the code example to appear inside the step
-    Multiple lines of code
-  	<copy>Enclose the text you want to copy in <copy></copy>.</copy>
-    ```
+- Enter name as **muhsop-phoenix**
+- Select the compartment assigned to you
+- In the object storage bucket, use the drop down option and select **mushop-xxxxx** (mushop-12345)
+- In role, leave it as non configured
+- Ignore add member
+- Verify and hit create
 
-4. Code examples that include variables
+  ![](./images/phoenix-drpgcreate.png)
 
-	```
-  <copy>ssh -i <ssh-key-file></copy>
-  ```
+Navigate back to DR Protection group page, the state of DRPG will change from creating to active in few seconds.
 
-## Learn More
+  ![](./images/phoenix-drpgactive.png)
 
-*(optional - include links to docs, white papers, blogs, etc)*
+## Task 2:Associate Ashburn DRPG as primary and Phoenix DRPG as Standby
 
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+1.From the Ashburn region OCI console, select **mushop-ashburn** DRPG. Select **Associate** button 
+
+  ![](./images/drpg-associate.png)
+
+- Select Role as **Primary**
+- Select Peer Region as **US West (Phoenix)**, 
+- Select Peer DR Protection group in compartment (change assigned compartment if required), you should select **mushop-phoenix**
+- Verfiy and associate
+
+  ![](./images/drpg-associate-1.png)
+
+
+ **mushop-ashburn** DRPG will change to *Updating* state 
+ 
+  ![](./images/drpg-associate-updating.png)
+
+ Navigate back to DR Protection group home page.You should be able to see DRPG **mushop-ashburn** state as *Active*, role as *Primary*, peer region as *US West (Phoenix)*
+
+   ![](./images/drpg-status-ashburn.png)
+
+2.From the Phoenix region OCI console, navigate to DR Protection group home page.You should be able to see DRPG **mushop-phoenix** state as *Active*, role as *Standby*, peer region as *US East (Ashburn)*
+
+   ![](./images/drpg-status-phoenix.png)
+
+Now, we have associated **mushop-ashburn** as *Primary DRPG* and **mushop-phoenix**  as *Standby DRPG*
+
+This concludes Lab 2. Now you can move to Lab 3.
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+- **Author** -  Suraj Ramesh, Principal Product Manager
+- **Last Updated By/Date** -  Suraj Ramesh,August 2022
