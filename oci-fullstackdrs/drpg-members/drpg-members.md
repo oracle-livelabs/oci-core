@@ -24,85 +24,182 @@ Watch the video below for a quick walk through of the lab.
 
   ![](./images/ashburn-region.png)
 
-  Open another browser tab and select region as **Phoenix** (Standby Region)
-
-  ![](./images/phoenix-region.png)
-
-2.From the Hamburger menu, select **Migration and Disaster Recovery**, then **Disaster Recovery Protection Groups**.Verify the region in **Ashburn**
+2. From the Hamburger menu, select **Migration and Disaster Recovery**, then **Disaster Recovery Protection Groups**.Verify the region in **Ashburn**
 
   ![](./images/ashburn-drpgpage.png)
 
-3.From the Hamburger menu, select **Migration and Disaster Recovery**, then **Disaster Recovery Protection Groups**.Verify the region in **Phoenix**
+3. You will land up in the Disaster Recovery Protection group home page, make sure you have selected *Ashburn* region.
+
+  ![](./images/ashburn-drpg.png)
+
+4. In the Ashburn region DRPG page,add the members required in the **muhsop-ashburn** DRPG. *We will be adding ATP Primary Database, two mushop compute VM's, two volume groups for the boot volumes of mushop compute VM's*. Let's add those details. 
+
+5. Add ATP Primary Database. Select **muhsop-ashburn** DRPG, navigate to **Members** in the *Resources* section and hit **Add Member**
+
+![](./images/ashburn-add-member.png) 
+
+It will show various resource types and select **Autonomous Database**
+![](./images/ashburn-resource-type.png)
+
+Select the Database in your compartment, it will have MushopDB-XXXXX. Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
+
+![](./images/ashburn-atp-add.png) 
+
+**muhsop-ashburn** DRPG status will change to updating, wait for few seconds. You should be able to see ATP database has been added as member. Refresh the DRPG page if required. You can monitor the status of the request in **Work requests* section under Resources. 
+
+![](./images/ashburn-atp-added.png) 
+
+Navigate back to DR Protection group page, status of DRPG should be active.
+
+6.Add first Compute instance. We need to add **mushop-xxxxx-0**
+
+Select **muhsop-ashburn** DRPG, navigate to **Members** in the *Resources* section and hit **Add Member**
+
+![](./images/ashburn-add-member.png) 
+
+It will show various resource types and select **Compute**
+![](./images/ashburn-resource-type.png)
+
+
+- Resource type as Compute
+- Make sure to check the box **"I understand that all existing plans will be deleted"**
+- Instances in Compartment, select *mushop-xxxxx-0*
+- Click check mark in the Move instance on switchover or failover. 
+- Destination compartment, select your compartment name
+- Ignore Destination dedicated VM host section
+- Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
+- Select VNIC as *primarynic*
+- Destination subnet as *mushop-main-xxxxx*
+- Ignore Network security groups
+- Click Add
+
+  ![](./images/ashburn-vnic-node0.png)
+
+- You should be able to able to add VNIC details, verify and click Add
+
+  ![](./images/ashburn-compute-node0.png)
+
+**muhsop-ashburn** DRPG status will change to updating, wait for few seconds. DRPG status will change to active.You should be able to see compute instance **mushop-xxxxx-0** has been added as member. Refresh the DRPG page if required. You can monitor the status of the request in *Work requests* section under Resources. 
+
+  ![](./images/ashburn-node0-added.png)
+
+7. Add second Compute instance. We need to add **mushop-xxxxx-1**
+
+Select **muhsop-ashburn** DRPG, navigate to **Members** in the *Resources* section and hit **Add Member**
+
+![](./images/ashburn-add-member.png) 
+
+It will show various resource types and select **Compute**
+![](./images/ashburn-resource-type.png)
+
+
+- Resource type as Compute
+- Make sure to check the box **"I understand that all existing plans will be deleted"**
+- Instances in Compartment, select *mushop-xxxxx-1*
+- Click check mark in the Move instance on switchover or failover. 
+- Destination compartment, select your compartment name
+- Ignore Destination dedicated VM host section
+- Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
+- Select VNIC as *primarynic*
+- Destination subnet as *mushop-main-xxxxx*
+- Ignore Network security groups
+- Click Add
+
+  ![](./images/ashburn-vnic-node1.png)
+
+- You should be able to able to add VNIC details, verify and click Add
+
+  ![](./images/ashburn-compute-node1.png)
+
+**muhsop-ashburn** DRPG status will change to updating, wait for few seconds. DRPG status will change to active.You should be able to see compute instance **mushop-xxxxx-1** has been added as member. Refresh the DRPG page if required. You can monitor the status of the request in **Work requests* section under Resources. 
+
+  ![](./images/ashburn-node1-added.png)
+
+8. Add first volume group. We need to add **mushop-volume-group-0**. This volume group consists of boot volume of mushop-xxxx-0 VM and it has cross region replication configured to phoenix region. 
+
+Select **muhsop-ashburn** DRPG, navigate to **Members** in the *Resources* section and hit **Add Member**
+
+![](./images/ashburn-add-member.png) 
+
+It will show various resource types and select **Volume group**
+![](./images/ashburn-resource-type.png)
+
+- Resource type as Volume group
+- Make sure to check the box **"I understand that all existing plans will be deleted"**
+- Select volume group **mushop-volume-group-0**
+- Verify and add
+
+  ![](./images/ashburn-add-vg0.png)
+
+**muhsop-ashburn** DRPG status will change to updating, wait for few seconds. DRPG status will change to active.You should be able to see volume group **mushop-volume-group-0** has been added as member. Refresh the DRPG page if required. You can monitor the status of the request in **Work requests* section under Resources. 
+
+  ![](./images/ashburn-vg0-added.png)
+
+9. Add second volume group. We need to add **mushop-volume-group-1**. This volume group consists of boot volume of mushop-xxxx-1 VM and it has cross region replication configured to phoenix region. 
+
+Select **muhsop-ashburn** DRPG, navigate to **Members** in the *Resources* section and hit **Add Member**
+
+![](./images/ashburn-add-member.png) 
+
+It will show various resource types and select **Volume group**
+![](./images/ashburn-resource-type.png)
+
+- Resource type as Volume group
+- Make sure to check the box **"I understand that all existing plans will be deleted"**
+- Select volume group **mushop-volume-group-1**
+- Verify and add
+
+  ![](./images/ashburn-add-vg1.png)
+
+**muhsop-ashburn** DRPG status will change to updating, wait for few seconds. DRPG status will change to active.You should be able to see volume group **mushop-volume-group-1** has been added as member. Refresh the DRPG page if required. You can monitor the status of the request in **Work requests* section under Resources. 
+
+   ![](./images/ashburn-vg1-added.png)
+
+
+10. Now we have added all the required members in the **muhsop-ashburn** DRPG . It should show ATP Database, 2 Compute Instances and 2 Volume groups.
+
+    ![](./images/ashburn-allmembers.png)
+
+## Task 2: Add members to Phoenix DRPG (Standby)
+
+<if type="livelabs">
+
+1. Login into OCI Console with your provided Credentials. Standby region should be **Pheonix**.
+
+  ![](./images/phoenix-region.png)
+
+2. From the Hamburger menu, select **Migration and Disaster Recovery**, then **Disaster Recovery Protection Groups**.Verify the region is **Phoenix**
 
   ![](./images/phoenix-drpgpage.png)
 
-4.You will land up in the Disaster Recovery Protection group home page, make sure to have two tabs opened for Ashburn and Phoenix region.
+3. You will land up in the Disaster Recovery Protection group home page, make sure you have selected the Phoenix region.
 
-  ![](./images/ashburn-drpg.png)
   ![](./images/phoenix-drpg.png)
 
-5. In the Ashburn region DRPG page,add the members required in the **muhsop-ashburn** DRPG. *We will be adding ATP Primary Database, two mushop compute VM's, two volume groups for the boot volumes of mushop compute VM's*. Let's add those details. 
+4. In the Phoenix region DRPG page,add the members required in the **muhsop-phoenix** DRPG. *We will be adding only ATP Primary Database*. Let's add those details.  **We dont need to add compute and volume groups, as those will be created automatically during the DR switchover process by FSDRS** 
 
-  a. Add ATP Primary Database 
-   
-- We will be adding ATP Primary Database, two mushop compute VM's, two volume groups for the boot volumes of mushop compute VM's.
-- Enter name as **muhsop-ashburn**
-- Select the compartment assigned to you
-- In the object storage bucket, use the drop down option and select **mushop-xxxxx** (mushop-12345)
-- In role, leave it as non configured
-- Ignore add member
-- Verify and hit create
+6. Add ATP Primary Database. Select **muhsop-phoenix** DRPG, navigate to **Members** in the *Resources* section and hit **Add Member**
 
-  ![](./images/ashburn-drpgcreate.png)
+![](./images/phoenix-add-member.png) 
 
-Navigate back to DR Protection group page, the state of DRPG will change from creating to active in few seconds.
+It will show various resource types and select **Autonomous Database**
+![](./images/phoenix-resource-type.png)
 
-  ![](./images/ashburn-drpgactive.png)
+Select the Database in your compartment, it will have **MushopDB-XXXXX**. Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
 
-6. Create DRPG in the Phoenix region. Select Create DR Protection group in the Phoenix region browser tab and follow the below instructions.
+![](./images/phoenix-atp-add.png) 
 
-- Enter name as **muhsop-phoenix**
-- Select the compartment assigned to you
-- In the object storage bucket, use the drop down option and select **mushop-xxxxx** (mushop-12345)
-- In role, leave it as non configured
-- Ignore add member
-- Verify and hit create
+**muhsop-phoenix** DRPG status will change to updating, wait for few seconds. You should be able to see ATP database has been added as member. Refresh the DRPG page if required. You can monitor the status of the request in **Work requests* section under Resources. 
 
-  ![](./images/phoenix-drpgcreate.png)
+![](./images/phoenix-atp-added.png) 
 
-Navigate back to DR Protection group page, the state of DRPG will change from creating to active in few seconds.
+Navigate back to DR Protection group page, status of DRPG should be active.
 
-  ![](./images/phoenix-drpgactive.png)
+7. Now we have added all the required member in the **muhsop-ashburn** DRPG . It should show ATP Database.
 
-## Task 2:Associate Ashburn DRPG as primary and Phoenix DRPG as Standby
+    ![](./images/phoenix-allmembers.png)
 
-1.From the Ashburn region OCI console, select **mushop-ashburn** DRPG. Select **Associate** button 
-
-  ![](./images/drpg-associate.png)
-
-- Select Role as **Primary**
-- Select Peer Region as **US West (Phoenix)**, 
-- Select Peer DR Protection group in compartment (change assigned compartment if required), you should select **mushop-phoenix**
-- Verfiy and associate
-
-  ![](./images/drpg-associate-1.png)
-
-
- **mushop-ashburn** DRPG will change to *Updating* state 
- 
-  ![](./images/drpg-associate-updating.png)
-
- Navigate back to DR Protection group home page.You should be able to see DRPG **mushop-ashburn** state as *Active*, role as *Primary*, peer region as *US West (Phoenix)*
-
-   ![](./images/drpg-status-ashburn.png)
-
-2.From the Phoenix region OCI console, navigate to DR Protection group home page.You should be able to see DRPG **mushop-phoenix** state as *Active*, role as *Standby*, peer region as *US East (Ashburn)*
-
-   ![](./images/drpg-status-phoenix.png)
-
-Now, we have associated **mushop-ashburn** as *Primary DRPG* and **mushop-phoenix**  as *Standby DRPG*
-
-This concludes Lab 2. Now you can move to Lab 3.
+This concludes Lab 3. Now you can move to Lab 4.
 
 ## Acknowledgements
 
