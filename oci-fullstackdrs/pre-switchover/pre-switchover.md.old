@@ -1,10 +1,10 @@
-# **Prepare the environments for using the Full Stack DR Service**
+# Prepare the environments and Pre-check the MuShop Application
 
 ## Introduction
 
-In this lab, we will download Autonomous Database Wallet and the prepare the MuShop application virtual machines which are required to work with Full Stack DR Service
+In this lab, we will prepare the environments which are required to work with Full Stack DR Service and Pre-check the MuShop Application
 
-Estimated Lab Time: 15 Minutes
+Estimated Lab Time: 10 Minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -14,25 +14,28 @@ Watch the video below for a quick walk through of the lab.
 
 - Download Autonomous Database Wallet using Cloud Shell and transfer the Wallet to application VM instances.
 - Connect to application VM instances and create application environment files
+- Verify the Mushop application and break the application
 
-*****Primary Region is Ashburn and all the steps as part of this lab has to be performed in Ashburn Region*****
+*****Primary Region in Ashburn and all the steps as part of this lab has to be performed in Ashburn Region*****
 
 ## Task 1: Download Autonomous Database Wallet using Cloud Shell and transfer the Wallet to application VM instances
+
+<if type="livelabs">
 
 1. Login into OCI Console with your provided Credentials. Primary region should be **Ashburn**.
 
   ![](./images/ashburn-region.png)
 
-2. Open the **Cloud Shell** using the icon next to the region.  If you get a policy error, ensure you have chosen the correct compartment which was assigned to you.
+2. Open the **Cloud Shell** using the icon next to the region.  If you get a policy error, ensure you have chosen the correct compartment you were assigned.
 
   ![](./images/cloud-shell.png)
   ![](./images/cloud-shell-1.png)
 
   The Cloud Shell opens after a few seconds and shows the **prompt**.
 
-3. As next step, need to gather the OCID( Oracle Cloud Identifier) of the ATP database.Leave the existing Cloud Shell browser tab and use duplicate tab to open a new tab in browser.
+3. As next step, gather the OCID of the ATP database.Leave the existing Cloud Shell browser tab and use duplicate tab to open a new tab in browser.
 
-   From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
+   From the Hamburger menu, select **Oracle Database**, then **Autonomous Transcation Processing**.
 
   ![](./images/atp-menu.png)
 
@@ -56,7 +59,7 @@ Watch the video below for a quick walk through of the lab.
      <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx</copy>
     ````
 
-    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet file which was downloaded. Verify that using the list command ls -ltr as provided in the screenshot.
+    You should be able to see the Wallet file which was downloaded. Verify that using the list command ls -ltr as provided in the screenshot.
 
    ![](./images/atp-wallet-cs.png)
 
@@ -74,7 +77,7 @@ Watch the video below for a quick walk through of the lab.
     <copy>chmod 0600 mushopll</copy>
     ````
 
-7. Use the other tab of the browser, From the Hamburger menu, select **Compute**, then **Instances**. Verify the region as **Ashburn**
+7. Use the other tab of the browser, From the Hamburger menu, select **Compute**, then **Instances**.
 
     ![](./images/compute-navigate.png)
 
@@ -98,11 +101,11 @@ Replace `publicipnode0` and `publicipnode1` with the real public IP address of b
 
    ![](./images/wallet-compute.png)
 
-## Task 2: Connect to application VM instances and customize the application environment files
+## Task 2: Connect to application VM instances and cutomize the application environment files
 
-*****Tasks 2-1,2-2,2-3 Steps needs to be performed by connecting to both Mushop compute virtual machines  mushop-xxxxx-0 and mushop-xxxxx-0 without fail, instructions are shown for only mushop-xxxxx-0*****
+*****Task 2-1,2,3 Steps needs to be performed by connecting to Mushop compute node-0 and node-1 without fail, here we have shown details for only node-0*****
 
-1. Connect to the MuShop Application Instances and perform various pre-requisites for integrating with Full Stack DR Service.
+1. Connect to the Mushop Application Instances and perform various pre-requsites for integrating with Full Stack DR Service.
 
    Connect to mushop node-0, replace `publicipnode0` with the real public IP address of node-0
 
@@ -114,7 +117,7 @@ Replace `publicipnode0` and `publicipnode1` with the real public IP address of b
 
    ![](./images/compute-node0.png)
 
-   Unzip the atpwallet.zip file using the below command and it will prompt for replacing the files, use **A**
+   Unzip the atpwallet.zip file using the below command and in case if its prompts for replace files, use **A**
 
     ````
     <copy>unzip atpwallet.zip -d atpwallet</copy>
@@ -122,7 +125,7 @@ Replace `publicipnode0` and `publicipnode1` with the real public IP address of b
 
     ![](./images/unzip-node0.png)
 
-2. Change the permissions of both atpwallet and fsdrs folders/files which are present in /hom/opc directory. fsdrs scripts folder consists of various scripts as part of this lab, we will discuss about these scripts in later labs.
+2. Change the permission of both atpwallet and fsdrs folders which are present in /hom/opc directory. fsdrs scripts folder consits of various scripts as part of this lab, we will discuss about these scripts in later labs.
 
     ````
     <copy>chmod -R 777 fsdrsscripts</copy>
@@ -134,7 +137,7 @@ Replace `publicipnode0` and `publicipnode1` with the real public IP address of b
 
    ![](./images/permissions-node0.png)
 
-3. Prepare the mushop application environment files as part of Switchover requirements.
+3. Prepare the mushop applicaiton envionment files as part of Switchover requirements.
 
     Change to /root location and copy a mushop.env file
 
@@ -164,7 +167,49 @@ Replace `publicipnode0` and `publicipnode1` with the real public IP address of b
 
     ![](./images/difference-node0.png)
 
-*****Repeat the same steps as part of tasks 2-1,2-2,2-3 for the MuShop compute node-1,it is quite important to do this else the lab will not working as intended*****
+*****Repeat the same steps as part of Task 2-1,2,3 for the Mushop compute node-1,it is quite important to do this else the lab will not working as intended*****
+
+## Task 3: Verify the Mushop application and break the application
+
+1. Gather the Load Balancer public IP
+
+  From the Hamburger menu, select **Networking**, then **Load Balancers**
+  
+     ![](./images/loadbalancer-navigate.png)
+
+ Gather the Public IP address of the Load Balancer
+
+     ![](./images/loadbalancer-ip.png)
+
+  In your browser, open up a tab and verify the Mushop Application using the gathered public IP address. Play around the site and verify various cat products!!
+
+      ![](./images/mushop-app.png)
+
+2. Let us break the MuShop Application to create an outage. 
+
+   Click the mushop-xxxxx load balancer details, in the resources section select Listeners
+
+   ![](./images/loadbalancer-ash.png)
+
+   ![](./images/loadbalancer-listeners.png)
+
+
+3. Select the edit option using 3 dots symbol in the right end of the port 80 listener, mushop-xxxxx-80 
+
+      ![](./images/port80-edit.png)
+
+   Modify the listener port from 80 to 81 to break the application, save changes.  You will get work request submitted and select close requests.
+    
+      ![](./images/port80-edit1.png)
+      ![](./images/port81-edit.png)
+      ![](./images/workrequest-listener.png)
+
+  Wait for few seconds and refresh the browser tab of the Mushop application. You should see, this site can't be reached.  
+
+      ![](./images/mushop-broken.png)
+
+
+We have created an outage to a working Mushop application, in next set of labs we will use Full Stack DR service to initate the Switchover of the Full Stack (App VM's/Database/Application Customization) from Ashburn to Phoenix region.
 
 This concludes this Lab 1. Now you can move to Lab 2.
 

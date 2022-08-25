@@ -2,12 +2,10 @@
 
 ## Introduction
 
-In this lab, we will execute **Run Prechecks** for the **mushop-app-switchover** switchover plan which we have created in lab4. **Run Prechecks**
-will execute all the **Built-in Prechecks** in parallel. 
+In this lab, we will execute actual switchover plan for the **mushop-app-switchover** switchover plan which we have created in lab4. The  switchover plan will execute the series of steps as per the switchover plan.
 
-As the name, execute **Run Prechecks**  will perform only the *pre-checks* and not the actual execution. It is quite important to have the pre-checks run successfully as a pre-reqisuite for running the actual switchover plan.
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 20 Minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -15,11 +13,11 @@ Watch the video below for a quick walk through of the lab.
 
 ### Objectives
 
-- Perform Run prechecks for the mushop-app-switchover  plan
-- Monitor the executed prechecks plan
-- Verify the executed prechecks plan
+- Execute the switchover plan
+- Monitor the executed switchover plan
+- Verify the executed switchover plan
 
-## Task 1: Perform Run prechecks for the mushop-app-switchover plan
+## Task 1: Execute switchover for mushop-app-switchover plan
 
 1. Login into OCI Console with your provided Credentials. Select region as **Pheonix**.
 
@@ -37,17 +35,22 @@ Watch the video below for a quick walk through of the lab.
 
   ![](./images/phoenix-sw-plan.png)
 
-5. Navigate to **Run prechecks** section which will be right below the **mushop-app-switchover** plan
+5. Navigate to **Execute Plan** section which will be right below the **mushop-app-switchover** plan and select
 
-  ![](./images/phoenix-run-prechecks.png)
+  ![](./images/phoenix-execute-plan.png)
 
-6. In the **Run prechecks** window, provide the Plan execution name as **mushop-app-switchover-prechecks** and hit **Run prechecks**
+6. In the **Execute Plans** window
 
-  ![](./images/phoenix-execute-prechecks.png)
+- Provide the Plan execution name as **mushop-app-switchover-execute**
+- Uncheck the **Enable prechecks**  (  Prechecks was executed successfully in Lab 5)
+- Leave the **Ignore warnings** as it is
+- Verfiy and hit **Execute Plan**
 
-## Task 2: Monitor the executed prechecks plan
+  ![](./images/phoenix-execute-run.png)
 
-1. Navigate to **Plan executions** section under **Resources** and select the **mushop-app-switchover-prechecks** plan execution.Intially it will show as all the **Built-in Prechecks** as *Queued**.
+## Task 2: Monitor the executed mushop-app-switchover plan
+
+1. Navigate to **Plan executions** section under **Resources** and select the **mushop-app-switchover-execute** plan execution.Initially it will show as all the steps as *Queued**.
 
   ![](./images/phoenix-execute-queued.png)
 
@@ -55,26 +58,35 @@ Watch the video below for a quick walk through of the lab.
 
   ![](./images/phoenix-execute-inprogress.png)
 
-3. All the **Built-in Prechecks**  steps will execute in parallel, you can monitor the various steps log. Navigate to three dots section for the respective buil-in step and click. You get option to view log and download log. These logs are stored in the object storage bucket which was provided during the DRPG creation. You can monitor the progress and download log if required for any troubleshooting.
+3. All the *plan group* will run serially, but steps inside each *plan group* will in parallel.  As an example, *Remove Primary Load Balancer Backends* group will start first, the steps (Remove Primary Backend on Node-0 and Remove Primary Backend on Node-1) which are part of this group will run in parallel.
 
-   ![](./images/phoenix-execute-monitor.png)
+4. Monitor the various plan group and steps which are running. Navigate to three dots section for the respective plan group step and click. You get option to view log and download log. These logs are stored in the object storage bucket which was provided during the DRPG creation. You can monitor the progress and download log if required for any troubleshooting.
 
+   ![](./images/phoenix-execute-viewlog.png)
 
-## Task 3: Verify the executed prechecks plan
+5. Once the each plan group is executed successfully, it will move on to next group for execution. Here you can see  *Remove Primary Load Balancer Backends*  completed successfully (State-Succeeded) and the next group **Stop Compute Instances (Primary)** started running (State-In-progress).
 
-1. After 2-3 mins, **Built-in Prechecks**  will be completed successfully.  You can verify the duration of each step, status, duration of entire prechecks etc. *It is important to have successful completion of pre-check execution*
+   ![](./images/phoenix-execute-moving.png)
+
+6. Keep monitoring the rest of groups and steps, each step will complete depending on the actual task (DB Switchover, VM Stop, Script execution ) etc). For example, ATP DB Switchover will take more time when comparing to stop VM. You can verify the start and end of each step, total duration, logs etc.
+ 
+   ![](./images/phoenix-execute-moving1.png)
+ 
+7. Wait for all the steps to complete successfully. Approximately it will take *20-30* mins to complete the switchover plan. This timings may vary.
+
+## Task 3: Verify the executed switchover plan
+
+1. From the plan execution detail verify the duration of each step, status, duration of entire switchover plan etc. *It is important to have successful completion of all steps* . Use the Expand all button for expanding all the steps and Collapse all button for collapsing all the steps.Use the view or download log option to see the details of step execution.
 
       ![](./images/phoenix-execute-done.png)
 
-This concludes this Lab 5. Now you can move to Lab 6. 
+This concludes this Lab 6. Now you can move to Lab 7. 
 
 Refer the **Troubleshooting tips** section for known failures and correction actions.
 
 ## Troubleshooting tips 
 
-1. During the pre-check execution logs, if you messages like "Requests are being throttled for instance ocid1", retry the **Run prechecks** again
-
-[ocid1.instance.oc1.iad.anuwcljt5h22avqcjswxs6tublhrz2qonyjmucpxlyjxplybldbpxz2jqkaq] -- Error returned by PutObject operation in ObjectStorage service.(409, Conflict, false) Server is busy. Requests are being throttled for instance ocid1.instance.oc1.iad.anuwcljt5h22avqcjswxs6tublhrz2qonyjmucpxlyjxplybldbpxz2jqkaq (opc-request-id: B7721980580148749787FE758C9440FC/3D8758622598943932D50842DCD7EAA1/143166BA790ECD35695B548600382010)
+1. 
 
 ## Acknowledgements
 

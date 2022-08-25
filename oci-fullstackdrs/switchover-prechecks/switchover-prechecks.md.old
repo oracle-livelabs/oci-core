@@ -1,4 +1,4 @@
-# Perform pre-checks for the DR Switchover Plan and Pre-check the MuShop Application
+# Perform pre-checks for the DR Switchover Plan
 
 ## Introduction
 
@@ -18,7 +18,6 @@ Watch the video below for a quick walk through of the lab.
 - Perform Run prechecks for the mushop-app-switchover  plan
 - Monitor the executed prechecks plan
 - Verify the executed prechecks plan
-- Verify the Mushop application and break the application
 
 ## Task 1: Perform Run prechecks for the mushop-app-switchover plan
 
@@ -70,52 +69,6 @@ Watch the video below for a quick walk through of the lab.
 This concludes this Lab 5. Now you can move to Lab 6. 
 
 Refer the **Troubleshooting tips** section for known failures and correction actions.
-
-## Task 4: Verify the Mushop application and break the application
-
-1. Login into OCI Console with your provided Credentials. Select region as **Ashburn**.
-
-  ![](./images/ashburn-region.png)
-  
-2. Gather the Load Balancer public IP
-
-  From the Hamburger menu, select **Networking**, then **Load Balancers**
-  
-     ![](./images/loadbalancer-navigate.png)
-
- Gather the Public IP address of the Load Balancer
-
-     ![](./images/loadbalancer-ip.png)
-
-  In your browser, open up a tab and verify the Mushop Application using the gathered public IP address. Play around the site and verify various cat products!!
-
-      ![](./images/mushop-app.png)
-
-3. Let us break the MuShop Application to create an outage. 
-
-   Click the mushop-xxxxx load balancer details, in the resources section select Listeners
-
-   ![](./images/loadbalancer-ash.png)
-
-   ![](./images/loadbalancer-listeners.png)
-
-
-4. Select the edit option using 3 dots symbol in the right end of the port 80 listener, mushop-xxxxx-80 
-
-      ![](./images/port80-edit.png)
-
-   Modify the listener port from 80 to 81 to break the application, save changes.  You will get work request submitted and select close requests.
-    
-      ![](./images/port80-edit1.png)
-      ![](./images/port81-edit.png)
-      ![](./images/workrequest-listener.png)
-
-  Wait for few seconds and refresh the browser tab of the Mushop application. You should see, this site can't be reached.  
-
-      ![](./images/mushop-broken.png)
-
-
-We have created an outage to a working Mushop application, in next lab we will use Full Stack DR service to initate the Switchover of the Full Stack (App VM's/Database/Application Customization) from Ashburn to Phoenix region.
 
 ## Troubleshooting tips 
 

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Protect your business using Oracle Full Stack Disaster Recovery Service",
+  "workshoptitle": "Protect your business using Oracle Full Stack Disaster Recovery",
   "help": "livelabs-help-**enterarea**_us@oracle.com",
   "tutorials": [
     {
@@ -9,12 +9,12 @@
     },
     {
       "title": "Introduction",
-      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "description": "Workshop Overview",
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Prepare the environments and Pre-check the MuShop Application",
-      "description": "Prepare the environments and Pre-check the MuShop Application",
+      "title": "Lab 1: Prepare the environments for using the Full Stack DR Service",
+      "description": "Prepare the environments for using the Full Stack DR Service",
       "filename": "../../pre-switchover/pre-switchover.md"
     },
     {
@@ -33,8 +33,8 @@
       "filename": "../../switchover-plan/switchover-plan.md"
     },
     {
-      "title": "Lab 5: Perform pre-checks for the DR Switchover Plan",
-      "description": "Perform pre-checks for the DR Switchover Plan",
+      "title": "Lab 5: Perform pre-checks for the DR Switchover plan,check and create outage the Mushop application",
+      "description": "Perform pre-checks for the DR Switchover plan,check and create outage the Mushop application ",
       "filename": "../../switchover-prechecks/switchover-prechecks.md"
     },
     {
@@ -43,8 +43,8 @@
       "filename": "../../switchover-execute/switchover-execute.md"
     },
     {
-      "title": "Lab 7: Verify the MuShop Application post switchover",
-      "description": "Verify the MuShop Application post switchover",
+      "title": "Lab 7: Verify the DRPG status and MuShop Application post switchover",
+      "description": "Verify the DRPG status and MuShop Application post switchover",
       "filename": "../../post-switchover/post-switchover.md"
     },
     {

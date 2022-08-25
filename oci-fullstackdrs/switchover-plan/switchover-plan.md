@@ -2,12 +2,12 @@
 
 ## Introduction
 
-In this lab, we will create DR plan and customize the plan with additional steps. Ashburn is primary region and Phoenix is standby region. FSDRS provides two types of plan
+In this lab, we will create DR Switchover plan and customize the plan with additional steps. Ashburn is primary region and Phoenix is standby region. FSDR provides two types of plan
 
-- Switchover ( Maintenance/Planned Disaster Recovery)
+- Switchover (Maintenance/Planned Disaster Recovery)
 - Failover   (Actual Disaster Recovery/Unplanned)
 
-This lab will focus of how to create Switchover plan and customize the plan as per Mushop application requirements. DR Plan will be created only in Standby region (Phoenix). This is because in case of worst case scenario of  unplanned DR ( complete primary region outage) the FSDRS will not be accessible from the primary region.
+This lab will focus of how to create Switchover plan and customize the plan as per MuShop application requirements. DR Plan *must* be created in standby region (Phoenix). This is because in case of worst case scenario of complete primary region outside the FSDR will not be accessible from the primary region.
 
 Estimated Lab Time: 20 Minutes
 
@@ -26,9 +26,7 @@ Watch the video below for a quick walk through of the lab.
 
 ## Task 1: Create Switchover plan
 
-<if type="livelabs">
-
-1. Login into OCI Console with your provided Credentials. Select region as **Pheonix**.
+1. Login into OCI Console with your provided Credentials. Select region as **Phoenix**.
 
   ![](./images/phoenix-region.png)
 
@@ -63,21 +61,22 @@ Watch the video below for a quick walk through of the lab.
 
   ![](./images/phoenix-drplan-details.png)
 
-  Based on the members we have added in both primary and standby DRPG, FSDRS created these built-in plans automatically. You can navigate around the plan groups to see the various steps which got created.
+  Based on the members we have added in both primary and standby DRPG, FSDR created these built-in plans automatically. You can navigate around the plan groups to see the various steps which got created.
+
   ![](./images/phoenix-drplan-moredetails.png)
 
-- Built-in Precheks - These are prechecks for app,db and volume group switchover
-- Stop Compute Instances (Primary) - Stop app VM's in ashburn region (primary)
+- Built-in Prechecks - These are prechecks for app,db and volume group switchover
+- Stop Compute Instances (Primary) - Stop app virtual machines in ashburn region (primary)
 - Switchover Volume Group (Standby) - Switchover volume group in phoenix region (standby)
 - Switchover Autonomous Databases (Standby) - Switchover ATP DB from ashburn to Phoenix region
-- Launch Compute Instances (Standby) - Create app VM's in phoenix region (stanby)
-- Terminate Compute Instances (Primary) - Though the group says as terminate compute instances, we will not terminate the app VM's in primary region.
+- Launch Compute Instances (Standby) - Create app virtual machines in phoenix region (standby)
+- Terminate Compute Instances (Primary) - Though the group says as terminate compute instances, FSDR *will not terminate* the app virtual machines in primary region.
 - Reverse Volume Group Replication policies (Standby)- Setup reverse volume group replication from phoenix to ashburn region.
 - Delete Volume Group (Primary)- Though the group says as delete volume group, we will not delete those in ashburn region.
 
 ## Task 2: Gather Load Balancer OCID's
 
-1. As a prequisite need to gather OCID's (Oracle Cloud Identifier) of loadbalancers running in Ashburn (Primary) and Phoenix (Standby) region.
+1. As a perquisites need to gather OCID's (Oracle Cloud Identifier) of load balancers running in Ashburn (Primary) and Phoenix (Standby) region.
 
 2. Leave the existing DRPG console tabs as running. Now open two new OCI console tabs and make sure you are logged into asburn region and phoenix region respectively.
 
@@ -315,7 +314,6 @@ Watch the video below for a quick walk through of the lab.
 - **mushop-phoenix** drpg will go into updating state and after few seconds it will come back to active state. Refersh the DRPG page if required. You should be able to see the *Add Standby Load Balancer Backends* Plan group has been modified successfully with *Add Standby Backend on Node-1* step. Now you can see both steps has been added in the group.
 
   ![](./images/phoenix-lbadd-steps.png)
-
 
 
 ## Task 7: Verify and reorder the user defined groups

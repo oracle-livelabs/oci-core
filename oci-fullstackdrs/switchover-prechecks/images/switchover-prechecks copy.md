@@ -1,4 +1,4 @@
-# Perform pre-checks for the DR Switchover Plan and Pre-check the MuShop Application
+# Perform pre-checks for the DR Switchover Plan
 
 ## Introduction
 
@@ -115,7 +115,7 @@ Refer the **Troubleshooting tips** section for known failures and correction act
       ![](./images/mushop-broken.png)
 
 
-We have created an outage to a working Mushop application, in next lab we will use Full Stack DR service to initate the Switchover of the Full Stack (App VM's/Database/Application Customization) from Ashburn to Phoenix region.
+We have created an outage to a working Mushop application, in next set of labs we will use Ful
 
 ## Troubleshooting tips 
 
