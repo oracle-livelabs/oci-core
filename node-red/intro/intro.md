@@ -7,7 +7,12 @@ In this workshop, you will learn to install Node-RED on a compute instance runni
 
 Estimated workshop time: 60-90 minutes
 
-We hope you enjoy this LiveLab. Go ahead and start the first Lab. 
+We hope you enjoy this LiveLab. Go ahead and start the first Lab.
+
+
+If you are interested in more information about Oracle Linux, please watch the folllowing video:
+
+[](videohub:1_mlwioaoh) 
 
 ## Additional Recommended Resources
 
