@@ -4,7 +4,7 @@
 
 In this lab, we will Create and Associate Disaster Recovery Protection Groups (DRPG). Ashburn is primary region and Phoenix is standby region.
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 5 Minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -18,8 +18,6 @@ Watch the video below for a quick walk through of the lab.
 
 
 ## Task 1: Create DRPG in Ashburn and Phoenix regions.
-
-<if type="livelabs">
 
 1. Login into OCI Console with your provided Credentials. Primary region should be **Ashburn**.
 
@@ -44,7 +42,7 @@ Watch the video below for a quick walk through of the lab.
 
 5. Create DRPG in the Ashburn region. Select Create DR Protection group in the Ashburn region browser tab and follow the below instructions.
    
-- Enter name as **muhsop-ashburn**
+- Enter name as **mushop-ashburn**
 - Select the compartment assigned to you
 - In the object storage bucket, use the drop down option and select **mushop-xxxxx** (mushop-12345)
 - In role, leave it as non configured
@@ -59,7 +57,7 @@ Navigate back to DR Protection group page, the state of DRPG will change from cr
 
 6. Create DRPG in the Phoenix region. Select Create DR Protection group in the Phoenix region browser tab and follow the below instructions.
 
-- Enter name as **muhsop-phoenix**
+- Enter name as **mushop-phoenix**
 - Select the compartment assigned to you
 - In the object storage bucket, use the drop down option and select **mushop-xxxxx** (mushop-12345)
 - In role, leave it as non configured

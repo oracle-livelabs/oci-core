@@ -91,6 +91,7 @@ Refer the **Troubleshooting tips** section for known failures and correction act
 
       ![](./images/mushop-app.png)
 
+
 3. Let us break the MuShop Application to create an outage. 
 
    Click the mushop-xxxxx load balancer details, in the resources section select Listeners
@@ -122,6 +123,8 @@ We have created an outage to a working Mushop application, in next lab we will u
 1. During the pre-check execution logs, if you messages like "Requests are being throttled for instance ocid1", retry the **Run prechecks** again
 
 [ocid1.instance.oc1.iad.anuwcljt5h22avqcjswxs6tublhrz2qonyjmucpxlyjxplybldbpxz2jqkaq] -- Error returned by PutObject operation in ObjectStorage service.(409, Conflict, false) Server is busy. Requests are being throttled for instance ocid1.instance.oc1.iad.anuwcljt5h22avqcjswxs6tublhrz2qonyjmucpxlyjxplybldbpxz2jqkaq (opc-request-id: B7721980580148749787FE758C9440FC/3D8758622598943932D50842DCD7EAA1/143166BA790ECD35695B548600382010)
+
+2. While navigating the mushop website if you see error **Error: Request failed with status code 500**, reboot the both compute VM's (mushop-xxxxx-0 and mushop-xxxx-1).  Navigate to Compute from OCI Console, select the three dots in the compute instance and reboot the VM's.
 
 ## Acknowledgements
 

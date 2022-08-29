@@ -4,7 +4,7 @@
 
 In this lab, we will download Autonomous Database Wallet and the prepare the MuShop application virtual machines which are required to work with Full Stack DR Service
 
-Estimated Lab Time: 10 Minutes
+Estimated Lab Time: 15 Minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -92,7 +92,7 @@ Watch the video below for a quick walk through of the lab.
     <copy>scp -i mushopll atpwallet.zip opc@publicipnode1:/home/opc</copy>
     ````
 
-Replace `publicipnode0` and `publicipnode1` with the public IP address of both mushop-xxxxx-0 and mushop-xxxxx-1 respectively in the scp commands.
+Replace `publicipnode0` and `publicipnode1` with the real public IP address of both application nodes respectively in the scp commands.
 
    Execute the scp commands in the cloud shell and while it prompts for confirmation key in as yes. Make sure the ATP Wallet is transferred successfully to both MuShop Applicaiton nodes.
 
@@ -100,64 +100,71 @@ Replace `publicipnode0` and `publicipnode1` with the public IP address of both m
 
 ## Task 2: Connect to application VM instances and customize the application environment files
 
-1. Connect to MuShop App VM mushop-xxxxx-0, replace `publicipnode0` with the public IP address of mushop-xxxxx-0. Refer task 1.7 to get the public IP address of mushop-xxxxx-0.
+*****Tasks 2-1,2-2,2-3 Steps needs to be performed by connecting to both Mushop compute virtual machines  mushop-xxxxx-0 and mushop-xxxxx-0 without fail, instructions are shown for only mushop-xxxxx-0*****
+
+1. Connect to the MuShop Application Instances and perform various pre-requisites for integrating with Full Stack DR Service.
+
+   Connect to mushop node-0, replace `publicipnode0` with the real public IP address of node-0
 
     ````
     <copy>ssh -i mushopll opc@publicipnode0</copy>
     ````
+
    Once its connected, use ls -ltr command in the shell. You should be able to see the atpwallet.zip file which we transferred in previous step.
 
    ![](./images/compute-node0.png)
 
-2.  Download the script to run custom changes as part of MuShop application requirement
+   Unzip the atpwallet.zip file using the below command and it will prompt for replacing the files, use **A**
 
     ````
-    <copy>wget http://bit.ly/mushopapp.sh</copy>
+    <copy>unzip atpwallet.zip -d atpwallet</copy>
     ````
 
-3. Provide execute permission for the mushopapp.sh script in /hom/opc directory. 
+    ![](./images/unzip-node0.png)
+
+2. Change the permissions of both atpwallet and fsdrs folders/files which are present in /hom/opc directory. fsdrs scripts folder consists of various scripts as part of this lab, we will discuss about these scripts in later labs.
 
     ````
-    <copy>chmod +x mushopapp.sh</copy>
-     ````
-
-4.  Execute the mushoapp.sh script
-
-    ````
-    <copy>./mushopapp.sh</copy>
+    <copy>chmod -R 777 fsdrsscripts</copy>
     ````
 
-    ![](./images/exec-mushapp-node0.png)
-
-5. Connect to MuShop App VM mushop-xxxxx-1, replace `publicipnode1` with the public IP address of mushop-xxxxx-1. Refer task 1.7 to get the public IP address of mushop-xxxxx-1.
-
     ````
-    <copy>ssh -i mushopll opc@publicipnode1</copy>
-    ````
-   Once its connected, use ls -ltr command in the shell. You should be able to see the atpwallet.zip file which we transferred in previous step.
-
-   ![](./images/compute-node1.png)
-
-2.  Download the script to run custom changes as part of MuShop application requirement
-
-    ````
-    <copy>wget http://bit.ly/mushopapp.sh</copy>
+    <copy>chmod -R 777 atpwallet</copy>
     ````
 
-3. Provide execute permission for the mushopapp.sh script in /hom/opc directory. 
+   ![](./images/permissions-node0.png)
+
+3. Prepare the mushop application environment files as part of Switchover requirements.
+
+    Change to /root location and copy a mushop.env file
 
     ````
-    <copy>chmod +x mushopapp.sh</copy>
-     ````
-
-4.  Execute the mushoapp.sh script
-
-    ````
-    <copy>./mushopapp.sh</copy>
+    <copy>cd /root</copy>
     ````
 
-    ![](./images/exec-mushapp-node1.png)
+    ````
+    <copy>cp mushop.env mushop.new.env</copy>
+    ````
 
+   ![](./images/mushopenv-node0.png)
+
+   Replace the bucket region from ashburn to phoenix in the mushop.new.env
+
+    ````
+    <copy>sed -i 's/ashburn-1/phoenix-1/g' mushop.new.env</copy>
+    ````
+
+    ![](./images/replacebucket-node0.png)
+
+   Verify the difference are refelecting
+
+    ````
+    <copy>diff mushop.env mushop.new.env</copy>
+    ````
+
+    ![](./images/difference-node0.png)
+
+*****Repeat the same steps as part of tasks 2-1,2-2,2-3 for the MuShop compute node-1,it is quite important to do this else the lab will not working as intended*****
 
 This concludes this Lab 1. Now you can move to Lab 2.
 

@@ -34,7 +34,7 @@ Watch the video below for a quick walk through of the lab.
 
   ![](./images/phoenix-drpgpage.png)
 
-3. You will land up in the Disaster Recovery Protection group home page, make sure you have selected the Phoenix region.
+3. You will land up in the Disaster Recovery Protection group home page, make sure you have selected the Phoenix region. **DR Plans will be always created from Standby DRPG (Phoenix region)**
 
   ![](./images/phoenix-drpg.png)
 
@@ -331,16 +331,16 @@ Watch the video below for a quick walk through of the lab.
 
   ![](./images/phoenix-all-plangroups.png)
 
-3. Plan groups can be reordered as per the switchover workflow requirement. As part of Mushop Switchover plan, we would like to execute **Remove Primary Load Balancer Backends** plan group after the **Built-In Prechecks** plan group. Use the **Actions** after the Add group and select **Reorder groups**
+3.Plan groups can be reordered as per the switchover workflow requirement. As part of Mushop Switchover plan, we would like to execute **Remove Primary Load Balancer Backends** plan group after the **Built-In Prechecks** plan group. Use the **Actions** after the Add group and select **Reorder groups**
 
   ![](./images/phoenix-reorder-groups.png)
 
-4. Go to **Remove Primary Load Balancer Backends** plan group, use the move up **^** symbol and keep moving up the **Remove Primary Load Balancer Backends** plan group and place it after **Built-In Prechecks** plan group. This is very important so that we execute the plan groups in right order. Verify and hit **Save changes** 
+4.Go to **Remove Primary Load Balancer Backends** plan group, use the move up **^** symbol and keep moving up the **Remove Primary Load Balancer Backends** plan group and place it after **Built-In Prechecks** plan group. This is very important so that we execute the plan groups in right order. Verify and hit **Save changes** 
 
   ![](./images/phoenix-plangrp-moving.png)
   ![](./images/phoenix-plangrp-moved.png) 
 
-5. You should be able to see **Remove Primary Load Balancer Backends** plan group moved after **Built-In Prechecks** plan group.
+5.You should be able to see **Remove Primary Load Balancer Backends** plan group moved after **Built-In Prechecks** plan group.
 
     ![](./images/phoenix-final-plan.png)
 
