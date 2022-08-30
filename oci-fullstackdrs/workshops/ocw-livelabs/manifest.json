@@ -8,13 +8,13 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
     },
     {
-      "title": "Introduction",
-      "description": "Workshop Overview",
+      "title": "Introduction to Full Stack DR Service and workshop",
+      "description": "Introduction to Full Stack DR Service and workshop",
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Prepare the environments for using the Full Stack DR Service",
-      "description": "Prepare the environments for using the Full Stack DR Service",
+      "title": "Lab 1: Prepare the environments  ",
+      "description": "Prepare the environments to use FSDR",
       "filename": "../../pre-switchover/pre-switchover.md"
     },
     {

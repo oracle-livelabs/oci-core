@@ -21,7 +21,7 @@ Watch the video below for a quick walk through of the lab.
 
 1. Login into OCI Console with your provided Credentials. Primary region should be **Ashburn**.
 
-  ![](./images/ashburn-region.png)
+  ![](./images/ashburn-region.png " ")
 
 2. Open the **Cloud Shell** using the icon next to the region.  If you get a policy error, ensure you have chosen the correct compartment which was assigned to you.
 
@@ -163,5 +163,5 @@ This concludes this Lab 1. Now you can move to Lab 2.
 
 ## Acknowledgements
 
-- **Author** -  Suraj Ramesh, Principal Product Manager
+- **Author** -  Suraj Ramesh, Principal Product Manager, Oracle Database Maximum Availability Architecture Team
 - **Last Updated By/Date** -  Suraj Ramesh,August 2022
