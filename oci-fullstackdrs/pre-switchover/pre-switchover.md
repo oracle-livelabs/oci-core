@@ -6,7 +6,7 @@ In this lab, we will download Autonomous Database Wallet and the prepare the MuS
 
 Estimated Lab Time: 10 Minutes
 
-Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walk through of the lab
 
 [](youtube:6Dp49VXqjtQ)
 

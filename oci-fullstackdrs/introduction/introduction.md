@@ -24,6 +24,7 @@ Below are some of the critical functionalities of Full Stack Disaster Recovery S
 
 Full Stack Disaster Recovery provides multiple benefits in the area of business continuity.
 
+
 - Provides comprehensive disaster protection for the entire Application( Oracle/Non-Oracle) stack, including databases, VMs, attached volumes, storage, and applications across different OCI regions.
 
 - Minimizes Recovery Time Objectives (RTO).
@@ -46,17 +47,17 @@ In this workshop, we will see how easily Full Stack Disaster Recovery will help 
 
 MuShop is a demo application purpose-built to showcase interoperable various cloud services on Oracle Cloud Infrastructure. The premise of MuShop is an e-commerce website offering a variety of cat products, and it is a 3-tier web application.
 
-![](./images/mushop.png)
+![MuShop webpage](./images/mushop.png)
 
 ## Estimated Workshop Time
 
-Approximately 2-3 hrs
+Approximately 2 hrs
 
 If you would like to watch us do the workshop, click [here](https://youtu.be/IF_HAzrzizc).
 
 ## Workshop Architecture
 
-![](./images/mushop-fsdrs.png)
+![MuShop FSDR Architecture](./images/mushop-fsdrs.png)
 
 ## Environment details
 
@@ -93,4 +94,6 @@ The following is intended to outline our general product direction. It is intend
 ## Acknowledgements
 
 - **Author** -  Suraj Ramesh, Principal Product Manager, Oracle Database Maximum Availability Architecture Team
+- **Contributors** - 
 - **Last Updated By/Date** -  Suraj Ramesh,August 2022
+
