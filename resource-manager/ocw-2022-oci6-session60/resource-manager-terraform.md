@@ -254,6 +254,7 @@ Estimated time: 90 minutes
 
 	![Stack Plan Succeeded](./images/task5/plan-succeeded.png " ")
 
+
 10. At this point, if you were to **Apply** this ORM stack, it **MIGHT** fail since the **VM.Standard.E2.1.Micro** Compute Shapes can reside in different **Availability Domains (AD)** depending on the Cloud Tenant you are using.  This ORM Stack Template was written to leverage **AD1**. In **Task 6**, we will download the **Terraform Configuration** and edit it accordingly to allow the Availability Domain to be selected.
 
 	```
@@ -486,6 +487,7 @@ With Resource Manager, you can use Terraform's remote exec functionality to exec
 10. Click **Plan** and **Plan**
 
 	![Stack-Plan](./images/task7/stack-plan.png " ")
+
 
 11. Click **Stack Details** then click **Apply** and **Apply**
 	
