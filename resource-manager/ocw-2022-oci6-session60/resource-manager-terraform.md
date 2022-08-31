@@ -202,7 +202,7 @@ Estimated time: 90 minutes
 
 	![Compute Instance Details](./images/task4/compute-instance-details.png " ")
 
-13. Using the desired command prompt, we can test the SSH connection to the newly compute instance by issuing the below command. You will use the private key **cloudshellkey** you created earlier along with **Public IP address** and the user **opc**
+13. Using the desired command prompt or the **Cloud Shell**, we can test the SSH connection to the newly compute instance by issuing the below command. You will use the private key **cloudshellkey** you created earlier along with **Public IP address** and the user **opc**
 
     ```
     <copy>
@@ -211,6 +211,8 @@ Estimated time: 90 minutes
     ```
 
 	![SSH Into Compute Instance](./images/task4/ssh-into-instance.png " ")
+
+	![SSH Using Cloud Shell](./images/task4/ssh-cloud-shell.png " ")
 
 ## Task 5: Create an ORM Stack using the Template Feature
 
@@ -232,7 +234,7 @@ Estimated time: 90 minutes
 
 	![Stack Name](./images/task5/stack-name.png " ")
 
-5. Enter the compute instance name **ComputeTemplate**, select the **CareClinicVCN** VCN, select the subnet **Public Subnet-CareClinicVCN (Regional)** under the **Required Configuration** section
+5. Enter the compute instance name **ComputeTemplate**, select the VCN **testVCN**, select the subnet **Default Subnet....US-ASHBURN-AD-1** under the **Required Configuration** section
 
 	![Instance Display Name and Select Subnet](./images/task5/instance-name-subnet.png " ")
 
@@ -252,7 +254,7 @@ Estimated time: 90 minutes
 
 	![Stack Plan Succeeded](./images/task5/plan-succeeded.png " ")
 
-10. At this point, if you were to **Apply** this ORM stack, it would fail since the **VM.Standard.E2.1.Micro** Compute Shapes are only available in **Availability Domain 3 (AD3)** and this ORM Stack was written to leverage **AD1**. In **Task 6**, we will download the **Terraform Configuration** and edit it accordingly to allow the Availability Domain to be selected.
+10. At this point, if you were to **Apply** this ORM stack, it **MIGHT** fail since the **VM.Standard.E2.1.Micro** Compute Shapes can reside in different **Availability Domains (AD)** depending on the Cloud Tenant you are using.  This ORM Stack Template was written to leverage **AD1**. In **Task 6**, we will download the **Terraform Configuration** and edit it accordingly to allow the Availability Domain to be selected.
 
 	```
 	Error: Service error:NotAuthorizedOrNotFound. shape VM.Standard.E2.1.Micro not found. http status code: 404.
@@ -341,9 +343,9 @@ In this task, we will download the Terraform Configuration files from the ORM St
 
 	![Stack Name](./images/task6/stack-name.png " ")
 
-11. Enter the name **Compute-Template**, select the **-AD-3** Availability Domain, select the **CareClinicVCN** and select the Subnet **Public Subnet-CareClinicVCN (Regional)**.
+11. Enter the name **Compute-Template**, select the **-AD-1** or **AD-3** Availability Domain, select the **testVCN** and select the Subnet **Default Subnet....US-ASHBURN-AD-1**.
 
-	**Note:** The **[Always-Free](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)** shape **VM.Standard.E2.1.Micro** is only available in the **AD-3** Availability Domain.
+	**Note:** The **[Always-Free](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)** shape **VM.Standard.E2.1.Micro** can be available in the **AD-1** or **AD-3** Availability Domain.
 
 	![Availability Domain and VCN](./images/task6/ad-vcn.png " ")
 
@@ -485,17 +487,23 @@ With Resource Manager, you can use Terraform's remote exec functionality to exec
 
 	![Stack-Plan](./images/task7/stack-plan.png " ")
 
-11. The status of the Plan will become **SUCCEEDED**
+11. Click **Stack Details** then click **Apply** and **Apply**
+	
+	![Stack-Apply](./images/task7/stack-apply.png " ")
 
-	![Plann Succeeded](./images/task7/plan-succeeded.png " ")
+12. The status of the **Apply** will become **SUCCEEDED**
 
-12. You will see in the **Logs**, Terraform connected to the Compute Instance and completed the **Inline** command.
+	![Apply Succeeded](./images/task7/apply-succeeded.png " ")
+
+13. You will see in the **Logs**, Terraform connected to the Compute Instance and completed the **Inline** command.
 
 	![Stack Logs](./images/task7/stack-logs.png " ")
 
-13. If you SSH into the compute Instance using a local command shell, you will see the file **IMadeAFile.Right.Here** was created successfully.
+14. If you SSH into the compute Instance using a local command shell or Cloud Shell, you will see the file **IMadeAFile.Right.Here** was created successfully.
 
 	![SSH Verify File](./images/task7/verify-file-created.png " ")
+
+	![Cloud Shell Verify File](./images/task7/verify-file-cloud-shell.png " ")
 
 ## Task 8: Destroy all OCI Resources
 
