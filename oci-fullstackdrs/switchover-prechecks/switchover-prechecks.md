@@ -91,6 +91,13 @@ Refer the **Troubleshooting tips** section for known failures and correction act
 
       ![](./images/mushop-app.png)
 
+  In case if you see error **Error: Request failed with status code 500** while navigating the mushop website, reboot **both** compute VM's (mushop-xxxxx-0 and mushop-xxxx-1).
+  
+  Navigate to Compute from OCI Console, select the three dots in the respective compute instances and reboot the VM's. 
+
+     ![](./images/reboot-vm.png)
+
+  After couple of minutes, refresh the browser and re-verify.
 
 3. Let us break the MuShop Application to create an outage. 
 
