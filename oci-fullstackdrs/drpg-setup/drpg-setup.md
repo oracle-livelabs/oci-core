@@ -4,7 +4,7 @@
 
 In this lab, we will Create and Associate Disaster Recovery Protection Groups (DRPG). Ashburn is a primary region, and Phoenix is the standby region.
 
-Estimated Lab Time: 5 Minutes
+Estimated Time: 5 Minutes
 
 Watch the video below for a quick walk through of the lab.
 

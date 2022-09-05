@@ -2,349 +2,380 @@
 
 ## Introduction
 
-In this lab, we will create DR Switchover plan and customize the plan with additional steps. Ashburn is primary region and Phoenix is standby region. FSDR provides two types of plan
+In this lab, we will create a DR Switchover plan and customize the plan with additional steps. Ashburn is a primary region, and Phoenix is the standby region. FSDR provides two types of plan
 
 - Switchover (Maintenance/Planned Disaster Recovery)
 - Failover   (Actual Disaster Recovery/Unplanned)
 
-This lab will focus of how to create Switchover plan and customize the plan as per MuShop application requirements. DR Plan *must* be created in standby region (Phoenix). This is because in case of worst case scenario of complete primary region outside the FSDR will not be accessible from the primary region.
+This lab will focus on how to create a Switchover plan and customize the plan as per MuShop application requirements. DR Plan *must* be created in the standby region (Phoenix). It is because, in the case of the worst-case scenario, the entire primary region outside the FSDR will not be accessible from the primary region.
 
-Estimated Lab Time: 20 Minutes
+Estimated Time: 20 Minutes
 
-Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walkthrough of the lab.
 
 [](youtube:6Dp49VXqjtQ)
 
 ### Objectives
 
-- Create Switchover plan
+- Create a Switchover plan
 - Gather Load Balancer OCID's
 - Customize the Switchover plan- Remove Primary Load Balancer Backends group
 - Customize the Switchover plan- Restore Database Wallet group
-- Customize the Switchover plan- Restore Application group
+- Customize the Switchover plan- Restore the Application Group
 - Customize the Switchover plan- Add Standby Load Balancer Backends group
+- Review the Switchover plan- Reorder groups
 
-## Task 1: Create Switchover plan
+## Task 1: Create a Switchover plan
 
 1. Login into OCI Console with your provided Credentials. Select region as **Phoenix**.
 
-  ![](./images/phoenix-region.png)
+  ![phoenix region](./images/phoenix-region.png)
 
-2. From the Hamburger menu, select **Migration and Disaster Recovery**, then **Disaster Recovery Protection Groups**.Verify the region is **Phoenix**
+2. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery Protection Groups**. Verify the region is **Phoenix**
 
-  ![](./images/phoenix-drpgpage.png)
+  ![phoenix region drpg](./images/phoenix-drpgpage.png)
 
-3. You will land up in the Disaster Recovery Protection group home page, make sure you have selected the Phoenix region. **DR Plans will be always created from Standby DRPG (Phoenix region)**
+3. You will land on the Disaster Recovery Protection group home page; make sure you have selected the Phoenix region. **DR Plans always be created in the Standby DRPG (Phoenix region)**
 
-  ![](./images/phoenix-drpg.png)
+  ![drpg home](./images/phoenix-drpg.png)
 
-4. Select the **mushop-phoenix** DRPG and navigate to Plans under resources section.
+4. Select the **mushop-phoenix** DRPG and navigate to Plans under the resources section.
 
-  ![](./images/phoenix-drplan.png)
+  ![drpg dr plan](./images/phoenix-drplan.png)
 
 - Create plan
 - Name as **mushop-app-switchover**
-- Plantype as **Switchover**
+- Plan type as **Switchover**
 - Hit Create
 
-  ![](./images/phoenix-create-drplan.png)
+  ![drpg create plan](./images/phoenix-create-drplan.png)
 
-  Plan will start creating,select the plan **mushop-app-switchover**.
+  The plan will start creating; select the plan **mushop-app-switchover**.
 
-  ![](./images/phoenix-drplan-creating.png)
+  ![drpg creating plan](./images/phoenix-drplan-creating.png)
 
-  Refresh the DR Plan page if required. You can monitor the status of the request in **Work requests* section under Resources. Within a minute, the plan will get created and it should be in *active* state
+  Refresh the DR Plan page if required. You can monitor the request's status in the **Work requests** section under Resources. Within a minute, the plan will get created, and it should be in *active* State.
 
-  ![](./images/phoenix-drplan-created.png)
+  ![drpg plan created](./images/phoenix-drplan-created.png)
 
-  Select the **mushop-app-switchover** plan and you should be able to various inbuilt plan groups.
+  Select the **mushop-app-switchover** plan, and you should be able to various inbuilt plan groups.
 
-  ![](./images/phoenix-drplan-details.png)
+  ![drpg plan details](./images/phoenix-drplan-details.png)
 
-  Based on the members we have added in both primary and standby DRPG, FSDR created these built-in plans automatically. You can navigate around the plan groups to see the various steps which got created.
+  Based on the members we added in both primary and standby DRPG, FSDR created these built-in plans. You can navigate the plan groups to see the various steps created.
 
-  ![](./images/phoenix-drplan-moredetails.png)
+  ![drpg plan more details](./images/phoenix-drplan-moredetails.png)
 
-- Built-in Prechecks - These are prechecks for app,db and volume group switchover
-- Stop Compute Instances (Primary) - Stop app virtual machines in ashburn region (primary)
-- Switchover Volume Group (Standby) - Switchover volume group in phoenix region (standby)
-- Switchover Autonomous Databases (Standby) - Switchover ATP DB from ashburn to Phoenix region
-- Launch Compute Instances (Standby) - Create app virtual machines in phoenix region (standby)
-- Terminate Compute Instances (Primary) - Though the group says as terminate compute instances, FSDR *will not terminate* the app virtual machines in primary region.
-- Reverse Volume Group Replication policies (Standby)- Setup reverse volume group replication from phoenix to ashburn region.
-- Delete Volume Group (Primary)- Though the group says as delete volume group, we will not delete those in ashburn region.
+- Built-in Prechecks - These are prechecks for the app, DB, and volume group switchover
+- Stop Compute Instances (Primary) - Stop app virtual machines in the Ashburn region (primary)
+- Switchover Volume Group (Standby) - Switchover volume group in the phoenix region (standby)
+- Switchover Autonomous Databases (Standby) - Switchover ATP DB from Ashburn to Phoenix region
+- Launch Compute Instances (Standby) - Create app virtual machines in the phoenix region (standby)
+- Terminate Compute Instances (Primary) - Though the group says terminate compute instances, FSDR *will not terminate* the app virtual machines in the primary region.
+- Reverse Volume Group Replication policies (Standby)- Set up reverse volume group replication from Phoenix to Ashburn region.
+- Delete Volume Group (Primary)- Though the group says as delete volume group, we will not delete those in the Ashburn region.
 
 ## Task 2: Gather Load Balancer OCID's
 
-1. As a perquisites need to gather OCID's (Oracle Cloud Identifier) of load balancers running in Ashburn (Primary) and Phoenix (Standby) region.
+1. As perquisites, we need to gather OCIDs (Oracle Cloud Identifier) of load balancers running in the Ashburn (Primary) and Phoenix (Standby) region.
 
-2. Leave the existing DRPG console tabs as running. Now open two new OCI console tabs and make sure you are logged into asburn region and phoenix region respectively.
+2. Leave the existing DRPG console tabs as running. Now open two new OCI console tabs and ensure you are logged into the auburn region and phoenix region, respectively.
 
-3. From the Hamburger menu, select **Networking**, then **Load Balancers**.Make sure you are logged into **Ashburn** region.
+3. From the Hamburger menu, select **Networking**, then **Load Balancers**. Make sure you are logged in to **Ashburn** region.
   
-  ![](./images/loadbalancer-navigate.png)
+  ![ashburn loadbalancer home](./images/loadbalancer-navigate.png)
 
-4. You should have load balancer with name **mushop-xxxx**, choose the right compartment assigned to you.Select the three dots in the right end of balancer details. Select **Copy OCID** and paste the OCID details safely in any preferred notes. You shoud have value something similar to below
+4. You should have a load balancer with the name **mushop-xxxx**; choose the right compartment assigned to you. Select the three dots on the right end of the load balancer details. Select **Copy OCID** and paste the OCID details safely into any preferred notes. You should have something similar to below
 
- **ocid1.loadbalancer.oc1.iad.aaaaaaaa2t4kwwavlgwghuebrce6mgqm5ewrsj5kscw2t5ncdpxdpo6ztvaq**
+ **ocid1.loadbalancer.oc1.iad.aaaaaaaa2t4kwwavlgwghuebrce6mgqm5ewrsj5kscw2t5ncdpxdpo6ztvaq** (**Don't use this**)
 
-  ![](./images/ashburn-lb-ocid.png)
+  ![ashburn loadbalancer OCID](./images/ashburn-lb-ocid.png)
 
-5. From the Hamburger menu, select **Networking**, then **Load Balancers**.Make sure you are logged into **Phoenix** region.
+5. From the Hamburger menu, select **Networking**, then **Load Balancers**. Make sure you are logged in to **Phoenix** region.
   
-  ![](./images/loadbalancer-navigate.png)
+  ![phonenix loadbalancer home](./images/loadbalancer-navigate.png)
 
-6. You should have load balancer with name **mushop-xxxx**,choose the right compartment assigned to you.Select the three dots in the right end of balancer details. Select **Copy OCID** and paste the OCID details safely in any preferred notes. You shoud have value something similar to below
+6. You should have a load balancer with the name **mushop-xxxx**; choose the right compartment assigned to you. Select the three dots on the right end of the balancer details. Select **Copy OCID** and paste the OCID details safely into any preferred notes. You should have value something similar to below
 
- **ocid1.loadbalancer.oc1.phx.aaaaaaaaqo6sn6xku3vcuiqjb7emuastpzdrd4yrdgozh5g2c3bahwdkhiyq**
+ **ocid1.loadbalancer.oc1.phx.aaaaaaaaqo6sn6xku3vcuiqjb7emuastpzdrd4yrdgozh5g2c3bahwdkhiyq**  (**Don't use this**)
 
-  ![](./images/phoenix-lb-ocid.png)
+  ![phoenix loadbalancer OCID](./images/phoenix-lb-ocid.png)
+
 
 ## Task 3: Customize the Switchover plan- Remove Primary Load Balancer Backends group
 
-1. Create user defined groups for mushop application switchover. We need to create 4 user defined groups. Let's create those one by one. This can be done by selecting **Add group** in the *mushop-app-switchover* plan
+1. Create user-defined groups for mushop application switchover. We need to create four user-defined groups. Let's create those. You can do this by selecting **Add group** in the *mushop-app-switchover* plan
 
-  ![](./images/phoenix-plangroup-add.png)
+  ![add plan group](./images/phoenix-plangroup-add.png)
 
-2. Add "Remove Primary Load Balancer Backends" user defined group
+2. Add "Remove Primary Load Balancer Backends" User defined group
 
-- Add *Remove Primary Load Balancer Backends* in Group name
-- Add *Remove Primary Backend on Node-0* in Step name
-- Select Error mode as "Stop on error"
-- Leave the default "3600" seconds in Timeout in seconds
-- Leave the enabled tick mark
-- In the region select "US East (Ashburn)"
-- Select "Run local script" option
-- Select "mushop-xxxxx-0" instance in "Target instance in compartment"
-- In script parameters provide the details **/usr/bin/sudo /home/opc/fsdrsscripts/removeFromBackendset.py ocid1.loadbalancer.oc1.iad.aaaaaaaa2t4kwwavlgwghuebrce6mgqm5ewrsj5kscw2t5ncdpxdpo6ztvaq**
+  - Add *Remove Primary Load Balancer Backends* in Group name
+  - Add *Remove Primary Backend on Node-0* in Step name
+  - Select Error mode as "Stop on error."
+  - Leave the default "3600" seconds in Timeout in seconds
+  - Leave the enabled tick mark
+  - In the region, select "US East (Ashburn)."
+  - Select the "Run local script" option
+  - Select "mushop-xxxxx-0" instance in "Target instance in compartment"
+  - In script parameters, add the below script
+ 
+  ````
+    <copy>/usr/bin/sudo /home/opc/fsdrsscripts/removeFromBackendset.py ocid1.loadbalancer.oc1.iad.aaaaaaaa2t4kwwavlgwghuebrce6mgqm5ewrsj5kscw2t5ncdpxdpo6ztvaq</copy>
+  ````
 
- **You need to replace the OCID of the primary (Ashburn) load balancer as per step 2.4, make sure you replace the OCID of your load balancer with out fail in the above command**
+  **Replace the OCID of the primary (Ashburn) load balancer as per step 2.4; make sure you replace the OCID of your load balancer without fail in the above command**
 
-- Leave the field blank in "Run as user"
-- Verify all the details and hit add
+  - Leave the field blank in "Run as user."
+  - Verify all the details and hit add
 
-  ![](./images/phoenix-lbremove-node0.png)
+  ![create lbremove plangroup](./images/phoenix-lbremove-node0.png)
 
-- **mushop-phoenix** drpg will go into updating state and after few seconds it will come back to active state. Refersh the DRPG page if required. You should be able to see the *Remove Primary Load Balancer Backends* Plan group has been added successfully with *Remove Primary Backend on Node-0* step. Note the type in group name it will show as **User defined** as this is user defined group.
+  - **mushop-phoenix**  DRPG will go into updating state, and after a few seconds, it will return to the active state. Refresh the DRPG page if required. You should be able to see that the *Remove Primary Load Balancer Backends* Plan group has been added successfully with the *Remove Primary Backend on Node-0* step. Note that the type in the group name it will show as **User defined** as this is a user-defined group.
 
-  ![](./images/phoenix-lbremove-node0-added.png)
+  ![create lbremove plangroup](./images/phoenix-lbremove-node0-added.png)
 
 3.Need to add another step for *Remove Primary Backend on Node-1* in *Remove Primary Load Balancer Backends* Plan group
 
-- From the *Remove Primary Load Balancer Backends* Plan group, select the three dots section in the right end. Select **Add Step"
+- Select the three dots section in the right end from the *Remove Primary Load Balancer Backends* Plan group. Select **Add Step**
 
-  ![](./images/phoenix-lbremove-addstep.png)
+  ![add lbremove step](./images/phoenix-lbremove-addstep.png)
 
 - Leave the default Group name
 - Add *Remove Primary Backend on Node-1* in Step name
-- Select Error mode as "Stop on error"
+- Select Error mode as "Stop on error."
 - Leave the default "3600" seconds in Timeout in seconds
 - Leave the enabled tick mark
-- In the region select "US East (Ashburn)"
-- Select "Run local script" option
+- In the region, select "US East (Ashburn)."
+- Select the "Run local script" option
 - Select "mushop-xxxxx-1" instance in "Target instance in compartment"
-- In script parameters provide the details **/usr/bin/sudo /home/opc/fsdrsscripts/removeFromBackendset.py ocid1.loadbalancer.oc1.iad.aaaaaaaa2t4kwwavlgwghuebrce6mgqm5ewrsj5kscw2t5ncdpxdpo6ztvaq**
+- In script parameters, add the below script
+ 
+    ````
+    <copy>/usr/bin/sudo /home/opc/fsdrsscripts/removeFromBackendset.py ocid1.loadbalancer.oc1.iad.aaaaaaaa2t4kwwavlgwghuebrce6mgqm5ewrsj5kscw2t5ncdpxdpo6ztvaq</copy>
+    ````
 
- **You need to replace the OCID of the primary (Ashburn) load balancer as per step 2.4, make sure you replace the OCID of your load balancer with out fail in the above command**
+ **Replace the OCID of the primary (Ashburn) load balancer as per step 2.4; make sure you replace the OCID of your load balancer without fail in the above command**
 
-- Leave the field blank in "Run as user"
+- Leave the field blank in "Run as user."
 - Verify all the details and hit add
 
-  ![](./images/phoenix-lbremove-node1.png)
+  ![adding lbremove step](./images/phoenix-lbremove-node1.png)
 
-- **mushop-phoenix** drpg will go into updating state and after few secondw it will come back to active state. Refersh the DRPG page if required. You should be able to see the *Remove Primary Load Balancer Backends* Plan group has been modified successfully with *Remove Primary Backend on Node-1* step. Now you can see both steps has been added in the group.
+- **mushop-phoenix** DRPG will go into updating state, and after a few seconds, it will return to the active state. Refresh the DRPG page if required. You should be able to see that the *Remove Primary Load Balancer Backends* Plan group has been modified successfully with the *Remove Primary Backend on Node-1* step. Now you can see that both steps have been added to the group.
 
-  ![](./images/phoenix-lbremove-steps.png)
+  ![added lbremove step](./images/phoenix-lbremove-steps.png)
 
 
 ## Task 4: Customize the Switchover plan- Restore Database Wallet group
 
-1. Create user defined group for "Restore Database Wallet". This can be done by selecting **Add group** in the *Restore Database Wallet* plan
+1. Create a user-defined group for "Restore Database Wallet." This can be done by selecting **Add group** in the *Restore Database Wallet* plan
 
-  ![](./images/phoenix-plangroup-add.png)
+  ![add plan group](./images/phoenix-plangroup-add.png)
 
-2. Add "Restore Database Wallet" user defined group
+2. Add "Restore Database Wallet" User defined group
 
-- Add *Restore Database Wallet* in Group name
+- Add *Restore Database Wallet* in the Group name
 - Add *Restore Database Wallet on Node-0* in Step name
-- Select Error mode as "Stop on error"
+- Select Error mode as "Stop on error."
 - Leave the default "3600" seconds in Timeout in seconds
 - Leave the enabled tick mark
-- In the region select "US East (Ashburn)"
-- Select "Run local script" option
+- In the region, select "US East (Ashburn)."
+- Select the "Run local script" option
 - Select "mushop-xxxxx-0" instance in "Target instance in compartment"
-- In script parameters provide the details */usr/bin/sudo /home/opc/fsdrsscripts/mushop\_db\_wallet\_restore.sh*
-- Leave the field blank in "Run as user"
+- In script parameters, add the below script
+
+    ````
+    <copy>/usr/bin/sudo /home/opc/fsdrsscripts/mushop_db_wallet_restore.sh</copy>
+    ````
+- Leave the field blank in "Run as user."
 - Verify all the details and hit add
 
-  ![](./images/phoenix-dbrestore-node0.png)
+  ![create dbrestore group](./images/phoenix-dbrestore-node0.png)
 
-- **mushop-phoenix** drpg will go into updating state and after few seconds it will come back to active state. Refersh the DRPG page if required. You should be able to see the *Restore Database Wallet* plan group has been added successfully with *Restore Database Wallet on Node-0* step. Note the type in group name it will show as **User defined** as this is user defined group.
+- **mushop-phoenix** drpg will go into updating state, and after a few seconds, it will return to active state. Refresh the DRPG page if required. You should be able to see that the *Restore Database Wallet* plan group has been added successfully with the *Restore Database Wallet on Node-0* step. Note the type in the group name. It will show as **User defined** as this is a user-defined group.
 
-  ![](./images/phoenix-dbrestore-node0-added.png)
+  ![created dbrestore group](./images/phoenix-dbrestore-node0-added.png)
 
 3.Need to add another step for *Restore Database Wallet on Node-1* in *Restore Database Wallet* plan group
 
-- From the *Restore Database Wallet* Plan group, select the three dots section in the right end. Select **Add Step**
+- From the *Restore Database Wallet* Plan group, select the three dots section at the right end. Select **Add Step**
 
-  ![](./images/phoenix-dbrestore-addstep.png)
+  ![add dbrestore step](./images/phoenix-dbrestore-addstep.png)
 
 - Leave the default Group name
 - Add *Restore Database Wallet on Node-1* in Step name
-- Select Error mode as "Stop on error"
+- Select Error mode as "Stop on error."
 - Leave the default "3600" seconds in Timeout in seconds
 - Leave the enabled tick mark
-- In the region select "US East (Ashburn)"
-- Select "Run local script" option
+- In the region, select "US East (Ashburn)."
+- Select the "Run local script" option
 - Select "mushop-xxxxx-1" instance in "Target instance in compartment"
-- In script parameters provide the details */usr/bin/sudo /home/opc/fsdrsscripts/mushop\_db\_wallet\_restore.sh*
-- Leave the field blank in "Run as user"
+- In script parameters, add the below script
+
+    ````
+        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/mushop_db_wallet_restore.sh</copy>
+    ````
+- Leave the field blank in "Run as user."
 - Verify all the details and hit add
 
-  ![](./images/phoenix-dbrestore-node1.png)
+  ![adding dbrestore step](./images/phoenix-dbrestore-node1.png)
 
-- **mushop-phoenix** drpg will go into updating state and after few secondw it will come back to active state. Refersh the DRPG page if required. You should be able to see the *Restore Database Wallet* Plan group has been modified successfully with *RRestore Database Wallet on Node-1* step. Now you can see both steps has been added in the group.
+- **mushop-phoenix** drpg will go into updating state, and after a few seconds, it will return to active state. Refresh the DRPG page if required. You should be able to see that the *Restore Database Wallet* Plan group has been modified successfully with the *RRestore Database Wallet on Node-1* step. Now you can see that both steps have been added to the group.
 
-  ![](./images/phoenix-dbrestore-steps.png)
+  ![added dbrestore step](./images/phoenix-dbrestore-steps.png)
 
-## Task 5: Customize the Switchover plan- Restore Application group
+## Task 5: Customize the Switchover plan- Restore the Application Group
 
-1. Create user defined group for "Restore Application". This can be done by selecting **Add group** in the *mushop-app-switchover* plan
+1. Create a user-defined group for "Restore Application." This can be done by selecting **Add group** in the *mushop-app-switchover* plan
 
-  ![](./images/phoenix-plangroup-add.png)
+  ![add plan group](./images/phoenix-plangroup-add.png)
 
-2. Add "Restore Application" user defined group
+2. Add "Restore Application" User defined group
 
-- Add *Restore Application* in Group name
+- Add *Restore Application* in the Group name
 - Add *Restore Application on Node-0* in Step name
-- Select Error mode as "Stop on error"
+- Select Error mode as "Stop on error."
 - Leave the default "3600" seconds in Timeout in seconds
 - Leave the enabled tick mark
-- In the region select "US East (Ashburn)"
-- Select "Run local script" option
+- In the region, select "US East (Ashburn)."
+- Select the "Run local script" option
 - Select "mushop-xxxxx-0" instance in "Target instance in compartment"
-- In script parameters provide the details */usr/bin/sudo /home/opc/fsdrsscripts/mushop_reconfigure.sh*
-- Leave the field blank in "Run as user"
+- In script parameters, add the below script
+    ````
+        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/mushop_reconfigure.sh</copy>
+    ````
+- Leave the field blank in "Run as user."
 - Verify all the details and hit add
 
-  ![](./images/phoenix-restoreapp-node0.png)
+  ![create restoreapp group](./images/phoenix-restoreapp-node0.png)
 
-- **mushop-phoenix** drpg will go into updating state and after few seconds it will come back to active state. Refersh the DRPG page if required. You should be able to see the *Restore Application* plan group has been added successfully with *Restore Application on Node-0* step. Note the type in group name it will show as **User defined** as this is user defined group.
+- **mushop-phoenix** drpg will go into updating state, and after a few seconds, it will return to active state. Refresh the DRPG page if required. You should be able to see that the *Restore Application* plan group has been added successfully with the *Restore Application on Node-0* step. Note the type in the group name. It will show as **User defined** as this is a user-defined group.
 
-  ![](./images/phoenix-restoreapp-node0-added.png)
+  ![created restoreapp group](./images/phoenix-restoreapp-node0-added.png)
 
-3.Need to add another step for *Restore Application on Node-1* in *Restore Application* plan group
+3.We Need to add another step for *Restore Application on Node-1* in the *Restore Application* plan group
 
-- From the *Restore Database Wallet* Plan group, select the three dots section in the right end. Select **Add Step**
+- From the *Restore Application* Plan group, select the three dots section at the right end. Select **Add Step**
 
-  ![](./images/phoenix-restoreapp-addstep.png)
+  ![add restoreapp step](./images/phoenix-restoreapp-addstep.png)
 
 - Leave the default Group name
 - Add *Restore Application on Node-1* in Step name
-- Select Error mode as "Stop on error"
+- Select Error mode as "Stop on error."
 - Leave the default "3600" seconds in Timeout in seconds
 - Leave the enabled tick mark
-- In the region select "US East (Ashburn)"
-- Select "Run local script" option
+- In the region, select "US East (Ashburn)."
+- Select the "Run local script" option
 - Select "mushop-xxxxx-1" instance in "Target instance in compartment"
-- In script parameters provide the details */usr/bin/sudo /home/opc/fsdrsscripts/mushop_reconfigure.sh*
-- Leave the field blank in "Run as user"
+- In script parameters, add the below script
+    ````
+        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/mushop_reconfigure.sh</copy>
+    ````
+- Leave the field blank in "Run as user."
 - Verify all the details and hit add
 
-  ![](./images/phoenix-restoreapp-node1.png)
+  ![adding restoreapp step](./images/phoenix-restoreapp-node1.png)
 
-- **mushop-phoenix** drpg will go into updating state and after few seconds it will come back to active state. Refersh the DRPG page if required. You should be able to see the *Restore Application* Plan group has been modified successfully with *RRestore Application on Node-1* step. Now you can see both steps has been added in the group.
+- **mushop-phoenix** drpg will go into updating state, and after a few seconds, it will return to active state. Refresh the DRPG page if required. You should be able to see that the *Restore Application* Plan group has been modified successfully with the *RRestore Application on Node-1* step. Now you can see that both steps have been added to the group.
 
-  ![](./images/phoenix-restore-steps.png)
+  ![added restoreapp step](./images/phoenix-restoreapp-steps.png)
 
 
 ## Task 6: Customize the Switchover plan- Add Standby Load Balancer Backends group
 
-1. Create user defined group for "Add Standby Load Balancer Backends". This can be done by selecting **Add group** in the *mushop-app-switchover* plan
+1. Create a user-defined group for "Add Standby Load Balancer Backends." This can be done by selecting **Add group** in the *mushop-app-switchover* plan
 
-  ![](./images/phoenix-plangroup-add.png)
+  ![add plan group](./images/phoenix-plangroup-add.png)
 
-2. Add "Add Standby Load Balancer Backends" user defined group
+2. Add "Add Standby Load Balancer Backends" User defined group
 
 - Add *Add Standby Load Balancer Backends* in Group name
 - Add *Add Standby Backend on Node-0* in Step name
-- Select Error mode as "Stop on error"
+- Select Error mode as "Stop on error."
 - Leave the default "3600" seconds in Timeout in seconds
 - Leave the enabled tick mark
-- In the region select "US East (Ashburn)"
-- Select "Run local script" option
+- In the region, select "US East (Ashburn)."
+- Select the "Run local script" option
 - Select "mushop-xxxxx-0" instance in "Target instance in compartment"
-- In script parameters provide the details **/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py ocid1.loadbalancer.oc1.phx.aaaaaaaae4uajkrtx544r2txz4hzo2ongtc5v5jaddl2szok3lzh3r5w4awa**
+- In script parameters, add the below script
 
- **You need to replace the OCID of the standby (Phoenix) load balancer as per step 2.6, make sure you replace the OCID of your load balancer with out fail in the above command**
+    ````
+        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py ocid1.loadbalancer.oc1.phx.aaaaaaaae4uajkrtx544r2txz4hzo2ongtc5v5jaddl2szok3lzh3r5w4awa</copy>
+    ````
 
-- Leave the field blank in "Run as user"
+ **You need to replace the OCID of the standby (Phoenix) load balancer as per step 2.6; make sure you replace the OCID of your load balancer without fail in the above command**
+
+- Leave the field blank in "Run as user."
 - Verify all the details and hit add
 
-  ![](./images/phoenix-lbadd-node0.png)
+  ![create loadbalancer add group](./images/phoenix-lbadd-node0.png)
 
-- **mushop-phoenix** drpg will go into updating state and after few seconds it will come back to active state. Refersh the DRPG page if required. You should be able to see the *Add Standby Load Balancer Backends* Plan group has been added successfully with *Add Standby Backend on Node-0* step. Note the type in group name it will show as **User defined** as this is user defined group.
+- **mushop-phoenix** drpg will go into updating state, and after a few seconds, it will return to active state. Refresh the DRPG page if required. You should be able to see that the *Add Standby Load Balancer Backends* Plan group has been added successfully with the *Add Standby Backend on Node-0* step. Note the type in the group name. It will show as **User defined** as this is a user-defined group.
 
-  ![](./images/phoenix-lbadd-node0-added.png)
+  ![created loadbalancer add group](./images/phoenix-lbadd-node0-added.png)
 
 3.Need to add another step for *Add Standby Backend on Node-1* in *Add Standby Load Balancer Backends* Plan group
 
-- From the *Add Standby Load Balancer Backends* Plan group, select the three dots section in the right end. Select **Add Step"
+- Select the three dots section in the right end from the *Add Standby Load Balancer Backends* Plan group. Select **Add Step** 
 
-  ![](./images/phoenix-lbadd-addstep.png)
+  ![add step to adding loadbalancer group](./images/phoenix-lbadd-addstep.png)
 
 - Leave the default Group name
 - Add *Add Standby Backend on Node-1* in Step name
-- Select Error mode as "Stop on error"
+- Select Error mode as "Stop on error."
 - Leave the default "3600" seconds in Timeout in seconds
 - Leave the enabled tick mark
-- In the region select "US East (Ashburn)"
-- Select "Run local script" option
+- In the region, select "US East (Ashburn)."
+- Select the "Run local script" option
 - Select "mushop-xxxxx-1" instance in "Target instance in compartment"
-- In script parameters provide the details **/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py ocid1.loadbalancer.oc1.phx.aaaaaaaae4uajkrtx544r2txz4hzo2ongtc5v5jaddl2szok3lzh3r5w4awa**
+- In script parameters, add the below script
 
- **You need to replace the OCID of the standby (Phoenix) load balancer as per step 2.6, make sure you replace the OCID of your load balancer with out fail in the above command**
+    ````
+        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py ocid1.loadbalancer.oc1.phx.aaaaaaaae4uajkrtx544r2txz4hzo2ongtc5v5jaddl2szok3lzh3r5w4awa</copy>
+    ````
 
+ **You need to replace the OCID of the standby (Phoenix) load balancer as per step 2.6; make sure you replace the OCID of your load balancer without fail in the above command**
 
-- Leave the field blank in "Run as user"
+- Leave the field blank in "Run as user."
 - Verify all the details and hit add
 
-  ![](./images/phoenix-lbadd-node1.png)
+  ![adding step to adding loadbalancer group](./images/phoenix-lbadd-node1.png)
 
-- **mushop-phoenix** drpg will go into updating state and after few seconds it will come back to active state. Refersh the DRPG page if required. You should be able to see the *Add Standby Load Balancer Backends* Plan group has been modified successfully with *Add Standby Backend on Node-1* step. Now you can see both steps has been added in the group.
+- **mushop-phoenix** drpg will go into updating state, and after a few seconds, it will return to active state. Refresh the DRPG page if required. You should be able to see that the *Add Standby Load Balancer Backends* Plan group has been modified successfully with the *Add Standby Backend on Node-1* step. Now you can see that both steps have been added to the group.
 
-  ![](./images/phoenix-lbadd-steps.png)
+  ![added step to adding loadbalancer group](./images/phoenix-lbadd-steps.png)
 
 
-## Task 7: Verify and reorder the user defined groups
+## Task 7: Verify and reorder the User defined groups
 
-1. We have created all the required user defined group in **mushop-app-switchover** switchover plan as part of the Mushop application switchover.
+1. We have created all the required user-defined groups in the **mushop-app-switchover** switchover plan as part of the Mushop application switchover.
 
-  ![](./images/phoenix-userdef-groups.png)
+   ![review all userdefined groups](./images/phoenix-userdef-groups.png)
 
-2. Let review the **mushop-app-switchover** switchover plan 
+2. Let's review the **mushop-app-switchover** switchover plan 
 
-  - "Built in Prechecks" - These are the built in prechecks groups for all the Plan groups (Built-in and User defined)
-  -  Based on the members we have added in both Primary DRPG and Standby DRPG, FSDRS created 7 Built-in switchover plan
-  -  We have manually created 4 user defined group as per the Mushop application switchover requirement.
-  -  In summary, **mushop-app-switchover** switchover plan has created *1*- Built in precheck plan group, *7*- Built in Plan group,*4*- User defined Plan group
+-  Built-in Prechecks - These are the built-in prechecks groups for all the Plan groups (Built-in and User defined)
+-  Based on the members we have added in both Primary DRPG and Standby DRPG, FSDRS created 7 Built-in switchover plan
+-  We have manually created four user-defined groups per the Mushop application switchover requirement.
+-  In summary, the **mushop-app-switchover** switchover plan has created with *one*- Built-in precheck plan group, *server*- Built-in Plan group,*four*- User defined Plan group
 
-  ![](./images/phoenix-all-plangroups.png)
+  ![all groups in DR plan](./images/phoenix-all-plangroups.png)
 
-3.Plan groups can be reordered as per the switchover workflow requirement. As part of Mushop Switchover plan, we would like to execute **Remove Primary Load Balancer Backends** plan group after the **Built-In Prechecks** plan group. Use the **Actions** after the Add group and select **Reorder groups**
+3.Plan groups can be reordered as per the switchover workflow requirement. As part of the Mushop Switchover plan, we would like to execute **Remove Primary Load Balancer Backends** plan group after the **Built-In Prechecks** plan group. Use the **Actions** after the Add group, and select **Reorder groups**
 
-  ![](./images/phoenix-reorder-groups.png)
+  ![reorder dr plan group](./images/phoenix-reorder-groups.png)
 
-4.Go to **Remove Primary Load Balancer Backends** plan group, use the move up **^** symbol and keep moving up the **Remove Primary Load Balancer Backends** plan group and place it after **Built-In Prechecks** plan group. This is very important so that we execute the plan groups in right order. Verify and hit **Save changes** 
+4.Go to the **Remove Primary Load Balancer Backends** plan group, use the move up **^** symbol, and keep moving up the **Remove Primary Load Balancer Backends** plan group and place it after the **Built-In Prechecks** plan group. This is very important to execute the plan groups in the proper order. Verify and hit **Save changes** 
 
-  ![](./images/phoenix-plangrp-moving.png)
-  ![](./images/phoenix-plangrp-moved.png) 
+  ![moving the plangroup](./images/phoenix-plangrp-moving.png)
+  ![moved the plangroup](./images/phoenix-plangrp-moved.png) 
 
-5.You should be able to see **Remove Primary Load Balancer Backends** plan group moved after **Built-In Prechecks** plan group.
+5.You should be able to see **Remove Primary Load Balancer Backends** plan group moved after the **Built-In Prechecks** plan group.
 
-    ![](./images/phoenix-final-plan.png)
+  ![final plangroup](./images/phoenix-final-plan.png)
 
-This concludes this Lab 4. Now you can move to Lab 5.
+   You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

@@ -2,136 +2,133 @@
 
 ## Introduction
 
-In this lab, we will execute **Run Prechecks** for the **mushop-app-switchover** switchover plan which we have created in lab4. **Run Prechecks**
-will execute all the **Built-in Prechecks** in parallel. 
+In this lab, we will execute **Run Prechecks** for the **mushop-app-switchover** switchover plan, which we have created in lab4. **Run Prechecks**
+will execute all the **Built-in Prechecks** in parallel.
 
-As the name, execute **Run Prechecks**  will perform only the *pre-checks* and not the actual execution. It is quite important to have the pre-checks run successfully as a pre-reqisuite for running the actual switchover plan.
+Execute **Run Prechecks**  will perform only the *pre-checks* and not the actual execution. Having the pre-checks completed successfully is essential as a pre-requisite for running the actual switchover plan.
 
-Estimated Lab Time: 10 Minutes
+Estimated Time: 10 Minutes
 
-Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walkthrough of the lab.
 
 [](youtube:6Dp49VXqjtQ)
 
 ### Objectives
 
-- Perform Run prechecks for the mushop-app-switchover  plan
+- Perform Run prechecks for the MuShop-app-switchover  plan
 - Monitor the executed prechecks plan
 - Verify the executed prechecks plan
-- Verify the Mushop application and break the application
+- Verify the MuShop application and break the application
 
 ## Task 1: Perform Run prechecks for the mushop-app-switchover plan
 
 1. Login into OCI Console with your provided Credentials. Select region as **Pheonix**.
 
-  ![](./images/phoenix-region.png)
+  ![phoenix oci console](./images/phoenix-region.png)
 
-2. From the Hamburger menu, select **Migration and Disaster Recovery**, then **Disaster Recovery Protection Groups**.Verify the region is **Phoenix**
+2. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery Protection Groups**. Verify the region is **Phoenix**
 
-  ![](./images/phoenix-drpgpage.png)
+  ![phoenix navigate drpg](./images/phoenix-drpgpage.png)
 
-3. You will land up in the Disaster Recovery Protection group home page, make sure you have selected the Phoenix region.
+3. You will land on the Disaster Recovery Protection group home page; make sure you have selected the Phoenix region.
 
-  ![](./images/phoenix-drpg.png)
+  ![drpg landing page](./images/phoenix-drpg.png)
 
 4. Select the **mushop-phoenix** DRPG and select **mushop-app-switchover** plan
 
-  ![](./images/phoenix-sw-plan.png)
+  ![drpg switchover plan](./images/phoenix-sw-plan.png)
 
-5. Navigate to **Run prechecks** section which will be right below the **mushop-app-switchover** plan
+5. Navigate to the **Run prechecks** section, which will be right below the **mushop-app-switchover** plan
 
-  ![](./images/phoenix-run-prechecks.png)
+  ![navigate drpg prechecks](./images/phoenix-run-prechecks.png)
 
 6. In the **Run prechecks** window, provide the Plan execution name as **mushop-app-switchover-prechecks** and hit **Run prechecks**
 
-  ![](./images/phoenix-execute-prechecks.png)
+  ![drpg execute prechecks](./images/phoenix-execute-prechecks.png)
 
 ## Task 2: Monitor the executed prechecks plan
 
-1. Navigate to **Plan executions** section under **Resources** and select the **mushop-app-switchover-prechecks** plan execution.Intially it will show as all the **Built-in Prechecks** as *Queued**.
+1. Navigate to **Plan executions** section under **Resources** and select the **mushop-app-switchover-prechecks** plan execution.Initially, it will show all the **Built-in Prechecks** as *Queued*
 
-  ![](./images/phoenix-execute-queued.png)
+  ![prechecks status](./images/phoenix-execute-queued.png)
 
-2. Refresh the page, within few seconds the **State** will change from *Queued* to *In Progess*. 
+2. Refresh the page; within a few seconds, the **State** will change from *Queued* to *In Progress*.
 
-  ![](./images/phoenix-execute-inprogress.png)
+  ![prechecks in-progress](./images/phoenix-execute-inprogress.png)
 
-3. All the **Built-in Prechecks**  steps will execute in parallel, you can monitor the various steps log. Navigate to three dots section for the respective buil-in step and click. You get option to view log and download log. These logs are stored in the object storage bucket which was provided during the DRPG creation. You can monitor the progress and download log if required for any troubleshooting.
+3. All the **Built-in Prechecks**  steps will execute in parallel; you can monitor the various steps log. Navigate to the three dots section for the respective built-in step and click. You get the option to view the log and download the log. These logs are stored in the object storage bucket provided during the DRPG creation. You can monitor the Progress and download the log if necessary for troubleshooting.
 
-   ![](./images/phoenix-execute-monitor.png)
-
+   ![prechecks monitor](./images/phoenix-execute-monitor.png)
 
 ## Task 3: Verify the executed prechecks plan
 
-1. After 2-3 mins, **Built-in Prechecks**  will be completed successfully.  You can verify the duration of each step, status, duration of entire prechecks etc. *It is important to have successful completion of pre-check execution*
+1. After 2-3 mins, **Built-in Prechecks**  will be completed successfully. You can verify the duration of each step, status, duration of entire prechecks, etc. *It is essential to have successful completion of pre-check execution*
 
-      ![](./images/phoenix-execute-done.png)
+      ![prechecks completed](./images/phoenix-execute-done.png)
 
-This concludes this Lab 5. Now you can move to Lab 6. 
+Refer to the **Troubleshooting tips** section for known failures and correction actions.
 
-Refer the **Troubleshooting tips** section for known failures and correction actions.
-
-## Task 4: Verify the Mushop application and break the application
+## Task 4: Verify the MuShop application and break the application
 
 1. Login into OCI Console with your provided Credentials. Select region as **Ashburn**.
 
-  ![](./images/ashburn-region.png)
+  ![oci console ashburn](./images/ashburn-region.png)
   
 2. Gather the Load Balancer public IP
 
   From the Hamburger menu, select **Networking**, then **Load Balancers**
   
-     ![](./images/loadbalancer-navigate.png)
+     ![navigate loadbalancer](./images/loadbalancer-navigate.png)
 
  Gather the Public IP address of the Load Balancer
 
-     ![](./images/loadbalancer-ip.png)
+     ![get loadbalancer IP](./images/loadbalancer-ip.png)
 
-  In your browser, open up a tab and verify the Mushop Application using the gathered public IP address. Play around the site and verify various cat products!!
+  Open a tab in your browser and verify the Mushop Application using the gathered public IP address. Play around the site and verify various cat products.
 
-      ![](./images/mushop-app.png)
+      ![mushop app](./images/mushop-app.png)
 
-  In case if you see error **Error: Request failed with status code 500** while navigating the mushop website, reboot **both** compute VM's (mushop-xxxxx-0 and mushop-xxxx-1).
+  In case you see error **Error: Request failed with status code 500** while navigating the mushop website, reboot **both** compute VM's (mushop-xxxxx-0 and mushop-xxxx-1).
   
-  Navigate to Compute from OCI Console, select the three dots in the respective compute instances and reboot the VM's. 
+  Navigate to Compute from OCI Console, select the three dots in the respective compute instances and reboot the VMs.
 
-     ![](./images/reboot-vm.png)
+     ![reboot VMs](./images/reboot-vm.png)
 
-  After couple of minutes, refresh the browser and re-verify.
+  After a couple of minutes, refresh the browser and re-verify the app.
 
-3. Let us break the MuShop Application to create an outage. 
+3. Let us break the MuShop Application to create an outage.
 
-   Click the mushop-xxxxx load balancer details, in the resources section select Listeners
+   Click the mushop-xxxxx load balancer details; in the resources section, select Listeners.
 
-   ![](./images/loadbalancer-ash.png)
+   ![load balancer landing page](./images/loadbalancer-ash.png)
 
-   ![](./images/loadbalancer-listeners.png)
+   ![listeners load balancer](./images/loadbalancer-listeners.png)
 
+4. Select the edit option using the three dots symbol at the right end of the port 80 listeners, mushop-xxxxx-80
 
-4. Select the edit option using 3 dots symbol in the right end of the port 80 listener, mushop-xxxxx-80 
+      ![modify port 80](./images/port80-edit.png)
 
-      ![](./images/port80-edit.png)
+   Modify the listener port from 80 to 81 to break the application, and save changes. You will get work requests submitted and select close requests.
 
-   Modify the listener port from 80 to 81 to break the application, save changes.  You will get work request submitted and select close requests.
-    
-      ![](./images/port80-edit1.png)
-      ![](./images/port81-edit.png)
-      ![](./images/workrequest-listener.png)
+      ![modify port 80](./images/port80-edit1.png)
+      ![modify port 81](./images/port81-edit.png)
+      ![work request](./images/workrequest-listener.png)
 
-  Wait for few seconds and refresh the browser tab of the Mushop application. You should see, this site can't be reached.  
+  Wait for a few seconds and refresh the browser tab of the MuShop application. You should see that the MuShop site can't be reached.  
 
-      ![](./images/mushop-broken.png)
+      ![reverify mushop app](./images/mushop-broken.png)
 
+We have created an outage to a working MuShop application; in the next lab, we will use the Full Stack DR service to initiate the Switchover of the Full Stack (App VM's/Database/Application Customization) from Ashburn to the Phoenix region.
 
-We have created an outage to a working Mushop application, in next lab we will use Full Stack DR service to initate the Switchover of the Full Stack (App VM's/Database/Application Customization) from Ashburn to Phoenix region.
+   You may now **proceed to the next lab**.
 
-## Troubleshooting tips 
+## Troubleshooting tips
 
 1. During the pre-check execution logs, if you messages like "Requests are being throttled for instance ocid1", retry the **Run prechecks** again
 
 [ocid1.instance.oc1.iad.anuwcljt5h22avqcjswxs6tublhrz2qonyjmucpxlyjxplybldbpxz2jqkaq] -- Error returned by PutObject operation in ObjectStorage service.(409, Conflict, false) Server is busy. Requests are being throttled for instance ocid1.instance.oc1.iad.anuwcljt5h22avqcjswxs6tublhrz2qonyjmucpxlyjxplybldbpxz2jqkaq (opc-request-id: B7721980580148749787FE758C9440FC/3D8758622598943932D50842DCD7EAA1/143166BA790ECD35695B548600382010)
 
-2. While navigating the mushop website if you see error **Error: Request failed with status code 500**, reboot the both compute VM's (mushop-xxxxx-0 and mushop-xxxx-1).  Navigate to Compute from OCI Console, select the three dots in the compute instance and reboot the VM's.
+2. While navigating the mushop website, if you see error **Error: Request failed with status code 500**, reboot both compute VMs (mushop-xxxxx-0 and mushop-xxxx-1). Navigate to Compute from OCI Console, select the three dots in the compute instance, and reboot the VMs.
 
 ## Acknowledgements
 
