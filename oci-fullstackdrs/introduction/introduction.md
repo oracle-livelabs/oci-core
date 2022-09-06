@@ -2,7 +2,7 @@
 
 ## Overview of OCI Full Stack Disaster Recovery
 
-Oracle Full Stack Disaster Recovery Service is an OCI native and fully managed Service. It provides full-stack disaster recovery orchestration for Oracle applications, Oracle Database, Compute Instance, Storage, and networking, across **OCI regions**.
+Full Stack Disaster Recovery Service is an fully managed OCI disaster recovery orchestration and management service that provides comprehensive disaster recovery capabilities for all layers of an application stack, including infrastructure, middleware, database, and application across  **OCI regions**.
 
 Throughout this workshop, we will use FSDR to denote OCI Full Stack Disaster recovery.
 
@@ -19,7 +19,6 @@ Below are some of the critical functionalities of Full Stack Disaster Recovery S
 - Provide comprehensive logs with error management and recovery.
 - Perform pre-checks before the DR execution plan.
 - Provide a framework to customize DR operations.
-
 
 ## Benefits of OCI Full Stack Disaster Recovery
 

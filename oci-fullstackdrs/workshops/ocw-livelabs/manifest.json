@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Full Stack DR Service",
+  "workshoptitle": "Protect your business using OCI Full Stack Disaster Recovery",
   "help": "livelabs-help-db-us@oracle.com",
   "tutorials": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "title": "Introduction",
-      "description": "Introduction to Full Stack DR Service and workshop",
+      "description": "Introduction to OCI Full Stack Disaster Recovery and workshop",
       "filename": "../../introduction/introduction.md"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "title": "Oracle CloudWorld 2022 - Get Help",
-      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+      "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
     }
   ]
 }

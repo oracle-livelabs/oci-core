@@ -4,6 +4,8 @@
 
 In this lab, we will Create and Associate Disaster Recovery Protection Groups (DRPG). Ashburn is a primary region, and Phoenix is the standby region.
 
+What is DRPG – A resource type used by FSDR.  A DR Protection Group represents a consistency grouping defined for the purposes of disaster recovery.  It is a collection of different OCI resources that comprise an application and must be treated as a combined group when performing disaster recovery operations.  For example, a DR Protection Group may consist of application servers (compute instances), associated block storage (grouped as volume groups), and databases.
+
 Estimated Time: 5 Minutes
 
 Watch the video below for a quick walk through of the lab.

@@ -23,12 +23,16 @@ Watch the video below for a quick walk-through of the lab.
 
   ![ashburn console](./images/ashburn-region.png " ")
 
-2. Open the **Cloud Shell** using the icon next to the region.  If you get a policy error, ensure you have chosen the correct compartment which was assigned to you.
+2. Open the **Cloud Shell** using the icon next to the region.  
 
   ![open cloud shell](./images/cloud-shell.png)
   ![open cloud shell](./images/cloud-shell-1.png)
 
   The Cloud Shell opens after a few seconds and shows the **prompt**.
+
+  In case if you are getting **Policy Missing** error. Click the Navigation Menu in the upper left, navigate to Compute, and select Instances.Select the compartment(*LLxxxxx-USER*) you were assigned. Expand the root compartment and then the Livelabs compartment. Select the compartment assigned to you. Relaunch your cloud shell. You should be able to open your cloud shell. 
+
+  ![select compartment](./images/ashburn-compartment.png)
 
 3. As next step, need to gather the OCID( Oracle Cloud Identifier) of the ATP database.Leave the existing Cloud Shell browser tab and use duplicate tab to open a new tab in browser.
 
@@ -128,9 +132,15 @@ Replace `publicipnode0` and `publicipnode1` with the public IP address of both m
     <copy>./mushopapp</copy>
     ````
 
-    ![run mushop script](./images/exec-mushapp-node0.png)
+5.  Verify for successful execution of script and exit from mushop-xxxxx-0 node
 
-5. Connect to MuShop App VM mushop-xxxxx-1, replace `publicipnode1` with the public IP address of mushop-xxxxx-1. Refer task 1.7 to get the public IP address of mushop-xxxxx-1.
+    ````
+    <copy>exit</copy>
+    ````
+
+    ![disconnect node0](./images/disconnect-mushop-node0.png)
+
+6. Connect to MuShop App VM mushop-xxxxx-1, replace `publicipnode1` with the public IP address of mushop-xxxxx-1. Refer task 1.7 to get the public IP address of mushop-xxxxx-1.
 
     ````
     <copy>ssh -i mushopll opc@publicipnode1</copy>
@@ -139,20 +149,20 @@ Replace `publicipnode0` and `publicipnode1` with the public IP address of both m
 
    ![list atp wallet](./images/compute-node1.png)
 
-2.  Download the script to run custom changes as part of MuShop application requirement
+7.  Download the script to run custom changes as part of MuShop application requirement
 
     ````
     <copy>wget http://bit.ly/mushopapp</copy>
     ````
     ![get mushop script](./images/mushopll-node1.png)
 
-3. Provide execute permission for the mushopapp script in /home/opc directory. 
+8. Provide execute permission for the mushopapp script in /home/opc directory. 
 
     ````
     <copy>chmod +x mushopapp</copy>
      ````
 
-4.  Execute the mushopapp script
+9.  Execute the mushopapp script
 
     ````
     <copy>./mushopapp</copy>
