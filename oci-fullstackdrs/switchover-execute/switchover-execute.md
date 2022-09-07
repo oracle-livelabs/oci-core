@@ -22,7 +22,7 @@ Watch the video below for a quick walkthrough of the lab.
 
   ![oci console phoenix](./images/phoenix-region.png)
 
-2. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery Protection Groups**.Verify the region is **Phoenix**
+2. Select Migration and Disaster Recovery from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region is **Phoenix**
 
   ![drpg navigation](./images/phoenix-drpgpage.png)
 
@@ -71,7 +71,9 @@ Watch the video below for a quick walkthrough of the lab.
 
    ![drpg execute monitor progress1 ](./images/phoenix-execute-moving1.png)
 
-7. Wait for all the steps to complete successfully. Approximately it will take *20-30* mins to complete the switchover plan. 
+7. Wait for all the steps to complete successfully.  It is important to monitor the progress of each step and take actions in case of any failures.  Switchover Autonomous Databases (Standby) group will run for around 10 minutes. 
+
+**Approximately it will take *20-30* mins to successfully complete the switchover plan**
 
 ## Task 3: Verify the executed switchover plan
 
@@ -85,11 +87,12 @@ Refer to the **Troubleshooting tips** section for known failures and corrective 
 
 ## Troubleshooting tips
 
-1. 
+1. If any of the Step fails, verify the log and take necessary actions.
+2. If required cancel the plan and run prechecks as per Lab 5.1, verify for successful execution.
 
-2. 
+
 
 ## Acknowledgements
 
 - **Author** -  Suraj Ramesh, Principal Product Manager
-- **Last Updated By/Date** -  Suraj Ramesh,August 2022
+- **Last Updated By/Date** -  Suraj Ramesh,September 2022

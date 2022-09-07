@@ -86,7 +86,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Copy publicip](./images/compute-publicip.png)
 
-8. Scp (Secure copy) the ATP Wallet to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
+8. Move to Cloud Shell browser tab and  Scp (Secure copy) the ATP Wallet to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
 
     ````
     <copy>scp -i mushopll atpwallet.zip opc@publicipnode0:/home/opc</copy>
@@ -104,7 +104,7 @@ Replace `publicipnode0` and `publicipnode1` with the public IP address of both m
 
 ## Task 2: Connect to application VM instances and customize the application environment files
 
-1. Connect to MuShop App VM mushop-xxxxx-0, replace `publicipnode0` with the public IP address of mushop-xxxxx-0. Refer task 1.7 to get the public IP address of mushop-xxxxx-0.
+1. From the existing Cloud Shell, Connect to MuShop App VM mushop-xxxxx-0, replace `publicipnode0` with the public IP address of mushop-xxxxx-0. Refer task 1.7 to get the public IP address of mushop-xxxxx-0.
 
     ````
     <copy>ssh -i mushopll opc@publicipnode0</copy>
@@ -140,7 +140,7 @@ Replace `publicipnode0` and `publicipnode1` with the public IP address of both m
 
     ![disconnect node0](./images/disconnect-mushop-node0.png)
 
-6. Connect to MuShop App VM mushop-xxxxx-1, replace `publicipnode1` with the public IP address of mushop-xxxxx-1. Refer task 1.7 to get the public IP address of mushop-xxxxx-1.
+6. From the existing Cloud Shell,Connect to MuShop App VM mushop-xxxxx-1, replace `publicipnode1` with the public IP address of mushop-xxxxx-1. Refer task 1.7 to get the public IP address of mushop-xxxxx-1.
 
     ````
     <copy>ssh -i mushopll opc@publicipnode1</copy>
@@ -176,4 +176,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 - **Author** -  Suraj Ramesh, Principal Product Manager, Oracle Database Maximum Availability Architecture Team
-- **Last Updated By/Date** -  Suraj Ramesh,August 2022
+- **Last Updated By/Date** -  Suraj Ramesh,September 2022

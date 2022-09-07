@@ -26,7 +26,7 @@ Watch the video below for a quick walkthrough of the lab.
 
   ![phoenix oci console](./images/phoenix-region.png)
 
-2. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery Protection Groups**. Verify the region is **Phoenix**
+2. Select Migration and Disaster Recovery from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region is **Phoenix**
 
   ![phoenix navigate drpg](./images/phoenix-drpgpage.png)
 
@@ -133,4 +133,4 @@ We have created an outage to a working MuShop application; in the next lab, we w
 ## Acknowledgements
 
 - **Author** -  Suraj Ramesh, Principal Product Manager
-- **Last Updated By/Date** -  Suraj Ramesh,August 2022
+- **Last Updated By/Date** -  Suraj Ramesh,September 2022

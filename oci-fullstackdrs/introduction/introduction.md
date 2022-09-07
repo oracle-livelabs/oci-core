@@ -83,5 +83,5 @@ The following is intended to outline our general product direction. It is intend
 
 - **Author** -  Suraj Ramesh, Principal Product Manager, Oracle Database Maximum Availability Architecture Team
 - **Contributors** - 
-- **Last Updated By/Date** -  Suraj Ramesh,August 2022
+- **Last Updated By/Date** -  Suraj Ramesh,September 2022
 

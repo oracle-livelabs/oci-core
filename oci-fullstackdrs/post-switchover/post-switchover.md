@@ -15,13 +15,13 @@ Watch the video below for a quick walkthrough of the lab.
 - Verify the DRPG status
 - Access the MuShop Application from the phoenix region
 
-## Task 1:Verify the DRPG status
+## Task 1: Verify the DRPG status
 
 1. Login into OCI Console with your provided Credentials. Select region as **Pheonix**.
 
   ![oci console phoenix](./images/phoenix-region.png)
 
-2. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery Protection Groups**. Verify the region is **Phoenix**
+2. Select Migration and Disaster Recovery from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region is **Phoenix**
 
   ![drpg navigation page](./images/phoenix-drpgpage.png)
 
@@ -33,7 +33,7 @@ Watch the video below for a quick walkthrough of the lab.
 
   ![oci console ashburn](./images/ashburn-region.png)
 
-5. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery Protection Groups**. Verify the region is **Ashburn**
+5. Select Migration and Disaster Recovery from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region is **Ashburn**
 
   ![drpg navigation page](./images/ashburn-drpgpage.png)
 
@@ -44,7 +44,7 @@ Watch the video below for a quick walkthrough of the lab.
 
 ## Task 2: Access MuShop Application from the phoenix region
 
-1. From the Hamburger menu, select **Networking**, then **Load Balancers**
+1. From the Hamburger menu, select **Networking**, then **Load Balancers** .Verify the region is **Phoenix**
   
      ![phoenix load balancer navigation](./images/phoenix-loadbalancer-navigate.png)
 
@@ -65,4 +65,4 @@ This concludes the lab Protect your business using Oracle Full Stack Disaster Re
 ## Acknowledgements
 
 - **Author** -  Suraj Ramesh, Principal Product Manager
-- **Last Updated By/Date** -  Suraj Ramesh,August 2022
+- **Last Updated By/Date** -  Suraj Ramesh,September 2022

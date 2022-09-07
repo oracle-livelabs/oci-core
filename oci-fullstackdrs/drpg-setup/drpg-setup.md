@@ -27,11 +27,11 @@ Watch the video below for a quick walk through of the lab.
 
   ![Phoenix OCI Console](./images/phoenix-region.png)
 
-2. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery Protection Groups**. Verify the region in **Ashburn**
+2. In the first browser tab,Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region in **Ashburn**
 
   ![DRPG from ashburn](./images/ashburn-drpgpage.png)
 
-3. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery Protection Groups**. Verify the region in **Phoenix**
+3. In the second browser tab,Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups** Verify the region in **Phoenix**
 
   ![DRPG from phoenix](./images/phoenix-drpgpage.png)
 
@@ -102,4 +102,4 @@ Navigate back to the DR Protection group page; the state of DRPG will change fro
 ## Acknowledgements
 
 - **Author** -  Suraj Ramesh, Principal Product Manager
-- **Last Updated By/Date** -  Suraj Ramesh,August 2022
+- **Last Updated By/Date** -  Suraj Ramesh,September 2022

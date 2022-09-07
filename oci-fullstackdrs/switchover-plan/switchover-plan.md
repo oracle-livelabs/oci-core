@@ -31,7 +31,7 @@ Watch the video below for a quick walkthrough of the lab.
 
   ![phoenix region](./images/phoenix-region.png)
 
-2. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery Protection Groups**. Verify the region is **Phoenix**
+2. Select Migration and Disaster Recovery from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region is **Phoenix**
 
   ![phoenix region drpg](./images/phoenix-drpgpage.png)
 
@@ -104,7 +104,7 @@ Watch the video below for a quick walkthrough of the lab.
 
 ## Task 3: Customize the Switchover plan- Remove Primary Load Balancer Backends group
 
-1. Create user-defined groups for mushop application switchover. We need to create four user-defined groups. Let's create those. You can do this by selecting **Add group** in the *mushop-app-switchover* plan
+1. Use the browser tab where you have created the switchover plan in phoenix region. Create user-defined groups for mushop application switchover. We need to create four user-defined groups. Let's create those. You can do this by selecting **Add group** in the *mushop-app-switchover* plan
 
   ![add plan group](./images/phoenix-plangroup-add.png)
 
@@ -356,9 +356,9 @@ Watch the video below for a quick walkthrough of the lab.
 2. Let's review the **mushop-app-switchover** switchover plan 
 
 -  Built-in Prechecks - These are the built-in prechecks groups for all the Plan groups (Built-in and User defined)
--  Based on the members we have added in both Primary DRPG and Standby DRPG, FSDRS created 7 Built-in switchover plan
+-  Based on the members we have added in both Primary DRPG and Standby DRPG, FSDRS created seven Built-in switchover plan
 -  We have manually created four user-defined groups per the Mushop application switchover requirement.
--  In summary, the **mushop-app-switchover** switchover plan has created with *one*- Built-in precheck plan group, *server*- Built-in Plan group,*four*- User defined Plan group
+-  In summary, the **mushop-app-switchover** switchover plan has created with *one*- Built-in precheck plan group, *seven*- Built-in Plan group,*four*- User defined Plan group
 
   ![all groups in DR plan](./images/phoenix-all-plangroups.png)
 
@@ -366,7 +366,7 @@ Watch the video below for a quick walkthrough of the lab.
 
   ![reorder dr plan group](./images/phoenix-reorder-groups.png)
 
-4.Go to the **Remove Primary Load Balancer Backends** plan group, use the move up **^** symbol, and keep moving up the **Remove Primary Load Balancer Backends** plan group and place it after the **Built-In Prechecks** plan group. This is very important to execute the plan groups in the proper order. Verify and hit **Save changes** 
+4.Go to the **Remove Primary Load Balancer Backends** plan group, use the move up **^** symbol, and keep moving up the **Remove Primary Load Balancer Backends** plan group and place it after the **Built-In Prechecks** plan group. This is very important to execute the plan groups in the proper order. Verify and hit **Save changes**. Don't move the other groups. 
 
   ![moving the plangroup](./images/phoenix-plangrp-moving.png)
   ![moved the plangroup](./images/phoenix-plangrp-moved.png) 
@@ -380,4 +380,4 @@ Watch the video below for a quick walkthrough of the lab.
 ## Acknowledgements
 
 - **Author** -  Suraj Ramesh, Principal Product Manager
-- **Last Updated By/Date** -  Suraj Ramesh,August 2022
+- **Last Updated By/Date** -  Suraj Ramesh,September 2022
