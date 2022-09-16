@@ -11,7 +11,7 @@ Estimated Time: 10 Minutes
 
 Watch the video below for a quick walkthrough of the lab.
 
-[](youtube:6Dp49VXqjtQ)
+[Perform prechecks and break MuShop app](videohub:1_i1toadew)
 
 ### Objectives
 
