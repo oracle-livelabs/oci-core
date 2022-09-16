@@ -8,7 +8,7 @@ Estimated Time: 5 Minutes
 
 Watch the video below for a quick walkthrough of the lab.
 
-[Perform Switchover](videohub:1_o4qx53ec)
+[Post Switchover tasks](videohub:1_o4qx53ec)
 
 ### Objectives
 
