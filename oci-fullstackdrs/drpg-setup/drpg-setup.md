@@ -10,7 +10,7 @@ Estimated Time: 5 Minutes
 
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:6Dp49VXqjtQ)
+[Create and Associate DRPG](videohub:1_e046v6gz)
 
 ### Objectives
 

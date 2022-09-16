@@ -8,7 +8,7 @@ Estimated Time: 20 Minutes
 
 Watch the video below for a quick walkthrough of the lab.
 
-[](youtube:6Dp49VXqjtQ)
+[Perform Switchover](videohub:1_d9ownrzi)
 
 ### Objectives
 

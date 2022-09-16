@@ -13,7 +13,7 @@ Estimated Time: 20 Minutes
 
 Watch the video below for a quick walkthrough of the lab.
 
-[](youtube:6Dp49VXqjtQ)
+[Create DR Switchover plan](videohub:1_zf3hto6p)
 
 ### Objectives
 
