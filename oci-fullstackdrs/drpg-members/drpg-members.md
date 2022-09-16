@@ -8,7 +8,7 @@ Estimated Time: 10 Minutes
 
 Watch the video below for a quick walkthrough of the lab.
 
-[](youtube:6Dp49VXqjtQ)
+[Add members to DRPG](videohub:1_vhwdwhfk)
 
 ### Objectives
 

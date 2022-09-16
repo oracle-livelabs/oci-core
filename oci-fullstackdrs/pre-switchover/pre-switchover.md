@@ -8,7 +8,7 @@ Estimated Time: 10 Minutes
 
 Watch the video below for a quick walk-through of the lab.
 
-[](youtube:6Dp49VXqjtQ)
+[Prepare environments](videohub:1_0ci6i8cd)
 
 ### Objectives:
 
