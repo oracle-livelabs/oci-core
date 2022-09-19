@@ -121,10 +121,10 @@ Watch the video below for a quick walkthrough of the lab.
   - In script parameters, add the below script
  
   ````
-    <copy>/usr/bin/sudo /home/opc/fsdrsscripts/removeFromBackendset.py ocid1.loadbalancer.oc1.iad.aaaaaaaa2t4kwwavlgwghuebrce6mgqm5ewrsj5kscw2t5ncdpxdpo6ztvaq</copy>
+    <copy>/usr/bin/sudo /home/opc/fsdrsscripts/removeFromBackendset.py <REPLACE WITH YOUR OCID></copy>
   ````
 
-  **Replace the OCID of the primary (Ashburn) load balancer as per step 2.4; make sure you replace the OCID of your load balancer without fail in the above command**
+  **Replace the OCID of the primary (Ashburn) load balancer as per step 2.4; make sure you replace the OCID of your load balancer without fail in the above command,remove angle brackets,note there is space after removeFromBackendset.py**
 
   - Leave the field blank in "Run as user."
   - Verify all the details and hit add
@@ -150,12 +150,12 @@ Watch the video below for a quick walkthrough of the lab.
 - Select the "Run local script" option
 - Select "mushop-xxxxx-1" instance in "Target instance in compartment"
 - In script parameters, add the below script
- 
+
     ````
-    <copy>/usr/bin/sudo /home/opc/fsdrsscripts/removeFromBackendset.py ocid1.loadbalancer.oc1.iad.aaaaaaaa2t4kwwavlgwghuebrce6mgqm5ewrsj5kscw2t5ncdpxdpo6ztvaq</copy>
+    <copy>/usr/bin/sudo /home/opc/fsdrsscripts/removeFromBackendset.py <REPLACE WITH YOUR OCID></copy>
     ````
 
- **Replace the OCID of the primary (Ashburn) load balancer as per step 2.4; make sure you replace the OCID of your load balancer without fail in the above command**
+ **Replace the OCID of the primary (Ashburn) load balancer as per step 2.4; make sure you replace the OCID of your load balancer without fail in the above command,remove angle brackets,note there is space after removeFromBackendset.py**
 
 - Leave the field blank in "Run as user."
 - Verify all the details and hit add
@@ -301,10 +301,11 @@ Watch the video below for a quick walkthrough of the lab.
 - In script parameters, add the below script
 
     ````
-        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py ocid1.loadbalancer.oc1.phx.aaaaaaaae4uajkrtx544r2txz4hzo2ongtc5v5jaddl2szok3lzh3r5w4awa</copy>
+        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py <REPLACE WITH YOUR OCID<</copy>
     ````
 
- **You need to replace the OCID of the standby (Phoenix) load balancer as per step 2.6; make sure you replace the OCID of your load balancer without fail in the above command**
+ **You need to replace the OCID of the standby (Phoenix) load balancer as per step 2.6; make sure you replace the OCID of your load balancer without fail in the above command,remove angle brackets,note there is space after addToBackendset.py**
+
 
 - Leave the field blank in "Run as user."
 - Verify all the details and hit add
@@ -332,10 +333,10 @@ Watch the video below for a quick walkthrough of the lab.
 - In script parameters, add the below script
 
     ````
-        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py ocid1.loadbalancer.oc1.phx.aaaaaaaae4uajkrtx544r2txz4hzo2ongtc5v5jaddl2szok3lzh3r5w4awa</copy>
+        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py <REPLACE WITH YOUR OCID></copy>
     ````
 
- **You need to replace the OCID of the standby (Phoenix) load balancer as per step 2.6; make sure you replace the OCID of your load balancer without fail in the above command**
+ **You need to replace the OCID of the standby (Phoenix) load balancer as per step 2.6; make sure you replace the OCID of your load balancer without fail in the above command,remove angle brackets,note there is space after addToBackendset.py**
 
 - Leave the field blank in "Run as user."
 - Verify all the details and hit add
