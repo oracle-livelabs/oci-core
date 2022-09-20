@@ -45,7 +45,7 @@ Watch the video below for a quick walk through of the lab.
 - Enter name as **mushop-ashburn**
 - Select the compartment assigned to you
 - In the object storage bucket, use the drop-down option and select **mushop-xxxxx** (mushop-12345)  ( Don't select mushop-media-xxxxx bucket)
-- In role, leave it as non configured
+- In role, leave it as **Not Configured**
 - Ignore add member
 - Verify and hit create
 
@@ -60,7 +60,7 @@ Navigate back to the DR Protection group page; the state of DRPG will change fro
 - Enter name as **mushop-phoenix**
 - Select the compartment assigned to you
 - In the object storage bucket, use the drop-down option and select **mushop-xxxxx** (mushop-12345) ( Don't select mushop-media-xxxxx bucket)
-- In role, leave it as non configured
+- In role, leave it as **Not Configured**
 - Ignore add member
 - Verify and hit create
 

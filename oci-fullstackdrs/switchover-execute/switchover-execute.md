@@ -45,7 +45,7 @@ Watch the video below for a quick walkthrough of the lab.
 - Leave the **Ignore warnings** as it is
 - Verify and hit **Execute Plan**
 
-  ![drpg execute confirm](./images/phoenix-execute-run.png)
+  ![drpg execute confirm](./images/phoenix-execute-run-1.png)
 
 ## Task 2: Monitor the executed mushop-app-switchover Plan
 
@@ -63,7 +63,7 @@ Watch the video below for a quick walkthrough of the lab.
 
    ![drpg execute monitor log](./images/phoenix-execute-viewlog.png)
 
-5. Once each plan group is executed successfully, it will move on to the next group for execution. Here you can see  *Remove Primary Load Balancer Backends*  completed successfully (State-Succeeded) and the next group **Stop Compute Instances (Primary)** started running (State-In-progress).
+5. Once each plan group is executed successfully, it will move on to the next group for execution. Here you can see  *Remove Primary Load Balancer Backends*  completed successfully (State-Succeeded) and the next group **Stop Compute Instances (Primary)** started running (State: In progress).
 
    ![drpg execute monitor progress](./images/phoenix-execute-moving.png)
 
@@ -89,7 +89,6 @@ Refer to the **Troubleshooting tips** section for known failures and corrective 
 
 1. If any of the Step fails, verify the log and take necessary actions.
 2. If required cancel the plan and run prechecks as per Lab 5.1, verify for successful execution.
-
 
 
 ## Acknowledgements

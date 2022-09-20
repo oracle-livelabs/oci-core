@@ -58,7 +58,7 @@ Watch the video below for a quick walkthrough of the lab.
 
   ![drpg plan created](./images/phoenix-drplan-created.png)
 
-  Select the **mushop-app-switchover** plan, and you should be able to various inbuilt plan groups.
+  Select the **mushop-app-switchover** plan, and you should be able to various built-in plan groups.
 
   ![drpg plan details](./images/phoenix-drplan-details.png)
 
