@@ -121,7 +121,7 @@ It will show various resource types and select **Compute**
 
 Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-8. Add the first volume group  **mushup-volume-group-0**. This volume group consists of the boot volume of mushop-xxxx-0 VM and has cross-region replication configured to the phoenix region.
+8. Add the first volume group  **mushop-volume-group-0**. This volume group consists of the boot volume of mushop-xxxx-0 VM and has cross-region replication configured to the phoenix region.
 
 Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
@@ -132,7 +132,7 @@ It will show various resource types and select **Volume group**
 
 - Resource Type as Volume Group
 - Make sure to check the box **"I understand that all existing plans will be deleted"**
-- Select volume group **mushup-volume-group-0**
+- Select volume group **mushop-volume-group-0**
 - Verify and add
 
   ![drpg add volume group](./images/ashburn-add-vg0.png)
@@ -143,7 +143,7 @@ It will show various resource types and select **Volume group**
 
 Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-9. Add the second volume group **mushup-volume-group-1**. This volume group consists of the boot volume of mushop-xxxx-1 VM, and it has cross-region replication configured to the phoenix region.
+9. Add the second volume group **mushop-volume-group-1**. This volume group consists of the boot volume of mushop-xxxx-1 VM, and it has cross-region replication configured to the phoenix region.
 
 Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
@@ -154,7 +154,7 @@ It will show various resource types and select **Volume group**
 
 - Resource Type as Volume Group
 - Make sure to check the box **"I understand that all existing plans will be deleted"**
-- Select volume group **mushup-volume-group-1**
+- Select volume group **mushop-volume-group-1**
 - Verify and add
 
   ![drpg add volume group](./images/ashburn-add-vg1.png)
