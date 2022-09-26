@@ -23,16 +23,24 @@ Watch the video below for a quick walk-through of the lab.
 
   ![ashburn console](./images/ashburn-region.png " ")
 
+2. From the Hamburger menu, select **Compute**,then **Instances**
+  
+  ![Compute ashburn](./images/ashburn-compute.png)
+
+  Select the compartment(**LLxxxxx-COMPARTMENT**) you were assigned. **LLxxxxx** is the username which was used to login into the OCI console. Expand the root compartment and then the Livelabs compartment. Select the *correct compartment which was assigned without fail*.
+
+  ![select compartment](./images/ashburn-compute-1.png)
+
+  Once the right compartment is selected, you should be able to see the VM's.
+
+  ![Compute VM's in ashburn](./images/ashburn-compute-2.png)
+
 2. Open the **Cloud Shell** using the icon next to the region.  
 
   ![open cloud shell](./images/cloud-shell.png)
   ![open cloud shell](./images/cloud-shell-1.png)
 
   The Cloud Shell opens after a few seconds and shows the **prompt**.
-
-  In case if you are getting **Policy Missing** error. Click the Navigation Menu in the upper left, navigate to Compute, and select Instances.Select the compartment(*LLxxxxx-USER*) you were assigned. Expand the root compartment and then the Livelabs compartment. Select the compartment assigned to you. Relaunch your cloud shell. You should be able to open your cloud shell. 
-
-  ![select compartment](./images/ashburn-compartment.png)
 
 3. As next step, need to gather the OCID( Oracle Cloud Identifier) of the ATP database.Leave the existing Cloud Shell browser tab and use duplicate tab to open a new tab in browser.
 

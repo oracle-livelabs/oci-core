@@ -47,8 +47,6 @@ In this workshop, we will see how easily Full Stack Disaster Recovery will help 
 
 Approximately 2 hrs
 
-If you would like to watch us do the workshop, click [here](https://youtu.be/IF_HAzrzizc).
-
 ## Workshop Architecture
 
 ![MuShop FSDR Architecture](./images/mushop-fsdrs.png)
@@ -56,7 +54,9 @@ If you would like to watch us do the workshop, click [here](https://youtu.be/IF_
 ## Environment details
 
 - **Ashburn** is the Primary region, and **Phoenix** is the Standby region.
-- All the mentioned infrastructure resources will be automatically created per the workshop Architecture diagram shown above. Replication for App virtual machines (Block Volume) and Database ( Data Guard) are configured.
+- Pre-requisites for using FSDR is to create various infrastructure resources and configure replication
+- For this lab, LiveLabs provisions various resources like ATP-S Primary and Standby, Compute instances,Setup block volume replication,Load Balancers, Object storage etc as per the workshop Architecture diagram shown above.
+
 
 ## Workshop Objectives
 
