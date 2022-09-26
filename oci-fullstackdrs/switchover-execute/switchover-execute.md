@@ -38,7 +38,7 @@ Watch the video below for a quick walkthrough of the lab.
 
   ![drpg execute plan](./images/phoenix-execute-plan.png)
 
-6. In the **Execute Plans** window
+6. In the **Execute Plan** window
 
 - Provide the Plan execution name as **mushop-app-switchover-execute**
 - Uncheck the **Enable prechecks**  (  Prechecks were executed successfully in Lab 5)

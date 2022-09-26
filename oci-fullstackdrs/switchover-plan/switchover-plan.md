@@ -45,7 +45,7 @@ Watch the video below for a quick walkthrough of the lab.
 
 - Create plan
 - Name as **mushop-app-switchover**
-- Plan type as **Switchover**
+- Plan type as **Switchover (planned)**
 - Hit Create
 
   ![drpg create plan](./images/phoenix-create-drplan.png)
@@ -301,7 +301,7 @@ Watch the video below for a quick walkthrough of the lab.
 - In script parameters, add the below script
 
     ````
-        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py <REPLACE WITH YOUR OCID<</copy>
+        <copy>/usr/bin/sudo /home/opc/fsdrsscripts/addToBackendset.py <REPLACE WITH YOUR OCID></copy>
     ````
 
  **You need to replace the OCID of the standby (Phoenix) load balancer as per step 2.6; make sure you replace the OCID of your load balancer without fail in the above command,remove angle brackets,note there is space after addToBackendset.py**
