@@ -88,14 +88,6 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
 
       ![mushop app](./images/mushop-app.png)
 
-  In case you see error **Error: Request failed with status code 500** while navigating the mushop website, reboot **both** compute VM's (mushop-xxxxx-0 and mushop-xxxx-1).
-  
-  Navigate to Compute from OCI Console, select the three dots in the respective compute instances and reboot the VMs.
-
-     ![reboot VMs](./images/reboot-vm.png)
-
-  After a couple of minutes, refresh the browser and re-verify the app.
-
 3. Let us break the MuShop Application to create an outage.
 
    Click the mushop-xxxxx load balancer details; in the resources section, select Listeners.
@@ -128,7 +120,13 @@ We have created an outage to a working MuShop application; in the next lab, we w
 
 [ocid1.instance.oc1.iad.anuwcljt5h22avqcjswxs6tublhrz2qonyjmucpxlyjxplybldbpxz2jqkaq] -- Error returned by PutObject operation in ObjectStorage service.(409, Conflict, false) Server is busy. Requests are being throttled for instance ocid1.instance.oc1.iad.anuwcljt5h22avqcjswxs6tublhrz2qonyjmucpxlyjxplybldbpxz2jqkaq (opc-request-id: B7721980580148749787FE758C9440FC/3D8758622598943932D50842DCD7EAA1/143166BA790ECD35695B548600382010)
 
-2. While navigating the mushop website, if you see error **Error: Request failed with status code 500**, reboot both compute VMs (mushop-xxxxx-0 and mushop-xxxx-1). Navigate to Compute from OCI Console, select the three dots in the compute instance, and reboot the VMs.
+2. In case you see error **Error: Request failed with status code 500** while navigating the mushop website, reboot **both** compute VM's (mushop-xxxxx-0 and mushop-xxxx-1).
+  
+  Navigate to Compute from OCI Console, select the three dots in the respective compute instances and reboot the VMs.
+
+     ![reboot VMs](./images/reboot-vm.png)
+
+  After a couple of minutes, refresh the browser and re-verify the app.
 
 ## Acknowledgements
 
