@@ -77,7 +77,7 @@ Watch the video below for a quick walkthrough of the lab.
 
 ## Task 2: Gather Load Balancer OCID's
 
-1. As perquisites, we need to gather OCIDs (Oracle Cloud Identifier) of load balancers running in the Ashburn (Primary) and Phoenix (Standby) region.
+1. As a prerequisite, we need to gather OCIDs (Oracle Cloud Identifier) of load balancers running in the Ashburn (Primary) and Phoenix (Standby) region.
 
 2. Leave the existing DRPG console tabs as running. Now open two new OCI console tabs and ensure you are logged into the auburn region and phoenix region, respectively.
 
