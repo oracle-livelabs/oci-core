@@ -12,7 +12,7 @@ We hope you enjoy this LiveLab. Go ahead and start the first Lab.
 
 If you are interested in more information about Oracle Linux, please watch the folllowing video:
 
-[](videohub:1_mlwioaoh) 
+[](videohub:1_mlwioaoh:medium) 
 
 ## Additional Recommended Resources
 
