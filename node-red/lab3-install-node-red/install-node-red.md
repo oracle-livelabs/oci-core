@@ -60,7 +60,7 @@ Finally, we can build the application. To build Node-RED:
 `grunt build`
 
 You are done with the installation of Node-RED. Before we run Node-RED, we want to first update the Network Security List in OCI and the
-`iptables` of the OAL installatio.
+`iptables` of the OAL installation.
 
 You may now proceed to the next lab.
 
