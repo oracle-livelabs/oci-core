@@ -6,7 +6,7 @@ Oracle Cloud Infrastructure (OCI) Resource Manager is an Oracle-managed service 
 
 Please take a couple minutes to watch the following Introduction to Resource Manager.
 
-[](youtube:ghOW03Dkrdg)
+[](youtube:lBL1ZP8etCw)
 
 Estimated time: 90 minutes
 
@@ -284,6 +284,8 @@ In this task, we will download the Terraform Configuration files from the ORM St
 	* **schema.yaml** - Schema documents are recommended for Terraform configurations when using Resource Manager. Including a schema document allows you to extend pages in the Oracle Cloud Infrastructure Console. Facilitate variable entry in the Create Stack page by surfacing SSH key controls and by naming, grouping, dynamically prepopulating values, and more.
 	* **variables.tf** - Define the variables you want to use when provisioning your resources. A best practice is to create a "variables" file in the configuration package that you upload.
 
+	**Note:**  When editing the above text files, please be sure the **indentation** in your files match the screens shots below.
+
 4. Edit **variables.tf** using your desired text editor and add the follow line.
 
 	```
@@ -346,7 +348,7 @@ In this task, we will download the Terraform Configuration files from the ORM St
 
 11. Enter the name **Compute-Template**, select the **-AD-1** or **AD-3** Availability Domain, select the **testVCN** and select the Subnet **Default Subnet....US-ASHBURN-AD-1**.
 
-	**Note:** The **[Always-Free](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)** shape **VM.Standard.E2.1.Micro** can be available in the **AD-1** or **AD-3** Availability Domain.
+	**Note:** The **[Always-Free](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)** shape **VM.Standard.E2.1.Micro** is available in only one Availabilty Domain (**-AD-1**, **-AD-2**,**-AD-3** ) and can be different by tenant.  You can navaigate to **Governance & Administration** -> **Limits, Quotas and Usage** to see which Availabilty Domain they reside in.
 
 	![Availability Domain and VCN](./images/task6/ad-vcn.png " ")
 
@@ -392,6 +394,8 @@ With Resource Manager, you can use Terraform's remote exec functionality to exec
 	- **variables.tf**		- This will contain the required variables
 	- **schema.yaml** 		- This file facilitates variable entry when creating and editing ORM Stacks
 
+	**Note:**  When creating the above text files, please be sure the **indentation** in your files match the screens shots below.
+
 2. Create the **variables.tf** file
 
 	```
@@ -434,6 +438,7 @@ With Resource Manager, you can use Terraform's remote exec functionality to exec
 
 	```
     <copy>
+	# remote-exec schema yaml file
 	  title: "Update a Compute instance using remote-exec"
 	  stackDescription: ${Messages.solutionsHub.solutions.computeInstance.stackDescription()}
 	  schemaVersion: 1.1.0
