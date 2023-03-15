@@ -24,7 +24,7 @@ You are running this workshop in a LiveLabs environment. Our LiveLabs environmen
  [](youtube:lxQYHuvipx8)
  </if>
 
-<if type="freetier">
+<if type="sandbox">
 
 ## Task 1: Create Your VCN
 
@@ -56,7 +56,7 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     Your screen should look similar to the following:
 
-    ![Create a VCN Configuration|Foobar](images/vcn-configuration.png " ")
+    ![Create a VCN Configuration](images/vcn-configuration.png " ")
 
      Click the **Next** button at the bottom of the screen.
 

@@ -9,7 +9,7 @@ Estimated Time: 40 minutes
  
 This video provides an overview of creating and attaching Oracle Cloud Infrastructure Block Volumes:
 
-[](youtube:jxzw8NZGUJw)
+[Creating and Attaching Block Volumes](youtube:jxzw8NZGUJw)
 
 ### Objectives
 In this lab, you will:
@@ -27,14 +27,14 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Storage**, and click **Block Storage**.
 
-    ![](images/storage-block-storage.png " ")
+    ![Click on Block Storage](images/storage-block-storage.png " ")
 
 2. In Block Volume service, click **Create Block Volume** and provide the following details:
 
     
      - **Name:** BV-DEMO
      - **Compartment:** Demo
-     - **Name:** username-BV
+     - **Name:** username-BVS
      - **Compartment:** username-compartment
      - **Availability Domain:** It must be the same as the AD you chose for your instance
      - **Size**: Please choose **50 GB**
@@ -50,12 +50,12 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
     - **Gold Policy**: The gold policy includes daily incremental backups. These backups are retained for seven days. This policy also includes weekly incremental backups that run on Sunday and are retained for four weeks. Also includes monthly incremental backups, run on the first day of the month, retained for twelve months, and a full backup, run yearly on January 1st. Full backups are retained for five years.
 
-     ![](images/block-volume1.png " ")
+     ![Block Volume - fill the details](images/block-volume1.png " ")
 
 3. Leave the encryption and tags options as their default values and click **Create Block Volume**. The volume will be ready to attach once its icon no longer lists it as **PROVISIONING** in the volume list.
 
   
-   ![](images/available1.png " ")
+   ![Block Volume is available](images/available1.png " ")
    
   
 ## Task 2: Attach a Block Volume to an Instance
@@ -92,7 +92,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 5. Connect to the instance through SSH and **run the iSCSI Connect Commands**. 
     Click **Copy** to copy all connect commands. Run all these commands by pasting them in the cloud shell:
 
-    ![](images/iscsi-commands1.png " ")
+    ![ISCSI Commands](images/iscsi-commands1.png " ")
 
 6. Once the disk is attached, you can run the following commands to format the disk and mount it.
      ```
@@ -112,7 +112,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
      # <copy>df -h</copy>
      ```
 
-    ![](images/format-mount1.png " ")
+    ![Format & Mount the Disk](images/format-mount1.png " ")
 
     >**Note:** When mounting a storage volume for the first time, you can format the storage volume and create a single, primary partition that occupies the entire volume by using fdisk command (Caution: Using fdisk to format the disk deletes any data on the disk).
 
