@@ -28,24 +28,19 @@ In this lab, you will:
 - Create a pre-authenticated link to access that Object
 
 ### Prerequisites
-  <if type="freetier">
-  </if>
-   
-  <if type="livelabs">
-  - Oracle Cloud Infrastructure account credentials (User name, Password, Tenancy, and Compartment) 
-  </if>
 
+Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment for you to use on your tenancy.
 
 ## Task 1: Create Object Storage Bucket
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
-	![](images/storage-buckets.png " ")
+	![Navigate to Buckets](images/storage-buckets.png " ")
 
 2. Select the compartment that you want to create your bucket in. 
  
   Click **Create Bucket**.
-  ![](images/create-bucket.png " ")
+  ![Click Create Bucket](images/create-bucket.png " ")
 
 3. Fill out the dialog box:
 
@@ -54,7 +49,7 @@ In this lab, you will:
 
   Click **Create**.
 
-  ![](images/bucket-details.png " ")
+  ![Fill the Details](images/bucket-details.png " ")
 
 
 ## Task 2: Upload Object and Create Pre-Authenticated Link
@@ -63,18 +58,18 @@ In this lab, you will:
 
 2. Switch to OCI window and click the Bucket Name.
 
-  ![](images/buckets.png " ")
+  ![Select your bucket](images/buckets.png " ")
 
 3. Bucket detail window should be visible. Click **Upload**.
 
-  ![](images/upload.png " ")
+  ![Click on Upload](images/upload.png " ")
 
 4. Click **select files** and select the *[sample-file.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FJ8cOXrQeIJeOHR0b6U_5wUrRgwNPEQjsd80tpMMpc_HV2ROskAhOZ-yVuptKjUj/n/c4u04/b/oci-library/o/sample-file.txt)* you just downloaded. Click **Upload** in the Dialog box, then click **Close**.
-  ![](images/upload-sample-file.png)
+  ![Upload the sample file](images/upload-sample-file.png)
 
 5. File should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
 
-  ![](images/create-par.png " ")
+  ![Create a Pre-Authenticated Link](images/create-par.png " ")
 
 6. Fill out the dialog box:
 
@@ -85,18 +80,18 @@ In this lab, you will:
 
 7. Click **Create Pre-Authenticated Request**.
 
-  ![](images/par-details.png " ")
+  ![Fill the PAR details](images/par-details.png " ")
 
 8. Click **Copy** to copy the link.
 
     >**Note:** The link must be copied and saved once the window is closed. The link cannot be retrieved again.
   
-    ![](images/copy-par.png " ")
+    ![Copy the link](images/copy-par.png " ")
 
 9. Click **Close**.
 
 10. Open a new browser window and paste the Pre-Authenticated link.
-  ![](images/open-par.png " ")
+  ![Paste into a new browser tab](images/open-par.png " ")
 
 11. As this is a text file, it will open in your browser page.
 

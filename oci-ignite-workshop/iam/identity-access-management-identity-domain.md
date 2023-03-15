@@ -59,15 +59,15 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
 For IAM with Identity Domains, what was identified before as IAM users and groups, now is under the default domain.
 
-   ![](images/id-domains.png)
+   ![Navigate to Domains](images/id-domains.png)
 
 1. Select the default domain
 
-   ![](images/id-domains-default.png)
+   ![Select the Default Domain](images/id-domains-default.png)
 
 1. Select **Groups**
 
-   ![](images/id-domains-groups.png)
+   ![Navigato to Groups](images/id-domains-groups.png)
 
 1. Click **Create Group**.
 
@@ -134,7 +134,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    b) On the left side, select **Workshop** compartment. After you have selected the **Workshop** compartment, click **Create Policy**.
 
-   ![](images/id-domain-create-policy.png)
+   ![Click on Create Policy](images/id-domain-create-policy.png)
 
       >**Note:** You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment ***Workshop***. If you do, and you still don't see the sub-compartment, ***refresh your browser***. Sometimes your browser caches the compartment information and does not update its internal cache.
     
@@ -156,13 +156,13 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    g) Click **Create**.
 
-   ![Create](images/create-policy.png)
+   ![Click on Create](images/create-policy.png)
 
 8. Verify user permissions.
 
    a) Click the **Navigation Menu** in the upper left. Click **Compute** and then click **Instances**.
 
-   ![](images/compute-instances.png " ")
+   ![Navigate to Compute Instances](images/compute-instances.png " ")
 
    b) Try to select any compartment from the left menu.
 
@@ -176,16 +176,16 @@ For IAM with Identity Domains, what was identified before as IAM users and group
       a) Sign back in with the ***admin*** account.
 
       b) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Domains**. From the **Users** list, click the user account that you just created (for example, `Test User`)  to go to the User Details page.
-         ![](images/id-domains.png)
+         ![Navigate to Identity Domains](images/id-domains.png)
 
       C) Select the default domain.
-         ![](images/id-domains-default.png " ")
+         ![Select the Default](images/id-domains-default.png " ")
 
       d) Under the **Resources** menu on the left, click **Users**, if it's not already selected.
          ![Select Users](images/id-domains-users.png)
 
       e) Click **Assign User to groups**.
-         ![](images/id-domains-users-assign-group.png)
+         ![Click on Assign User to groups](images/id-domains-users-assign-group.png)
 
       f) From the **Groups** list, click the group that you just created (for example, `oci-group`)  to go to the User Details page.
 
