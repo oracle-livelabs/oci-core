@@ -10,31 +10,33 @@ Estimated time: 5 minutes
 
 ### Objectives
 
+<if type="livelabs">
+You are running this workshop in a LiveLabs environment. Our LiveLabs environments use a pre-configured Identity and Access Management environment, so you will not be able to create a compartment, or to manage a user's access in this workshop. However, you can see how a compartment is created in Oracle Cloud Infrastructure by watching this short video:
+
+[](youtube:FSjQP5gqLAc)
+</if>
+
+<if type="freetier">
 In this lab, you will:
 
 - Create a compartment
-
-### Optional
 - Create a user
 - Create a group
-- Create a policy associated with the group
+- Create a policy associated to the group
 - Add user to the group
 
 ### Prerequisites
 
-
-* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-If you prefer to use your tenancy (**recommended**) please have your **username** and **password** ready to log in for the event.
-
+Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment for you to use on your tenancy.
 
 
 ## Task 1: Create Compartments
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (i.e. when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security**, and select **Compartments**.
+1. Click the **Navigation Menu** in the upper left, navigate to **Identity & Security** and select **Compartments**.
 
- ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-compartment.png " ")
+ ![Navigation Menu](images/id-compartments.png " ")
 
 1. Click **Create Compartment**.
    ![Create a compartment](images/create-compartment3.png)
@@ -45,7 +47,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 1. You have just created a compartment for all of your work in this *Workshop*.
 
-##  Task 2 (Optional): Manage Users, Groups, and Policies to Control Access
+##  Task 2: Manage Users, Groups, and Policies to Control Access
 
 A user's permissions to access services comes from the _groups_ to which they belong. The permissions for a group are defined by policies. Policies define what actions members of a group can perform, and in which compartments. Users can access services and perform operations based on the policies set for the groups of which they are members.
 
@@ -57,15 +59,15 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
 For IAM with Identity Domains, what was identified before as IAM users and groups, now is under the default domain.
 
-   ![Navigation Menu -> Identity & Security -> Domains](images/id-domains.png)
+   ![](images/id-domains.png)
 
 1. Select the default domain
 
-   ![Click on the default domain](images/id-domains-default.png)
+   ![](images/id-domains-default.png)
 
 1. Select **Groups**
 
-   ![Navigate to Groups](images/id-domains-groups.png)
+   ![](images/id-domains-groups.png)
 
 1. Click **Create Group**.
 
@@ -124,46 +126,43 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    ![Reset password](images/id-domains-resetpw.png)
 
-1. Now, let’s create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to members of group **oci-group** in compartment **Demo**:
+1. Now, let’s create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to members of group **oci-group** in compartment **Workshop**:
 
    a) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Policies**.
 
    ![IAM Policy](images/iam-policies.png)
 
-   b) On the left side, select **Demo** compartment.
+   b) On the left side, select **Workshop** compartment. After you have selected the **Workshop** compartment, click **Create Policy**.
 
-   ![Select ***Demo** compartment](images/id-domains-demo-compartment.png)
+   ![](images/id-domain-create-policy.png)
 
-      >**Note:** You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment ***Demo***. If you do, and you still don't see the sub-compartment, ***refresh your browser***. Sometimes your browser caches the compartment information and does not update its internal cache.
-
-   c) After you have selected the **Demo** compartment, click **Create Policy**.
-      
-      ![Click on Create Policy](images/id-domain-create-policy.png)
-
-   d) Enter a unique **Name** for your policy (for example, "Policy-for-oci-group").
+      >**Note:** You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment ***Workshop***. If you do, and you still don't see the sub-compartment, ***refresh your browser***. Sometimes your browser caches the compartment information and does not update its internal cache.
+    
+   
+   c) Enter a unique **Name** for your policy (for example, "Policy-for-oci-group").
       >**Note:** the name can NOT contain spaces.
 
-   e) Enter a **Description** (for example, "Policy for OCI Group").
+   d) Enter a **Description** (for example, "Policy for OCI Group").
 
-   f) Select **Demo** for compartment.
+   e) Select **Workshop** for compartment.
 
-   g) Click **Show manual editor** and enter the following **Statement**:
+   f) Click **Show manual editor** and enter the following **Statement**:
 
      ```
-     <copy>Allow group default/oci-group to manage all-resources in compartment Demo</copy>
+     <copy>Allow group default/oci-group to manage all-resources in compartment Workshop</copy>
      ```
 
      Note: If you do not include the *identity_domain_name* before the *group_name*, then the policy statement is evaluated as though the group belongs to the default identity domain.
 
-   h) Click **Create**.
+   g) Click **Create**.
 
-   ![Fill in the details and click on Create](images/create-policy.png)
+   ![Create](images/create-policy.png)
 
 8. Verify user permissions.
 
    a) Click the **Navigation Menu** in the upper left. Click **Compute** and then click **Instances**.
 
-   ![Navigation Menu -> Compute -> Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+   ![](images/compute-instances.png " ")
 
    b) Try to select any compartment from the left menu.
 
@@ -176,45 +175,44 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
       a) Sign back in with the ***admin*** account.
 
-      b) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Users**. From the **Users** list, click the user account that you just created (for example, `User01`)  to go to the User Details page.
-         ![Navigation Menu -> Identity & Security -> Users](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/id-users.png " ")
+      b) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Domains**. From the **Users** list, click the user account that you just created (for example, `Test User`)  to go to the User Details page.
+         ![](images/id-domains.png)
 
-      c) Under the **Resources** menu on the left, click **Groups**, if it's not already selected.
+      C) Select the default domain.
+         ![](images/id-domains-default.png " ")
 
-      d) Click **Add User to Group**.
-         ![Add User to Group](images/image020.png)
+      d) Under the **Resources** menu on the left, click **Users**, if it's not already selected.
+         ![Select Users](images/id-domains-users.png)
 
-      e) From the **Groups** drop-down list, select the **oci-group** that you created.
+      e) Click **Assign User to groups**.
+         ![](images/id-domains-users-assign-group.png)
 
-      f) Click **Add**.
-         ![Press the Add button](images/add-user-to-group.png)
+      f) From the **Groups** list, click the group that you just created (for example, `oci-group`)  to go to the User Details page.
 
-      g) Sign out of the Oracle Cloud website.
+      g) Click **Add**.
+         ![Press the Assign button](images/id-add-user-to-group.png)
+
+      h) Sign out of the Oracle Cloud website.
 
 10. Verify user permissions when a user belongs to a specific group.
 
-      a) Sign in with the local **User01** account you created. Remember to use the latest password you assigned to this user.
+      a) Sign in with the local **Test User** account you created. Remember to use the latest password you assigned to this user.
 
       b) Click the **Navigation Menu**. Click **Compute** and then click **Instances**.
 
-      c) Select compartment **Demo** from the list of compartments on the left.
+      c) Select compartment **Workshop** from the list of compartments on the left.
 
-      ![Select ***Demo***](images/select-demo.png)
+      ![Select ***Workshop***](images/select-demo.png)
 
-      d) There is no message related to permissions and you are allowed to create new instances.
+      d) There is no message related to permissions and you are allowed to create new instances.  
 
-      e) Click the **Navigation Menu**. click **Identity & Security** and select **Groups**.
+      e) Sign out.
 
-      f) The message **“Authorization failed or requested resource not found”** appears. This is expected since your user has no permission to modify groups.
-      >**Note:** You may instead get the "An unexpected error occurred" message instead. That is also fine.
-
-      ![Error message can be ignored](images/group-error.png)
-
-      g) Sign out.
+</if>
 
 _Congratulations! You have successfully completed the lab._
 
 ## Acknowledgements
 
-- **Author** - Orlando Gentil
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, July 2022
+- **Author** - Cristian Manea
+- **Last Updated By/Date** - Cristian Manea, March 2023

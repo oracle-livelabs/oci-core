@@ -5,24 +5,21 @@
 
 The Oracle Cloud Infrastructure Block Volume service lets you dynamically provision and manage block storage volumes. You can create, attach, connect and move volumes as needed to meet your storage and application requirements. Once attached and connected to an instance, you can use a volume like a regular hard drive. Volumes can also be disconnected and attached to another instance without the loss of data.
 
-### Objectives
-In this lab, you will:
-- Create a Block Volume
-- Attach the Block Volume to your instance
-- Mount the Block Volume
+Estimated Time: 40 minutes
  
 This video provides an overview of creating and attaching Oracle Cloud Infrastructure Block Volumes:
 
 [](youtube:jxzw8NZGUJw)
 
-Estimated Time: 40 minutes
+### Objectives
+In this lab, you will:
+- Create a Block Volume
+- Attach the Block Volume to your instance
+- Mount the Block Volume
 
 ### Prerequisites
 
-
-* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-If you prefer to use your tenancy (**recommended**) please have your **username** and **password** ready to log in for the event.
-
+Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment for you to use on your tenancy.
  
 ## Task 1: Create a Block Volume
 
@@ -30,7 +27,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Storage**, and click **Block Storage**.
 
-    ![Navigation Menu -> Storage -> Block Storage](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-block-storage.png " ")
+    ![](images/storage-block-storage.png " ")
 
 2. In Block Volume service, click **Create Block Volume** and provide the following details:
 
@@ -53,12 +50,12 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
     - **Gold Policy**: The gold policy includes daily incremental backups. These backups are retained for seven days. This policy also includes weekly incremental backups that run on Sunday and are retained for four weeks. Also includes monthly incremental backups, run on the first day of the month, retained for twelve months, and a full backup, run yearly on January 1st. Full backups are retained for five years.
 
-     ![Create Block Volume details](images/block-volume1.png " ")
+     ![](images/block-volume1.png " ")
 
 3. Leave the encryption and tags options as their default values and click **Create Block Volume**. The volume will be ready to attach once its icon no longer lists it as **PROVISIONING** in the volume list.
 
   
-   ![Provisioned Block Volume details](images/available1.png " ")
+   ![](images/available1.png " ")
    
   
 ## Task 2: Attach a Block Volume to an Instance
@@ -84,18 +81,18 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
      - Click **Attach**
 
   
-   ![Volume Details](images/attach-bv1.png " ")
-   
+   ![Volume Details](images/attach-bv2.png " ")
+
 4. Once the volume is attached, you can click on the ellipsis and then click **iSCSI commands and information**.
 
     
-    ![iSCSI Commands](images/command1.png " ")
+    ![iSCSI commands](images/command1.png " ")
     
     
 5. Connect to the instance through SSH and **run the iSCSI Connect Commands**. 
     Click **Copy** to copy all connect commands. Run all these commands by pasting them in the cloud shell:
 
-    ![Copy iSCSI Attach Commands ](images/iscsi-commands1.png " ")
+    ![](images/iscsi-commands1.png " ")
 
 6. Once the disk is attached, you can run the following commands to format the disk and mount it.
      ```
@@ -115,7 +112,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
      # <copy>df -h</copy>
      ```
 
-    ![Format and mount the disk](images/format-mount1.png " ")
+    ![](images/format-mount1.png " ")
 
     >**Note:** When mounting a storage volume for the first time, you can format the storage volume and create a single, primary partition that occupies the entire volume by using fdisk command (Caution: Using fdisk to format the disk deletes any data on the disk).
 
@@ -125,5 +122,5 @@ _Congratulations! You have successfully completed the lab._
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, July 2022
+- **Last Updated By/Date** - Cristian Manea, Radu Chiru, March 2023
 

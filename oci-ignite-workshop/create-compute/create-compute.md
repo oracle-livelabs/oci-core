@@ -5,23 +5,19 @@
 Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances. You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
 
 Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bestpracticescompute.htm) for important information about working with your Oracle Cloud Infrastructure Compute instance.
+
+Estimated Time: 30 minutes
+
+[](youtube:09kahbIF0Ew)
+
 ### Objectives
 In this lab, you will:
 - Create a compute instance
 - Connect to the compute instance
 
-[](youtube:09kahbIF0Ew)
-
-Estimated Time: 30 minutes
 ### Prerequisites
 
-
-* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-If you prefer to use your tenancy (**recommended**) please have your **username** and **password** ready to log in for the event.
-
-
-
-
+Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment for you to use on your tenancy.
 
 ## Task 1: Create a Compute Instance
 Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instances:
@@ -33,44 +29,44 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Compute**, and select **Instances**.
 
-	![Navigation Menu -> Compute -> Instances](images/compute-instances.png)
+	![](images/compute-instances.png)
 
 
 2. Select the *Workshop* Compartment that you created in *"Create a Compartment" Lab*. Then click **Create Instance**. We will launch a VM instance for this lab.
 
-  ![Create Instance flow](images/create-compute1.png)
+  ![](images/create-compute1.png)
 
 
 
 3. The *Create Compute Instance* wizard will launch.
     Enter **workshop-instance** as the name of the server. 
         
-    ![Create Compute Instance wizard](images/create-compute2.png)
+    ![](images/create-compute2.png)
        
 4. Click *Change Shape* to choose a VM shape.
 
-    ![Choose a VM shape](images/create-compute-livelabs-3.png)
+    ![](images/create-compute4.png)
 
-5. Select *AMD Rome*, then select **1** as number of OCPUs, and **16 GB** as the amount of memory, and click **Select Shape**.
+5. Select *AMD Rome E4 Flex*, then select **1** as number of OCPUs, and **16 GB** as the amount of memory, and click **Select Shape**.
 
-    ![Customize the VM shape](images/create-compute4.png)
+    ![](images/create-compute-shapes.png)
 
 7. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
  
-    ![Assign a public IPv4](images/create-compute4b.png)
+    ![](images/create-compute4b.png)
 
     >**Note:** You need a public IP address, so that you can SSH into the running instance later in this lab.
 
 8. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
 
-    ![Paste public SSH key](images/ssh-keys.png)
+    ![](images/ssh-keys.png)
 
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute, and the instance state will change from *PROVISIONING* to *RUNNING*.
 
 9. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*.
 
     
-    ![Copy the Public IP](images/public-ip.png " ")
+    ![](images/public-ip.png " ")
 
 ## Task 2: Connect to the Instance 
 
@@ -84,7 +80,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
 
-    ![Connect to VM via Cloud Shell](images/ssh.png)
+    ![](images/ssh.png)
 
 
 _Congratulations! You have successfully completed the lab._
@@ -93,4 +89,4 @@ _Congratulations! You have successfully completed the lab._
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, July 2022
+- **Last Updated By/Date** - Cristian Manea, Radu Chiru, March 2023

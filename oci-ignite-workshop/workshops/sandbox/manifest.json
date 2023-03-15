@@ -9,11 +9,13 @@
         {
             "title": "Get Started",
             "description": "Login to Oracle Cloud",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Create a Compartment",
+            "title": "Lab 1: Identity and Access Management",
+            "type": "sandbox",
             "filename": "../../../oci-ignite-workshop/iam/identity-access-management-identity-domain.md"
+            
         },
         {
             "title": "Lab 2: Create a Virtual Cloud Network",
@@ -22,7 +24,7 @@
         },
         {
             "title": "Lab 3: Generate SSH Keys",
-            "filename": "../../../oci-ignite-workshop/generate-ssh-key/generate-ssh-keys.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
         },        
         {
             "title": "Lab 4: Create a Compute Service",
@@ -39,7 +41,7 @@
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier"
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
         }
     ]
 }

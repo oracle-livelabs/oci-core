@@ -7,12 +7,7 @@ Oracle Cloud Infrastructure (OCI) Object Storage service is an Internet-scale, h
 With Object Storage, you can safely and securely store or retrieve data directly from the Internet or from within the cloud platform. Object Storage offers multiple management interfaces that let you easily manage storage at scale.
 
 Object Storage is a regional service and is not tied to any specific compute instances. You can access data from anywhere inside or outside the context of Oracle Cloud Infrastructure.
-### Objectives
 
-In this lab, you will:
-- Create an Object Storage Bucket
-- Upload a sample Object to the Storage Bucket
-- Create a pre-authenticated link to access that Object
 Estimated Time: 15 minutes
 
 [](youtube:ci-U-174T_8)
@@ -24,23 +19,33 @@ Estimated Time: 15 minutes
 2. Use *Archive* for data to which you seldom or rarely access, but that must be retained and preserved for long periods of time. The cost efficiency of the Archive Storage tier offsets the long lead time required to access the data
 
 The purpose of this lab is to give you an overview of the Object Service and an example scenario to help you understand how the service works.
+
+### Objectives
+
+In this lab, you will:
+- Create an Object Storage Bucket
+- Upload a sample Object to the Storage Bucket
+- Create a pre-authenticated link to access that Object
+
 ### Prerequisites
-
-
-* Please view this workshop’s LiveLabs registration page to see which environments are supported during this event. 
-If you prefer to use your tenancy (**recommended**) please have your **username** and **password** ready to log in for the event.
+  <if type="freetier">
+  </if>
+   
+  <if type="livelabs">
+  - Oracle Cloud Infrastructure account credentials (User name, Password, Tenancy, and Compartment) 
+  </if>
 
 
 ## Task 1: Create Object Storage Bucket
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
-	![Navigation Menu -> Storage -> Buckets](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png " ")
+	![](images/storage-buckets.png " ")
 
 2. Select the compartment that you want to create your bucket in. 
  
   Click **Create Bucket**.
-  ![Create Bucket flow](images/create-bucket.png " ")
+  ![](images/create-bucket.png " ")
 
 3. Fill out the dialog box:
 
@@ -49,7 +54,7 @@ If you prefer to use your tenancy (**recommended**) please have your **username*
 
   Click **Create**.
 
-  ![Create Bucket details](images/bucket-details.png " ")
+  ![](images/bucket-details.png " ")
 
 
 ## Task 2: Upload Object and Create Pre-Authenticated Link
@@ -58,18 +63,18 @@ If you prefer to use your tenancy (**recommended**) please have your **username*
 
 2. Switch to OCI window and click the Bucket Name.
 
-  ![Click the Bucket Name](images/buckets.png " ")
+  ![](images/buckets.png " ")
 
 3. Bucket detail window should be visible. Click **Upload**.
 
-  ![Click Upload button](images/upload.png " ")
+  ![](images/upload.png " ")
 
 4. Click **select files** and select the *[sample-file.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FJ8cOXrQeIJeOHR0b6U_5wUrRgwNPEQjsd80tpMMpc_HV2ROskAhOZ-yVuptKjUj/n/c4u04/b/oci-library/o/sample-file.txt)* you just downloaded. Click **Upload** in the Dialog box, then click **Close**.
-  ![Select the sample file and Upload it](images/upload-sample-file.png)
+  ![](images/upload-sample-file.png)
 
 5. File should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
 
-  ![Create Pre-Authenticated Request flow](images/create-par.png " ")
+  ![](images/create-par.png " ")
 
 6. Fill out the dialog box:
 
@@ -80,18 +85,18 @@ If you prefer to use your tenancy (**recommended**) please have your **username*
 
 7. Click **Create Pre-Authenticated Request**.
 
-  ![Pre-Authenticated Request details](images/par-details.png " ")
+  ![](images/par-details.png " ")
 
 8. Click **Copy** to copy the link.
 
     >**Note:** The link must be copied and saved once the window is closed. The link cannot be retrieved again.
   
-    ![Copy the link!](images/copy-par.png " ")
+    ![](images/copy-par.png " ")
 
 9. Click **Close**.
 
 10. Open a new browser window and paste the Pre-Authenticated link.
-  ![Access the copied link](images/open-par.png " ")
+  ![](images/open-par.png " ")
 
 11. As this is a text file, it will open in your browser page.
 
@@ -101,5 +106,5 @@ _Congratulations! You have successfully completed the lab._
 
 - **Author** - Flavio Pereira, Larry Beausoleil 
 - **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, July 2022
+- **Last Updated By/Date** - Cristian Manea, Radu Chiru, March 2023
 
