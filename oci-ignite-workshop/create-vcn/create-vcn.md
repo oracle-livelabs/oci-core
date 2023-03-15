@@ -25,7 +25,7 @@ You are running this workshop in a LiveLabs environment. Our LiveLabs environmen
  [](youtube:lxQYHuvipx8)
  </if>
 
-<if type="freetier">
+<if type="sandbox">
 
 ## Task 1: Create Your VCN
 
