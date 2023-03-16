@@ -9,7 +9,7 @@
         {
             "title": "Get Started",
             "description": "Login to Oracle Cloud",
-            "filename": "../../../oci-ignite-workshop/cloud-login/cloud-login-livelabs-ignite.md"
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
             "title": "Lab 1: Identity and Access Management",
