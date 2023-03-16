@@ -16,7 +16,7 @@ You are running this workshop in a LiveLabs environment. Our LiveLabs environmen
 [](youtube:FSjQP5gqLAc)
 </if>
 
-<if type="sandbox">
+<if type="tenancy">
 In this lab, you will:
 
 - Create a compartment
