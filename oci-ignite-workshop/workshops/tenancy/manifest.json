@@ -13,13 +13,13 @@
         },
         {
             "title": "Lab 1: Identity and Access Management",
-            "type": "sandbox",
+            "type": "tenancy",
             "filename": "../../../oci-ignite-workshop/iam/identity-access-management-identity-domain.md"
             
         },
         {
             "title": "Lab 2: Create a Virtual Cloud Network",
-            "type": "sandbox",
+            "type": "tenancy",
             "filename": "../../../oci-ignite-workshop/create-vcn/create-vcn.md"
         },
         {
