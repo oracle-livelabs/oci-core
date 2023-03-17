@@ -22,7 +22,7 @@ In this workshop, you will:
  - Create an Object Storage bucket
 
 ### Prerequisites
-Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment for you to use on your tenancy.
+Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment to get you started with Oracle Cloud.
 
 
 

@@ -8,7 +8,7 @@ With Object Storage, you can safely and securely store or retrieve data directly
 
 Object Storage is a regional service and is not tied to any specific compute instances. You can access data from anywhere inside or outside the context of Oracle Cloud Infrastructure.
 
-Estimated Time: 15 minutes
+Estimated Time: 10 minutes
 
 [](youtube:ci-U-174T_8)
 
@@ -29,7 +29,8 @@ In this lab, you will:
 
 ### Prerequisites
 
-Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment for you to use on your tenancy.
+Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment to get you started with Oracle Cloud.
+
 
 ## Task 1: Create Object Storage Bucket
 
