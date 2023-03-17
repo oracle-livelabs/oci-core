@@ -6,7 +6,7 @@ Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts,
 
 Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bestpracticescompute.htm) for important information about working with your Oracle Cloud Infrastructure Compute instance.
 
-Estimated Time: 30 minutes
+Estimated Time: 20 minutes
 
 [Create a Compute Instance](youtube:09kahbIF0Ew)
 

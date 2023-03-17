@@ -8,7 +8,7 @@ Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Co
 
 [](youtube:mIYSgeX5FkM)
 
-Estimated Time: 15 minutes
+Estimated Time: 10 minutes
 
 
 ### Objectives
