@@ -13,19 +13,19 @@
         },
         {
             "title": "Ignite Basics: Identity and Access Management",
-            "filename": "./../../iam/identity-access-management-identity-domain.md"
+            "filename": "../../../oci-ignite-advanced/iam/identity-access-management-identity-domain.md"
         },
         {
             "title": "Lab 1: Create a Virtual Cloud Network",
-            "filename": "./../../create-vcn/create-vcn.md"
+            "filename": "../../../oci-ignite-advanced/create-vcn/create-vcn.md"
         },
         {
             "title": "Lab 2: Create an Autonomous Database",
-            "filename": "./../../create-adw/autonomous-data-warehouse.md"
+            "filename": "../../../oci-ignite-advanced/create-adw/autonomous-data-warehouse.md"
         },        
         {
             "title": "Lab 3 (Optional): Create a Kubernetes Cluster",
-            "filename": "./../../create-oke/create-oke-cluster.md"
+            "filename": "../../../oci-ignite-advanced/create-oke/create-oke-cluster.md"
         },       
         {
             "title": "Need Help?",
