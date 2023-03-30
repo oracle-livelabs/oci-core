@@ -21,7 +21,7 @@ In this lab, you will:
 * [Overview of Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 * [Oracle Cloud basics](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm)
 * [Connecting to a compute instance](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm)
-* Your **<font color="red">Oracle Cloud Account</font>** - During this workshop, we will create a Level 100 environment for you to use on your tenancy.
+* Your **Oracle Cloud Account** - During this workshop, we will create a Level 100 environment for you to use on your tenancy.
 
 ## Task 1: Choose Autonomous Database from the Services Menu
 
@@ -203,7 +203,7 @@ GROUP BY channel_desc;
 
 See this [tutorial](https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/adwc/OBE_Running%20a%20Query%20on%20Sample%20Data/running_a_query_on_sample_data.html#QuerytheSampleStarSchemaBenchmarkDataSet) to test the performance of different Autonomous Data Warehouse configurations.
 
-
+*Congratulations! You have successfully completed the lab.*
 Please *proceed to the next lab*.
 
 ## Learn more
@@ -212,7 +212,6 @@ See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-wa
 
 
 ## Acknowledgements
-*Congratulations! You have successfully completed the lab.*
 
 - **Author** - Cristian Manea
 - **Last Updated By/Date** - Cristian Manea, March 2023

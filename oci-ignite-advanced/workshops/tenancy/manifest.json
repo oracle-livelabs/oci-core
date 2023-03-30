@@ -7,25 +7,25 @@
             "filename": "./../../intro/intro.md"
         },
         {
+            "title": "Revise Ignite Basics: Identity and Access Management",
+            "filename": "../../../oci-ignite-advanced/iam/iam.md"
+        },
+        {
             "title": "Get Started",
             "description": "Login to Oracle Cloud",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
-        },
-        {
-            "title": "Ignite Basics: Identity and Access Management",
-            "filename": "../../../oci-ignite-advanced/iam/identity-access-management-identity-domain.md"
-        },
+        },        
         {
             "title": "Lab 1: Create a Virtual Cloud Network",
             "filename": "../../../oci-ignite-advanced/create-vcn/create-vcn.md"
         },
         {
             "title": "Lab 2: Create an Autonomous Database",
-            "filename": "../../../oci-ignite-advanced/create-adw/autonomous-data-warehouse.md"
+            "filename": "../../../oci-ignite-advanced/create-adw/create-adw.md"
         },        
         {
             "title": "Lab 3 (Optional): Create a Kubernetes Cluster",
-            "filename": "../../../oci-ignite-advanced/create-oke/create-oke-cluster.md"
+            "filename": "../../../oci-ignite-advanced/create-oke/create-oke.md"
         },       
         {
             "title": "Need Help?",

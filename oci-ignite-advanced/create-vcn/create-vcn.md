@@ -20,7 +20,7 @@ In this lab, you will:
 * [Familiarity with OCI console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm)
 * [Overview of Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 * [Oracle Cloud basics](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm)
-* Your **<font color="red">Oracle Cloud Account</font>** - During this workshop, we will create a basic environment for you to use on your tenancy.
+* Your **Oracle Cloud Account** - During this workshop, we will create a basic environment for you to use on your tenancy.
 
 
 

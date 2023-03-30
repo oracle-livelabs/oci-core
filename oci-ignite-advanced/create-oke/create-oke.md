@@ -18,7 +18,7 @@ Estimated time: 20-25 min
 * [Overview of Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 * [Oracle Cloud basics](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm)
 * [Connecting to a compute instance](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm)
-* Your **<font color="red">Oracle Cloud Account</font>** - During this workshop, we will create a Level 100 environment for you to use on your tenancy.
+* Your **Oracle Cloud Account** - During this workshop, we will create a Level 100 environment for you to use on your tenancy.
 ## Task 1: Create Kubernetes Cluster (OKE)
 
 1. To create an **OKE cluster**, open up the navigation menu in the top-left corner of the Console and go to the **Developer Services** section, then click on **Kubernetes Clusters**.
@@ -50,7 +50,7 @@ Estimated time: 20-25 min
 
   Select **Managed** for the **Node type**, and **Private workers** for the **Kubernetes worker nodes**.
 
-*Optionally choose the visibility of the Kubernetes Worker Nodes to Public Workers if you want public access to your nodes and the number of nodes to 2 or 1 if you want a reduced number of nodes*
+    *Optionally choose the visibility of the Kubernetes Worker Nodes to Public Workers if you want public access to your nodes and the number of nodes to 2 or 1 if you want a reduced number of nodes*
 
   ![Select the required details.](images/configure-cluster-oke2.png " ")
 

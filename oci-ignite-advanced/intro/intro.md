@@ -11,6 +11,10 @@ Deploy a complete data warehousing platform that scales to both your technical a
 
 Estimated Workshop Time: 1 hour and 30 minutes
 
+## About Oracle Cloud Infrastructure
+
+Oracle Cloud Infrastructure is a set of complementary cloud services that enable you to build and run a wide range of applications and services in a highly available hosted environment. Oracle Cloud Infrastructure offers high-performance compute capabilities (as physical hardware instances) and storage capacity in a flexible overlay virtual network that is securely accessible from your on-premises network.
+
 ### Objectives
 
 In this workshop, you will:
@@ -20,21 +24,19 @@ In this workshop, you will:
 - Create a Virtual Cloud Network
 - Create an Autonomous Database
 
-**<font color="blue">Optional</font>**:
+Optional
  - Create a Kubernetes Cluster
 ### Prerequisites
 * [Familiarity with OCI console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm)
 * [Overview of Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
 * [Oracle Cloud basics](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm)
 * [Connecting to a compute instance](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm)
-* Your **<font color="red">Oracle Cloud Account</font>** - During this workshop, we will create a Level 100 environment for you to use on your tenancy.
+* Your **Oracle Cloud Account** - During this workshop, we will create a Level 100 environment for you to use on your tenancy.
 
 
-## About Oracle Cloud Infrastructure
 
-Oracle Cloud Infrastructure is a set of complementary cloud services that enable you to build and run a wide range of applications and services in a highly available hosted environment. Oracle Cloud Infrastructure offers high-performance compute capabilities (as physical hardware instances) and storage capacity in a flexible overlay virtual network that is securely accessible from your on-premises network.
 
-### Let's get Started!
+### You may now proceed to the next lab.
 
 Click on the next lab in this workshop to get started.
 
