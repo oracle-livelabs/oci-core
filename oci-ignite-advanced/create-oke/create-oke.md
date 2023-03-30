@@ -53,7 +53,7 @@ Estimated time: 20-25 min
     *Optionally choose the visibility of the Kubernetes Worker Nodes to Public Workers if you want public access to your nodes and the number of nodes to 2 or 1 if you want a reduced number of nodes*
 
   ![Select the required details.](images/configure-cluster-oke2.png " ")
-
+  
 7. Select *AMD Rome E3 Flex*, then select **1** as the number of OCPUs, and **16 GB** as the amount of memory, and under **Node Count** select **3** as the number of nodes. 
 
   Click **Next** at the bottom of the window.

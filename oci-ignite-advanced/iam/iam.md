@@ -35,11 +35,11 @@ A compartment is a collection of cloud assets, like compute instances, load bala
  ![Navigation Menu](images/id-compartments.png " ")
 
 2. Click **Create Compartment**.
-   ![Create a compartment](images/create-compartment3.png)
+   ![Create a compartment](images/create-compartment3.png " ")
 
 3. Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
 
-   ![Create compartment](images/compartment-details2.png)
+   ![Create compartment](images/compartment-details2.png " ")
 
 4. You have just created a compartment for all of your work in this *Workshop*.
 
@@ -55,15 +55,15 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
     For IAM with Identity Domains, what was identified before as IAM users and groups, now is under the default domain.
 
-   ![Navigate to Domains](images/id-domains.png)
+   ![Navigate to Domains](images/id-domains.png " ")
 
 2. Select the default domain
 
-   ![Select the Default Domain](images/id-domains-default.png)
+   ![Select the Default Domain](images/id-domains-default.png " ")
 
 3. Select **Groups**
 
-   ![Navigato to Groups](images/id-domains-groups.png)
+   ![Navigato to Groups](images/id-domains-groups.png " ")
 
 4. Click **Create Group**.
 
@@ -73,27 +73,27 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
      - **Description:** Enter a description, such as **New group for oci users**
      - Click **Create**
 
-   ![Create Group](images/id-domains-create-group.png) 
+   ![Create Group](images/id-domains-create-group.png " ") 
 
 5. Click your new group to display it. Your new group is displayed.
 
-   ![New group is shown](images/id-domains-group-detail.png)
+   ![New group is shown](images/id-domains-group-detail.png " ")
 
 6. Create a New User
 
-   * In the breadcrumb, click on **Default Domain**
+   *  In the breadcrumb, click on **Default Domain**
 
-   ![Select Default domain in the bread crumb](images/id-domains-bc-default-domain.png)
+   ![Select Default domain in the bread crumb](images/id-domains-bc-default-domain.png " ")
 
-    You can also click the **Navigation Menu** in the upper left, navigate to **Identity & Security**, and select **Domains**, select the default domain and then go to **Users**
+       You can also click the **Navigation Menu** in the upper left, navigate to **Identity & Security**, and select **Domains**, select the default domain and then go to **Users**
 
-   * Select **Users**
+   *  Select **Users**
 
-   ![Select Users](images/id-domains-users.png)
+   ![Select Users](images/id-domains-users.png " ")
 
-   * Click **Create User**.
+   *  Click **Create User**.
 
-   * In the **Create User** dialog box, enter the following:
+   In the **Create User** dialog box, enter the following:
 
       - **First Name** - your first name
       - **Last NameName** - your last name
@@ -102,12 +102,13 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
       - **Assign cloud account administrator role:** Leave unchecked.
       - Check the box besides **oci-group**
 
-   * Click **Create**.
+   *  Click **Create**.
+
    ![New user form](images/id-domains-create-user.png " ")
 
-      - After creating the user, you will be directed to the user details.
+    - After creating the user, you will be directed to the user details.
 
-      - The newly created user will receive an email with an activation link like this:
+    - The newly created user will receive an email with an activation link like this:
 
    ![Activation email](images/id-domains-activation-message.png " ")
 
@@ -115,21 +116,21 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
    ![Reset password](images/id-domains-user-resetpw.png " ")
 
-      After clicking on the reset button, your will be prompted for confirmation before the reset link is sent.
+   After clicking on the reset button, your will be prompted for confirmation before the reset link is sent.
 
 8. Check the messages in the email account you used for the new user. Open the activation link (password reset will take you to a similar screen)
 
-   ![Reset password](images/id-domains-resetpw.png)
+   ![Reset password](images/id-domains-resetpw.png " ")
 
 9. Now, let’s create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to members of group **oci-group** in compartment **Workshop**:
 
    * Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Policies**.
 
-   ![IAM Policy](images/iam-policies.png)
+   ![IAM Policy](images/iam-policies.png " ")
 
    * On the left side, select the **Workshop** compartment. After you have selected the **Workshop** compartment, click **Create Policy**.
 
-   ![Click on Create Policy](images/id-domain-create-policy.png)
+   ![Click on Create Policy](images/id-domain-create-policy.png " ")
 
       >**Note:** You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment ***Workshop***. If you do, and you still don't see the sub-compartment, ***refresh your browser***. Sometimes your browser caches the compartment information and does not update its internal cache.    
    
@@ -151,18 +152,17 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
    * Click **Create**.
 
-      ![Click on Create](images/create-policy.png)
+   ![Click on Create](images/create-policy.png)
 
 10. Verify user permissions.
 
    * Click the **Navigation Menu** in the upper left. Click **Compute** and then click **Instances**.
-
-      ![Navigate to Compute Instances](images/compute-instances.png " ")
+   ![Navigate to Compute Instances](images/compute-instances.png " ")
 
    * Try to select any compartment from the left menu.
 
    * The message “**You don’t have permission to view these resources**” appears. This is normal as you did not add the user to the group where you associated the policy.
-      ![Error message can be ignored](images/no-permission.png)
+   ![Error message can be ignored](images/no-permission.png " ")
 
    * Sign out of the Console.
 
@@ -171,21 +171,21 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
       * Sign back in with the ***admin*** account.
 
       * Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Domains**. From the **Users** list, click the user account that you just created (for example, `Test User`)  to go to the User Details page.
-         ![Navigate to Identity Domains](images/id-domains.png)
+      ![Navigate to Identity Domains](images/id-domains.png " ")
 
       * Select the default domain.
-         ![Select the Default](images/id-domains-default.png " ")
+      ![Select the Default](images/id-domains-default.png " ")
 
       * Under the **Resources** menu on the left, click **Users**, if it's not already selected.
-         ![Select Users](images/id-domains-users.png)
+      ![Select Users](images/id-domains-users.png " ")
 
       * Click **Assign User to groups**.
-         ![Click on Assign User to groups](images/id-domains-users-assign-group.png)
+      ![Click on Assign User to groups](images/id-domains-users-assign-group.png " ")
 
       * From the **Groups** list, click the group that you just created (for example, `oci-group`)  to go to the User Details page.
 
       * Click **Add**.
-         ![Press the Assign button](images/id-add-user-to-group.png)
+      ![Press the Assign button](images/id-add-user-to-group.png " ")
 
       * Sign out of the Oracle Cloud website.
 
@@ -197,7 +197,7 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
       * Select compartment **Workshop** from the list of compartments on the left.
 
-      ![Select ***Workshop***](images/select-demo.png)
+      ![Select ***Workshop***](images/select-demo.png " ")
 
       * There is no message related to permissions and you are allowed to create new instances.  
 
