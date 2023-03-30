@@ -81,17 +81,17 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
 6. Create a New User
 
-   *  In the breadcrumb, click on **Default Domain**
+    *  In the breadcrumb, click on **Default Domain**
 
    ![Select Default domain in the bread crumb](images/id-domains-bc-default-domain.png " ")
 
        You can also click the **Navigation Menu** in the upper left, navigate to **Identity & Security**, and select **Domains**, select the default domain and then go to **Users**
 
-   *  Select **Users**
+    *  Select **Users**
 
    ![Select Users](images/id-domains-users.png " ")
 
-   *  Click **Create User**.
+    *  Click **Create User**.
 
    In the **Create User** dialog box, enter the following:
 
@@ -102,7 +102,7 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
       - **Assign cloud account administrator role:** Leave unchecked.
       - Check the box besides **oci-group**
 
-   *  Click **Create**.
+    *  Click **Create**.
 
    ![New user form](images/id-domains-create-user.png " ")
 
@@ -124,24 +124,24 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
 9. Now, let’s create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to members of group **oci-group** in compartment **Workshop**:
 
-   * Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Policies**.
+    * Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Policies**.
 
    ![IAM Policy](images/iam-policies.png " ")
 
-   * On the left side, select the **Workshop** compartment. After you have selected the **Workshop** compartment, click **Create Policy**.
+    * On the left side, select the **Workshop** compartment. After you have selected the **Workshop** compartment, click **Create Policy**.
 
    ![Click on Create Policy](images/id-domain-create-policy.png " ")
 
       >**Note:** You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment ***Workshop***. If you do, and you still don't see the sub-compartment, ***refresh your browser***. Sometimes your browser caches the compartment information and does not update its internal cache.    
    
-   * Enter a unique **Name** for your policy (for example, "Policy-for-oci-group").
+    * Enter a unique **Name** for your policy (for example, "Policy-for-oci-group").
       >**Note:** the name can NOT contain spaces.
 
-   * Enter a **Description** (for example, "Policy for OCI Group").
+    * Enter a **Description** (for example, "Policy for OCI Group").
 
-   * Select **Workshop** for the compartment.
+    * Select **Workshop** for the compartment.
 
-   * Click **Show manual editor** and enter the following **Statement**:
+    * Click **Show manual editor** and enter the following **Statement**:
 
      ```
      <copy> Allow group default/oci-group to manage all-resources in compartment Workshop</copy>
@@ -150,21 +150,21 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
 
      >**Note:** If you do not include the *identity_domain_name* before the *group_name*, then the policy statement is evaluated as though the group belongs to the default identity domain.
 
-   * Click **Create**.
+    * Click **Create**.
 
    ![Click on Create](images/create-policy.png)
 
 10. Verify user permissions.
 
-   * Click the **Navigation Menu** in the upper left. Click **Compute** and then click **Instances**.
+    * Click the **Navigation Menu** in the upper left. Click **Compute** and then click **Instances**.
    ![Navigate to Compute Instances](images/compute-instances.png " ")
 
-   * Try to select any compartment from the left menu.
+    * Try to select any compartment from the left menu.
 
-   * The message “**You don’t have permission to view these resources**” appears. This is normal as you did not add the user to the group where you associated the policy.
+    * The message “**You don’t have permission to view these resources**” appears. This is normal as you did not add the user to the group where you associated the policy.
    ![Error message can be ignored](images/no-permission.png " ")
 
-   * Sign out of the Console.
+    * Sign out of the Console.
 
 11. Add User to a Group.
 
