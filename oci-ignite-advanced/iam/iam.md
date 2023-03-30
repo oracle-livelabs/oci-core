@@ -96,7 +96,7 @@ In 2022, OCI IAM introduced Identity Domains. An identity domain is a container 
    In the **Create User** dialog box, enter the following:
 
       - **First Name** - your first name
-      - **Last NameName** - your last name
+      - **Last Name** - your last name
       - **Email:**  Preferably use a personal email address to which you have access (Gmail, Yahoo, etc) and different from any email already in use in the tenancy.
       - **Use the email address as the username:** Leave checked unless you want to use a username that is not the email. It can be used if you want to use the same email already in use in the tenancy.
       - **Assign cloud account administrator role:** Leave unchecked.
