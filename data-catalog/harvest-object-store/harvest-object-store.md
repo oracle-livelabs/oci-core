@@ -31,13 +31,13 @@ In this task, you copy the OCID of the Data Catalog instance and use it as a res
 
 2. On the **Data Catalogs** page, in the row for your **data-catalog-livelab-instance**, click the **Action** button to display the context menu. Select **Copy OCID** from the context menu to copy the OCID for the **training-dcat-instance** Data Catalog instance. Next, paste that OCID to an editor or a file, so that you can retrieve it later in this lab.
 
-  ![Copy OCID](./images/copy-dcat-ocid.png " ")
+    ![Copy OCID](./images/copy-dcat-ocid.png " ")
 
-3. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
+3. Open the **Navigation** menu and click **Identity & Security**. Click **Domain**. Select Your **Domain** (Default) and click **Dynamic Groups**.
 
 4. On the **Dynamic Groups** page, click **Create Dynamic Group**.
 
-  ![Dynamic Group](./images/dynamic-group-page.png " ")
+    ![Dynamic Group](./images/dynamic-group-page.png " ")
 
 5. In the **Create Dynamic Group** dialog box, specify the following:
 
@@ -68,6 +68,8 @@ Create an access policy to grant ``READ`` permission to the **Object Storage** a
 
 1. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Policies**.
 
+    ![Create Policy Menu](./images/create-policy-menu.png " ")
+
 2. On the **Policies** page, make sure that your **`data-catalog-livelab-work`** compartment is selected, and then click **Create Policy**.  
 
     ![Create OS Policy](./images/create-os-policy.png " ")
@@ -90,11 +92,11 @@ Create an access policy to grant ``READ`` permission to the **Object Storage** a
 
     + Click **Create**. The **Policy Detail** page is displayed. Click **Policies** in the breadcrumbs to return to the **Dynamic Groups** page.
 
-          ![Object Storage Policy](./images/moviestream-object-storage-policy.png " ")
+         ![Object Storage Policy](./images/moviestream-object-storage-policy.png " ")
 
           The newly created policy is displayed in the **Policies** page.
 
-          ![Object Storage Policy created](./images/moviestream-object-storage-policy-created.png " ")
+        ![Object Storage Policy created](./images/moviestream-object-storage-policy-created.png " ")
         > **NOTE:**   You must have a **Free Tier/ Paid Oracle Cloud Account** and **Oracle Cloud Infrastructure user** that is assigned to an **Oracle Cloud Infrastructure group**.
 
 ## Task 2: Create an Object Storage Data Asset
@@ -103,11 +105,11 @@ Create an access policy to grant ``READ`` permission to the **Object Storage** a
 
 2. On the **Data Catalogs** page, click the **`data-catalog-livelab-instance`** Data Catalog instance where you want to create your data asset.
 
-   ![DCAT Instance](./images/dcat-instance.png " ")
+    ![DCAT Instance](./images/dcat-instance.png " ")
 
 3. On the **`data-catalog-livelab-instance`** **Home** page, click **Create Data Asset** in the **Quick Actions** tile.
 
-  ![Create Data Asset](./images/create-data-asset-object.png " ")
+     ![Create Data Asset](./images/create-data-asset-object.png " ")
 
 4. In the **Create Data Asset** panel, specify the data asset details as follows. You can use the values, which you have obtained from Task1 for filling the details, but for this lab, we will use an existing Object Storage buckets:    
        * **Name:** **`Oracle Object Storage Data Asset`**.
@@ -129,11 +131,11 @@ Create an access policy to grant ``READ`` permission to the **Object Storage** a
 
 5. Click **Create** in the **Create Data Asset** panel.  
 
-  ![Data Asset Panel](./images/create-data-asset-panel.png " ")
+    ![Data Asset Panel](./images/create-data-asset-panel.png " ")
 
   A  `Data Asset created successfully` message box is displayed. The **Data Lake** tab is displayed. The details for the new Data Asset are displayed in the **Summary tab**.
 
-  ![New Data Asset](./images/new-data-asset-tab.png " ")
+    ![New Data Asset](./images/new-data-asset-tab.png " ")
 
 ## Task 3: Add Data Asset Connections to the Oracle Object Storage Buckets
 
@@ -157,7 +159,7 @@ Add a connection to the **moviestream\_landing** bucket to your new **Oracle Obj
          ```   
        * **Make this the default connection for the data asset:** Leave this checkbox unchecked.
 
-         ![Add Connection](./images/moviestream-landing-connection.png " ")
+    ![Add Connection](./images/moviestream-landing-connection.png " ")
 
 3. Click **Test Connection**. A message box is displayed indicating whether the test was successful.
 
@@ -181,7 +183,7 @@ Create a filename pattern as follows:
 
 3. On the Data Catalog instance **Home** page, click the **+** tab and select **File Patterns** from the **Context** menu.
 
-    ![Select Filename Pattern](./images/click-filename-patterns.png" ")
+    ![Select Filename Pattern](./images/click-filename-patterns.png " ")
 
     The **Filename Patterns** tab is displayed.
 
@@ -195,6 +197,7 @@ Create a filename pattern as follows:
 
      * **Name:** `Map Object Storage Folders to DCAT Logical Entities`.
      * **Description:** `Map each Object Storage folder off the moviestream_landing and moviestream_gold root buckets to DCAT Logical Entities using the regular expression`.
+     * Select **Regular Expression**
      * **Expression:** Enter the following regular expression:
 
         ```
@@ -226,15 +229,15 @@ Create a filename pattern as follows:
 
 5. Click the **Test Expression** link. The **Resulting Logical Entities** based on the regular expression that you specified are displayed.
 
-  ![Test Expression](./images/test-expression.png " ")
+    ![Test Expression](./images/test-expression.png " ")
 
 6. Click **Create**. A message box is displayed indicating whether the test was successful.
 
-  ![Create](./images/test-expression-msg.png " ")
+    ![Create](./images/test-expression-msg.png " ")
 
   The **File Patterns** tab is re-displayed. The newly created file pattern is displayed in the **Filename Patterns** list.
-
-      ![Filename Pattern created](./images/file-pattern-create.png " ")
+  
+    ![Filename Pattern created](./images/file-pattern-create.png " ")
 
 7. Assign the filename pattern that you just created to your **Oracle Object Storage Data Asset**. On the **Home** tab, click the **Data Assets** link to access the **Data Assets** tab.
 
@@ -313,7 +316,7 @@ Harvest the data entities from a data asset as follows:
 
     ![Harvest Job Completed](./images/harvest-job-completed.png " ")
 
-9. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details.  The **Logical data entities harvested** field shows **9** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_landing`** root buckets. There are **32** corresponding files under the sub-folders under the root buckets.
+9. The harvest job name tab is displayed. On the **Jobs** tab, you can track the status of your job and view the job details.  The **Logical data entities harvested** field shows **9** as the number of logical entities that were harvested using the filename pattern that you assigned to this Object Storage asset. This number represents the number of sub-folders under the **`moviestream_landing`** root buckets. There are **57** corresponding files under the sub-folders under the root buckets.
 
     ![Job Details](./images/job-details.png " ")
 
@@ -339,7 +342,7 @@ Harvest the data entities from a data asset as follows:
 
 15. Click on **Data Entities** tab to explore further, for example click on **custsales** data entity.
 
-    ![Click Data Entities](./images/click-data-entites.png" ")
+    ![Click Data Entities](./images/click-data-entites.png " ")
 
 16. A **Summary** tab is displayed.View the default properties, custom properties, tags, business glossary terms and categories, and recommendations, if any, for the data entity from the **Summary** tab.
 
@@ -364,4 +367,4 @@ Harvest the data entities from a data asset as follows:
 
 * **Author** - Lauran Serhal, Shreedhar Talikoti, Ramkumar Dhanasekaran
 * **Contributors** - Rashmi Badan, Sreekala Vyasan
-* **Last Updated By/Date** - Ramkumar, Sep 2021
+* **Last Updated By/Date** - Alexandru Porcescu, March 2023

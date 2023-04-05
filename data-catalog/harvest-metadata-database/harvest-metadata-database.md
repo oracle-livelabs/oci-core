@@ -134,4 +134,4 @@ Here is how you harvest data entities from a data asset:
 
 * **Author** - Shreedhar Talikoti
 * **Contributors** -  Rashmi Badan, Sreekala Vyasan
-* **Last Updated By/Date** - Ramkumar, Aug 2021
+* **Last Updated By/Date** - Alexandru Porcescu, March 2023

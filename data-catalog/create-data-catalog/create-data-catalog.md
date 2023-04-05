@@ -66,4 +66,4 @@ You complete a single form to create a Data Catalog instance. Oracle takes care 
 
 * **Author** - Shreedhar Talikoti, Ramkumar Dhanasekaran
 * **Contributors** -  Rashmi Badan, Sreekala Vyasan
-* **Last Updated By/Date** - Shreedhar Talikoti, Aug 2021
+* **Last Updated By/Date** - Alexandru Porcescu, March 2023

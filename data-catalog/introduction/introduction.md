@@ -68,4 +68,4 @@ In this workshop, you will:
 
 * **Author** - Shreedhar Talikoti, Ramkumar Dhanasekaran
 * **Contributors** - Rashmi Badan, Sreekala Vyasan
-* **Last Updated By/Date** - Ramkumar Dhanasekaran, Aug 2021
+* **Last Updated By/Date** - Alexandru Porcescu, March 2023

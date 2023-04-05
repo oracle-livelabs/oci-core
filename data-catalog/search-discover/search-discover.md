@@ -81,7 +81,7 @@ You can use the **Browse Data Assets** option to conveniently view and navigate 
 
     > **NOTE:** You can always go back to the previous browse result by selecting the value in the **Path** in the left panel.
 
-    ![Path](./images/path-section.png " ")
+  ![Path](./images/path-section.png " ")
 
 4. Click **SALES\_HISTORY**. On the right pane, you can view all the details of the schema. .
 
@@ -145,4 +145,4 @@ You can explore data catalog objects by the tags linked with them. In the **Home
 
 * **Author** - Shreedhar Talikoti, Ramkumar Dhanasekaran
 * **Contributors** - Rashmi Badan, Sreekala Vyasan
-* **Last Updated By/Date** - Ramkumar, Sep 2021
+* **Last Updated By/Date** - Alexandru Porcescu, March 2023
