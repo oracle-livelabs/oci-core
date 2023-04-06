@@ -55,7 +55,7 @@ To create a compartment, follow these steps:
 
 To create a user group, follow these steps:
 
- 1. From the Console navigation menu, select **Identity & Security** and under **Identity**, click **Domains**. Select **Default** dommain from the list.
+ 1. From the Console navigation menu, select **Identity & Security** and under **Identity**, click **Domains**. Select **Default** domain from the list.
 
  (**Note:** If under **Identity** you do not see **Domains**, select **Groups** directly.)
 
