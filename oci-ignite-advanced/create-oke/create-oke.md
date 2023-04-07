@@ -134,7 +134,7 @@ Estimated time: 20-25 min
 
 _Congratulations! You have successfully completed the lab._
 
-## Want to Learn More?
+## Learn More
 
 * [Oracle Developer Cloud Service Documentation](https://docs.oracle.com/en/cloud/paas/developer-cloud/index.html)
 * [Oracle Container Engine for Kubernetes Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengoverview.htm)

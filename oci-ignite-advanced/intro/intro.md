@@ -36,9 +36,7 @@ Optional
 
 
 
-### You may now proceed to the next lab.
-
-Click on the next lab in this workshop to get started.
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
