@@ -1,6 +1,6 @@
-# **Prepare the environments for using the Full Stack DR Service**
+# Prepare the environments for using the Full Stack DR Service
 
-## Introduction:
+## Introduction
 
 In this lab, download Autonomous Database Wallet and prepare the MuShop application virtual machines, which are required to work with Full Stack DR Service
 
@@ -10,7 +10,7 @@ Watch the video below for a quick walk-through of the lab.
 
 [Prepare environments](videohub:1_0ci6i8cd)
 
-### Objectives:
+### Objectives
 
 - Download Autonomous Database Wallet using Cloud Shell and transfer the Wallet to application VM instances.
 - Connect to application VM instances and create application environment files
@@ -179,7 +179,7 @@ Replace `publicipnode0` and `publicipnode1` with the public IP address of both m
     ![run mushop script](./images/exec-mushapp-node1.png)
 
 
-You may now **proceed to the next lab**.
+You may now [Proceed to the next lab](#next)
 
 ## Acknowledgements
 
