@@ -20,32 +20,32 @@
     {
       "title": "Lab 2: Create and Associate DRPG",
       "description": "Create and Associate DRPG",
-      "filename": "../../drpg-setup/drpg-setup.md"
+      "filename": "../../drpg-setup/drpg-setup-ocw23.md"
     },
     {
       "title": "Lab 3: Add members to DRPG",
       "description": "Add members to DRPG",
-      "filename": "../../drpg-members/drpg-members.md"
+      "filename": "../../drpg-members/drpg-members-ocw23.md"
     },
     {
       "title": "Lab 4: Create DR Switchover plan",
       "description": "Create DR Switchover plan",
-      "filename": "../../switchover-plan/switchover-plan.md"
+      "filename": "../../switchover-plan/switchover-plan-ocw23.md"
     },
     {
       "title": "Lab 5: Perform prechecks and break MuShop app" ,
       "description": "Perform prechecks and break MuShop app",
-      "filename": "../../switchover-prechecks/switchover-prechecks.md"
+      "filename": "../../switchover-prechecks/switchover-prechecks-ocw23.md"
     },
     {
       "title": "Lab 6: Perform Switchover",
       "description": "Perform Switchover",
-      "filename": "../../switchover-execute/switchover-execute.md"
+      "filename": "../../switchover-execute/switchover-execute-ocw23.md"
     },
     {
       "title": "Lab 7: Post Switchover tasks",
       "description": "Post Switchover tasks",
-      "filename": "../../post-switchover/post-switchover.md"
+      "filename": "../../post-switchover/post-switchover-ocw23.md"
     },
     {
       "title": "Need Help?",
