@@ -73,7 +73,7 @@ Estimated Time: 25 Minutes
 
 ## Task 3: Verify the executed switchover plan
 
-1.  From the plan execution detail, verify the duration of each step, status, duration of the entire switchover plan, etc. *It is essential to have successful completion of all steps*. In this example it took around 47 minutes to complete.These timings will vary.Use the Expand all button to expand all the steps and the Collapse all button for collapsing. Use the view or download log option to see step execution details.
+1.  From the plan execution detail, verify the duration of each step, status, duration of the entire switchover plan, etc. *It is essential to have successful completion of all steps*. In this example it took around 25 minutes to complete.These timings will vary as it has depending factors like ATP Data Guard switchover, compute stop/launch timings etc. Use the Expand all button to expand all the steps and the Collapse all button for collapsing. Use the view or download log option to see step execution details.
 
     ![drpg execution done](./images/phoenix-execute-done-new.png)
 

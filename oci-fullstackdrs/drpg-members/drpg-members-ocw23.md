@@ -46,7 +46,7 @@ As part of the MuShop architecture, Full Stack DR will create the MuShop VM's in
 
     ![drpg atp added](./images/ashburn-atp-added-new.png)
 
-    Navigate back to the DR Protection group page; the status of DRPG should be active.
+    Navigate back to the DR Protection group page; the status of DRPG should be active. In case if you don't see the ATP DB member, add it again.
 
 6.  Add first Compute instance **mushop-xxxxx-0** as member,select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
@@ -56,7 +56,7 @@ As part of the MuShop architecture, Full Stack DR will create the MuShop VM's in
     - Resource Type as Compute
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
     - Instances in Compartment, select **mushop-xxxxx-0**
-    - Click the checkmark in the Move instance on switchover or failover
+    - **Click the checkmark in the Move instance on switchover or failover**
     - Destination compartment, select your compartment name
     - Ignore the Destination dedicated VM host section
     - Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
@@ -85,7 +85,7 @@ As part of the MuShop architecture, Full Stack DR will create the MuShop VM's in
     - Resource Type as Compute
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
     - Instances in Compartment, select **mushop-xxxxx-1**
-    - Click the checkmark in the Move instance on switchover or failover
+    - **Click the checkmark in the Move instance on switchover or failover**
     - Destination compartment, select your compartment name
     - Ignore the Destination dedicated VM host section
     - Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
@@ -126,7 +126,7 @@ As part of the MuShop architecture, Full Stack DR will create the MuShop VM's in
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-9. Add the second volume group **mushop-volume-group-1**. This volume group consists of the boot volume of mushop-xxxx-0 VM and has cross-region replication configured to the phoenix region.
+9. Add the second volume group **mushop-volume-group-1**. This volume group consists of the boot volume of mushop-xxxx-1 VM and has cross-region replication configured to the phoenix region.
 
     Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 

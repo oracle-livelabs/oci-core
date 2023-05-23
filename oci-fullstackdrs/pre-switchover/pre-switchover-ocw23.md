@@ -2,18 +2,14 @@
 
 ## Introduction
 
-In this lab, download Autonomous Database Wallet and prepare the MuShop application virtual machines, which are required to work with Full Stack DR Service
+In this lab, download Autonomous Database Wallets and prepare the MuShop application virtual machines, which are required to work with Full Stack DR Service.
 
 Estimated Time: 10 Minutes
 
-Watch the video below for a quick walk-through of the lab.
-
-[Prepare environments](videohub:1_0ci6i8cd)
-
 ### Objectives
 
-- Download Autonomous Database Wallets using Cloud Shell and transfer the Wallet to application VM instances.
-- Connect to application VM instances and create application environment files
+- Download Autonomous Database Wallets using Cloud Shell and transfer the wallets to application VM instances
+- Connect to application VM instances and execute application change script
 
 ## Task 1: Download Autonomous Database Wallets using Cloud Shell and transfer the Wallet to application VM instances
 
@@ -76,7 +72,7 @@ Watch the video below for a quick walk-through of the lab.
      <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_phoenix.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.phx.anyhqljt5h22avqaw32nmjoi7d5zhxbkt6txxxxxxxxxxxxx</copy>
     ````
 
-    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet file which was downloaded. Verify that using the list command ls -ltr as provided in the screenshot.
+    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet which was downloaded. Verify that using the list command ls -ltr as provided in the screenshot.
 
     ![ATP Wallet](./images/atp-wallet-cs-phx-new.png)
 

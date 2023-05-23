@@ -81,6 +81,7 @@ The following is intended to outline our general product direction. It is intend
 
 ## Acknowledgements
 
-- **Authors** - Suraj Ramesh, Principal Product Manager, Oracle Database Maximum Availability Architecture Team
-- **Last Updated By/Date** - Suraj Ramesh,March 2023
+- **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
+- **Last Updated By/Date** - Suraj Ramesh,May 2023
+
 
