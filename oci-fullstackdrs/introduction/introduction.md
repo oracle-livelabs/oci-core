@@ -1,4 +1,4 @@
-# Protect your business using Oracle Full Stack Disaster Recovery
+# Introduction
 
 ## About the Workshop
 
@@ -43,7 +43,6 @@ Full Stack Disaster Recovery provides multiple benefits in the area of business 
 - Executes scalable and reliable complete stack switchover and failover operations with a button.
 - Operates at the service level instead of requiring the customer to manually failover VMs, databases, middleware, applications, storage, and load balancers.
 
-
 ### Estimated Workshop Time
 
 Approximately 3 hrs
@@ -83,5 +82,3 @@ The following is intended to outline our general product direction. It is intend
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
 - **Last Updated By/Date** - Suraj Ramesh,May 2023
-
-
