@@ -1,187 +1,174 @@
-# **Prepare the environments for using the Full Stack DR Service**
+# Prepare the environments for using the Full Stack DR Service
 
-## Introduction:
+## Introduction
 
-In this lab, download Autonomous Database Wallet and prepare the MuShop application virtual machines, which are required to work with Full Stack DR Service
+In this lab, download Autonomous Database Wallets and prepare the MuShop application virtual machines, which are required to work with Full Stack DR Service.
 
-Estimated Time: 10 Minutes
+Estimated Time: 15 Minutes
 
-Watch the video below for a quick walk-through of the lab.
+### Objectives
 
-[Prepare environments](videohub:1_0ci6i8cd)
+- Download Autonomous Database Wallets using Cloud Shell and transfer the wallets to application VM instances
+- Connect to application VM instances and execute application change script
 
-### Objectives:
+## Task 1: Download Autonomous Database Wallets using Cloud Shell and transfer the Wallets to application VM instances
 
-- Download Autonomous Database Wallet using Cloud Shell and transfer the Wallet to application VM instances.
-- Connect to application VM instances and create application environment files
+1. Login into OCI Console with your provided Credentials. Select **ASHBURN** region.
 
-*****Primary Region is Ashburn and all the steps as part of this lab has to be performed in Ashburn Region*****
+    ![ashburn console](./images/ashburn-region-new.png " ")
 
-## Task 1: Download Autonomous Database Wallet using Cloud Shell and transfer the Wallet to application VM instances
+2. Open the **Cloud Shell** using the icon next to the Ashburn region.  
 
-1. Login into OCI Console with your provided Credentials. Primary region should be **Ashburn**.
+    ![open cloud shell](./images/cloud-shell-new.png)
+    ![open cloud shell](./images/cloud-shell-1-new.png)
 
-  ![ashburn console](./images/ashburn-region.png " ")
+    The Cloud Shell opens after a few seconds and shows the **prompt**.
 
-2. From the Hamburger menu, select **Compute**,then **Instances**
-  
-  ![Compute ashburn](./images/ashburn-compute.png)
+3. As next step, need to gather the OCID( Oracle Cloud Identifier) of the ATP database in Ashburn.Leave the existing Cloud Shell browser tab and use duplicate tab to open a new tab in browser.
 
-  Select the compartment(**LLxxxxx-COMPARTMENT**) you were assigned. **LLxxxxx** is the username which was used to login into the OCI console. Expand the root compartment and then the Livelabs compartment. Select the *correct compartment which was assigned without fail*.
+    From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
 
-  ![select compartment](./images/ashburn-compute-1.png)
+    ![ATP menu](./images/atp-menu-new.png)
 
-  Once the right compartment is selected, you should be able to see the VM's.
+     Make sure to change the compartment which was assigned to you.Select the compartment(**LLxxxxx-COMPARTMENT**) you were assigned. **LLxxxxx** is the username which was used to login into the OCI console. Expand the root compartment and then select Livelabs compartment. Under Livelabs compartment select the **correct compartment which was assigned to you without fail**.You should be able to see an ATP database, similar to below. If you cannot see, then you should be selecting different compartment. Retry by selecting the right compartment.
 
-  ![Compute VM's in ashburn](./images/ashburn-compute-2.png)
+    ![ATP database](./images/atp-database-new.png)
 
-2. Open the **Cloud Shell** using the icon next to the region.  
+    Click the ATP database which should have like **"MuShopDB-XXXXX"** and in the Autonomous Database Information tab, copy the OCID of the ATP database and keep it safe. This is required for downloading the wallet in the next step.
 
-  ![open cloud shell](./images/cloud-shell.png)
-  ![open cloud shell](./images/cloud-shell-1.png)
+    ![ATP OCID](./images/atp-ocid-new.png)
 
-  The Cloud Shell opens after a few seconds and shows the **prompt**.
+4. Download the ATP database wallet running in Ashburn using the Cloud Shell. Switch to the first tab of your browser, where Cloud Shell was initially opened. In case if the Cloud Shell got disconnected, reconnect it again.
 
-3. As next step, need to gather the OCID( Oracle Cloud Identifier) of the ATP database.Leave the existing Cloud Shell browser tab and use duplicate tab to open a new tab in browser.
+    You can maximize the Cloud Shell view and restore it as your requirements. For better viewing, you can use maximize option.
 
-   From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
+    ![Cloud Shell Maximize](./images/cloud-max-new.png)
 
-  ![ATP menu](./images/atp-menu.png)
-
-  You should be able to see an ATP database, similar to below. Make sure who change to the compartment which was assigned to you.
-
-  ![ATP database](./images/atp-database.png)
-
-  Click the ATP database which should have like **"MuShopDB-XXXXX"** and in the Autonomous Database Information tab, copy the OCID of the ATP database and keep it safe. This is required for downloading the wallet in the next step.
-
-  ![ATP OCID](./images/atp-ocid.png)
-
-4. Download the ATP Wallet for this lab using the Cloud Shell. Switch to the first tab of your browser, where Cloud Shell was initially opened. In case if the Cloud Shell got disconnected, reconnect it again.
-
-   You can maximize the Cloud Shell view and restore it as your requirements. For better viewing, you can use maximize option.
-
-   ![Cloud Shell Maximize](./images/cloud-max.png)
-
-   **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 3**
+    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 3**
 
     ````
-     <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.iad.xxxxxxxxxxxxxxxxxxxxxx</copy>
+     <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_ashburn.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.iad.anuwcljt5h22avqazns5ncswf4jc7owrzb6nug53xxxxxxxxxxxx</copy>
     ````
 
     Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet file which was downloaded. Verify that using the list command ls -ltr as provided in the screenshot.
 
-   ![ATP Wallet](./images/atp-wallet-cs.png)
+    ![ATP Wallet](./images/atp-wallet-cs-new.png)
 
-5. Download the private key for connecting to MuShop compute VM's using the below command in the Cloud Shell.
+5. Open a new tab in the browser, login to OCI console and select **PHOENIX** region.
 
-    ````
-    <copy>wget http://bit.ly/mushopll</copy>
-    ````
+    ![phoenix console](./images/phoenix-region-new.png " ")
 
-    ![Mushop privatekey](./images/mushopll-key.png)
+6. **Repeat the steps 2 and 3, gather the OCID( Oracle Cloud Identifier) of the ATP database in Phoenix, make sure to use phoenix region in the steps**.
 
-6. Change the permission of the private key to `0600` in in the Cloud Shell
+7. Download the ATP database wallet running in Phoenix using the Cloud Shell. Switch to the first tab of your browser, where Cloud Shell was initially opened. In case if the Cloud Shell got disconnected, reconnect it again.
 
-    ````
-    <copy>chmod 0600 mushopll</copy>
-    ````
+    You can maximize the Cloud Shell view and restore it as your requirements. For better viewing, you can use maximize option.
 
-7. Use the other tab of the browser, From the Hamburger menu, select **Compute**, then **Instances**. Verify the region as **Ashburn**
+    ![Cloud Shell Maximize](./images/cloud-max-phx-new.png)
 
-    ![Compute navigation](./images/compute-navigate.png)
-
-    Gather the Public IP from the two MuShop application instances. **mushop-xxxxx-0  -- Node 0** and **mushop-xxxxx-1  -- Node 1**
-
-    ![Copy publicip](./images/compute-publicip.png)
-
-8. Move to Cloud Shell browser tab and  Scp (Secure copy) the ATP Wallet to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
+    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 3**
 
     ````
-    <copy>scp -i mushopll atpwallet.zip opc@publicipnode0:/home/opc</copy>
+     <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_phoenix.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.phx.anyhqljt5h22avqaw32nmjoi7d5zhxbkt6txxxxxxxxxxxxx</copy>
+    ````
+
+    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet which was downloaded. Verify that using the list command ls -ltr as provided in the screenshot.
+
+    ![ATP Wallet](./images/atp-wallet-cs-phx-new.png)
+
+    In case if you are getting "NotAuthorizedOrNotFound" error, make sure you are running the command in the Phoenix region.
+
+8. **Switchback to the Ashburn region Cloud Shell tab and rest of the Lab 1 will be done in Ashburn region**.Download the private key for connecting to MuShop compute VM's using the below command in the Cloud Shell.
+
+    ````
+    <copy>wget https://bit.ly/mushoppk</copy>
+    ````
+
+    ![Mushop privatekey](./images/mushoppk-key.png)
+
+9. Change the permission of the private key to `0600` in in the Cloud Shell
+
+    ````
+    <copy>chmod 0600 mushoppk</copy>
+    ````
+
+10. Use the other tab of the browser, From the Hamburger menu, select **Compute**, then **Instances**. Verify the region as **Ashburn**
+
+    ![Compute navigation](./images/compute-navigate-new.png)
+
+    Gather the Public IP from the two MuShop application instances. **mushop-xxxxx-0-->Node 0** and **mushop-xxxxx-1-->Node 1**. In case if you are not able to view the instances, select the correct compartment assigned to you. Refer step-3 for more details.
+
+    ![Copy publicip](./images/compute-publicip-new.png)
+
+11. Move to Cloud Shell browser tab and  scp (Secure copy) the ATP wallets(Ashburn and Phoenix) to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
+
+    ````
+    <copy>scp -i mushoppk atpwallet_ashburn.zip atpwallet_phoenix.zip opc@publicipnode0:/home/opc</copy>
     ````
 
     ````
-    <copy>scp -i mushopll atpwallet.zip opc@publicipnode1:/home/opc</copy>
+    <copy>scp -i mushoppk atpwallet_ashburn.zip atpwallet_phoenix.zip opc@publicipnode1:/home/opc</copy>
     ````
 
-Replace `publicipnode0` and `publicipnode1` with the public IP address of both mushop-xxxxx-0 and mushop-xxxxx-1 respectively in the scp commands.
+    Replace `publicipnode0` and `publicipnode1` with the public IP address(step 10) of both mushop-xxxxx-0 and mushop-xxxxx-1 respectively in the scp commands.
 
-   Execute the scp commands in the cloud shell and while it prompts for confirmation key in as yes. Make sure the ATP Wallet is transferred successfully to both MuShop Application nodes.
+    Execute the scp commands in the cloud shell and while it prompts for confirmation key in as yes. Make sure the ATP wallets are transferred successfully to both muShop application nodes.
 
-   ![Wallet copytovm](./images/wallet-compute.png)
+    ![Wallet copytovm](./images/wallet-compute-new.png)
 
-## Task 2: Connect to application VM instances and customize the application environment files
+## Task 2: Connect to application VM instances and run the application script
 
-1. From the existing Cloud Shell, Connect to MuShop App VM mushop-xxxxx-0, replace `publicipnode0` with the public IP address of mushop-xxxxx-0. Refer task 1.7 to get the public IP address of mushop-xxxxx-0.
-
-    ````
-    <copy>ssh -i mushopll opc@publicipnode0</copy>
-    ````
-   Once its connected, use ls -ltr command in the shell. You should be able to see the atpwallet.zip file which we transferred in previous step.
-
-   ![list atp wallet](./images/compute-node0.png)
-
-2.  Download the script to run custom changes as part of MuShop application requirement
+1. **Use Ashburn region for all the steps**.From the existing Cloud Shell, Connect to MuShop App VM mushop-xxxxx-0, replace `publicipnode0` with the public IP address of mushop-xxxxx-0. Refer task 1.10 to get the public IP address of mushop-xxxxx-0.
 
     ````
-    <copy>wget http://bit.ly/mushopapp</copy>
+    <copy>ssh -i mushoppk opc@publicipnode0</copy>
     ````
-    ![get mushop script](./images/mushopll-node0.png)
 
-3. Provide execute permission for the mushopapp script in /home/opc directory. 
+    Once its connected, use ls -ltr atpwa* command in the shell. You should be able to see the ATP wallet files from both Ashburn and phoenix region files which we transferred in previous step.
 
-    ````
-    <copy>chmod +x mushopapp</copy>
-     ````
+    ![list atp wallet](./images/compute-node0-new.png)
 
-4.  Execute the mushopapp script
+2. Mushopapp script has been created to unzip the wallet files,modify changes in the mushop env files,copy the wallet to oracle client and restart the mushoapp.
+
+    Execute the mushopapp script
 
     ````
     <copy>./mushopapp</copy>
-    ````
 
-5.  Verify for successful execution of script and exit from mushop-xxxxx-0 node
+    ````
+3. Verify for successful execution of script and exit from mushop-xxxxx-0 node
 
     ````
     <copy>exit</copy>
     ````
+    ![disconnect node0](./images/disconnect-mushop-node0-new.png)
 
-    ![disconnect node0](./images/disconnect-mushop-node0.png)
-
-6. From the existing Cloud Shell,Connect to MuShop App VM mushop-xxxxx-1, replace `publicipnode1` with the public IP address of mushop-xxxxx-1. Refer task 1.7 to get the public IP address of mushop-xxxxx-1.
-
-    ````
-    <copy>ssh -i mushopll opc@publicipnode1</copy>
-    ````
-   Once its connected, use ls -ltr command in the shell. You should be able to see the atpwallet.zip file which we transferred in previous step.
-
-   ![list atp wallet](./images/compute-node1.png)
-
-7.  Download the script to run custom changes as part of MuShop application requirement
+4. Repeat steps 2.1,2.2,2.3 for mushop-xxxxx-1.From the existing Cloud Shell,Connect to MuShop App VM mushop-xxxxx-1, replace `publicipnode1` with the public IP address of mushop-xxxxx-1.Refer task 1.10 to get the public IP address of mushop-xxxxx-1.
 
     ````
-    <copy>wget http://bit.ly/mushopapp</copy>
+    <copy>ssh -i mushoppk opc@publicipnode1</copy>
     ````
-    ![get mushop script](./images/mushopll-node1.png)
+    Once its connected, use ls -ltr atpwa* command in the shell. You should be able to see the ATP wallet files from both Ashburn and phoenix region files which we transferred in previous step.
 
-8. Provide execute permission for the mushopapp script in /home/opc directory. 
+    ![list atp wallet](./images/compute-node1-new.png)
 
-    ````
-    <copy>chmod +x mushopapp</copy>
-     ````
-
-9.  Execute the mushopapp script
+5. Execute the mushopapp script
 
     ````
     <copy>./mushopapp</copy>
     ````
 
-    ![run mushop script](./images/exec-mushapp-node1.png)
+6.  Verify for successful execution of script and exit from mushop-xxxxx-1 node
 
+    ````
+    <copy>exit</copy>
+    ````
+    ![run mushop script](./images/exec-mushapp-node1-new.png)
 
-You may now **proceed to the next lab**.
+You may now [Proceed to the next lab](#next)
 
 ## Acknowledgements
 
-- **Author** -  Suraj Ramesh, Principal Product Manager, Oracle Database Maximum Availability Architecture Team
-- **Last Updated By/Date** -  Suraj Ramesh,September 2022
+- **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
+- **Last Updated By/Date** - Suraj Ramesh,May 2023
+
