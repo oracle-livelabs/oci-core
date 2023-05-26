@@ -11,7 +11,7 @@ Estimated Time: 15 Minutes
 - Add members to Ashburn DRPG (Primary)- ATP(Primary DB),MuShop Compute VM's(node-0 and node-1),two volume groups( Boot volumes of MuShop Compute VM's)
 - Add members to Phoenix DRPG (Standby)-ATP(Standby DB)
 
-As part of the MuShop architecture, Full Stack DR will create the MuShop VM's in the phoenix region during the Switchover.
+As part of the MuShop architecture,Virtual machines are deployed as Cold VM or Pilot light pattern.Full Stack DR will create the MuShop VM's in the phoenix region during the Switchover.
 
 ## Task 1: Add members to Ashburn DRPG (Primary)
 
@@ -56,7 +56,7 @@ As part of the MuShop architecture, Full Stack DR will create the MuShop VM's in
     - Resource Type as Compute
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
     - Instances in Compartment, select **mushop-xxxxx-0**
-    - **Click the checkmark in the Move instance on switchover or failover**
+    - **Click the checkbox in the Move instance on switchover or failover**
     - Destination compartment, select your compartment name
     - Ignore the Destination dedicated VM host section
     - Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
@@ -85,7 +85,7 @@ As part of the MuShop architecture, Full Stack DR will create the MuShop VM's in
     - Resource Type as Compute
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
     - Instances in Compartment, select **mushop-xxxxx-1**
-    - **Click the checkmark in the Move instance on switchover or failover**
+    - **Click the checkbox in the Move instance on switchover or failover**
     - Destination compartment, select your compartment name
     - Ignore the Destination dedicated VM host section
     - Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
