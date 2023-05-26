@@ -76,7 +76,7 @@ Estimated Time: 15 Minutes
 
     ![ATP Wallet](./images/atp-wallet-cs-phx-new.png)
 
-    In case if you are getting "NotAuthorizedOrNotFound" error, make sure you are running the command in the Phoenix region.
+    In case if you are getting "NotAuthorizedOrNotFound" error, make sure you are running the command in the Phoenix region and Cloud Shell shows phoenix region in the prompt.  
 
 8. **Switchback to the Ashburn region Cloud Shell tab and rest of the Lab 1 will be done in Ashburn region**.Download the private key for connecting to MuShop compute VM's using the below command in the Cloud Shell.
 
