@@ -4,7 +4,7 @@
 
 In this lab, we will execute the actual switchover plan for the **mushop-app-switchover** switchover plan, which we have created in lab 4. The switchover plan will execute the series of steps per the switchover plan.
 
-Estimated Time: 25 Minutes
+Estimated Time: 30 Minutes
 
 ### Objectives
 
@@ -37,7 +37,7 @@ Estimated Time: 25 Minutes
 6.  In the **Execute DR Plan** window
 
     - Provide the Plan execution name as **mushop-app-switchover-execute**
-    - Uncheck the **Enable prechecks**  (Prechecks were executed successfully in Lab 5)
+    - Uncheck the **Enable prechecks**  (Prechecks was executed successfully in previous lab)
     - Leave the **Ignore warnings** as it is
     - Verify and hit **Execute Plan**
 
@@ -73,7 +73,7 @@ Estimated Time: 25 Minutes
 
 ## Task 3: Verify the executed switchover plan
 
-1.  From the plan execution detail, verify the duration of each step, status, duration of the entire switchover plan, etc. *It is essential to have successful completion of all steps*. In this example it took around 25 minutes to complete.These timings will vary as it has depending factors like ATP Data Guard switchover, compute stop/launch timings etc. Use the Expand all button to expand all the steps and the Collapse all button for collapsing. Use the view or download log option to see step execution details.
+1.  From the plan execution detail, verify the duration of each step, status, duration of the entire switchover plan, etc. *It is essential to have successful completion of all steps*. In this example it took around **25 minutes** to complete.These timings will vary as it has depending factors like ATP Data Guard switchover, compute stop/launch timings etc. Use the Expand all button to expand all the steps and the Collapse all button for collapsing. Use the view or download log option to see step execution details.
 
     ![drpg execution done](./images/phoenix-execute-done-new.png)
 

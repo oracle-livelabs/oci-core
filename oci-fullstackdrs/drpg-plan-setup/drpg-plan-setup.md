@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will Create and Associate Disaster Recovery Protection Groups (DRPG).Create and customize Switchover plan. Ashburn is a primary region, and Phoenix is the standby region.
+In this lab, we will Create and Associate Disaster Recovery Protection Groups (DRPG).Create and customize Switchover plan. Ashburn is the primary region and Phoenix is the standby region.
 
 **DR Protection group (DRPG)** – A resource type used by Full Stack DR.  A DR Protection Group represents a consistency grouping defined for the purposes of disaster recovery.  It is a collection of different OCI resources that comprise an application and must be treated as a combined group when performing disaster recovery operations.  For example, a DR Protection Group may consist of application servers (compute instances), associated block storage (grouped as volume groups), and databases.
 
@@ -12,7 +12,7 @@ In this lab, we will Create and Associate Disaster Recovery Protection Groups (D
 - Boot and Block Volumes (Volume Groups)
 - Oracle Exadata Database Service
 - Oracle Enterprise Database Service
-- racle Autonomous Database on Shared Exadata Infrastructure
+- Oracle Autonomous Database on Shared Exadata Infrastructure
 
 **DR Plans**- DR plan is an automated DR workflow (a DR runbook) created by Full Stack Disaster Recovery to perform disaster recovery for all the resources in the primary DR protection group. 
 
@@ -33,35 +33,37 @@ Estimated Time: 20 Minutes
 
 ### Objectives
 
-- Create DRPG in Ashburn and Phoenix regions.
-- Associate Ashburn DRPG as primary and Phoenix DRPG as Standby.
-- Add members in Ashburn and Phoenix DRPG.
-- Create switchover plan.
-- Customize switchover plan with four user defined plan groups.
-- Reorder user defined plan groups.
+- Gather compartment OCID.
+- Execute DR resource creation script which will
+    - Create DRPG in Ashburn and Phoenix regions.
+    - Associate Ashburn DRPG as primary and Phoenix DRPG as Standby.
+    - Add members in Ashburn and Phoenix DRPG.
+    - Create switchover plan.
+    - Customize switchover plan with four user defined plan groups.
+    - Reorder user defined plan groups.
+- Verify the resources created.
 
 ## Task 1: Gather Compartment OCID
 
-1.  Login into OCI Console with your provided Credentials. The primary region should be **Ashburn**.
+1. Login into OCI Console with your provided Credentials. The primary region should be **Ashburn**.
 
     ![Ashburn OCI Console](./images/ashburn-region-new.png)
 
-
-2.  Navigate to **search resources,services,documentation and Marketplace** section
+2. Navigate to **search resources,services,documentation and Marketplace** section
 
     ![Search OCI console](./images/ashburn-region-search.png)
 
-3.  Type your allocated compartment, for example if your compartment is **LL52010-COMPARTMENT**.Compartment name will be in the format USERNAME-COMPARTMENT. You can find the username from the login credentials.
+3. Type your allocated compartment, for example if your compartment is **LL52010-COMPARTMENT**.Compartment name will be in the format USERNAME-COMPARTMENT. You can find the username from the login credentials.
 
     ![Compartment search](./images/ashburn-compartment-search.png)
 
-4.  From the search results select **your alloted compartment number correctly**. Copy the OCID of your compartment and make a note of it.
+4. From the search results select **your alloted compartment number correctly**. Copy the OCID of your compartment and make a note of it.
 
     ![Copy compartment OCID](./images/ashburn-compartment-ocid.png)
 
 ## Task 2: Download and execute Full Stack DR resources creation script
 
-1.  Open the **Cloud Shell** using the icon next to the region.  Make sure you are selecting Ashburn region.
+1. Open the **Cloud Shell** using the icon next to the region.  Make sure you are selecting Ashburn region.
 
     ![open cloud shell](./images/cloud-shell-new.png)
     ![open cloud shell](./images/cloud-shell-1-new.png)
@@ -94,17 +96,19 @@ Estimated Time: 20 Minutes
 
     ![execute mushop completed](./images/mushop-dr-finished.png)
 
+    In case if you are seeing errors, make sure you are using the correct compartment OCID and retry.
+
 ## Task 3: Verify Full Stack DR resources
 
-1.  Login into OCI Console with your provided Credentials. The primary region should be **Ashburn**.
+1. Login into OCI Console with your provided Credentials. The primary region should be **Ashburn**.
 
     ![oci console ashburn](./images/ashburn-region-new.png)
 
-2.  Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region in **Ashburn**
+2. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region in **Ashburn**
 
     ![drpg navigation page](./images/ashburn-drpgpage-new.png)
 
-3.  You will land on the Disaster Recovery Protection group home page; make sure you have selected *the Ashburn* region. **mushop_ashburn** DRPG will have **primary** role.
+3. You will land on the Disaster Recovery Protection group home page; make sure you have selected *the Ashburn* region. **mushop_ashburn** DRPG will have **primary** role.
 
     ![drpg landing page](./images/drpg-status-ashburn-new.png)
 
@@ -112,19 +116,19 @@ Estimated Time: 20 Minutes
 
     ![drpg members ashburn](./images/ashburn-allmembers-new.png)
 
-5.  Login into OCI Console with your provided Credentials. The Standby region should be **Pheonix**.
+5. Login into OCI Console with your provided Credentials. The Standby region should be **Pheonix**.
 
     ![oci console phoenix](./images/phoenix-region-new.png)
 
-6.  Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups** Verify the region in **Phoenix**
+6. Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups** Verify the region in **Phoenix**
 
     ![drpg navigation page](./images/phoenix-drpgpage-new.png)
 
-7.  You will land on the Disaster Recovery Protection group home page; make sure you have selected the Phoenix region.**mushop_phoenix** DRPG will have **standby** role.
+7. You will land on the Disaster Recovery Protection group home page; make sure you have selected the Phoenix region.**mushop_phoenix** DRPG will have **standby** role.
 
     ![drpg landing page](./images/drpg-status-phoenix-new.png)
 
-8.  Now, we have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Database. DRPG status will show as active.
+8. Now, we have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Database. DRPG status will show as active.
 
     ![drpg members phoenix](./images/phoenix-allmembers-new.png)
 
@@ -134,7 +138,7 @@ Estimated Time: 20 Minutes
 
     ![drpg plan](./images/phoenix-drplan-created-new.png)
 
-10.  Let's review the **mushop-app-switchover** switchover plan 
+10. Let's review the **mushop-app-switchover** switchover plan 
 
     -  Built-in Precheck - These are the built-in prechecks groups for all the Plan groups (Built-in and User defined).
     -  Based on the members we have added in both Primary DRPG and Standby DRPG, Full Stack DR created nine Built-in switchover plan groups.
@@ -145,7 +149,7 @@ Estimated Time: 20 Minutes
 
     You may now [Proceed to the next lab](#next)
 
-    In case if you are interested to perform DRPG creation,association,add members,create switchover and customize switchover plan using OCI console refer Lab 2,3 and 4 using [Full Stack DR resources creation] (https://oracle-livelabs.github.io/oci-core/oci-fullstackdrs/workshops/sandbox/index.html?lab=drpg-setup)
+    **OPTIONAL** - In case if you are interested to perform DRPG creation,association,add members,create switchover and customize switchover plan using OCI console instead of this lab,please refer to Lab 2,3 and 4 using [Full Stack DR resources creation] (https://oracle-livelabs.github.io/oci-core/oci-fullstackdrs/workshops/sandbox/index.html?lab=drpg-setup).
 
 ## Acknowledgements
 
