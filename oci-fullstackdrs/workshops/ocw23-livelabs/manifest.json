@@ -13,12 +13,12 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Prepare environments",
+      "title": "Lab 1: Prepare your environments",
       "description": "Prepare environments",
       "filename": "../../pre-switchover/pre-switchover.md"
     },
     {
-      "title": "Lab 2: Create DRPG and Switchover plan",
+      "title": "Lab 2: Creation of DRPG and Switchover plan",
       "description": "Create DRPG and Switchover plan",
       "filename": "../../drpg-plan-setup/drpg-plan-setup.md"
     },

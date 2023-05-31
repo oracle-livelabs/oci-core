@@ -98,7 +98,7 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
     ![modify port 81](./images/port81-edit-new.png)
     ![work request](./images/workrequest-listener-new.png)
 
-    Wait for a few seconds and refresh the browser tab of the MuShop application. You should see that the MuShop site can't be reached.  
+    Wait for a few seconds and refresh the browser tab of the MuShop application. You should see that the MuShop site can't be reached or Error: Request failed with status code 502. 
 
     ![reverify mushop app](./images/mushop-broken-new.png)
 

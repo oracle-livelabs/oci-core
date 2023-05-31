@@ -45,21 +45,14 @@ Estimated Time: 20 Minutes
 
 ## Task 1: Gather Compartment OCID
 
-1. Login into OCI Console with your provided Credentials. The primary region should be **Ashburn**.
+1.  From the workshop instructions page,click to view your login information, click View Login Info. 
 
-    ![Ashburn OCI Console](./images/ashburn-region-new.png)
+    ![View Login info](./images/workshop-login-info.png)
 
-2. Navigate to **search resources,services,documentation and Marketplace** section
+2.  From the login info page, select **Copy Compartment OCID** and make a note of it.
 
-    ![Search OCI console](./images/ashburn-region-search.png)
+    ![Compartment OCID](./images/copy-compartment-ocid.png)
 
-3. Type your allocated compartment, for example if your compartment is **LL52010-COMPARTMENT**.Compartment name will be in the format USERNAME-COMPARTMENT. You can find the username from the login credentials.
-
-    ![Compartment search](./images/ashburn-compartment-search.png)
-
-4. From the search results select **your alloted compartment number correctly**. Copy the OCID of your compartment and make a note of it.
-
-    ![Copy compartment OCID](./images/ashburn-compartment-ocid.png)
 
 ## Task 2: Download and execute Full Stack DR resources creation script
 
@@ -70,21 +63,16 @@ Estimated Time: 20 Minutes
 
     The Cloud Shell opens after a few seconds and shows the **prompt**.
 
-2. Download the Full Stack DR resources creation script using the below command in the Cloud Shell.
+2. Download the Full Stack DR resources creation script using the below command in the Cloud Shell and hit enter
 
     ````
-    <copy>wget https://bit.ly/mushoppk</copy>
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/mushop_dr_setup.py </copy>
     ````
+    Once downloaded, verify the file using 
+    ls -ltr mushop\_dr\_setup.py 
+    ![mushop dr script](./images/mushop-dr-setup.png)
 
-    ![Mushop privatekey](./images/mushoppk-key.png)
-
-3. Change the permission of the private key to `0600` in in the Cloud Shell
-
-    ````
-    <copy>chmod 0600 mushoppk</copy>
-    ````
-
-4. Execute the mushop\_dr\_setup.py script.Replace your compartment OCID which was noted down from step 1.4 in the below command. **You should remove the values after *compartment_ocid* in the below command and add your compartment ocid**. This script will create all the necessary Full Stack DR resources.
+3. Execute the mushop\_dr\_setup.py script.Replace your compartment OCID which was noted down from step 1.2 in the below command. **You should remove the values after *compartment_ocid* in the below command and add your compartment ocid**. This script will create all the necessary Full Stack DR resources.
 
     ````
     <copy>python3 mushop_dr_setup.py --compartment_ocid=ocid1.compartment.oc1.xxxxx</copy>
@@ -92,11 +80,11 @@ Estimated Time: 20 Minutes
 
     ![execute mushop script](./images/mushop-dr-script.png)
 
-5. Monitor for successful execution of the script. Approximately the script will run for 4-5 minutes.
+4. Monitor for successful execution of the script. Approximately the script will run for 4-5 minutes.
 
     ![execute mushop completed](./images/mushop-dr-finished.png)
 
-    In case if you are seeing errors, make sure you are using the correct compartment OCID and retry.
+    In case if you are seeing errors, make sure you are using the correct compartment OCID and retry.Don't proceed further unless the script has been executed successfully.
 
 ## Task 3: Verify Full Stack DR resources
 
@@ -112,7 +100,7 @@ Estimated Time: 20 Minutes
 
     ![drpg landing page](./images/drpg-status-ashburn-new.png)
 
-4. We have added all the required members in the **mushop-ashburn** DRPG. It should show ATP Database, 2 Compute Instances, and 2 Volume groups.DRPG status should show as active.
+4. Select the **mushop-ashburn** DRPG and select **Memebers** under resources section.We have added all the required members in the **mushop-ashburn** DRPG. It should show ATP Primary Database, 2 Compute Instances, and 2 Volume groups.DRPG status should show as active.
 
     ![drpg members ashburn](./images/ashburn-allmembers-new.png)
 
@@ -128,7 +116,7 @@ Estimated Time: 20 Minutes
 
     ![drpg landing page](./images/drpg-status-phoenix-new.png)
 
-8. Now, we have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Database. DRPG status will show as active.
+8. Select the **mushop-phoenix** DRPG and select **Memebers** under resources section.We have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Standby Database. DRPG status will show as active.
 
     ![drpg members phoenix](./images/phoenix-allmembers-new.png)
 
