@@ -13,43 +13,33 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Prepare environments",
+      "title": "Lab 1: Prepare your environments",
       "description": "Prepare environments",
       "filename": "../../pre-switchover/pre-switchover.md"
     },
     {
-      "title": "Lab 2: Create and Associate DRPG",
-      "description": "Create and Associate DRPG",
-      "filename": "../../drpg-setup/drpg-setup.md"
+      "title": "Lab 2: Creation of DRPG and Switchover plan",
+      "description": "Create DRPG and Switchover plan",
+      "filename": "../../drpg-plan-setup/drpg-plan-setup.md"
     },
     {
-      "title": "Lab 3: Add members to DRPG",
-      "description": "Add members to DRPG",
-      "filename": "../../drpg-members/drpg-members.md"
-    },
-    {
-      "title": "Lab 4: Create and Customize DR Switchover plan",
-      "description": "Create DR Switchover plan",
-      "filename": "../../switchover-plan/switchover-plan.md"
-    },
-    {
-      "title": "Lab 5: Perform prechecks and break MuShop app" ,
+      "title": "Lab 3: Perform prechecks and break MuShop app" ,
       "description": "Perform prechecks and break MuShop app",
       "filename": "../../switchover-prechecks/switchover-prechecks.md"
     },
     {
-      "title": "Lab 6: Perform Switchover",
+      "title": "Lab 4: Perform Switchover",
       "description": "Perform Switchover",
       "filename": "../../switchover-execute/switchover-execute.md"
     },
     {
-      "title": "Lab 7: Post Switchover tasks",
+      "title": "Lab 5: Post Switchover tasks",
       "description": "Post Switchover tasks",
       "filename": "../../post-switchover/post-switchover.md"
     },
     {
       "title": "Need Help?",
-      "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+      "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
     }
   ]
 }

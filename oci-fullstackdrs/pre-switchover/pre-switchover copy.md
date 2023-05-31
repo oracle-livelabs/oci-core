@@ -17,15 +17,20 @@ Estimated Time: 15 Minutes
 
     ![ashburn console](./images/ashburn-region-new.png " ")
 
-2. As next step, need to gather the OCID( Oracle Cloud Identifier) of the ATP database in Ashburn.
+2. Open the **Cloud Shell** using the icon next to the Ashburn region.  
+
+    ![open cloud shell](./images/cloud-shell-new.png)
+    ![open cloud shell](./images/cloud-shell-1-new.png)
+
+    The Cloud Shell opens after a few seconds and shows the **prompt**.
+
+3. As next step, need to gather the OCID( Oracle Cloud Identifier) of the ATP database in Ashburn.Leave the existing Cloud Shell browser tab and use duplicate tab to open a new tab in browser.
 
     From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
 
     ![ATP menu](./images/atp-menu-new.png)
 
-     Make sure to change the compartment which was assigned to you.Select the compartment(**LLxxxxx-COMPARTMENT**) you were assigned. You can verify the compartment allocated to you using the **View Login Info** in the top left of the instructions page.**LLxxxxx** is the username which was used to login into the OCI console. 
-     
-     Expand the root compartment and then select Livelabs compartment. Under Livelabs compartment select the **correct compartment which was assigned to you without fail**.You should be able to see an ATP database, similar to below. If you cannot see, then you should be selecting different compartment. Retry by selecting the right compartment.
+     Make sure to change the compartment which was assigned to you.Select the compartment(**LLxxxxx-COMPARTMENT**) you were assigned. **LLxxxxx** is the username which was used to login into the OCI console. Expand the root compartment and then select Livelabs compartment. Under Livelabs compartment select the **correct compartment which was assigned to you without fail**.You should be able to see an ATP database, similar to below. If you cannot see, then you should be selecting different compartment. Retry by selecting the right compartment.
 
     ![ATP database](./images/atp-database-new.png)
 
@@ -33,27 +38,19 @@ Estimated Time: 15 Minutes
 
     ![ATP OCID](./images/atp-ocid-new.png)
 
-
-3.  Open the **Cloud Shell** using the icon next to the Ashburn region.  
-
-    ![open cloud shell](./images/cloud-shell-new.png)
-    ![open cloud shell](./images/cloud-shell-1-new.png)
-
-    The Cloud Shell opens after a few seconds and shows the **prompt**.
-
-4. Download the ATP database wallet running in Ashburn using the Cloud Shell.In case if the Cloud Shell got disconnected, reconnect it again.
+4. Download the ATP database wallet running in Ashburn using the Cloud Shell. Switch to the first tab of your browser, where Cloud Shell was initially opened. In case if the Cloud Shell got disconnected, reconnect it again.
 
     You can maximize the Cloud Shell view and restore it as your requirements. For better viewing, you can use maximize option.
 
     ![Cloud Shell Maximize](./images/cloud-max-new.png)
 
-    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 2**
+    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 3**
 
     ````
      <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_ashburn.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.iad.anuwcljt5h22avqazns5ncswf4jc7owrzb6nug53xxxxxxxxxxxx</copy>
     ````
 
-    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet file which was downloaded. Verify that using the list command ls -ltr atpwallet_ashburn.zip as provided in the screenshot.
+    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet file which was downloaded. Verify that using the list command ls -ltr as provided in the screenshot.
 
     ![ATP Wallet](./images/atp-wallet-cs-new.png)
 
@@ -63,19 +60,19 @@ Estimated Time: 15 Minutes
 
 6. **Repeat the steps 2 and 3, gather the OCID( Oracle Cloud Identifier) of the ATP database in Phoenix, make sure to use phoenix region in the steps**.
 
-7. Download the ATP database wallet running in Phoenix using the Cloud Shell.In case if the Cloud Shell got disconnected, reconnect it again.
+7. Download the ATP database wallet running in Phoenix using the Cloud Shell. Switch to the first tab of your browser, where Cloud Shell was initially opened. In case if the Cloud Shell got disconnected, reconnect it again.
 
     You can maximize the Cloud Shell view and restore it as your requirements. For better viewing, you can use maximize option.
 
     ![Cloud Shell Maximize](./images/cloud-max-phx-new.png)
 
-    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 2**
+    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 3**
 
     ````
      <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_phoenix.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.phx.anyhqljt5h22avqaw32nmjoi7d5zhxbkt6txxxxxxxxxxxxx</copy>
     ````
 
-    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet which was downloaded. Verify that using the list command ls -ltr atpwallet_phoenix.zip as provided in the screenshot.
+    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet which was downloaded. Verify that using the list command ls -ltr as provided in the screenshot.
 
     ![ATP Wallet](./images/atp-wallet-cs-phx-new.png)
 
