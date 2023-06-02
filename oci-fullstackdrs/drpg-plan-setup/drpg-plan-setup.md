@@ -100,7 +100,7 @@ Estimated Time: 20 Minutes
 
     ![drpg landing page](./images/drpg-status-ashburn-new.png)
 
-4. Select the **mushop-ashburn** DRPG and select **Memebers** under resources section.We have added all the required members in the **mushop-ashburn** DRPG. It should show ATP Primary Database, 2 Compute Instances, and 2 Volume groups.DRPG status should show as active.
+4. Select the **mushop-ashburn** DRPG and select **Members** under resources section.We have added all the required members in the **mushop-ashburn** DRPG. It should show ATP Primary Database, 2 Compute Instances, and 2 Volume groups.DRPG status should show as active.
 
     ![drpg members ashburn](./images/ashburn-allmembers-new.png)
 
@@ -116,7 +116,7 @@ Estimated Time: 20 Minutes
 
     ![drpg landing page](./images/drpg-status-phoenix-new.png)
 
-8. Select the **mushop-phoenix** DRPG and select **Memebers** under resources section.We have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Standby Database. DRPG status will show as active.
+8. Select the **mushop-phoenix** DRPG and select **Members** under resources section.We have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Standby Database. DRPG status will show as active.
 
     ![drpg members phoenix](./images/phoenix-allmembers-new.png)
 
