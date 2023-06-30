@@ -78,7 +78,8 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
 
      ![get loadbalancer IP](./images/ashburn-loadbalancer-ip-new.png)
 
-    Open a tab in your browser and verify the Mushop Application using the gathered public IP address. Play around the site and verify various cat products.
+    Verify the mushop application using **http://ashburn loadbalancer ip**
+    replace with the actual value from Step 2. Navigate around the site and verify the cat products.
 
     ![mushop app](./images/mushop-app-new.png)
 
