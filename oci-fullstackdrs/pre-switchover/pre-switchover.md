@@ -103,7 +103,7 @@ Estimated Time: 15 Minutes
 
     ![Copy publicip](./images/compute-publicip-new.png)
 
-11. Move to Cloud Shell browser tab and  scp (Secure copy) the ATP wallets(Ashburn and Phoenix) to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
+11. Navigate to the Cloud Shell browser tab and scp (Secure copy) the ATP wallets(Ashburn and Phoenix) to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
 
     ````
     <copy>scp -i mushoppk atpwallet_ashburn.zip atpwallet_phoenix.zip opc@publicipnode0:/home/opc</copy>
@@ -173,5 +173,5 @@ You may now [Proceed to the next lab](#next)
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,May 2023
+- **Last Updated By/Date** - Suraj Ramesh,June 2023
 

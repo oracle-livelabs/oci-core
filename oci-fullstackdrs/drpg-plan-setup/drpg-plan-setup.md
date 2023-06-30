@@ -122,7 +122,7 @@ Estimated Time: 20 Minutes
 
 9. DR Plan *must* be created in the standby region (Phoenix). It is because, in the case of the worst-case scenario, the entire primary region outside the Full Stack DR will not be accessible from the primary region. From the phoenix region,select the **mushop-phoenix** DRPG and navigate to Plans under the resources section. 
 
-    Select the **mushop-app-switchover** plan, and you should be able to various built-in prechecks,built-in plan groups, and user defined plan groups
+    Select the **mushop-app-switchover** plan, and you should be able to see various built-in prechecks,built-in plan groups, and user defined plan groups
 
     ![drpg plan](./images/phoenix-drplan-created-new.png)
 
