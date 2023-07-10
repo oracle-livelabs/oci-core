@@ -10,7 +10,9 @@ Object Storage is a regional service and is not tied to any specific compute ins
 
 Estimated Time: 15 minutes
 
-[](youtube:ci-U-174T_8)
+Watch the video below for a quick walk-through of the lab.
+
+[Create an Object Storage Service](videohub:1_696khzi5)
 
 **Object storage offers 2 tiers:**
 

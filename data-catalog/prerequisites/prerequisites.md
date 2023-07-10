@@ -55,9 +55,11 @@ To create a compartment, follow these steps:
 
 To create a user group, follow these steps:
 
- 1. From the Console navigation menu, select **Identity & Security** and under **Identity**, click **Groups**.
+ 1. From the Console navigation menu, select **Identity & Security** and under **Identity**, click **Domains**. Select **Default** domain from the list.
 
-    ![Select Groups menu](./images/navigate-groups.png " ")
+ (**Note:** If under **Identity** you do not see **Domains**, select **Groups** directly.)
+
+  ![Select Groups menu](./images/navigate-groups.png " ")
 
  2. On the **Groups page**, click **Create Group**.
 
@@ -137,7 +139,7 @@ To create a user group, follow these steps:
   3. Provide basic information for the Autonomous Database:
 
       - Choose a **Compartment** - Select a compartment for the database from the drop-down list (`data-catalog-livelab-work`).
-      - **Display Name** - Enter a meaningful name for the database for display purposes. For this lab, use `Data Catalog Workshop`.
+      - **Display Name** - Enter a meaningful name for the database for display purposes. For this lab, use `DataCatalogWorkshop`.
       - **Database Name** - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. For this lab, use `DCATWORKSHOP`.
 
          > **NOTE:** The same database name cannot be used for multiple Autonomous Databases in your tenancy, in the same region.
@@ -145,12 +147,12 @@ To create a user group, follow these steps:
      ![ADW Basic Info](./images/create-adw-info.png " ")
 
   4. Select **Data Warehouse** as the workload type.
-
-    ![ADW Workload type](./images/adw-worload.png " ")
+  
+      ![ADW Workload type](./images/adw-worload.png " ")
 
   5. Choose **Shared Infrastructure** as the deployment type.
 
-    ![ADW Deployment type](./images/shared-infrastructure.png " ")
+      ![ADW Deployment type](./images/shared-infrastructure.png " ")
 
   6. Configure the database:
 
@@ -183,27 +185,27 @@ To create a user group, follow these steps:
 
   10. Click **Create Autonomous Database**.
 
-    ![Create ADW](./images/create-adw-final.png " ")
+      ![Create ADW](./images/create-adw-final.png " ")
 
   11. When the state of the database changes from **Provisioning** to **Available**, the autonomous data warehouse database that you created is ready for use.
 
-    ![ADW Provisioned](./images/adw-available.png " ")
+      ![ADW Provisioned](./images/adw-available.png " ")
 
 Next, you download the client credentials wallet file for the database. This file is required to connect Data Catalog to the autonomous data warehouse. To download the wallet file, follow these steps:
 
-   1. On the **Autonomous Database** Details page of your database, click **DB Connections**.
+  12. On the **Autonomous Database** Details page of your database, click **Database connection**.
 
-    ![DB Connection](./images/adw-db-conn.png " ")
+      ![DB Connection](./images/adw-db-conn.png " ")
 
-   2. On the **Database Connection** page, leave the **Wallet Type** as **Instance Wallet**, and click **Download Wallet**.
+  13. On the **Database Connection** page, leave the **Wallet Type** as **Instance Wallet**, and click **Download Wallet**.
 
-    ![Click Download Wallet](./images/download-wallet-click.png " ")
+      ![Click Download Wallet](./images/download-wallet-click.png " ")
 
-   3. In the **Download Wallet** dialog box, enter a password for the wallet and re-enter it to confirm.  
+  14. In the **Download Wallet** dialog box, enter a password for the wallet and re-enter it to confirm.  
 
-    ![Download](./images/download-wallet.png " ")
+      ![Download](./images/download-wallet.png " ")
 
-   4. Click **Download**.
+  15. Click **Download**.
       The wallet file gets downloaded as a zip file and is named **Wallet_&lt;databasename&gt;.zip**.
 
 ## Task 5: Prepare the Autonomous Data Warehouse
@@ -220,25 +222,20 @@ In this task, you create a new user on the Autonomous Data Warehouse and then ru
 
   ![Select ADW](./images/select-adw.png " ")
 
-3. On the **Autonomous Database Details** page, click the **Tools** tab.
 
-  ![Tools](./images/click-tools.png " ")
-
-4. In the **Tools** tab, in the **Database Actions** section, click **Open Database Actions**.
+3. In the **Tools** tab, in the **Database Actions** section, click **Open Database Actions**.
 
   ![Database Actions](./images/open-db-actions.png " ")
 
-5. On the Database Actions Sign in page, enter your username and password, and click **Sign in**.
+4. On the Database Actions Sign in page, enter your username and password, and click **Sign in**.
 
-  ![admin page](./images/admin-user.png " ")
+  ![admin page](./images/admin-user-pass.png " ")
 
-  ![password page](./images/admin-pass.png " ")
-
-6. In the **Database Actions** page that appears, in the **Development** section, click **SQL**.
+5. In the **Database Actions** page that appears, in the **Development** section, click **SQL**.
 
   ![SQL](./images/sql-tile.png " ")
 
-7. In the SQL worksheet that opens, create a new user named **sales_history**. To create the user copy the following code, paste it in the worksheet, and then run it:
+6. In the SQL worksheet that opens, create a new user named **sales_history**. To create the user copy the following code, paste it in the worksheet, and then run it:
 
     ```
     <copy>CREATE USER sales_history IDENTIFIED BY "password";
@@ -256,15 +253,15 @@ In this task, you create a new user on the Autonomous Data Warehouse and then ru
 
   ![Create User](./images/create-user-sql.png " ")
 
-9. **Download** the zip file [DCAT Workshop files.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/DCAT%20Workshop%20files.zip) to your local directories. Unzip this file.
+7. **Download** the zip file [DCAT Workshop files.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/DCAT%20Workshop%20files.zip) to your local directories. Unzip this file.
 
-9. In the same SQL worksheet, run the **DCAT\_Livelabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you need for the following labs.
+8. In the same SQL worksheet, run the **DCAT\_Livelabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you need for the following labs.
 
    The SQL script creates tables CHANNELS, COSTS, COUNTRIES, CUSTOMERS, PRODUCTS, PROMOTIONS, SALES, and SUPPLEMENTARY_DEMOGRAPHICS and TIMES, which will serve as the target tables for the data catalog operations.
 
    ![Create tables](./images/adw-run-sql-script.png " ")
 
-11. Refresh the browser and in the Navigator on the left, switch to the `sales_history` schema to verify that your tables were created successfully. If still your new user does not appear, kindly log out and login again.
+9. Refresh the browser and in the Navigator on the left, switch to the `sales_history` schema to verify that your tables were created successfully. If still your new user does not appear, kindly log out and login again.
 
   ![Sales History Schema](./images/sales-history-schema.png " ")
 
@@ -283,4 +280,4 @@ In this task, you create a new user on the Autonomous Data Warehouse and then ru
 
 * **Author** - Shreedhar Talikoti, Ramkumar Dhanasekaran
 * **Contributors** -  Rashmi Badan, Sreekala Vyasan
-* **Last Updated By/Date** - Ramkumar, Aug 2021
+* **Last Updated By/Date** - Alexandru Porcescu, March 2023
