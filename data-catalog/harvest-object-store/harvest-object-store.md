@@ -356,6 +356,9 @@ Harvest the data entities from a data asset as follows:
 
     ![Attribute](./images/custsales-files-tab.png " ")
 
+
+You may now **proceed to the next lab**
+
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)

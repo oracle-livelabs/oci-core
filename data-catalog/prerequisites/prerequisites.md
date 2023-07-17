@@ -265,6 +265,9 @@ In this task, you create a new user on the Autonomous Data Warehouse and then ru
 
   ![Sales History Schema](./images/sales-history-schema.png " ")
 
+
+You may now **proceed to the next lab**
+
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)
