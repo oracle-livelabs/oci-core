@@ -354,10 +354,12 @@ Harvest the data entities from a data asset as follows:
 
 18. From the **Files** tab, view the data entity attribute details.
 
+
     ![Files](./images/custsales-files-tab.png " ")
 
 
 You may now **proceed to the next lab**
+
 
 ## Learn More
 

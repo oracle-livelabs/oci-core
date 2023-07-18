@@ -9,7 +9,7 @@ Estimated Time: 40 minutes
  
 This video provides an overview of creating and attaching Oracle Cloud Infrastructure Block Volumes:
 
-[](youtube:jxzw8NZGUJw)
+[Create and Attach a Block Volume Service](videohub:1_qnamtzw9)
 
 ### Objectives
 In this lab, you will:

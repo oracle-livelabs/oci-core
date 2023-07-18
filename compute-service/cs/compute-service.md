@@ -8,7 +8,9 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 
 Estimated Time: 30 minutes
 
-[](youtube:09kahbIF0Ew)
+Watch the video below for a quick walk-through of the lab.
+
+[Create a Compute Service](videohub:1_zvp51wx4)
 
 ### Objectives
 In this lab, you will:
