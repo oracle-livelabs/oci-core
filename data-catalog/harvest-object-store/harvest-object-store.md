@@ -241,7 +241,7 @@ Create a filename pattern as follows:
 
 7. Assign the filename pattern that you just created to your **Oracle Object Storage Data Asset**. On the **Home** tab, click the **Data Assets** link to access the **Data Assets** tab.
 
-    ![](./images/data-assets-link.png " ")
+    ![Click on Home](./images/data-assets-link.png " ")
 
 8. In the **Data Assets** list, click the **Oracle Object Storage Data Asset** data asset for which you want to assign filename pattern.
     ![Select Data Asset](./images/click-data-asset.png " ")
@@ -287,7 +287,7 @@ Harvest the data entities from a data asset as follows:
 
       ![Step 2](./images/harvest-step-2-1.png " ")
 
-      > **Note:** You can use this page to view and add the bucket(s) and/or data entities you want to harvest from the **Available Buckets** section. Click the **bucket link** to display its nested data entities. Click the ![](./images/add-entity-icon.png>) icon next to each data entity that you want to include in the harvest job. You can search for a bucket or entity using the **Filter Bucket** and **Filter Bucket / data entities** search boxes.
+      > **Note:** You can use this page to view and add the bucket(s) and/or data entities you want to harvest from the **Available Buckets** section. Click the **bucket link** to display its nested data entities. Click the ![Plus button](./images/add-entity-icon.png>) icon next to each data entity that you want to include in the harvest job. You can search for a bucket or entity using the **Filter Bucket** and **Filter Bucket / data entities** search boxes.
 
       ![Step 2](./images/harvest-step-2-add-entities.png " ")
 
@@ -354,7 +354,12 @@ Harvest the data entities from a data asset as follows:
 
 18. From the **Files** tab, view the data entity attribute details.
 
-    ![Attribute](./images/custsales-files-tab.png " ")
+
+    ![Files](./images/custsales-files-tab.png " ")
+
+
+You may now **proceed to the next lab**
+
 
 ## Learn More
 
