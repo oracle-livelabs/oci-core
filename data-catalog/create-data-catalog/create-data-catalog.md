@@ -51,6 +51,9 @@ You complete a single form to create a Data Catalog instance. Oracle takes care 
 
     ![Click Instance Name](./images/view-data-catalog2.png " ")
 
+
+You may now **proceed to the next lab**
+
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)

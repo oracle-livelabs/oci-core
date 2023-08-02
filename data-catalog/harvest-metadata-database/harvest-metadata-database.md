@@ -119,6 +119,8 @@ Here is how you harvest data entities from a data asset:
 
 	![Click Refresh](./images/harvest-job4.png " ")
 
+You may now **proceed to the next lab**
+
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)
