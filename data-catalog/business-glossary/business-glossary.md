@@ -202,6 +202,11 @@ The default properties may not be sufficient to capture all the context for a da
 
     ![Created Custom Property](./images/custom-properties5.png " ")
 
+
+ 
+ 
+You may now **proceed to the next lab**
+
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)

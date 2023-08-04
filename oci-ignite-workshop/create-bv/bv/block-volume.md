@@ -68,18 +68,19 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
      - **Paravirtualized:** Paravirtualized attachments are now an option when attaching volumes to VM instances. For VM instances launched from Oracle-Provided Images, you can select this option for Linux-based images published. Once you attach a volume using the paravirtualized attachment type, it is ready to use. You do not need to run any additional commands. However, due to the overhead of virtualization, this reduces the maximum IOPS performance for larger block volumes. See [Paravirtualized Attachment Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#paraPerf) for more information.
 
-2. Go to the Compute Instances Menu, and navigate to the VM instance you created before. Click **Attached instances**. Then click **Attach to Instance**.
+2. Go to the **Resources** Menu, click on **Attached instances**.  Then click **Attach to Instance**, and navigate to the VM instance you created before.
 
     
     ![Attached block volumes](images/attached-bv1.png " ")
    
  
 
-3. Click **Select volume** and choose the following options:
+3. After clicking **Attach to Instance**, provide the following details:
 
-     - **Volume:** Select the volume created
-     - **Device Path:** Select `/dev/oracleoci/oraclevdb`
      - **Attachment mode:** iSCSI
+     - **Access Type:** Read/Write
+     - **Instance:** Select the compute instance created in the previous lab.
+     - **Device Path:** Select `/dev/oracleoci/oraclevdb`
      - Click **Attach**
 
   
@@ -124,5 +125,5 @@ _Congratulations! You have successfully completed the lab._
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, March 2023
+- **Last Updated By/Date** - Cristian Manea, Radu Chiru, August 2023
 

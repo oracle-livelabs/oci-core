@@ -130,6 +130,8 @@ You can explore data catalog objects by the tags linked with them. In the **Home
 
     ![Search Result](./images/tag-search-result.png " ")
 
+You may now **proceed to the next lab**
+
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)

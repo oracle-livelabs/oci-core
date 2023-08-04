@@ -206,6 +206,9 @@ In this task you will link a glossary term to a Table object. You will then link
 
     ![Linked Objects](./images/link-glossary8.png " ")
 
+
+You may now **proceed to the next lab**
+
 ## Learn More
 
 * [Get Started with Data Catalog](https://docs.oracle.com/en-us/iaas/data-catalog/using/index.htm)
