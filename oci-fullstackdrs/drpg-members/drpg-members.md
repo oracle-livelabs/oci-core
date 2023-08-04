@@ -195,4 +195,4 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,May 2023
+- **Last Updated By/Date** -  Suraj Ramesh,August 2023
