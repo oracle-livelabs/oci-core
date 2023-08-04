@@ -53,14 +53,15 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
     It will show various resource types and select **Compute**
     ![drpg resource type](./images/ashburn-resource-type-new1.png)
 
-    - Resource Type as **Compute**
+    - Resource Type as Compute
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
     - Instances in Compartment, select **mushop-xxxxx-0**
-    - Compute instance type, select **Moving instance**
+    - **Click the checkbox in the Move instance on switchover or failover**
+    - Destination compartment, select your compartment name
+    - Ignore the Destination dedicated VM host section
     - Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
     - Select VNIC as *primaryvnic*
-    - Destination subnet as *mushop-main-xxxxx (regional)*
-    - No need to input any values for *Destination primary private IP address* and *Destination primary private IP hostname label*
+    - Destination subnet as *mushop-main-xxxxx*
     - Ignore Network security groups
     - Click Add
 
@@ -81,14 +82,15 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
     It will show various resource types and select **Compute**
     ![drpg resource type](./images/ashburn-resource-type-new1.png)
 
-    - Resource Type as **Compute**
+    - Resource Type as Compute
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
     - Instances in Compartment, select **mushop-xxxxx-1**
-    - Compute instance type, select **Moving instance**
+    - **Click the checkbox in the Move instance on switchover or failover**
+    - Destination compartment, select your compartment name
+    - Ignore the Destination dedicated VM host section
     - Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
     - Select VNIC as *primaryvnic*
-    - Destination subnet as *mushop-main-xxxxx (regional)*
-    - No need to input any values for *Destination primary private IP address* and *Destination primary private IP hostname label*
+    - Destination subnet as *mushop-main-xxxxx*
     - Ignore Network security groups
     - Click Add
 
