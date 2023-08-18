@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Ignite your Oracle Cloud Infrastructure Services - ADVANCED",
+    "workshoptitle": "Kick off your Oracle Cloud Journey Part 2",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -12,7 +12,7 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Lab 1: Revise Ignite Basics: Identity and Access Management",
+            "title": "Lab 1: Revise Part 1 Basics: Identity and Access Management",
             "filename": "../../../oci-ignite-advanced/iam/iam.md"
         },        
         {

@@ -42,6 +42,6 @@ You may now proceed to the next lab.
 
 - **Author** - Cristian Manea, Radu Chiru, March 2023
 - **Contributors** - DCX Team (Violeta Blendea, Tom Goulding)
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, March 2023
+- **Last Updated By/Date** - Cristian Manea, Radu Chiru, August 2023
 
 

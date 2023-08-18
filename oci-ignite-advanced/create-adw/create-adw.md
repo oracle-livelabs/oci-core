@@ -213,5 +213,5 @@ See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-wa
 ## Acknowledgements
 
 - **Author** - Cristian Manea
-- **Last Updated By/Date** - Cristian Manea, March 2023
+- **Last Updated By/Date** - Cristian Manea, August 2023
 
