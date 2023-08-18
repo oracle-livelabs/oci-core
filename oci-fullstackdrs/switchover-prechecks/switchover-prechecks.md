@@ -9,6 +9,9 @@ Execute **Run Prechecks**  will perform only the *pre-checks* and not the actual
 
 Estimated Time: 10 Minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Perform prechecks and break MuShop app](videohub:1_s9w4sbtk)
+
 ### Objectives
 
 - Perform Run prechecks for the MuShop-app-switchover  plan
@@ -116,4 +119,4 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,May 2023
+- **Last Updated By/Date** - Suraj Ramesh,August 2023
