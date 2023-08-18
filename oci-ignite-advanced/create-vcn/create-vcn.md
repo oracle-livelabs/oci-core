@@ -43,7 +43,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     |VCN Name |VCN-Workshop|
     |Compartment |  Choose the ***Workshop*** compartment
     |VCN CIDR Block|10.0.0.0/16|
-    |Public Subnet CIDR Block|10.0.2.0/24|
+    |Public Subnet CIDR Block|10.0.0.0/24|
     |Private Subnet CIDR Block|10.0.1.0/24|
     |Use DNS Hostnames In This VCN| Checked|
 
@@ -69,7 +69,7 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
-    | Name |RT_ADW|
+    | Name |RT_ADB|
     |Compartment |  Choose the ***Workshop*** compartment
     |Target Type|NAT Gateway|
     |Destination CIDR Block|0.0.0.0/0|
@@ -158,7 +158,7 @@ Please *proceed to the next lab*.
 ## Acknowledgements
 
 - **Author** - Radu Chiru
-- **Last Updated By/Date** - Radu Chiru, March 2023
+- **Last Updated By/Date** - Radu Chiru, Cristian Manea, August 2023
 
 
 
