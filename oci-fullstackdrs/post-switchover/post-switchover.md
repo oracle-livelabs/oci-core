@@ -6,6 +6,9 @@ We will verify the DR Protection Group (DRPG) status and MuShop Application post
 
 Estimated Time: 5 Minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Post Switchover tasks](videohub:1_tktqsgu1)
+
 ### Objectives
 
 - Verify the DRPG status
@@ -59,4 +62,4 @@ This concludes the lab Protect your business using Oracle Full Stack Disaster Re
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,May 2023
+- **Last Updated By/Date** - Suraj Ramesh,August 2023

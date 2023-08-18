@@ -31,6 +31,9 @@ There are two types of plan group
 
 Estimated Time: 20 Minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Creation of DR protection group and switchover plan](videohub:1_s82hj0aw)
+
 ### Objectives
 
 - Gather compartment OCID.
@@ -142,4 +145,4 @@ Estimated Time: 20 Minutes
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,May 2023
+- **Last Updated By/Date** -  Suraj Ramesh,August 2023
