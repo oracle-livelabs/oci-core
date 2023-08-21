@@ -6,6 +6,9 @@ In this lab, we will execute the actual switchover plan for the **mushop-app-swi
 
 Estimated Time: 30 Minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Perform Switchover](videohub:1_0gkqcad2)
+
 ### Objectives
 
 - Execute the switchover plan
@@ -89,4 +92,4 @@ Refer to the **Troubleshooting tips** section for known failures and corrective 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,May 2023
+- **Last Updated By/Date** - Suraj Ramesh,August 2023
