@@ -1,11 +1,11 @@
 {
   "workshoptitle": "Automate Disaster Recovery on OCI using Full Stack Disaster Recovery",
-  "help": "livelabs-help-db-us@oracle.com",
+  "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
       "title": "Get Started",
       "description": "Prerequisites for LiveLabs (Oracle-owned tenancies)",
-      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+      "filename": "../../sandbox-login/sandbox-login.md"
     },
     {
       "title": "Introduction",
@@ -36,6 +36,11 @@
       "title": "Lab 5: Post Switchover tasks",
       "description": "Post Switchover tasks",
       "filename": "../../post-switchover/post-switchover.md"
+    },
+    {
+        "title": "Need Help?",
+        "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+        "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
     },
     {
       "title": "Oracle CloudWorld 2023 - Support",
