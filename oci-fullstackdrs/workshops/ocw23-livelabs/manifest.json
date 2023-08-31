@@ -1,10 +1,10 @@
 {
-  "workshoptitle": "Protect your business using OCI Full Stack Disaster Recovery",
+  "workshoptitle": "Automate Disaster Recovery on OCI using Full Stack Disaster Recovery",
   "help": "livelabs-help-db-us@oracle.com",
   "tutorials": [
     {
       "title": "Get Started",
-      "description": "Login to Oracle Cloud",
+      "description": "Prerequisites for LiveLabs (Oracle-owned tenancies)",
       "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
     },
     {
@@ -38,7 +38,7 @@
       "filename": "../../post-switchover/post-switchover.md"
     },
     {
-      "title": "Need Help?",
+      "title": "Oracle CloudWorld 2023 - Support",
       "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
     }
   ]
