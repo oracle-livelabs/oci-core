@@ -20,7 +20,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![ashburn console](./images/ashburn-region-new.png " ")
 
-2. Gather the OCID( Oracle Cloud Identifier) of the ATP database in Ashburn.
+2. As next step, need to gather the OCID( Oracle Cloud Identifier) of the ATP database in Ashburn.
 
     From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
 
@@ -37,12 +37,12 @@ Watch the video below for a quick walk-through of the lab.
     ![ATP OCID](./images/atp-ocid-new.png)
 
 
-3.  Open the **Cloud Shell** using the icon next to the **Ashburn** region.  
+3.  Open the **Cloud Shell** using the icon next to the Ashburn region.  
 
     ![open cloud shell](./images/cloud-shell-new.png)
     ![open cloud shell](./images/cloud-shell-1-new.png)
 
-    The Cloud Shell will open after a few seconds and shows the **prompt**. Input **N** for quitting the tutorial.
+    The Cloud Shell opens after a few seconds and shows the **prompt**.
 
 4. Download the ATP database wallet running in Ashburn using the Cloud Shell.In case if the Cloud Shell got disconnected, reconnect it again.
 
@@ -64,36 +64,15 @@ Watch the video below for a quick walk-through of the lab.
 
     ![phoenix console](./images/phoenix-region-new.png " ")
 
-6. Gather the OCID( Oracle Cloud Identifier) of the ATP database in Phoenix.
+6. **Repeat the steps 2 and 3, gather the OCID( Oracle Cloud Identifier) of the ATP database in Phoenix, make sure to use phoenix region in the steps**.
 
-    From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
-
-    ![ATP menu](./images/atp-menu-new.png)
-
-     Make sure to change the compartment which was assigned to you.Select the compartment(**LLxxxxx-COMPARTMENT**) you were assigned. You can verify the compartment allocated to you using the **View Login Info** in the top left of the instructions page.**LLxxxxx** is the username which was used to login into the OCI console. 
-     
-     Expand the root compartment and then select Livelabs compartment. Under Livelabs compartment select the **correct compartment which was assigned to you without fail**.You should be able to see an ATP database, similar to below. If you cannot see, then you should be selecting different compartment. Retry by selecting the right compartment.
-
-    ![ATP database](./images/atp-database-phx-new.png)
-
-    Click the ATP database which should have like **"MuShopDB-XXXXX"** and in the Autonomous Database Information tab, copy the OCID of the ATP database and keep it safe. This is required for downloading the wallet in the next step.
-
-    ![ATP OCID](./images/atp-ocid-phx-new.png)
-
-7.  Open the **Cloud Shell** using the icon next to the **Phoenix** region.  
-
-    ![open cloud shell](./images/cloud-shell-phx-new.png)
-    ![open cloud shell](./images/cloud-shell-1-phx-new.png)
-
-    The Cloud Shell will open after a few seconds and shows the **prompt**. Input **N** for quitting the tutorial.
-
-8. Download the ATP database wallet running in Phoenix using the Cloud Shell.In case if the Cloud Shell got disconnected, reconnect it again.
+7. Download the ATP database wallet running in Phoenix using the Cloud Shell.In case if the Cloud Shell got disconnected, reconnect it again.
 
     You can maximize the Cloud Shell view and restore it as your requirements. For better viewing, you can use maximize option.
 
     ![Cloud Shell Maximize](./images/cloud-max-phx-new.png)
 
-    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 6**
+    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 2**
 
     ````
      <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_phoenix.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.phx.anyhqljt5h22avqaw32nmjoi7d5zhxbkt6txxxxxxxxxxxxx</copy>
@@ -105,9 +84,7 @@ Watch the video below for a quick walk-through of the lab.
 
     In case if you are getting "NotAuthorizedOrNotFound" error, make sure you are running the command in the Phoenix region and Cloud Shell shows phoenix region in the prompt.  
 
-9. **Switchback to the Ashburn region Cloud Shell tab and rest of the Lab 1 will be done in Ashburn region**.
-
-    Download the private key for connecting to MuShop compute VM's using the below command in the Cloud Shell.
+8. **Switchback to the Ashburn region Cloud Shell tab and rest of the Lab 1 will be done in Ashburn region**.Download the private key for connecting to MuShop compute VM's using the below command in the Cloud Shell.
 
     ````
     <copy>wget https://bit.ly/mushoppk</copy>
@@ -115,21 +92,21 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Mushop privatekey](./images/mushoppk-key.png)
 
-10. Change the permission of the private key to `0600` in in the Cloud Shell
+9. Change the permission of the private key to `0600` in in the Cloud Shell
 
     ````
     <copy>chmod 0600 mushoppk</copy>
     ````
 
-11. Use the other tab of the browser, From the Hamburger menu, select **Compute**, then **Instances**. Verify the region as **Ashburn**
+10. Use the other tab of the browser, From the Hamburger menu, select **Compute**, then **Instances**. Verify the region as **Ashburn**
 
     ![Compute navigation](./images/compute-navigate-new.png)
 
-    Gather the Public IP from the two MuShop application instances. **mushop-xxxxx-0-->Node 0** and **mushop-xxxxx-1-->Node 1**. In case if you are not able to view the instances, select the correct compartment assigned to you. Refer Step-2 for more details.
+    Gather the Public IP from the two MuShop application instances. **mushop-xxxxx-0-->Node 0** and **mushop-xxxxx-1-->Node 1**. In case if you are not able to view the instances, select the correct compartment assigned to you. Refer step-3 for more details.
 
     ![Copy publicip](./images/compute-publicip-new.png)
 
-12. Navigate to the Cloud Shell browser tab and scp (Secure copy) the ATP wallets(Ashburn and Phoenix) to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
+11. Navigate to the Cloud Shell browser tab and scp (Secure copy) the ATP wallets(Ashburn and Phoenix) to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
 
     ````
     <copy>scp -i mushoppk atpwallet_ashburn.zip atpwallet_phoenix.zip opc@publicipnode0:/home/opc</copy>
@@ -139,15 +116,15 @@ Watch the video below for a quick walk-through of the lab.
     <copy>scp -i mushoppk atpwallet_ashburn.zip atpwallet_phoenix.zip opc@publicipnode1:/home/opc</copy>
     ````
 
-    Replace `publicipnode0` and `publicipnode1` with the public IP address(step 11) of both mushop-xxxxx-0 and mushop-xxxxx-1 respectively in the scp commands.
+    Replace `publicipnode0` and `publicipnode1` with the public IP address(step 10) of both mushop-xxxxx-0 and mushop-xxxxx-1 respectively in the scp commands.
 
-    Execute the scp commands in the cloud shell and while it prompts for confirmation key in as yes. Make sure the ATP wallets for both **Ashburn and Phoenix** are transferred successfully to both muShop application compute instances.
+    Execute the scp commands in the cloud shell and while it prompts for confirmation key in as yes. Make sure the ATP wallets are transferred successfully to both muShop application nodes.
 
     ![Wallet copytovm](./images/wallet-compute-new.png)
 
 ## Task 2: Connect to application VM instances and run the application script
 
-1. **Use Ashburn region for all the steps**.From the existing Cloud Shell, Connect to MuShop App VM **mushop-xxxxx-0**, replace `publicipnode0` with the public IP address of mushop-xxxxx-0. Refer task 1.11 to get the public IP address of mushop-xxxxx-0.
+1. **Use Ashburn region for all the steps**.From the existing Cloud Shell, Connect to MuShop App VM mushop-xxxxx-0, replace `publicipnode0` with the public IP address of mushop-xxxxx-0. Refer task 1.10 to get the public IP address of mushop-xxxxx-0.
 
     ````
     <copy>ssh -i mushoppk opc@publicipnode0</copy>
@@ -172,7 +149,7 @@ Watch the video below for a quick walk-through of the lab.
     ````
     ![disconnect node0](./images/disconnect-mushop-node0-new.png)
 
-4. From the existing Cloud Shell,Connect to MuShop App VM **mushop-xxxxx-1**, replace `publicipnode1` with the public IP address of mushop-xxxxx-1.Refer task 1.11 to get the public IP address of mushop-xxxxx-1.
+4. Repeat steps 2.1,2.2,2.3 for mushop-xxxxx-1.From the existing Cloud Shell,Connect to MuShop App VM mushop-xxxxx-1, replace `publicipnode1` with the public IP address of mushop-xxxxx-1.Refer task 1.10 to get the public IP address of mushop-xxxxx-1.
 
     ````
     <copy>ssh -i mushoppk opc@publicipnode1</copy>
