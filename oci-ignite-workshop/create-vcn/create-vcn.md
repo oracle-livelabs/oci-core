@@ -52,7 +52,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     |VCN Name |VCN-Workshop|
     |Compartment |  Choose the ***Workshop*** compartment you created in the ***"Create a Compartment" Lab***
     |VCN CIDR Block|10.0.0.0/16|
-    |Public Subnet CIDR Block|10.0.2.0/24|
+    |Public Subnet CIDR Block|10.0.0.0/24|
     |Private Subnet CIDR Block|10.0.1.0/24|
     |Use DNS Hostnames In This VCN| Checked|
 
@@ -83,7 +83,5 @@ _Congratulations! You have successfully completed the lab._
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Radu Chiru, March 2023
-
-
+- **Last Updated By/Date** - Radu Chiru, August 2023
 

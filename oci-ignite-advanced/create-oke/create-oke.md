@@ -141,4 +141,4 @@ _Congratulations! You have successfully completed the lab._
 
 ## Acknowledgements
 * **Authors** -  Cristian Manea - Oracle DCX Team
-* **Last Updated By/Date** - Cristian Manea, March 2023
+* **Last Updated By/Date** - Cristian Manea, August 2023

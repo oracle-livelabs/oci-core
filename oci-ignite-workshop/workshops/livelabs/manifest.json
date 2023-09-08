@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "How to IGNITE your Oracle Tenancy",
+    "workshoptitle": "Kick off your Oracle Cloud - Part I",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -23,7 +23,7 @@
         },
         {
             "title": "Lab 3: Generate SSH Keys",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key/generate-ssh-keys.md"
+            "filename": "../../../oci-ignite-workshop/generate-ssh-key/generate-ssh-keys.md"
         },        
         {
             "title": "Lab 4: Create a Compute Service",
