@@ -46,7 +46,7 @@ For DNS Management:
 
     Allow group <group_name> to manage dns in tenancy <TenancyName>
 
-1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://console.us-phoenix-1.oraclecloud.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oegentil/learning-library/raw/master/oci-library/oci-hol/oci-private-dns/oci-private-dns/privatedns.zip)
+1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oracle-livelabs/oci-core/blob/main/oci-private-dns/oci-private-dns/privatedns.zip)
 
 2. Acept the Terms of use, chane the compartment to you want to use, and change the name (optional).
 3. Enter the required information for the stack, and click **Next**.
