@@ -8,8 +8,8 @@ Estimated Time: 15 Minutes
 
 ### Objectives
 
-- Add members to Ashburn DRPG (Primary)- ATP(Primary DB),MuShop Compute VM's(node-0 and node-1),two volume groups( Boot volumes of MuShop Compute VM's)
-- Add members to Phoenix DRPG (Standby)-ATP(Standby DB)
+- Add members to Ashburn DRPG (Primary)- ATP(Primary DB),MuShop Compute VM's(node-0 and node-1),two volume groups( Boot volumes of MuShop Compute VM's), Load Balancer
+- Add members to Phoenix DRPG (Standby)-ATP(Standby DB), Load Balancer
 
 As part of the MuShop architecture,Virtual machines are deployed as Cold VM or Pilot light pattern.Full Stack DR will create the MuShop VM's in the phoenix region during the Switchover.
 
@@ -27,7 +27,7 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 
     ![drpg landing page](./images/drpg-status-ashburn-new.png)
 
-4.  In the Ashburn region DRPG page, add the members required in the **mushop-ashburn** DRPG. *We will add ATP Primary Database, two mushop compute VMs, and two-volume groups for the boot volumes of mushop compute VMs*. Let's add those details.
+4.  In the Ashburn region DRPG page, add the members required in the **mushop-ashburn** DRPG. *We will add ATP Primary Database, two mushop compute VMs,two-volume groups for the boot volumes of mushop compute VMs and Load Balancer*. Let's add those details.
 
 5.  Add ATP Primary Database. 
 
@@ -36,7 +36,7 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
     ![drpg add member](./images/ashburn-add-member-new.png)
 
     It will show various resource types and select **Autonomous Database**
-    ![drpg resource type](./images/ashburn-resource-type-new.png)
+    ![drpg resource type](./images/ashburn-resource-new-members.png)
 
     Select the Database in your compartment; it will have MushopDB-XXXXX. Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
 
@@ -51,7 +51,7 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 6.  Add first Compute instance **mushop-xxxxx-0** as member,select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
     It will show various resource types and select **Compute**
-    ![drpg resource type](./images/ashburn-resource-type-new1.png)
+    ![drpg resource type](./images/ashburn-resource-new-members.png)
 
     - Resource Type as **Compute**
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
@@ -79,7 +79,7 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 7.  Add second Compute instance **mushop-xxxxx-1** as member,select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
     It will show various resource types and select **Compute**
-    ![drpg resource type](./images/ashburn-resource-type-new1.png)
+    ![drpg resource type](./images/ashburn-resource-new-members.png)
 
     - Resource Type as **Compute**
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
@@ -109,7 +109,7 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
     Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
     It will show various resource types and select **Volume group**
-    ![drpg resource type](./images/ashburn-resource-type-new1.png)
+    ![drpg resource type](./images/ashburn-resource-new-members.png)
 
     - Resource Type as Volume Group
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
@@ -129,7 +129,7 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
     Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
     It will show various resource types and select **Volume group**
-    ![drpg resource type](./images/ashburn-resource-type-new1.png)
+    ![drpg resource type](./images/ashburn-resource-new-members.png)
 
     - Resource Type as Volume Group
     - Make sure to check the box **"I understand that all existing plans will be deleted"**
@@ -144,14 +144,35 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-10. We have added all the required members in the **mushop-ashburn** DRPG. It should show ATP Database, 2 Compute Instances, and 2 Volume groups.DRPG status should show as active.
+10. Add Load Balancer as member.
+
+    It will show various resource types and select **Load Balancer**
+    ![drpg resource type](./images/ashburn-resource-new-members.png)
+     
+    - Resource Type as Load Balancer
+    - Make sure to check the box **"I understand that all existing plans will be deleted"**
+    - Select Load balancer **mushop-xxxxx**
+    - Select Destination load balancer **mushop-xxxxx**
+    - Select Source backend set **mushop-xxxxx**
+    - Select Destination backend set **mushop-xxxxx**
+    - Verify and add
+
+    ![drpg add lbr](./images/ashburn-lbr-add-new.png)
+
+    **mushop-ashburn** DRPG status will change to updating; wait for a few seconds. You should see that the Load Balancer is added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** section under Resources.
+
+    ![drpg lbr added](./images/ashburn-lbr-added-new.png)
+
+    Navigate back to the DR Protection group page; the status of DRPG should be active. In case if you don't see the Load Balancer member, add it again.
+
+10. We have added all the required members in the **mushop-ashburn** DRPG. It should show a ATP Database, two Compute Instances, two Volume groups and a Load Balancer.DRPG status should show as active.
 
     ![drpg members ashburn](./images/ashburn-allmembers-new.png)
 
 
 ## Task 2: Add members to Phoenix DRPG (Standby)
 
-1.  Login into OCI Console with your provided Credentials. The Standby region should be **Pheonix**.
+1.  Login into OCI Console with your provided Credentials. The Standby region should be **Phoenix**.
 
     ![oci console phoenix](./images/phoenix-region-new.png)
 
@@ -163,14 +184,14 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 
     ![drpg landing page](./images/drpg-status-phoenix-new.png)
 
-4.  In the Phoenix region DRPG page, add the members required in the **mushop-phoenix** DRPG. *We will be adding only ATP Standby Database*. Let's add those details.  **We don't need to add compute and volume groups as we VM's are designed in cold VM DR pattern and those VM's will be created automatically during the DR switchover process by Full Stack DR**
+4.  In the Phoenix region DRPG page, add the members required in the **mushop-phoenix** DRPG. *We will be adding ATP Standby Database and Load Balancer*. Let's add those details.  **We don't need to add compute and volume groups as we VM's are designed in cold VM DR pattern and those VM's will be created automatically during the DR switchover process by Full Stack DR**
 
 6.  Add ATP Standby Database. Select **mushop-phoenix** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
     ![drpg add member](./images/phoenix-add-member-new.png)
 
     It will show various resource types and select **Autonomous Database**
-    ![drpg resource type](./images/phoenix-resource-type-new.png)
+    ![drpg resource type](./images/phoenix-resource-new-members.png)
 
     Select the Database in your compartment; it will have **MushopDB-XXXXX**. Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
 
@@ -182,9 +203,30 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-7.  Now, we have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Database. DRPG status will show as active.
+7. Add Load Balancer as member.
 
-    ![drpg members phoenix](./images/phoenix-allmembers-new.png)
+    It will show various resource types and select **Load Balancer**
+    ![drpg resource type](./images/phoenix-resource-new-members.png)
+     
+    - Resource Type as Load Balancer
+    - Make sure to check the box **"I understand that all existing plans will be deleted"**
+    - Select Load balancer **mushop-xxxxx**
+    - Select Destination load balancer **mushop-xxxxx**
+    - Select Source backend set **mushop-xxxxx**
+    - Select Destination backend set **mushop-xxxxx**
+    - Verify and add
+
+    ![drpg add lbr](./images/phoenix-lbr-add-new.png)
+
+    **phoenix-ashburn** DRPG status will change to updating; wait for a few seconds. You should see that the Load Balancer is added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** section under Resources.
+
+    ![drpg lbr added](./images/phoenix-lbr-added-new.png)
+
+    Navigate back to the DR Protection group page; the status of DRPG should be active. In case if you don't see the Load Balancer member, add it again.
+
+8.  Now, we have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Database and Load Balancer. DRPG status will show as active.
+
+    ![drpg members phoenix](./images/phoenix-allmembers-new1.png)
 
     You may now [Proceed to the next lab](#next)
 
@@ -195,4 +237,4 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,August 2023
+- **Last Updated By/Date** -  Suraj Ramesh,November 2023
