@@ -15,7 +15,7 @@
       {
         "title": "Lab 1: Setup MuShop terraform stack",
         "description": "Setup MuShop terraform stack",
-        "filename": "../../stack-setup/stack-setup.md"
+        "filename": "../../terraform-stack-setup/terraform-stack-setup.md"
       },
       {
         "title": "Lab 2: Prepare environments",

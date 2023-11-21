@@ -1,22 +1,37 @@
-# Prepare the environments for using the Full Stack DR Service
+# Provision the environments for using the Full Stack DR Service
 
 ## Introduction
 
-In this lab, download Autonomous Database Wallets and prepare the MuShop application virtual machines, which are required to work with Full Stack DR Service.
+In this lab, we will provision all the required OCI resources which are required by using OCI Resource manager.
 
-Estimated Time: 15 Minutes
-
-Watch the video below for a quick walk-through of the lab.
-[Prepare your environments](videohub:1_yenhmts3)
+Estimated Time: 30 minutes
 
 ### Objectives
 
-- Download Autonomous Database Wallets using Cloud Shell and transfer the wallets to application VM instances
-- Connect to application VM instances and execute application change script
+- Use OCI Resource Manager to provision all the required OCI resources to demonstrate the Mushop application switchover using Full Stack DR.
+- Verify the resource manager stack creation is successful
 
-## Task 1: Download Autonomous Database Wallets using Cloud Shell and transfer the Wallets to application VM instances
+## Task 1: Use Resource Manager to provision OCI resources
 
-1. Necessary IAM policies are granted to the OCI user. Refer to this blog for more details. Ashburn is the primary region and Phoenix is the standby region. Both region details have been hardcoded in the terraform files. If you want to use different regions, please modify the tf files.
+1. Preferably OCI user with **administrator** role. If not please check the OCI documentation and create IAM policies for the OCI user to create and manage OCI VCN,Load Balancer,Autonomous Database Serverless-ATP,Block Storage, Object Storage,Cloud Shell.
+
+2. Provide necessary IAM policies to the OCI user for using Full Stack DR. Refer to this blog [Full Stack DR IAM policies](https://blogs.oracle.com/maa/post/iam-policies-fullstackdr).
+
+4.Click on the link below to download the Resource Manager zip file you need to build your environment.
+
+fullstackdr-mushop.zip - Packaged terraform script for creating various OCI resources.
+
+5.Save it in your downloads folder.
+
+6.We will use **Ashburn** as primary region and **Phoenix** as standby region. Both region details have been hardcoded in the terraform files. If you want to use different regions, please modify the region and remote_region details in the variables.tf file.
+
+7.Log in to your Oracle Cloud account and select Ashburn region
+
+8. Create custom image
+
+
+
+Click the Navigation Menu in the upper left, navigate to Developer Services, and select Stacks.
 
 2. Create a Mushop application stack using the OCI resource manager
 
