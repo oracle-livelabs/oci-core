@@ -1,249 +1,129 @@
-# Provision the environments for using the Full Stack DR Service
+# Provision the OCI resources
 
 ## Introduction
 
-In this lab, we will provision all the required OCI resources which are required by using OCI Resource manager.
+In this lab, we will provision all the required OCI resources for the Mushop application.
 
 Estimated Time: 30 minutes
 
 ### Objectives
 
+- Create custom image and prepare terraform files
 - Use OCI Resource Manager to provision all the required OCI resources to demonstrate the Mushop application switchover using Full Stack DR.
 - Verify the resource manager stack creation is successful
 
-## Task 1: Use Resource Manager to provision OCI resources
+## Task 1: Create custom image and prepare terraform files
 
-1. Preferably OCI user with **administrator** role. If not please check the OCI documentation and create IAM policies for the OCI user to create and manage OCI VCN,Load Balancer,Autonomous Database Serverless-ATP,Block Storage, Object Storage,Cloud Shell.
+1. Preferably use OCI user with **administrator** role to provision the OCI resources as part of this lab. If not please check the OCI  documentation and create necesary IAM policies for the OCI user to create and manage OCI VCN,Load Balancer,Autonomous Database Serverless-ATP,Block Storage, Object Storage,Cloud Shell.
 
 2. Provide necessary IAM policies to the OCI user for using Full Stack DR. Refer to this blog [Full Stack DR IAM policies](https://blogs.oracle.com/maa/post/iam-policies-fullstackdr).
 
-4.Click on the link below to download the Resource Manager zip file you need to build your environment.
+3. We will use **Ashburn** as primary region and **Phoenix** as standby region. Both region details are used in the terraform files. If you want to use different regions, please modify the region (primary) and remote_region (standby) details in the variables.tf file.If you are using different Primary and Standby region, make sure to complete the rest of lab 1 steps from your **Primary** region.
 
-fullstackdr-mushop.zip - Packaged terraform script for creating various OCI resources.
-
-5.Save it in your downloads folder.
-
-6.We will use **Ashburn** as primary region and **Phoenix** as standby region. Both region details have been hardcoded in the terraform files. If you want to use different regions, please modify the region and remote_region details in the variables.tf file.
-
-7.Log in to your Oracle Cloud account and select Ashburn region
-
-8. Create custom image
-
-
-
-Click the Navigation Menu in the upper left, navigate to Developer Services, and select Stacks.
-
-2. Create a Mushop application stack using the OCI resource manager
-
-     Download FullStackDR-TF.zip file
-     In your tenancy, select Ashburn region,create a custom image using the PAR and note down the custom image OCID. Refer Import Image for details.
-     In compute.tf file, modify the source_id under source_details with your custom image OCID
-     Using OCI Resource Manager service, create a stack in Ashburn region
-     Upload the updated stack zip file  in the stack configuration
-     Provide Stack name
-     Select the compartment to deploy the resources
-     In the variables section, add values for these
-        ociCompartmentOcid - Provide your comparment OCID
-        ociTenancyOcid - Provide your tenancy OCID
-        ociUserOcid - Provide the user OCID
-        resId- Provide a random 4-digit number
-    Create Stack
-    Run Apply
-    Monitor the job and verify for success.
-    All the required resources are deployed in Ashburn (Primary) and Phoenix (Standby) regions.
-    Follow these instructions for performing the Full Stack DR tasks 
-
-3. User-defined scripts which are used in the labs can be accessed from mushopappscripts.zip.  These scripts are provided for generic purposes.
-
-3. Destroy the stack if you don't need the resources anymore. Before destroying the stack
-
-    Terminate the ATP Standby DB
-    Disable the cross-region replication block volumes in both regions.
-    Delete the PAR generated in the mushop-xxxxx bucket in phoenix region.
-
-
-1. Login into OCI Console with your provided Credentials. Select **ASHBURN** region.
+4. Login into OCI Console with your provided Credentials. Select **ASHBURN** region.
 
     ![ashburn console](./images/ashburn-region-new.png " ")
 
-2. Gather the OCID( Oracle Cloud Identifier) of the ATP database in Ashburn.
+5. Create custom image in the Ashburn region.From the Hamburger menu,select Compute->Custom images
 
-    From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
+    ![custom image](./images/ashburn-custom-image.png " ")
 
-    ![ATP menu](./images/atp-menu-new.png)
+6. Click Import image and provide the below details.
 
-     Make sure to change the compartment which was assigned to you.Select the compartment(**LLxxxxx-COMPARTMENT**) you were assigned. You can verify the compartment allocated to you using the **View Login Info** in the top left of the instructions page.**LLxxxxx** is the username which was used to login into the OCI console. 
-     
-     Expand the root compartment and then select Livelabs compartment. Under Livelabs compartment select the **correct compartment which was assigned to you without fail**.You should be able to see an ATP database, similar to below. If you cannot see, then you should be selecting different compartment. Retry by selecting the right compartment.
+    - Select the compartment of your choice and use the same compartment for deploying all resources as part of this lab. 
+    - Provide Name as **mushopimage**
+    - Select Operating system as **Oracle Linux**
+    - Select **Import from an Object Storage URL**
+    - Paste the below URL inthe **Object Storage URL**
+        ````
+        <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/N1Q_gWVqQ2ETQ6kf6S-WTqd3s3uv6vPs4SniklnUf7wrukkhAWPEFC1EuxE3wRqI/n/idfwhcj05ugj/b/fsdrs/o/mushop-new-image</copy>
+        ````
+    - Select Image type as **OCI**
+    - Verify the details and click **Import image**
 
-    ![ATP database](./images/atp-database-new.png)
+    ![create custom image](./images/ashburn-create-custom-image.png " ")
 
-    Click the ATP database which should have like **"MuShopDB-XXXXX"** and in the Autonomous Database Information tab, copy the OCID of the ATP database and keep it safe. This is required for downloading the wallet in the next step.
+7. It will take approximately 10-15 minutes to show the custom image as **Available**.
 
-    ![ATP OCID](./images/atp-ocid-new.png)
+    ![Custom image created](./images/ashburn-available-custom-image.png " ")
 
+8. Copy the OCID of the custom image and keep it handy. 
 
-3.  Open the **Cloud Shell** using the icon next to the **Ashburn** region.  
+    ![Custom image ocid](./images/ashburn-ocid-custom-image.png " ")
 
-    ![open cloud shell](./images/cloud-shell-new.png)
-    ![open cloud shell](./images/cloud-shell-1-new.png)
+9. Click on the link below to download the Resource Manager zip file.
 
-    The Cloud Shell will open after a few seconds and shows the **prompt**. Input **N** for quitting the tutorial.
+    [fullstackdr-mushop.zip](https://idfwhcj05ugj.objectstorage.us-ashburn-1.oci.customer-oci.com/p/h8n0TsiellDDWa-fODHkWs3mg4nPCirw7sSlU_5sMsqLIJUutEHFrdISSro5NE5I/n/idfwhcj05ugj/b/fsdrs/o/fullstackdr-mushop.zip) - Packaged terraform script for creating various OCI resources for Mushop application.
 
-4. Download the ATP database wallet running in Ashburn using the Cloud Shell.In case if the Cloud Shell got disconnected, reconnect it again.
+10. Save it in your downloads or any other preferred folder.
 
-    You can maximize the Cloud Shell view and restore it as your requirements. For better viewing, you can use maximize option.
+11. Unzip  **fullstackdr-mushop.zip** 
 
-    ![Cloud Shell Maximize](./images/cloud-max-new.png)
+12. Navigate to **fullstackdr-mushop->terraform->scripts** folder
 
-    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 2**
+13. Open **compute.tf** file in your preferred editor, you should add the OCID of your compute image (taken in step 8) in the **`source_id`** which is under **`source_details`** section
 
-    ````
-     <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_ashburn.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.iad.anuwcljt5h22avqazns5ncswf4jc7owrzb6nug53xxxxxxxxxxxx</copy>
-    ````
+    ![source-custom-id](./images/ashburn-source-custom-id.png " ")
 
-    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet file which was downloaded. Verify that using the list command ls -ltr atpwallet_ashburn.zip as provided in the screenshot.
+14. Save the compute.tf file and zip or compress the folder as **fullstackdr-mushop-updated.zip**. This zip file should have the **updated compute.tf** file.
 
-    ![ATP Wallet](./images/atp-wallet-cs-new.png)
+## Task 2: Provision OCI resources using OCI resource manager
 
-5. Open a new tab in the browser, login to OCI console and select **PHOENIX** region.
+1. Click the Navigation Menu in the upper left, navigate to Developer Services, and select Stacks. Make sure you are in the **Ashburn** region.
 
-    ![phoenix console](./images/phoenix-region-new.png " ")
+    ![resource manager](./images/ashburn-resource-manager.png " ")
 
-6. Gather the OCID( Oracle Cloud Identifier) of the ATP database in Phoenix.
+2. Click **Create Stack** and select the compartment.
 
-    From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
+    ![create stack](./images/ashburn-create-stack.png " ")
 
-    ![ATP menu](./images/atp-menu-new.png)
+3. In the **Stack information** section,provide the below details.
 
-     Make sure to change the compartment which was assigned to you.Select the compartment(**LLxxxxx-COMPARTMENT**) you were assigned. You can verify the compartment allocated to you using the **View Login Info** in the top left of the instructions page.**LLxxxxx** is the username which was used to login into the OCI console. 
-     
-     Expand the root compartment and then select Livelabs compartment. Under Livelabs compartment select the **correct compartment which was assigned to you without fail**.You should be able to see an ATP database, similar to below. If you cannot see, then you should be selecting different compartment. Retry by selecting the right compartment.
+    - Choose **My configuration**
+    - In the **Stack congiguration**, use **.Zip file** and upload **fullstackdr-mushop-updated.zip**. You should use the zip file from Task 1 -> Step 14.
+    - In the **Name**,provide the name as **fullstackdr-mushop-stack**
+        ![create stack](./images/ashburn-create-stack-1.png " ")
+    - Select the **compartment** of your choice
+    - Leave the other values as default.
+    - Click Next
+    ![create stack](./images/ashburn-create-stack-2.png " ")
 
-    ![ATP database](./images/atp-database-phx-new.png)
+4. In the **Configure variables** section, provide the below details  in the variables section.  
+ 
+    - ociCompartmentOcid: Provide your compartment OCID
+    - ociTenancyOcid: Provide your tenancy OCID
+    - ociUserOcid: Provide your OCI user OCID
+    - resId:Provide a random 5 digit number
+    ![create stack](./images/ashburn-create-stack-3.png " ")
+    ![create stack](./images/ashburn-create-stack-4.png " ")
+    - Leave the rest of the variables section with default values.
+    - Click Next
 
-    Click the ATP database which should have like **"MuShopDB-XXXXX"** and in the Autonomous Database Information tab, copy the OCID of the ATP database and keep it safe. This is required for downloading the wallet in the next step.
+5. In the **Review** section
+ 
+    - Review the **Stack Information** and **Variables**
+    - Select the checkbox **Run apply** in the Run apply on selected stack
+    - Click **Create**
+    ![create stack](./images/ashburn-create-stack-5.png " ")
 
-    ![ATP OCID](./images/atp-ocid-phx-new.png)
+## Task 3: Verify the OCI resource manager job
 
-7.  Open the **Cloud Shell** using the icon next to the **Phoenix** region.  
+1. Navigate to **Stacks**, select **fullstackdr-mushop-stack**
 
-    ![open cloud shell](./images/cloud-shell-phx-new.png)
-    ![open cloud shell](./images/cloud-shell-1-phx-new.png)
+    ![mushop stack](./images/ashburn-mushop-stack.png " ")
 
-    The Cloud Shell will open after a few seconds and shows the **prompt**. Input **N** for quitting the tutorial.
+2. You should be able a see oracle resource manager (orm) job which is in-progress state.Click the job details and monitor.
 
-8. Download the ATP database wallet running in Phoenix using the Cloud Shell.In case if the Cloud Shell got disconnected, reconnect it again.
+    ![mushop job](./images/ashburn-mushop-job-inprogress.png " ")
 
-    You can maximize the Cloud Shell view and restore it as your requirements. For better viewing, you can use maximize option.
+3. The job will take approximately 30 minutes to complete. Verify the status of job, it should show as **Succeeded**. In case if the job fails, verify the logs and take necessary action. Common causes for failures are missing IAM policies, resource quota not available.
 
-    ![Cloud Shell Maximize](./images/cloud-max-phx-new.png)
-
-    **Make sure to modify the ATP database OCID for your database in the below command.You should replace the OCID after --autonomous-database-id  with your values which was captured in Step 6**
-
-    ````
-     <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_phoenix.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.phx.anyhqljt5h22avqaw32nmjoi7d5zhxbkt6txxxxxxxxxxxxx</copy>
-    ````
-
-    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet which was downloaded. Verify that using the list command ls -ltr atpwallet_phoenix.zip as provided in the screenshot.
-
-    ![ATP Wallet](./images/atp-wallet-cs-phx-new.png)
-
-    In case if you are getting "NotAuthorizedOrNotFound" error, make sure you are running the command in the Phoenix region and Cloud Shell shows phoenix region in the prompt.  
-
-9. **Switchback to the Ashburn region Cloud Shell tab and rest of the Lab 1 will be done in Ashburn region**.
-
-    Download the private key for connecting to MuShop compute VM's using the below command in the Cloud Shell.
-
-    ````
-    <copy>wget https://bit.ly/mushoppk</copy>
-    ````
-
-    ![Mushop privatekey](./images/mushoppk-key.png)
-
-10. Change the permission of the private key to `0600` in in the Cloud Shell
-
-    ````
-    <copy>chmod 0600 mushoppk</copy>
-    ````
-
-11. Use the other tab of the browser, From the Hamburger menu, select **Compute**, then **Instances**. Verify the region as **Ashburn**
-
-    ![Compute navigation](./images/compute-navigate-new.png)
-
-    Gather the Public IP from the two MuShop application instances. **mushop-xxxxx-0-->Node 0** and **mushop-xxxxx-1-->Node 1**. In case if you are not able to view the instances, select the correct compartment assigned to you. Refer Step-2 for more details.
-
-    ![Copy publicip](./images/compute-publicip-new.png)
-
-12. Navigate to the Cloud Shell browser tab and scp (Secure copy) the ATP wallets(Ashburn and Phoenix) to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
-
-    ````
-    <copy>scp -i mushoppk atpwallet_ashburn.zip atpwallet_phoenix.zip opc@publicipnode0:/home/opc</copy>
-    ````
-
-    ````
-    <copy>scp -i mushoppk atpwallet_ashburn.zip atpwallet_phoenix.zip opc@publicipnode1:/home/opc</copy>
-    ````
-
-    Replace `publicipnode0` and `publicipnode1` with the public IP address(step 11) of both mushop-xxxxx-0 and mushop-xxxxx-1 respectively in the scp commands.
-
-    Execute the scp commands in the cloud shell and while it prompts for confirmation key in as yes. Make sure the ATP wallets for both **Ashburn and Phoenix** are transferred successfully to both muShop application compute instances.
-
-    ![Wallet copytovm](./images/wallet-compute-new.png)
-
-## Task 2: Connect to application VM instances and run the application script
-
-1. **Use Ashburn region for all the steps**.From the existing Cloud Shell, Connect to MuShop App VM **mushop-xxxxx-0**, replace `publicipnode0` with the public IP address of mushop-xxxxx-0. Refer task 1.11 to get the public IP address of mushop-xxxxx-0.
-
-    ````
-    <copy>ssh -i mushoppk opc@publicipnode0</copy>
-    ````
-
-    Once its connected, use ls -ltr atpwa* command in the shell. You should be able to see the ATP wallet files from both Ashburn and phoenix region files which we transferred in previous step.
-
-    ![list atp wallet](./images/compute-node0-new.png)
-
-2. Mushopapp script has been created to unzip the wallet files,modify changes in the mushop env files,copy the wallet to oracle client and restart the mushoapp.
-
-    Execute the mushopapp script
-
-    ````
-    <copy>./mushopapp</copy>
-
-    ````
-3. Verify for successful execution of script and exit from mushop-xxxxx-0 node
-
-    ````
-    <copy>exit</copy>
-    ````
-    ![disconnect node0](./images/disconnect-mushop-node0-new.png)
-
-4. From the existing Cloud Shell,Connect to MuShop App VM **mushop-xxxxx-1**, replace `publicipnode1` with the public IP address of mushop-xxxxx-1.Refer task 1.11 to get the public IP address of mushop-xxxxx-1.
-
-    ````
-    <copy>ssh -i mushoppk opc@publicipnode1</copy>
-    ````
-    Once its connected, use ls -ltr atpwa* command in the shell. You should be able to see the ATP wallet files from both Ashburn and phoenix region files which we transferred in previous step.
-
-    ![list atp wallet](./images/compute-node1-new.png)
-
-5. Execute the mushopapp script
-
-    ````
-    <copy>./mushopapp</copy>
-    ````
-
-6.  Verify for successful execution of script and exit from mushop-xxxxx-1 node
-
-    ````
-    <copy>exit</copy>
-    ````
-    ![run mushop script](./images/exec-mushapp-node1-new.png)
+    ![mushop job done](./images/ashburn-mushop-job-done.png " ")
 
 You may now [Proceed to the next lab](#next)
 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,August 2023
+- **Last Updated By/Date** - Suraj Ramesh,November 2023
 
