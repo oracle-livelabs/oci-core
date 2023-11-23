@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will add members to the DR Protection groups created and associated in the previous lab. Ashburn is a primary region, and Phoenix is the standby region.
+In this lab, we will add members to the DR Protection groups created and associated in the previous lab. Ashburn is a primary region, and Phoenix is the standby region. This is an optional lab, in case if you want to destroy all the OCI resources.
 
 Estimated Time: 15 Minutes
 
