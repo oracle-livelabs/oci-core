@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Protect your business using OCI Full Stack Disaster Recovery",
+  "workshoptitle": "Automate Disaster Recovery on OCI using Full Stack Disaster Recovery ",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -15,7 +15,7 @@
     {
       "title": "Lab 1: Prepare environments",
       "description": "Prepare environments",
-      "filename": "../../pre-switchover/pre-switchover.md"
+      "filename": "../../pre-switchover/pre-switchover-sandbox.md"
     },
     {
       "title": "Lab 2: Create and Associate DRPG",
@@ -45,7 +45,7 @@
     {
       "title": "Lab 7: Post Switchover tasks",
       "description": "Post Switchover tasks",
-      "filename": "../../post-switchover/post-switchover.md"
+      "filename": "../../post-switchover/post-switchover-sandbox.md"
     },
     {
         "title": "Need Help?",

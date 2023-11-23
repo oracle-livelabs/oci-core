@@ -119,4 +119,4 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,August 2023
+- **Last Updated By/Date** - Suraj Ramesh,November 2023

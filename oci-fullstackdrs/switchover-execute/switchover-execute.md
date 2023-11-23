@@ -56,27 +56,27 @@ Watch the video below for a quick walk-through of the lab.
 
     ![drpg execute monitor1](./images/phoenix-execute-inprogress-new.png)
 
-3.  All the *plan groups* will run serially, but steps inside each *plan group* will be parallel. As an example, *Remove Primary Load Balancer Backends* group will start first, and the steps (Remove Primary Backend on Node-0 and Remove Primary Backend on Node-1) are part of this group will run in parallel.
+3.  All the *plan groups* will run serially, but steps inside each *plan group* will run in parallel.
 
 4.  Monitor the various plan group and steps which are running. Navigate to the three dots section for the respective plan group step and click. You get the option to view the log and download the log. These logs are stored in the object storage bucket provided during the DRPG creation. You can monitor the Progress and download the log if necessary for troubleshooting.
 
     ![drpg execute monitor log](./images/phoenix-execute-viewlog-new.png)
 
-5.  Once each plan group is executed successfully, it will move on to the next groups for execution. Here you can see plan groups *Remove Primary Load Balancer Backends* and *Stop Compute Instances (Primary)* are completed successfully (State-Succeeded), and the next group **Switchover Volume Groups (Standby)** started running (State: In progress).
+5.  Once each plan group is executed successfully, it will move on to the next groups for execution. Here you can see plan groups *Update Source Load Balancers' Backend Sets* and *Stop Compute Instances* are completed successfully (State-Succeeded), and the next group **Switchover Volume Groups** started running (State: In progress).
 
     ![drpg execute monitor progress](./images/phoenix-execute-moving-new.png)
 
-6.  Keep monitoring the rest of the groups and steps; each step will complete depending on the actual task (DB Switchover, VM Stop, Script execution ), etc.). For example, ATP DB Switchover will take more time when compared to stopping VM. You can verify the start and end of each step, total duration, logs, etc.
+6.  Keep monitoring the rest of the groups and steps; each step will complete depending on the actual task (DB Switchover, VM Stop, Script execution ), etc.). For example, ATP DB Switchover will take more time when comparing to stopping the VM. You can verify the start and end of each step, total duration, logs, etc.
 
     ![drpg execute monitor progress1 ](./images/phoenix-execute-moving1-new.png)
 
-7.  Wait for all the steps to complete successfully.  It is important to monitor the progress of each step and take actions in case of any failures.  Switchover Autonomous Databases (Standby) group will run for around 10 minutes. 
+7.  Wait for all the steps to complete successfully.  It is important to monitor the progress of each step and take necessary actions in case of any failures.
 
-    **Approximately it will take *20-30* mins to successfully complete the switchover plan**
+    **Approximately it will take *20-30* mins to for successful switchover plan execution**
 
 ## Task 3: Verify the executed switchover plan
 
-1.  From the plan execution detail, verify the duration of each step, status, duration of the entire switchover plan, etc. *It is essential to have successful completion of all steps*. In this example it took around **25 minutes** to complete.These timings will vary as it has depending factors like ATP Data Guard switchover, compute stop/launch timings etc. Use the Expand all button to expand all the steps and the Collapse all button for collapsing. Use the view or download log option to see step execution details.
+1.  From the plan execution details, verify the duration of each step, status, duration of the entire switchover plan, etc. *It is essential to have successful completion of all steps*. In this example it took around **27 minutes** to complete.These timings will vary as it has depending factors like ATP Data Guard switchover, compute stop/launch,script execution etc. Use the **Expand all** button to expand all the steps and the **Collapse all** button for collapsing. Use the view or download log option to see step execution details.
 
     ![drpg execution done](./images/phoenix-execute-done-new.png)
 
@@ -92,4 +92,4 @@ Refer to the **Troubleshooting tips** section for known failures and corrective 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,August 2023
+- **Last Updated By/Date** - Suraj Ramesh,November 2023
