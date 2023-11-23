@@ -20,7 +20,7 @@
       {
         "title": "Lab 2: Prepare environments",
         "description": "Prepare environments",
-        "filename": "../../pre-switchover/pre-switchover.md"
+        "filename": "../../pre-switchover/pre-switchover-tenancy.md"
       },
       {
         "title": "Lab 3: Create and Associate DRPG",

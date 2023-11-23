@@ -21,7 +21,7 @@ Estimated Time: 60 minutes
 
 ## Task 1: Create custom image and prepare terraform files
 
-1. We will use **Ashburn** as primary region and **Phoenix** as standby region. Both region details are used in the terraform files. If you want to use different regions, please modify the region (primary) and remote_region (standby) details in the variables.tf file.If you are using different Primary and Standby region, make sure to complete the rest of lab 1 steps from your **Primary** region.
+1. We will use **Ashburn** as primary region and **Phoenix** as standby region. Both region details are used in the terraform files. If you want to use different regions, please modify the region (primary) and remote_region (standby) details in the variables.tf file.More details about the terraform files are there from step 9-12. If you are using different Primary and Standby region, make sure to complete the rest of lab 1 steps from your **Primary** region.
 
 2. Login into OCI Console with your provided Credentials. Select **ASHBURN** region.
 
