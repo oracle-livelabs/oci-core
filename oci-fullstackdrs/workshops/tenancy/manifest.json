@@ -3,18 +3,18 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
-          "title": "Get Started",
-          "description": "Prerequisites for LiveLabs (Oracle-owned tenancies)",
-          "filename": "../../sandbox-login/sandbox-login.md"
-        },
-      {
         "title": "Introduction",
         "description": "Introduction to OCI Full Stack Disaster Recovery and workshop",
         "filename": "../../introduction/introduction.md"
       },
       {
-        "title": "Lab 1: Setup MuShop terraform stack",
-        "description": "Setup MuShop terraform stack",
+        "title": "Get Started",
+        "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+      },
+      {
+        "title": "Lab 1: Provision OCI resources",
+        "description": "Provision OCI resources",
         "filename": "../../terraform-stack-setup/terraform-stack-setup.md"
       },
       {
