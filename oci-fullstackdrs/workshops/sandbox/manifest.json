@@ -1,12 +1,12 @@
 {
-  "workshoptitle": "Protect your business using OCI Full Stack Disaster Recovery",
-  "help": "livelabs-help-db-us@oracle.com",
+  "workshoptitle": "Automate Disaster Recovery on OCI using Full Stack Disaster Recovery ",
+  "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
-      "title": "Get Started",
-      "description": "Login to Oracle Cloud",
-      "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
-    },
+        "title": "Get Started",
+        "description": "Prerequisites for LiveLabs (Oracle-owned tenancies)",
+        "filename": "../../sandbox-login/sandbox-login.md"
+      },
     {
       "title": "Introduction",
       "description": "Introduction to OCI Full Stack Disaster Recovery and workshop",
@@ -15,7 +15,7 @@
     {
       "title": "Lab 1: Prepare environments",
       "description": "Prepare environments",
-      "filename": "../../pre-switchover/pre-switchover.md"
+      "filename": "../../pre-switchover/pre-switchover-sandbox.md"
     },
     {
       "title": "Lab 2: Create and Associate DRPG",
@@ -45,7 +45,7 @@
     {
       "title": "Lab 7: Post Switchover tasks",
       "description": "Post Switchover tasks",
-      "filename": "../../post-switchover/post-switchover.md"
+      "filename": "../../post-switchover/post-switchover-sandbox.md"
     },
     {
         "title": "Need Help?",

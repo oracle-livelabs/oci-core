@@ -12,7 +12,7 @@ In this workshop, we will see how easily Full Stack Disaster Recovery will help 
 
 ## Overview of OCI Full Stack Disaster Recovery
 
-Full Stack Disaster Recovery Service is an fully managed OCI disaster recovery orchestration and management service that provides comprehensive disaster recovery capabilities for all layers of an application stack, including infrastructure, middleware, database, and application across  **OCI regions**.
+OCI Full Stack Disaster Recovery (Full Stack DR) provides a fully automated and comprehensive disaster recovery orchestration solution for all the layers of a full-stack cloud application, including infrastructure, database, and application. Using Full Stack DR, you can recover your full stack applications across OCI regions, or across availability domains within the same region.
 
 Throughout this workshop, we will use Full Stack DR to denote OCI Full Stack Disaster recovery.
 
@@ -25,7 +25,7 @@ Throughout this workshop, we will use Full Stack DR to denote OCI Full Stack Dis
 Below are some of the critical functionalities of Full Stack Disaster Recovery Service
 
 - Create and automate DR run books and make them more flexible.
-- Manage DR operations (Switchover and Failover) using a single pane of glass.
+- Manage DR operations (Switchover,Failover,DR Drills) using a single pane of glass.
 - Provide comprehensive logs with error management and recovery.
 - Perform pre-checks before the DR execution plan.
 - Provide a framework to customize DR operations.
@@ -74,6 +74,8 @@ Approximately 3 hrs
 
 - [MuShop Application](https://github.com/oracle-quickstart/oci-cloudnative/tree/master/deploy/basic)
 
+You may now [Proceed to the next lab](#next)
+
 ### Disclaimer
 
 The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remains at the sole discretion of Oracle.
@@ -81,4 +83,4 @@ The following is intended to outline our general product direction. It is intend
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,May 2023
+- **Last Updated By/Date** - Suraj Ramesh,November 2023
