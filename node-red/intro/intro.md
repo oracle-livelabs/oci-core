@@ -3,14 +3,14 @@
 
 ## About this Workshop
 
-In this workshop, you will learn to install Node-RED on a compute instance running Oracle Autonmous Linux.
+In this workshop, you will learn to install Node-RED on a compute instance running Oracle Autonomous Linux.
 
 Estimated workshop time: 60-90 minutes
 
 We hope you enjoy this LiveLab. Go ahead and start the first Lab.
 
 
-If you are interested in more information about Oracle Linux, please watch the folllowing video:
+If you are interested in more information about Oracle Linux, please watch the following video:
 
 [](videohub:1_mlwioaoh:medium) 
 
