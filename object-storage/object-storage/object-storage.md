@@ -66,7 +66,7 @@ In this lab, you will:
 
 ## Task 2: Upload Object and Create Pre-Authenticated Link
 
-1. Download this file to your local PC: [click here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FJ8cOXrQeIJeOHR0b6U_5wUrRgwNPEQjsd80tpMMpc_HV2ROskAhOZ-yVuptKjUj/n/c4u04/b/oci-library/o/sample-file.txt). You may need to right click the link and select **Save Link As...**.
+1. Download this file to your local PC: [click here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/sample-file.txt). You may need to right click the link and select **Save Link As...**.
 
 2. Switch to OCI window and click the Bucket Name.
 

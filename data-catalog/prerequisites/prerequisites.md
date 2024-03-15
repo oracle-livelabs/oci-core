@@ -253,7 +253,7 @@ In this task, you create a new user on the Autonomous Data Warehouse and then ru
 
   ![Create User](./images/create-user-sql.png " ")
 
-7. **Download** the zip file [DCAT Workshop files.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/DCAT%20Workshop%20files.zip) to your local directories. Unzip this file.
+7. **Download** the zip file [DCAT Workshop files.zip](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/DCAT%20Workshop%20files.zip) to your local directories. Unzip this file.
 
 8. In the same SQL worksheet, run the **DCAT\_Livelabs.sql** script from the unzipped archive from the previous step, to create the rest of the database objects that you need for the following labs.
 
