@@ -6,7 +6,7 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
-            "filename": "../../intro/intro.md"
+            "filename": "./../../intro/intro.md"
         },
         {
           "title": "Get Started",
