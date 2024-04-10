@@ -6,7 +6,7 @@ Oracle Cloud Infrastructure (OCI) Compute lets you create multiple Virtual Cloud
 
 Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm) to gain a full understanding of the network components and their relationships, or take a look at this video:
 
-[](youtube:mIYSgeX5FkM)
+[](youtube:DIjGGhidUrI)
 
 Estimated Time: 10 minutes
 
@@ -49,8 +49,8 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
-    |VCN Name |VCN-Workshop|
-    |Compartment |  Choose the ***Workshop*** compartment you created in the ***"Create a Compartment" Lab***
+    |VCN Name |Sandbox-VCN|
+    |Compartment |  Choose the ***Sandbox*** compartment you created in the ***"Create a Compartment" Lab***
     |VCN CIDR Block|10.0.0.0/16|
     |Public Subnet CIDR Block|10.0.0.0/24|
     |Private Subnet CIDR Block|10.0.1.0/24|
@@ -82,6 +82,6 @@ _Congratulations! You have successfully completed the lab._
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
-- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Radu Chiru, August 2023
+- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
 
