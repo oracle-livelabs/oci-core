@@ -10,8 +10,6 @@ If you already have an SSH key pair, you may use that to connect to your environ
 
 ## Option 1:  Oracle Cloud Shell
 
-Watch the video below for an overview of the Generate SSH Keys Cloud Shell option.
-[This video shows an overview of the lab content.](youtube:oq2Hk1Yy9Cg)
 
 The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
 
@@ -25,35 +23,51 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 2.  Once the cloud shell has started, enter the following command. Choose the key name you can remember. This will be the keyname you will use to connect to any compute instances you create. Press Enter twice for no passphrase.
 
-    ````
+    ```
     <copy>mkdir .ssh</copy>
-    ````
+    ```
 
-    ````
+    ```
     <copy>cd .ssh</copy>
-    ````
+    ```
 
-    ````
-    ssh-keygen -b 2048 -t rsa -f <<sshkeyname>>
-    ````
+    ```
+    <copy>ssh-keygen -b 2048 -t rsa -f <<sshkeyname>></copy>
+    ```
 
     *Note: The angle brackets <<>> should not appear in your command.*
+
+    Example for our case:
+
+     ```
+    <copy>ssh-keygen -b 2048 -t rsa -f cloudshellkey</copy>
+    ```
 
     ![Generate SSH key in cloud shell.](./images/cloudshell-ssh-keygen.png " ")
 
 3.  Examine the two files that you just created.
 
-    ````
+    ```
     <copy>ls</copy>
-    ````
+    ```
 
     ![Examine the two files.](./images/examine-cloudshell-keys.png " ")
 
     Note in the output that there are two files, a *private key:* ```<<sshkeyname>>``` and a *public key:* ```<<sshkeyname>>.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
-4. To list the contents of the public key, use the cat command ```cat <<sshkeyname>>.pub```
+4. List the contents of the public key.
+
+    ```
+    <copy>cat <<sshkeyname>>.pub</copy>
+    ```
 
     *Note: The angle brackets <<>> should not appear in your command.*
+
+    Example for our case:
+
+     ```
+    <copy>cat cloudshellkey.pub</copy>
+    ```
 
     ![Use cat command.](images/cat-in-cloudshell.png " ")
 
@@ -70,11 +84,11 @@ Watch the video below for an overview of the Generate SSH Keys Mac option.
 
 1.  If you don't already have a shortcut to the terminal application for MacOS, you can find it in the **Applications** > **Utilities** menu or (Shift+Command+U) on your keyboard.
 
-2.  Start up **Terminal** and type in the command ```ssh-keygen```. ssh-keygen will ask you where to save the key, accept the default of the .ssh folder in your home directory by pressing Enter. File name will be ```id_rsa``` or whatever you choose to name your key. Press Enter twice for no passphrase. Remember the directory where you saved your key (~/.ssh), you will need to reference it later when you create your instance.
+2.  Start up **Terminal** and type in the command ```ssh-keygen```. ssh-keygen will ask you where to save the key, accept the default of the .ssh folder in your home directory by pressing Enter. In our case, the file name will be ```id_rsa```, but you can name your key to your preference. Press Enter twice for no passphrase. Remember the directory where you saved your key (~/.ssh), you will need to reference it later when you create your instance.
 
-    ````
+    ```
     <copy>ssh-keygen</copy>
-    ````
+    ```
 
     ![SSH key Mac option.](images/keylab-028.png " ")
 
@@ -88,6 +102,13 @@ Watch the video below for an overview of the Generate SSH Keys Mac option.
     ```
     <copy>ls</copy>
     ```
+    ```
+    <copy>cat <<sshkeyname>>.pub</copy>
+    ```
+
+    *Note: The angle brackets <<>> should not appear in your command.*
+
+    Example for our case:
 
     ```
     <copy>cat id_rsa.pub</copy>
@@ -105,7 +126,7 @@ Watch the video below for an overview of the Generate SSH Keys Mac option.
 
 You may now proceed to the next lab or paste it in the LiveLabs reservation page.
 
-## Option 3:  Windows 10
+## Option 3:  Windows 10/11
 
 Watch the video below for an overview of the Generate SSH Keys Windows option.
 [This video shows an overview of Generate SSH keys windows option.](youtube:BHbfxg_ek3Y)
@@ -137,6 +158,13 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     ```
     <copy>ls</copy>
     ```
+    ```
+    <copy>cat <<sshkeyname>>.pub</copy>
+    ```
+
+    *Note: The angle brackets <<>> should not appear in your command.*
+
+    Example for our case:
 
     ```
     <copy>cat id_rsa.pub</copy>
@@ -161,7 +189,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 
 You may now proceed to the next lab or paste it in the LiveLabs reservation page.
 
-## Option 4a: Prior Windows Versions - Git for Windows
+## Option 4: Prior Windows Versions - Git for Windows
 
 In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **Git for Windows**. **Git for Windows** includes a Unix like shell called ```Git Bash``` which is what you will use to create keys, and establish SSH communications with your cloud host systems. If you prefer **PuTTY**, go to the next section.
 
@@ -193,7 +221,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
     Then navigate 'down' into the .ssh folder in your normal home directory.
 
     ```
-    cd Users/<your home folder name>/.ssh/
+    <copy>cd Users/<your home folder name>/.ssh/</copy>
     ```
     *Note: The angle brackets <> should not appear in your command.*
 
@@ -213,7 +241,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 You may now proceed to the next lab or paste it in the LiveLabs reservation page.
 
-## Option 4b: Windows Versions - PuTTY
+## Option 5: Windows Versions - PuTTY
 
 In earlier versions of Windows, ssh-keygen was not a native utility, so third party utilities had to be utilized. In this section, we'll illustrate using **PuTTY**. If you prefer **Git for Windows**, visit the option prior to this one.
 
@@ -271,6 +299,8 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 ### Connecting to an instance using PuTTY
 
+*Note: Please come back to this step after you complete Lab 4 Task 1: Create a compute instance.*
+
 1.  Open the PuTTY utility from the Windows start menu. In the dialog box, enter the IP address of your OCI Compute Instance. This can be obtained from the **OCI Console > Compute > Instances > Instance Details** screen.
 
     ![Enter IP address of OCI compute instance.](images/keylab-023.png " ")
@@ -301,7 +331,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 You may now proceed to the next lab or paste it in the LiveLabs reservation page.
 
-## Option 5: SSH Keys for Linux
+## Option 6: SSH Keys for Linux
 
 1. Open a terminal window and type in the ```ssh-keygen``` command.   There are a few command line options for the ssh-keygen utility; however, for quick and dirty key creation for lab use, no options are necessary.    Type ```ssh-keygen --help``` in your terminal window to see all the possible options.   For now, just run the command by itself.
 
@@ -347,6 +377,6 @@ You may now proceed to the next lab or paste it in the LiveLabs reservation page
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Contributors** - LiveLabs Team, Kamryn Vinson, Anil Nair
-* **Last Updated By/Date** - Cristian Manea, Aug 2023
+* **Contributors** - LiveLabs Team, Kamryn Vinson, Anil Nair, Cristian Manea, Radu Chiru
+* **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
 
