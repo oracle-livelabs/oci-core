@@ -55,7 +55,7 @@ Estimated Time: 45 minutes
 
     ```
     <copy>
-    oci network security-list create --display-name PubSub1 --compartment-id <compartment ocid> --vcn-id $VCN_OCID --egress-security-rules  '[{"destination": "0.0.0.0/0", "destination-type": "CIDR_BLOCK", "protocol": "all", "isStateless": false}]' --ingress-security-rules '[{"source": "0.0.0.0/0", "source-type": "CIDR_BLOCK", "protocol": 6, "isStateless": false, "tcp-options": {"destination-port-range": {"max": 80, "min": 80}}}]'
+    oci network security-list create --display-name PubSub1 --compartment-id <compartment ocid> --vcn-id <vcn ocid> --egress-security-rules  '[{"destination": "0.0.0.0/0", "destination-type": "CIDR_BLOCK", "protocol": "all", "isStateless": false}]' --ingress-security-rules '[{"source": "0.0.0.0/0", "source-type": "CIDR_BLOCK", "protocol": 6, "isStateless": false, "tcp-options": {"destination-port-range": {"max": 80, "min": 80}}}]'
     </copy>
     ```
 
@@ -66,7 +66,7 @@ Estimated Time: 45 minutes
 
     ```
     <copy>
-    oci network subnet create --cidr-block 192.168.10.0/24 -c <compartment ocid> --vcn-id <vcn ocid> --security-list-ids '["$SECURITY_LIST_OCID"]'
+    oci network subnet create --cidr-block 192.168.10.0/24 -c <compartment ocid> --vcn-id <vcn ocid> --security-list-ids '["<security list OCID>"]'
     </copy>
     ```
 
