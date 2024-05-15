@@ -16,11 +16,13 @@
      ![](images/RESERVEDIP_HOL0017.PNG " ")
 
 5. From OCI services menu Click **Networking** -> **Virtual Cloud Networks**, a list of all VCNs will
-appear.
+appear. Locate your VCN, and click into the details page.
 
      ![](images/vcn.png " ")
 
-6. Locate your VCN, and click into the details page. Locate Route Tables. Click into the Default Route Table and check the rule you created, click **remove** and then confirm when prompted.
+     ![](images/findvcn.png " ")
+
+6. Locate **Route Tables** on the left under **Resources**. Click into the Default Route Table and check the rule you created, click **remove** and then confirm when prompted.
 
      ![](images/findroutetable.PNG " ")
 
@@ -28,7 +30,7 @@ appear.
 
      ![](images/confirmremoveroute.PNG " ")
 
-6. Locate your VCN, and click into the details page. Locate Internet Gateways. Click Terminate on your Internet Gateway that you created. It will prompt if you are sure to delete, click Terminate.
+6. Go back to details page of your VCN. Locate **Internet Gateways** on the left under **Resources**. Click Terminate on your Internet Gateway that you created. It will prompt if you are sure to delete, click **Terminate**.
 
      ![](images/findigw.PNG " ")
 
@@ -36,13 +38,13 @@ appear.
 
 
 
-6. Locate your VCN , Click the Action icon and then **Terminate**. It will ask you to scan resources in all compartments or specific. Choose specific and make sure you have selected the compartment you created your resources in. Click **scan**.
+6. Go back to **Virtual Cloud Networks** under **Networking**. Find your VCN in the list and click the action icon and then **Terminate**. It will ask you to scan resources in all compartments or a specific one. Choose **specific compartments** and make sure you have selected the compartment you created your resources in. Click **scan**.
 
      ![](images/RESERVEDIP_HOL0018.PNG " ")
 
      ![](images/scanvcn.PNG " ")
 
-7. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted.
+7. Once the scan is complete, click **Delete All** in the confirmation window. Click **Close** once VCN is deleted.
 
      ![](images/deletevcn.PNG " ")
 
