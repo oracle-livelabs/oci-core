@@ -24,17 +24,17 @@ appear. Locate your VCN, and click into the details page.
 
 6. Locate **Route Tables** on the left under **Resources**. Click into the Default Route Table and check the rule you created, click **remove** and then confirm when prompted.
 
-     ![](images/findroutetable.PNG " ")
+     ![](images/findroutetable.png " ")
 
-     ![](images/removerouterule.PNG " ")
+     ![](images/removerouterule.png " ")
 
-     ![](images/confirmremoveroute.PNG " ")
+     ![](images/confirmremoveroute.png " ")
 
 6. Go back to details page of your VCN. Locate **Internet Gateways** on the left under **Resources**. Click Terminate on your Internet Gateway that you created. It will prompt if you are sure to delete, click **Terminate**.
 
-     ![](images/findigw.PNG " ")
+     ![](images/findigw.png " ")
 
-     ![](images/deleteigw.PNG " ")
+     ![](images/deleteigw.png " ")
 
 
 
@@ -46,7 +46,7 @@ appear. Locate your VCN, and click into the details page.
 
 7. Once the scan is complete, click **Delete All** in the confirmation window. Click **Close** once VCN is deleted.
 
-     ![](images/deletevcn.PNG " ")
+     ![](images/deletevcn.png " ")
 
 *Congratulations! You have successfully completed the lab.*
 
