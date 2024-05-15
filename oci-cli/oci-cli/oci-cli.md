@@ -8,7 +8,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
 
 Estimated Time: 45 minutes
 
-## Task 1: Use the CLI to create a VCN with one public subnet
+## Task 1: Use the CLI to create networking resources and launch an instance
 
 1. In the Cloud Shell, enter the following command:
 
@@ -84,7 +84,7 @@ Estimated Time: 45 minutes
 
     ![](images/CLI_015.png " ")
 
-14. Next, we will update the default route table with a route to the internet gateway. First, you will need to locate the OCID of the default route table.
+14. Next, we will update the default route table with a route to the internet gateway. First, you will need to locate the OCID of the default route table. Save the OCID to use in the next step.
 
     ```
     <copy>
@@ -169,31 +169,6 @@ Estimated Time: 45 minutes
 
     ![](images/instance_status.png)
 
-## Task 2: Delete the resources
-
-1. Switch to  OCI console window.
-
-2. If your Compute instance is not displayed, From OCI services menu Click **Compute** -> **Instances**.
-
-     ![](images/compute_instances.png " ")
-
-3. Locate your compute instance, Click the Action icon and then **Terminate**.
-
-     ![](images/RESERVEDIP_HOL0016.PNG " ")
-
-4. Make sure Permanently delete the attached Boot Volume is checked, Click **Terminate Instance**. Wait for instance to fully Terminate.
-
-     ![](images/RESERVEDIP_HOL0017.PNG " ")
-
-5. From OCI services menu Click **Networking** -> **Virtual Cloud Networks**, a list of all VCNs will
-appear.
-
-     ![](images/vcn.png " ")
-
-6. Locate your VCN , Click the Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
-
-     ![](images/RESERVEDIP_HOL0018.PNG " ")
-
 *Congratulations! You have successfully completed the lab.*
 
 ## Learn More
@@ -204,5 +179,6 @@ appear.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-- **Last Updated By/Date** - Kamryn Vinson, November 2021
+- **Last Updated By/Date** - Uma Kumar, May 2024
+
 
