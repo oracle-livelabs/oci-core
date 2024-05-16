@@ -85,6 +85,9 @@ Estimated Time: 20 Minutes
     ![add dbrestore plangroup](./images/phoenix-dbrestore-plangroup-new.png)
 
     - Add *Restore Database Wallet on Node-0* in Step name
+    - Leave the enable step tick mark
+    - Select Error mode as "Stop on error."
+    - Leave the default "3600" seconds in Timeout in seconds
     - In the region, select "US East (Ashburn)"
     - Select the "Run local script" option
     - Select "mushop-xxxxx-0" instance in "Target instance in compartment"
@@ -94,9 +97,6 @@ Estimated Time: 20 Minutes
     <copy>/usr/bin/sudo /home/opc/fsdrsscripts/mushop_db_wallet_restore.sh phoenix</copy>
     ````
     - Leave the field blank in "Run as user"
-    - Select Error mode as "Stop on error."
-    - Leave the default "3600" seconds in Timeout in seconds
-    - Leave the enable step tick mark
     - Verify all the details and hit Add Step
     
     ![create dbrestore plangroup](./images/phoenix-dbrestore-node0-new.png)
@@ -110,6 +110,9 @@ Estimated Time: 20 Minutes
     ![added dbrestore newstep](./images/phoenix-dbrestore-newstep.png)
 
     - Add *Restore Database Wallet on Node-1* in Step name
+    - Leave the enable step tick mark
+    - Select Error mode as "Stop on error."
+    - Leave the default "3600" seconds in Timeout in seconds
     - In the region, select "US East (Ashburn)"
     - Select the "Run local script" option
     - Select "mushop-xxxxx-1" instance in "Target instance in compartment"
@@ -119,9 +122,6 @@ Estimated Time: 20 Minutes
     <copy>/usr/bin/sudo /home/opc/fsdrsscripts/mushop_db_wallet_restore.sh phoenix</copy>
     ````
     - Leave the field blank in "Run as user"
-    - Select Error mode as "Stop on error."
-    - Leave the default "3600" seconds in Timeout in seconds
-    - Leave the enable step tick mark
     - Verify all the details and hit Add Step
     
     ![add dbrestore](./images/phoenix-dbrestore-node1-new.png)
@@ -150,6 +150,9 @@ Estimated Time: 20 Minutes
     ![add restoreapp plangroup](./images/phoenix-restoreapp-plangroup-new.png)
 
     - Add *Restore Application on Node-0* in Step name
+    - Leave the enable step tick mark
+    - Select Error mode as "Stop on error."
+    - Leave the default "3600" seconds in Timeout in seconds
     - In the region, select "US East (Ashburn)"
     - Select the "Run local script" option
     - Select "mushop-xxxxx-0" instance in "Target instance in compartment"
@@ -159,9 +162,6 @@ Estimated Time: 20 Minutes
     <copy>/usr/bin/sudo /home/opc/fsdrsscripts/mushop_reconfigure.sh ashburn phoenix</copy>
     ````
     - Leave the field blank in "Run as user"
-    - Select Error mode as "Stop on error."
-    - Leave the default "3600" seconds in Timeout in seconds
-    - Leave the enable step tick mark
     - Verify all the details and hit Add Step
     
     ![create restoreapp plangroup](./images/phoenix-restoreapp-node0-new.png)
@@ -175,6 +175,9 @@ Estimated Time: 20 Minutes
     ![added restoreapp newstep](./images/phoenix-restoreapp-newstep.png)
 
     - Add *Restore Application on Node-1* in Step name
+    - Leave the enable step tick mark
+    - Select Error mode as "Stop on error."
+    - Leave the default "3600" seconds in Timeout in seconds
     - In the region, select "US East (Ashburn)"
     - Select the "Run local script" option
     - Select "mushop-xxxxx-1" instance in "Target instance in compartment"
@@ -184,9 +187,6 @@ Estimated Time: 20 Minutes
     <copy>/usr/bin/sudo /home/opc/fsdrsscripts/mushop_reconfigure.sh ashburn phoenix</copy>
     ````
     - Leave the field blank in "Run as user"
-    - Select Error mode as "Stop on error."
-    - Leave the default "3600" seconds in Timeout in seconds
-    - Leave the enable step tick mark
     - Verify all the details and hit Add Step
     
     ![add restoreapp](./images/phoenix-restoreapp-node1-new.png)
@@ -227,4 +227,4 @@ Estimated Time: 20 Minutes
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,May 2024
+- **Last Updated By/Date** -  Suraj Ramesh,November 2023

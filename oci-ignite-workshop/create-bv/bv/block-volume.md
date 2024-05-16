@@ -7,17 +7,17 @@ The Oracle Cloud Infrastructure Block Volume service lets you dynamically provis
 
 Estimated Time: 30 minutes
  
-This video provides an overview of creating and attaching Oracle Cloud Infrastructure Block Volumes:
+This video provides an overview over Block Volumes:
 
-[Creating and Attaching Block Volumes](youtube:jxzw8NZGUJw)
+[Oracle Cloud Infrastructure Block Volume: Overview](youtube:pmyxqM2eQwI)
 
-### Objectives
+### **Objectives**
 In this lab, you will:
 - Create a Block Volume
 - Attach the Block Volume to your instance
 - Mount the Block Volume
 
-### Prerequisites
+### **Prerequisites**
 
 Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment to get you started with Oracle Cloud.
 
@@ -34,10 +34,8 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 2. In Block Volume service, click **Create Block Volume** and provide the following details:
 
     
-     - **Name:** BV-DEMO
-     - **Compartment:** Demo
-     - **Name:** username-BVS
-     - **Compartment:** username-compartment
+     - **Name:** Sandbox-BV
+     - **Compartment:** Sandbox
      - **Availability Domain:** It must be the same as the AD you chose for your instance
      - **Size**: Please choose **50 GB**
      - **Backup Policy**: **Gold**
@@ -103,8 +101,9 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
      ```
      ```
      # <copy>sudo mkfs -t ext4 /dev/oracleoci/oraclevdb</copy>
-     Press y when prompted
      ```
+     Press **y** if prompted
+     
      ```
      # <copy>sudo mkdir /mnt/disk1</copy>
      ```
@@ -123,7 +122,7 @@ _Congratulations! You have successfully completed the lab._
 
 ## Acknowledgements
 
-- **Author** - Rajeshwari Rai, Prasenjit Sarkar 
-- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, August 2023
+- **Author** - Flavio Pereira, Larry Beausoleil 
+- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
 

@@ -6,6 +6,9 @@ In this lab, download Autonomous Database Wallets and prepare the MuShop applica
 
 Estimated Time: 15 Minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Prepare your environments](videohub:1_yenhmts3)
+
 ### Objectives
 
 - Download Autonomous Database Wallets using Cloud Shell and transfer the wallets to application VM instances
@@ -196,5 +199,5 @@ You may now [Proceed to the next lab](#next)
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,May 2024
+- **Last Updated By/Date** - Suraj Ramesh, March 2024
 

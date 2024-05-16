@@ -55,7 +55,7 @@ Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we
 
 ## Task 2: Upload Object and Create Pre-Authenticated Link
 
-1. Download this file to your local PC: [click here](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/sample-file.txt). You may need to right click the link and select **Save Link As...**.
+1. Download this file to your local PC: [click here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FJ8cOXrQeIJeOHR0b6U_5wUrRgwNPEQjsd80tpMMpc_HV2ROskAhOZ-yVuptKjUj/n/c4u04/b/oci-library/o/sample-file.txt). You may need to right click the link and select **Save Link As...**.
 
 2. Switch to OCI window and click the Bucket Name.
 
@@ -65,7 +65,7 @@ Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we
 
   ![Click on Upload](images/upload.png " ")
 
-4. Click **select files** and select the *[sample-file.txt](https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/oci-library/sample-file.txt)* you just downloaded. Click **Upload** in the Dialog box, then click **Close**.
+4. Click **select files** and select the *[sample-file.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/FJ8cOXrQeIJeOHR0b6U_5wUrRgwNPEQjsd80tpMMpc_HV2ROskAhOZ-yVuptKjUj/n/c4u04/b/oci-library/o/sample-file.txt)* you just downloaded. Click **Upload** in the Dialog box, then click **Close**.
   ![Upload the sample file](images/upload-sample-file.png)
 
 5. File should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
@@ -101,6 +101,6 @@ _Congratulations! You have successfully completed the lab._
 ## Acknowledgements
 
 - **Author** - Flavio Pereira, Larry Beausoleil 
-- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, August 2023
+- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
 

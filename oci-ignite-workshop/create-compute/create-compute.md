@@ -8,8 +8,6 @@ Be sure to review [Best Practices for Your Compute Instance](https://docs.cloud.
 
 Estimated Time: 20 minutes
 
-[Create a Compute Instance](youtube:09kahbIF0Ew)
-
 ### Objectives
 In this lab, you will:
 - Create a compute instance
@@ -33,14 +31,14 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 	![Navigate to Compute Instances](images/compute-instances.png)
 
 
-2. Select the *Workshop* Compartment that you created in *"Create a Compartment" Lab*. Then click **Create Instance**. We will launch a VM instance for this lab.
+2. Select the *Sandbox* Compartment that you created in *"Create a Compartment" Lab*. Then click **Create Instance**. We will launch a VM instance for this lab.
 
   ![Click on Create instance](images/create-compute1.png)
 
 
 
 3. The *Create Compute Instance* wizard will launch.
-    Enter **workshop-instance** as the name of the server. 
+    Enter **Sandbox-VM** as the name of the server. 
         
     ![Fill the Name of the Instance](images/create-compute2.png)
        
@@ -81,6 +79,8 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
 
+    If you receive the message "Are you sure you want to continue connecting (yes/no)?", please write **yes**
+
     ![Connect to the machine using the command](images/ssh.png)
 
 
@@ -89,5 +89,5 @@ _Congratulations! You have successfully completed the lab._
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
-- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, August 2023
+- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024

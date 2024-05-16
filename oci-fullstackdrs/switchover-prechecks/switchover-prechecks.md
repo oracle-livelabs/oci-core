@@ -9,9 +9,6 @@ Execute **Run Prechecks**  will perform only the *pre-checks* and not the actual
 
 Estimated Time: 10 Minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Perform prechecks and break MuShop app](videohub:1_s9w4sbtk)
-
 ### Objectives
 
 - Perform Run prechecks for the MuShop-app-switchover  plan

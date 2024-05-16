@@ -8,6 +8,12 @@ The purpose of this lab is to give you an overview of the IAM Service components
 
 Estimated time: 5 minutes
 
+These videos provide an overview over **Identity and Access Management**:
+
+[](youtube:Op5TLTBBABI)
+
+[](youtube:zLU04HSYOOY)
+
 ### Objectives
 
 <if type="livelabs">
@@ -29,7 +35,8 @@ In this lab, you will:
 
 Your **<font color="red">Oracle Cloud Account</font>** - During this workshop we will create a basic environment to get you started with Oracle Cloud.
 
-
+You can see how a compartment is created in Oracle Cloud Infrastructure by watching this short video:
+[](youtube:FSjQP5gqLAc)
 
 ## Task 1: Create Compartments
 
@@ -42,7 +49,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 1. Click **Create Compartment**.
    ![Create a compartment](images/create-compartment3.png)
 
-1. Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
+1. Name the compartment **Sandbox** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
 
    ![Create compartment](images/compartment-details2.png)
 
@@ -74,8 +81,8 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    In the **Create Group** dialog box, enter the following:
 
-     - **Name:** Enter a unique name for your group, such as **oci-group**   
-     - **Description:** Enter a description, such as **New group for oci users**
+     - **Name:** Enter a unique name for your group, such as **Sandbox-admin**   
+     - **Description:** Enter a description, such as **A sandbox admin group created for workshops and tests**
      - Click **Create**
 
    ![Create Group](images/id-domains-create-group.png) 
@@ -105,7 +112,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
       - **Email:**  Preferably use a personal email address to which you have access (GMail, Yahoo, etc) and different from any email already in use in the tenancy.
       - **Use the email address as the username:** Leave checked unless if you want to use an username that is not the email. It can be used if you want to use the same email already in use in the tenancy.
       - **Assign cloud account administrator role:** Leave unchecked.
-      - Check the box besides **oci-group**
+      - Check the box besides **Sandbox-admin**
 
     Click **Create**.
 
@@ -127,30 +134,30 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    ![Reset password](images/id-domains-resetpw.png)
 
-1. Now, let’s create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to members of group **oci-group** in compartment **Workshop**:
+1. Now, let’s create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to members of group **Sandbox-admin** in compartment **Sandbox**:
 
    a) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Policies**.
 
    ![IAM Policy](images/iam-policies.png)
 
-   b) On the left side, select **Workshop** compartment. After you have selected the **Workshop** compartment, click **Create Policy**.
+   b) On the left side, select **Sandbox** compartment. After you have selected the **Sandbox** compartment, click **Create Policy**.
 
    ![Click on Create Policy](images/id-domain-create-policy.png)
 
-      >**Note:** You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment ***Workshop***. If you do, and you still don't see the sub-compartment, ***refresh your browser***. Sometimes your browser caches the compartment information and does not update its internal cache.
+      >**Note:** You may need to click on the + sign next to your main compartment name to be able to see the sub-compartment ***Sandbox***. If you do, and you still don't see the sub-compartment, ***refresh your browser***. Sometimes your browser caches the compartment information and does not update its internal cache.
     
    
-   c) Enter a unique **Name** for your policy (for example, "Policy-for-oci-group").
+   c) Enter a unique **Name** for your policy (for example, "Policy-for-Sandbox-admin").
       >**Note:** the name can NOT contain spaces.
 
-   d) Enter a **Description** (for example, "Policy for OCI Group").
+   d) Enter a **Description** (for example, "Policy for Sandbox-admin Group").
 
-   e) Select **Workshop** for compartment.
+   e) Select **Sandbox** for compartment.
 
    f) Click **Show manual editor** and enter the following **Statement**:
 
      ```
-     <copy>Allow group default/oci-group to manage all-resources in compartment Workshop</copy>
+     <copy>Allow group Sandbox-admin to manage all-resources in compartment Sandbox</copy>
      ```
 
      Note: If you do not include the *identity_domain_name* before the *group_name*, then the policy statement is evaluated as though the group belongs to the default identity domain.
@@ -188,7 +195,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
       e) Click **Assign User to groups**.
          ![Click on Assign User to groups](images/id-domains-users-assign-group.png)
 
-      f) From the **Groups** list, click the group that you just created (for example, `oci-group`)  to go to the User Details page.
+      f) From the **Groups** list, click the group that you just created (for example, `Sandbox-admin`)  to go to the User Details page.
 
       g) Click **Add**.
          ![Press the Assign button](images/id-add-user-to-group.png)
@@ -201,9 +208,9 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
       b) Click the **Navigation Menu**. Click **Compute** and then click **Instances**.
 
-      c) Select compartment **Workshop** from the list of compartments on the left.
+      c) Select compartment **Sandbox** from the list of compartments on the left.
 
-      ![Select ***Workshop***](images/select-demo.png)
+      ![Select ***Sandbox***](images/select-demo.png)
 
       d) There is no message related to permissions and you are allowed to create new instances.  
 
@@ -216,4 +223,5 @@ _Congratulations! You have successfully completed the lab._
 ## Acknowledgements
 
 - **Author** - Cristian Manea
-- **Last Updated By/Date** - Cristian Manea, August 2023
+- **Contributors** - Cristian Manea
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
