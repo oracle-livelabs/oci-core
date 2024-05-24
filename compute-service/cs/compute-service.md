@@ -64,9 +64,10 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![](images/create-compute-livelabs-3.png)
 
-5. Select *Intel Skylake*, then select **VM.Standard.2.1** as the shape, and click **Select Shape**.
+5. Select *Specialty and previous generation*, then select **VM.Standard.2.1** as the shape, and click **Select Shape**.
 
-    ![](images/create-compute-livelabs-4.png)</if>
+    ![](images/livelabs-create-compute-4.png)
+    ![](images/create-compute-livelabs-4b.png)</if>
 
 3. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
 
