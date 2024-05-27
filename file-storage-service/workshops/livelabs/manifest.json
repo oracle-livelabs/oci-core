@@ -1,7 +1,7 @@
 {
     "workshoptitle": "Oracle Cloud Infrastructure Configuring File System Storage",
     "help": "livelabs-help-oci_us@oracle.com",
-	"tutorials": [
+    "tutorials": [
         {
             "title": "Introduction",
             "filename": "./../../intro/intro.md"
@@ -17,7 +17,7 @@
         },
         {
             "title": "Lab 2: Configure File System Storage",
-            "filename": "./../../file-storage-service.md"
+            "filename": "./../../file-storage-service/file-storage-service.md"
         },
         {
             "title": "Need Help?",
