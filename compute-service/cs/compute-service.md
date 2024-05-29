@@ -75,7 +75,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![Create step 2](images/assign-ip.png " ")</if>
 
     <if type="livelabs">
-    ![](images/create-compute-livelabs-4b.png)</if>
+    ![](images/assign-ip.png)</if>
 
     >**Note:** You need a public IP address, so that you can SSH into the running instance later in this lab.
 
