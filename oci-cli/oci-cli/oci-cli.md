@@ -23,7 +23,7 @@ Estimated Time: 45 minutes
     ![](images/CLI_008.png)
 
 
-3. Return to the OCI Console and navigate to **Identity & Security -> Compartments**. Copy the OCID of the assigned compartment and save for later use.
+3. Return to the OCI Console and navigate to **Identity & Security -> Compartments**. Copy the OCID of the root compartment (or whichever compartment you have been assigned/are using for this lab) and save for later use.
 
     ![](images/CLI_009.png " ")
 
