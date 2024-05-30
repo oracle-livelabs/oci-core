@@ -16,7 +16,7 @@ Watch the video below for a quick walk-through of the lab.
 In this lab, you will:
 - Create a compute instance
 - Connect to the compute instance
-<if type ="freetier">- Install Apache HTTP server</if>
+<if type="freetier">- Install Apache HTTP server</if>
 
 ### Prerequisites
 
