@@ -15,7 +15,7 @@ Estimated Time: 45 minutes
     ```
     <copy>
     oci iam availability-domain list
-    <copy>
+    </copy>
     ```
 
     This will list all availability domains in the current region.  Make note of one of the availability domain names. It should look something like this `nESu:US-ASHBURN-AD-1`. You will use this in a future step.
