@@ -19,6 +19,10 @@
         {
             "title": "Lab 2: Getting started with the OCI Command Line Interface (CLI)",
             "filename": "../../oci-cli/oci-cli.md"
+        }, 
+        {
+            "title": "Lab 3: Cleaning up resources made with OCI Command Line Interface (CLI)",
+            "filename": "../../oci-cli/cli-cleanup.md"
         },
         {
             "title": "Need Help?",
