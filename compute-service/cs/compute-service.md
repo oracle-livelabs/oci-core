@@ -16,7 +16,7 @@ Watch the video below for a quick walk-through of the lab.
 In this lab, you will:
 - Create a compute instance
 - Connect to the compute instance
-- Install Apache HTTP server
+<if type="freetier">- Install Apache HTTP server</if>
 
 ### Prerequisites
 
@@ -64,9 +64,10 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![](images/create-compute-livelabs-3.png)
 
-5. Select *Intel Skylake*, then select **VM.Standard.2.1** as the shape, and click **Select Shape**.
+5. Select *Specialty and previous generation*, then select **VM.Standard.2.1** as the shape, and click **Select Shape**.
 
-    ![](images/create-compute-livelabs-4.png)</if>
+    ![](images/livelabs-create-compute-4.png)
+    ![](images/create-compute-livelabs-4b.png)</if>
 
 3. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
 
@@ -74,7 +75,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![Create step 2](images/assign-ip.png " ")</if>
 
     <if type="livelabs">
-    ![](images/create-compute-livelabs-4b.png)</if>
+    ![](images/assign-ip.png)</if>
 
     >**Note:** You need a public IP address, so that you can SSH into the running instance later in this lab.
 

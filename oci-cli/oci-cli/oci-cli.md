@@ -8,7 +8,7 @@ In this lab, you will use Oracle Cloud Shell (which has the OCI CLI preinstalled
 
 Estimated Time: 45 minutes
 
-## Task 1: Use the CLI to create a VCN with one public subnet
+## Task 1: Use the CLI to create networking resources and launch an instance
 
 1. In the Cloud Shell, enter the following command:
 
@@ -20,56 +20,30 @@ Estimated Time: 45 minutes
 
     This will list all availability domains in the current region.  Make note of one of the availability domain names. It should look something like this `nESu:US-ASHBURN-AD-1`. You will use this in a future step.
 
-    ![](images/CLI_008.png " ")
+    ![](images/CLI_008.png)
 
-2. Save the availability domain as a shell variable:
 
-    ```
-    <copy>
-    AD_NAME="<insert the OCID>"
-    </copy>
-    ```
-    ![Save AD as a shell variable](images/ad.png " ")
-
-3. Return to the OCI Console and navigate to **Identity & Security -> Compartments**. Copy the OCID of the assigned compartment.
+3. Return to the OCI Console and navigate to **Identity & Security -> Compartments**. Copy the OCID of the root compartment (or whichever compartment you have been assigned/are using for this lab) and save for later use.
 
     ![](images/CLI_009.png " ")
 
     ![](images/CLI_010.png " ")
 
-4. Save the copied OCID value as `COMPARTMENT_ID`.
+5. Create a new virtual cloud network with a unique CIDR block. You will need the OCID of your compartment. Save the OCID of the VCN to use later.
 
     ```
     <copy>
-    COMPARTMENT_ID="<compartment OCID value>"
-    </copy>
-    ```
-    ![Save Compartment ID](images/compartment_id.png " ")
-
-5. Create a new virtual cloud network with a unique CIDR block. You will need the OCID of your compartment.
-
-    ```
-    <copy>
-    oci network vcn create --cidr-block 192.168.0.0/16 -c $COMPARTMENT_ID --display-name CLI-Demo-VCN --dns-label clidemovcn
+    oci network vcn create --cidr-block 192.168.0.0/16 -c <compartment ocid> --display-name CLI-Demo-VCN --dns-label clidemovcn
     </copy>
     ```
 
     ![](images/CLI_012.png " ")
 
-6. Save the `id:` of the resource after it is created as `VCN_OCID`.
+7. Enter the following command to list VCN's. Replace ```<compartment ocid>``` with your compartment OCID.
 
     ```
     <copy>
-    VCN_OCID="<vcn id>"
-    </copy>
-    ```
-    ![Save VCN OCID](images/vcn_ocid.png " ")
-
-7. Enter the following command to list VCN's. Replace $COMPARTMENT_ID with your compartment OCID.
-
-    ```
-    <copy>
-    oci network vcn list --compartment-id $COMPARTMENT_ID
+    oci network vcn list --compartment-id <compartment ocid>
     </copy>
     ```
 
@@ -77,31 +51,22 @@ Estimated Time: 45 minutes
 
     *Note: It should return the details of the VCN you created.*
 
-8. Create a new security list.
+8. Create a new security list. Make note of the OCID and save it for later.
 
     ```
     <copy>
-    oci network security-list create --display-name PubSub1 --compartment-id $COMPARTMENT_ID --vcn-id $VCN_OCID --egress-security-rules  '[{"destination": "0.0.0.0/0", "destination-type": "CIDR_BLOCK", "protocol": "all", "isStateless": false}]' --ingress-security-rules '[{"source": "0.0.0.0/0", "source-type": "CIDR_BLOCK", "protocol": 6, "isStateless": false, "tcp-options": {"destination-port-range": {"max": 80, "min": 80}}}]'
+    oci network security-list create --display-name PubSub1 --compartment-id <compartment ocid> --vcn-id <vcn ocid> --egress-security-rules  '[{"destination": "0.0.0.0/0", "destination-type": "CIDR_BLOCK", "protocol": "all", "isStateless": false}]' --ingress-security-rules '[{"source": "0.0.0.0/0", "source-type": "CIDR_BLOCK", "protocol": 6, "isStateless": false, "tcp-options": {"destination-port-range": {"max": 80, "min": 80}}}]'
     </copy>
     ```
 
-    ![](images/CLI_013.png " ")
-
-9.  Save the resource `id` as `SECURITY_LIST_OCID`:
-
-    ```
-    <copy>
-    SECURITY_LIST_OCID="<security list ocid>"
-    </copy>
-    ```
-    ![](images/security_list_ocid.png " ")
+    ![](images/CLI_013.png)
 
 
-10. Create a public subnet.
+10. Create a public subnet. Save the OCID of the subnet for later use.
 
     ```
     <copy>
-    oci network subnet create --cidr-block 192.168.10.0/24 -c $COMPARTMENT_ID --vcn-id $VCN_OCID --security-list-ids '["$SECURITY_LIST_OCID"]'
+    oci network subnet create --cidr-block 192.168.10.0/24 -c <compartment ocid> --vcn-id <vcn ocid> --security-list-ids '["<security list OCID>"]'
     </copy>
     ```
 
@@ -109,51 +74,31 @@ Estimated Time: 45 minutes
 
     *Note: You have the option to specify up to 5 security lists and a custom route table.  In this case, we are only assigning one security list and allowing the system to automatically associate the default route table.*
 
-11. Save the ``id:`` of the resources after it is created as `SUBNET_OCID`.
+12. Create an Internet Gateway. You will need the OCID of your VCN and Compartment. Make note of the OCID of the internet gateway and save it for later use.
 
     ```
     <copy>
-    SUBNET_OCID="<subnet id>"
-    </copy>
-    ```
-
-    ![](images/subnet_ocid.png " ")    
-
-12. Create an Internet Gateway. You will need the OCID of your VCN and Compartment.
-
-    ```
-    <copy>
-    oci network internet-gateway create -c $COMPARTMENT_ID --is-enabled true --vcn-id $VCN_OCID --display-name DemoIGW
+    oci network internet-gateway create -c <compartment ocid> --is-enabled true --vcn-id <vcn ocid> --display-name DemoIGW
     </copy>
     ```
 
     ![](images/CLI_015.png " ")
 
-13. Save the `id:` for this resource after it has been created as `INTERNET_GATEWAY_OCID`:
+14. Next, we will update the default route table with a route to the internet gateway. First, you will need to locate the OCID of the default route table. Save the OCID to use in the next step.
 
     ```
     <copy>
-    INTERNET_GATEWAY_OCID="<internet gateway id"
+    oci network route-table list -c <compartment ocid> --vcn-id <vcn ocid>
     </copy>
     ```
-    
-    ![](images/internet_gateway.png " ")
-
-14. Next, we will update the default route table with a route to the internet gateway. First, you will need to locate the OCID of the default route table.
-
-    ```
-    <copy>
-    oci network route-table list -c $COMPARTMENT_ID --vcn-id $VCN_OCID
-    </copy>
-    ```
-    ![](images/CLI_016.png " ")
+    ![](images/CLI_016.png)
 
 
-14. Update the route table with a route to the internet gateway. When prompted to continue enter `y`.
+15. Update the route table with a route to the internet gateway. When prompted to continue enter `y`.
 
     ```
     <copy>
-    oci network route-table update --rt-id $ROUTE_TABLE_OCID --route-rules '[{"cidrBlock":"0.0.0.0/0","networkEntityId":"$INTERNET_GATEWAY_OCID"}]'
+    oci network route-table update --rt-id <route table ocid> --route-rules '[{"cidrBlock":"0.0.0.0/0","networkEntityId":"<internet gateway ocid>"}]'
     </copy>
     ```
 
@@ -163,47 +108,35 @@ Estimated Time: 45 minutes
 
     *Note: Use QUERY to find Oracle Linux Image ID, then launch a compute instance.*
 
-15. Use the CLI `query` command to retrieve the OCID for the latest Oracle Linux image.  
+15. Use the CLI `query` command to retrieve the OCID for the latest Oracle Linux image. Save the image OCID for later use.
 
     ```
     <copy>
-    oci compute image list --compartment-id $COMPARTMENT_ID --query 'data[?contains("display-name",`Oracle-Linux`)]|[0:1].["display-name",id]' --all
+    oci compute image list --compartment-id <compartment ocid> --query 'data[?contains("display-name",`Oracle-Linux`)]|[?!contains("display-name",`arch64`)]|[0:1].["display-name",id]' --all
     </copy>
     ```
 
     You may find more information on the Query command [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/cliusing.htm#ManagingCLIInputandOutput).
 
-    ![](images/cli_query.png)        
+    ![](images/CLIimageocid.png)
 
-16. Save a note of the image ID for future use:
+16. Navigate to your .ssh directory and save the ssh key file path to your public key, you will need it for the next step.
 
-    ```
-    <copy>
-    IMAGE_ID="<image id>"
-    </copy>
-    ```
-    ![](images/image_id.png)    
+    ![](images/clissh.png)
 
-17. To determine what shapes are available in your tenancy, use this command:
+    The path to my public ssh key will be ``` /home/<username for cloudshell>/.ssh/cloudshellkey.pub ```
+
+17. To query Standard shapes compatible with the image and available in your tenancy, use this command:
 
     ```
     <copy>
-    oci compute shape list -c $COMPARTMENT_ID
+    oci compute shape list -c <compartment OCID> --image-id <image OCID> --query 'data[?contains("shape",`Standard`)]|[*].["shape"]' --all
     </copy>
     ```
 
-18. Choose a shape from the output, for example, "VM.Standard1.4":
+18. Find "VM.Standard2.1" from the output. Save the name of the shape for future use.
 
-    ![](images/select-shape.png)
-
-19. Save the shape as a variable:
-
-    ```
-    <copy>
-    SHAPE="<shape>"
-    </copy>
-    ```
-    ![](images/shape.png)
+    ![](images/shapeocid.png)
 
 20. Launch a compute instance with the following command.  We previously created a regional subnet because our command did not include a specific availability domain. For compute instances, we must specify an availability domain and subnet.
 
@@ -212,15 +145,17 @@ Estimated Time: 45 minutes
     - Availability domain name
     - Subnet OCID
     - Valid compute shape (i.e. VM.Standard2.1)
-    - Your public SSH key
+    - Your public SSH key file path
 
     ```
     <copy>
-    oci compute instance launch --availability-domain $AD_NAME --display-name demo-instance --image-id $IMAGE_ID --subnet-id $SUBNET_OCID --shape $SHAPE --compartment-id $COMPARTMENT_ID --assign-public-ip true --ssh-authorized-keys-file $SSH_KEY_FILE
+    oci compute instance launch --availability-domain <ad name> --display-name demo-instance --image-id <image id> --subnet-id <subnet id> --shape <shape name> --compartment-id <compartment id> --assign-public-ip true --ssh-authorized-keys-file <path to public ssh key>
     </copy>
     ```
 
     Capture the ``id:`` of the compute instance launch output.
+
+    ![](images/CLIcomputelaunch.png)
 
 21. Check the status of the instance
 
@@ -234,31 +169,6 @@ Estimated Time: 45 minutes
 
     ![](images/instance_status.png)
 
-## Task 2: Delete the resources
-
-1. Switch to  OCI console window.
-
-2. If your Compute instance is not displayed, From OCI services menu Click **Compute** -> **Instances**.
-
-     ![](images/compute_instances.png " ")
-
-3. Locate your compute instance, Click the Action icon and then **Terminate**.
-
-     ![](images/RESERVEDIP_HOL0016.PNG " ")
-
-4. Make sure Permanently delete the attached Boot Volume is checked, Click **Terminate Instance**. Wait for instance to fully Terminate.
-
-     ![](images/RESERVEDIP_HOL0017.PNG " ")
-
-5. From OCI services menu Click **Networking** -> **Virtual Cloud Networks**, a list of all VCNs will
-appear.
-
-     ![](images/vcn.png " ")
-
-6. Locate your VCN , Click the Action icon and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
-
-     ![](images/RESERVEDIP_HOL0018.PNG " ")
-
 *Congratulations! You have successfully completed the lab.*
 
 ## Learn More
@@ -269,5 +179,6 @@ appear.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-- **Last Updated By/Date** - Kamryn Vinson, November 2021
+- **Last Updated By/Date** - Uma Kumar, May 2024
+
 
