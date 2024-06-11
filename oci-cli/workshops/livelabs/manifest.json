@@ -19,6 +19,10 @@
             "filename": "../../oci-cli/oci-cli.md"
         },
         {
+            "title": "Lab 3: Cleaning up resources made with OCI Command Line Interface (CLI)",
+            "filename": "../../oci-cli/cli-cleanup.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
