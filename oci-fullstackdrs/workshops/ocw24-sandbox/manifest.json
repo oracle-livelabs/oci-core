@@ -28,9 +28,9 @@
       "filename": "../../drpg-plan-setup/drpg-plan-customize-ocw24.md"
     },
     {
-      "title": "Lab 4: Perform prechecks and break MuShop app" ,
-      "description": "Perform prechecks and break MuShop app",
-      "filename": "../../switchover-prechecks/switchover-prechecks.md"
+      "title": "Lab 4: Perform prechecks and break the MuShop app" ,
+      "description": "Perform prechecks and break the MuShop app",
+      "filename": "../../failover-prechecks/failover-prechecks-ocw24.md"
     },
     {
       "title": "Lab 5: Perform Failover",

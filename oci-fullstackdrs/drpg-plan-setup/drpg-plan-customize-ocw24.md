@@ -107,30 +107,31 @@ Watch the video below for a quick walk-through of the lab.
 
     ![stop drill error](./images/phoenix-drplan-stopdrill-error.png)
 
-    Select the **mushop-app-switchover** plan, and you should be able to various built-in plan groups.
+9.  Select the **mushop-app-switchover-iad-phx** plan, and you should be able to various built-in plan groups.
 
-    ![drpg plan details](./images/phoenix-drplan-details-new.png)
+    ![so drpg plan details](./images/phoenix-drplan-details-so.png)
 
-9.  Based on the members we added in both primary and standby DRPG, Full Stack DR created these built-in plans. You can navigate the plan groups to see the various steps created.
+10. Select the **mushop-app-failover-iad-phx** plan, and you should be able to various built-in plan groups.
 
-    ![drpg plan more details](./images/phoenix-drplan-moredetails-new.png)
+    ![fo drpg plan details](./images/phoenix-drplan-details-fo.png)
 
-    - **Built-in Prechecks** - These are prechecks for the app, DB, volume groups and Load balancer switchover.
-    - **Update Source Load Balancers' Backend Sets** - Remove backend servers from the Load balancer backend set in the Ashburn region. 
-    - **Stop Compute Instances** - Stop app virtual machines in the Ashburn region.
-    - **Switchover Volume Groups** - Switchover volume groups in the phoenix region.
-    - **Switchover Autonomous Databases** - Switchover ATP DB from Ashburn to Phoenix region
-    - **Launch Compute Instances** - Create virtual machines in the phoenix region.
-    - **Reverse Volume Groups' Replication** - Set up reverse volume group replication from Phoenix to Ashburn region.
-    - **Terminate Compute Instances** - Terminate compute instances in the Ashburn region. By default the plan group is disabled, it can be enabled depending on the requirements.
-    - **Remove Compute Instances From DR Protection Group** - Remove compute instances from the Ashburn DRPG.
-    - **Terminate Volume Groups** - Terminate volume groups in the Ashburn region. By default the plan group is disabled, it can be enabled depending on the requirements.
-    - **Remove Volume Groups From DR Protection Group** - Remove volume group from the Ashburn DRPG
-    - **Update Destination Load Balancers' Backend Sets** - Add backend servers to the load balancer backend set in the Phoenix region. Backend servers IP will be mapped based on the launched VM's in the Phoenix region.
-  
-## Task 2: Customize the Switchover plan-Restore Database Wallet group
+11. Select the **mushop-app-stardrill-in-phx** plan, and you should be able to various built-in plan groups.
 
-1.  Create a user-defined group for **Restore Database Wallet**.This can be done by selecting **Add group** in the *mushop-app-switchover* plan
+    ![startdrill drpg plan details](./images/phoenix-drplan-details-startdrill.png)
+
+12. Full Stack DR will create the built-in plan groups depending on the members and type of DR plans. Summary of various built-in groups created by Full Stack DR.
+
+    ![dr plans summary](./images/phoenix-drplans-summary.png)
+
+13. For the rest of the tutorial, we are going to use **mushop-app-failover-iad-phx** plan.
+
+## Task 2: Customize the Failover plan-Restore Database Wallet group
+
+1. From the Plans section, select **mushop-app-failover-iad-phx** plan.
+
+    ![failover plan](./images/phoenix-mushop-app-failover-iad-phx.png)
+
+2.  Create a user-defined group for **Restore Database Wallet**.This can be done by selecting **Add group** in the *mushop-app-failover-iad-phx* plan
 
     ![add plan group](./images/phoenix-plangroup-add-new.png)
 
@@ -159,7 +160,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![added dbrestore step1](./images/phoenix-dbrestore-node0step-new.png)
 
-3.  Add step for *Restore Database Wallet on Node-1*
+4.  Add step for *Restore Database Wallet on Node-1*
 
     ![added dbrestore newstep](./images/phoenix-dbrestore-newstep.png)
 
@@ -193,9 +194,9 @@ Watch the video below for a quick walk-through of the lab.
     ![added dbrestore plangroup](./images/phoenix-dbrestore-addedpg-new.png)
  
 
-## Task 3: Customize the Switchover plan-Restore the Application Group
+## Task 3: Customize the Failover plan-Restore the Application Group
 
-1.  Create a user-defined group for **Restore Application**.This can be done by selecting **Add group** in the *mushop-app-switchover* plan
+1.  Create a user-defined group for **Restore Application**.This can be done by selecting **Add group** in the *mushop-app-failover-iad-phx* plan
 
     ![add plan group](./images/phoenix-plangroup-add-new.png)
 
@@ -257,22 +258,22 @@ Watch the video below for a quick walk-through of the lab.
 
     ![added restoreapp plangroup](./images/phoenix-restoreapp-addedpg-new.png)
  
-## Task 4: Verify the Switchover plan and plan groups
+## Task 4: Verify the Failover plan and plan groups
 
-1.  We have created all the required (two) user-defined groups in the **mushop-app-switchover** switchover plan as part of the Mushop application switchover.
+1.  We have created all the required (two) user-defined groups in the **mushop-app-failover-iad-phx** failover plan as part of the Mushop application failover.
 
     ![review all userdefined groups](./images/phoenix-userdef-groups-new.png)
 
-2.  Let's review the **mushop-app-switchover** switchover plan 
+2.  Let's review the **mushop-app-failover-iad-ph** failover plan 
 
     -  Built-in Prechecks - These are the built-in prechecks groups for all the Plan groups (Built-in and User defined).
-    -  Based on the members we have added in both Primary DRPG and Standby DRPG, Full Stack DR created **eleven** Built-in plan groups for the switchover plan.
-    -  We have manually created **two** user-defined groups as per the Mushop application switchover requirement.
-    -  In summary, the **mushop-app-switchover** switchover plan has created with *one*- Built-in prechecks plan group, *eleven*- Built-in Plan groups,*two*- User defined Plan groups
+    -  Based on the members we have added in both Primary DRPG and Standby DRPG, Full Stack DR created **four** Built-in plan groups for the failover plan.
+    -  We have manually created **two** user-defined groups as per the Mushop application failover requirements.
+    -  In summary, the **mushop-app-failover-iad-phx** failover plan has created with *one*- Built-in prechecks plan group, *four*- Built-in Plan groups,*two*- User defined Plan groups
 
     ![all groups in DR plan](./images/phoenix-all-plangroups-new.png)
 
-3.  Plan groups can be reordered as per the switchover workflow requirement.Since we have created the user defined plan groups in correct order, there is no need to reorder the user defined plan groups.
+3.  Plan groups can be reordered as per the failover workflow requirement.Since we have created the user defined plan groups in correct order, there is no need to reorder the user defined plan groups.
 
     ![reorder dr plan group](./images/phoenix-reorder-groups-new.png)
 
@@ -281,4 +282,4 @@ Watch the video below for a quick walk-through of the lab.
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,Jun 2024
+- **Last Updated By/Date** -  Suraj Ramesh,June 2024
