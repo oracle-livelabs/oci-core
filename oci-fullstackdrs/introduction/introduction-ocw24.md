@@ -12,9 +12,7 @@ For more details you can refer [MuShop Application](https://github.com/oracle-qu
 
 ## Overview of OCI Full Stack Disaster Recovery and the workshop 
 
-Oracle Cloud Infrastructure (OCI) Full Stack Disaster Recovery orchestrates the transition of compute, database, and applications between OCI regions from around the globe with a single click. Customers can automate the steps needed to recover one or more business systems without redesigning or re-architecting existing infrastructure, databases, or applications and without needing specialized management or conversion servers.
-
-Throughout this workshop, we will use Full Stack DR to denote OCI Full Stack Disaster recovery.
+Oracle Cloud Infrastructure (OCI) Full Stack Disaster Recovery orchestrates the transition of compute, database, and applications between OCI regions from around the globe with a single click. Customers can automate the steps needed to recover one or more business systems without redesigning or re-architecting existing infrastructure, databases, or applications and without needing specialized management or conversion servers.Throughout this workshop, we will use Full Stack DR to denote OCI Full Stack Disaster recovery.
 
 - Full Stack DR assures comprehensive business continuity from a variety of data center outages. Using Disaster Recovery Service for disaster recovery ensures that organizations are minimally impacted if there is a region-wide outage or Availability Domain outage.
 
@@ -30,7 +28,7 @@ Below are some of the critical functionalities of Full Stack Disaster Recovery S
 - Perform pre-checks before the DR execution plan.
 - Provide a framework to customize DR operations.
 
-###Benefits of OCI Full Stack Disaster Recovery
+### Benefits of OCI Full Stack Disaster Recovery
 
 Full Stack Disaster Recovery provides multiple benefits in the area of business continuity.
 
