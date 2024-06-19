@@ -1,19 +1,22 @@
-# Perform pre-checks for the DR Failover Plan and break the MuShop application
+# Perform pre-checks for the DR Switchover Plan and Pre-check the MuShop Application
 
 ## Introduction
 
-In this lab, we will execute prechecks for the **mushop-app-failover-iad-phx** failover plan, which we created in lab 3 and break the Mushop app. Run Prechecks will execute all the **Built-in Prechecks** in parallel. Running **Run Prechecks** will only perform the pre-checks and not the actual execution. Since we are running a failover plan, depending on the number of affected services, during actual failover area some prechecks might fail. In this lab, since we are mimicking a failover, prechecks should work fine. 
+In this lab, we will execute **Run Prechecks** for the **mushop-app-switchover** switchover plan, which we have created in lab4. **Run Prechecks**
+will execute all the **Built-in Prechecks** in parallel.
+
+Execute **Run Prechecks**  will perform only the *pre-checks* and not the actual execution. Having the pre-checks completed successfully is essential as a pre-requisite for running the actual switchover plan.
 
 Estimated Time: 10 Minutes
 
 ### Objectives
 
-- Perform Run prechecks for the Mushop application failover plan
+- Perform Run prechecks for the MuShop-app-switchover  plan
 - Monitor the executed prechecks plan
 - Verify the executed prechecks plan
 - Verify the MuShop application and break the application
 
-## Task 1: Perform Run prechecks for the Mushop application failover plan
+## Task 1: Perform Run prechecks for the mushop-app-switchover plan
 
 1.  Login into OCI Console with your provided Credentials. Select region as **Pheonix**.
 
@@ -27,37 +30,37 @@ Estimated Time: 10 Minutes
 
     ![drpg landing page](./images/drpg-status-phoenix-new.png)
 
-4.  Select the **mushop-phoenix** DRPG and select **mushop-app-failover-iad-phx** plan
+4.  Select the **mushop-phoenix** DRPG and select **mushop-app-switchover** plan
 
-    ![drpg switchover plan](./images/phoenix-fodrplan-created-new.png)
+    ![drpg switchover plan](./images/phoenix-drplan-created-new.png)
 
-5.  Navigate to the **Run prechecks** section, which will be right below the **mushop-app-failover-iad-phx** plan
+5.  Navigate to the **Run prechecks** section, which will be right below the **mushop-app-switchover** plan
 
-    ![navigate drpg prechecks](./images/phoenix-forun-prechecks-new.png)
+    ![navigate drpg prechecks](./images/phoenix-run-prechecks-new.png)
 
-6.  In the **Run prechecks** window, provide the Plan execution name as **mushop-app-failover-iad-phx-prechecks** and hit **Run prechecks**
+6.  In the **Run prechecks** window, provide the Plan execution name as **mushop-app-switchover-prechecks** and hit **Run prechecks**
 
-    ![drpg execute prechecks](./images/phoenix-foexecute-prechecks-new.png)
+    ![drpg execute prechecks](./images/phoenix-execute-prechecks-new.png)
 
 ## Task 2: Monitor the executed prechecks plan
 
-1.  Navigate to **Plan executions** section under **Resources** and select the **mushop-app-failover-iad-phx-prechecks** plan execution.Initially, it will show all the **Built-in Prechecks** as *Queued*
+1.  Navigate to **Plan executions** section under **Resources** and select the **mushop-app-switchover-prechecks** plan execution.Initially, it will show all the **Built-in Prechecks** as *Queued*
 
-    ![prechecks status](./images/phoenix-foexecute-queued-new.png)
+    ![prechecks status](./images/phoenix-execute-queued-new.png)
 
 2.  Refresh the page; within a few seconds, the **State** will change from *Queued* to *In Progress*.
 
-    ![prechecks in-progress](./images/phoenix-foexecute-inprogress-new.png)
+    ![prechecks in-progress](./images/phoenix-execute-inprogress-new.png)
 
 3.  All the **Built-in Prechecks**  steps will execute in parallel; you can monitor the various steps log. Navigate to the three dots section for the respective built-in step and click. You get the option to view the log and download the log. These logs are stored in the object storage bucket provided during the DRPG creation. You can monitor the Progress and download the log if necessary for troubleshooting.
 
-    ![prechecks monitor](./images/phoenix-foexecute-monitor-new.png)
+    ![prechecks monitor](./images/phoenix-execute-monitor-new.png)
 
 ## Task 3: Verify the executed prechecks plan
 
-1. After 2-3 mins, **Built-in Prechecks**  will be completed successfully. You can verify the duration of each step, status, duration of entire prechecks, etc.
+1. After 2-3 mins, **Built-in Prechecks**  will be completed successfully. You can verify the duration of each step, status, duration of entire prechecks, etc. *It is essential to have successful completion of pre-check execution*
 
-    ![prechecks completed](./images/phoenix-foexecute-done-new.png)
+    ![prechecks completed](./images/phoenix-execute-done-new.png)
 
 Refer to the **Troubleshooting tips** section for known failures and correction actions.
 
@@ -75,8 +78,7 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
 
      ![get loadbalancer IP](./images/ashburn-loadbalancer-ip-new.png)
 
-    Verify the mushop application using **http://ashburn loadbalancer ip**
-    replace with the actual value from Step 2. Navigate around the site and verify the cat products.
+    Open a tab in your browser and verify the Mushop Application using the gathered public IP address. Play around the site and verify various cat products.
 
     ![mushop app](./images/mushop-app-new.png)
 
@@ -96,11 +98,11 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
     ![modify port 81](./images/port81-edit-new.png)
     ![work request](./images/workrequest-listener-new.png)
 
-    Wait for a few seconds and refresh the browser tab of the MuShop application. You should see that the MuShop site can't be reached or Error: Request failed with status code 502. 
+    Wait for a few seconds and refresh the browser tab of the MuShop application. You should see that the MuShop site can't be reached.  
 
     ![reverify mushop app](./images/mushop-broken-new.png)
 
-    We have created an outage to a working MuShop application; in the next lab, we will use the Full Stack DR service to initiate the  failover plan of the Full Stack (App VM's/Database/Application Customization) from Ashburn to the Phoenix region.
+    We have created an outage to a working MuShop application; in the next lab, we will use the Full Stack DR service to initiate the Switchover of the Full Stack (App VM's/Database/Application Customization) from Ashburn to the Phoenix region.
 
     You may now [Proceed to the next lab](#next)
 
@@ -113,4 +115,4 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh, June 2024
+- **Last Updated By/Date** - Suraj Ramesh,May 2023

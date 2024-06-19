@@ -6,7 +6,7 @@ In this lab, we will Create and Associate Disaster Recovery Protection Groups (D
 
 **DR Protection group (DRPG)** – A resource type used by Full Stack DR.  A DR Protection Group represents a consistency grouping defined for the purposes of disaster recovery.  It is a collection of different OCI resources that comprise an application and must be treated as a combined group when performing disaster recovery operations.  For example, a DR Protection Group may consist of application servers (compute instances), associated block storage (grouped as volume groups), and databases.
 
-**Members**- A resource type which can be added toa DRPG. Full Stack DR currently supports all the below member types. These resources can be added as member to a DRPG.
+**Members**- A resource type which can be added to a DRPG. Full Stack DR currently supports all the below member types. These resources can be added as member to a DRPG.
 
 - Compute Instances ( Moving and Non-moving)
 - Boot and Block Volumes (Volume Groups)
@@ -15,7 +15,6 @@ In this lab, we will Create and Associate Disaster Recovery Protection Groups (D
 - Oracle Autonomous Database on Shared Exadata Infrastructure (Serverless)
 - Load Balancer
 - File Storage Service
-
 
 Estimated Time: 25 Minutes
 
@@ -26,10 +25,10 @@ Watch the video below for a quick walk-through of the lab.
 
 - Create DRPG in Ashburn and Phoenix regions.
 - Associate Ashburn DRPG as primary and Phoenix DRPG as Standby
-- Add members to Ashburn DRPG (Primary)- ATP(Primary DB),MuShop Compute VM's(node-0 and node-1),two volume groups( Boot volumes of MuShop Compute VM's),Load Balancer
-- Add members to Phoenix DRPG (Standby)-ATP(Standby DB),Load Balancer
+- Add members to Ashburn DRPG (Primary) - ATP(Primary DB),MuShop Compute VM's(node-0 and node-1),two volume groups( Boot volumes of MuShop Compute VM's),Load Balancer
+- Add members to Phoenix DRPG (Standby)- ATP(Standby DB),Load Balancer
 
-**As part of the MuShop architecture,Virtual machines are deployed as Cold VM or Pilot light pattern.Full Stack DR will create the MuShop VM's in the phoenix region during the DR plan execution**
+**As part of the MuShop architecture, virtual machines are deployed using either the Cold VM or Pilot Light pattern. During the DR plan execution, Full Stack DR will create the MuShop VMs in the Phoenix region.**
 
 ## Task 1: Create DRPG in Ashburn and Phoenix regions
 
@@ -253,7 +252,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active. In case if you don't see the Load Balancer member, add it again. **Make sure all the required members are added to the DRPG.**
 
-10. We have added all the required members in the **mushop-ashburn** DRPG. It should show a ATP Database, two Compute Instances, two Volume groups and a Load Balancer.DRPG status should show as active.
+10. We have added all the required members in the **mushop-ashburn** DRPG. It should show ADB (Primary) Database, two Compute Instances, two Volume groups and a Load Balancer.DRPG status should show as active.
 
     ![drpg members ashburn](./images/ashburn-allmembers-new.png)
 
@@ -312,7 +311,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active. **Make sure all the required members are added to the DRPG.**
 
-8.  Now, we have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Database and Load Balancer. DRPG status will show as active.
+8.  Now, we have added all the required members in the **mushop-phoenix** DRPG. It should ADB (Standby) Database and a Load Balancer. DRPG status will show as active.
 
     ![drpg members phoenix](./images/phoenix-allmembers-new1.png)
 

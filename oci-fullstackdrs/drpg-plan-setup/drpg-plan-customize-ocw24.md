@@ -2,17 +2,17 @@
 
 ## Introduction
 
-In this lab will focus on how to create switchover,failover and start drills plans. We will also customize the failover plan as per MuShop application requirements. Full Stack DR service wont allow the create DR plans in the DRPG which has a role. All DR Plans *must* be created in the standby region (Phoenix). It is because, in the case of the worst-case scenario, the entire primary region outside the Full Stack DR will not be accessible from the primary region. 
+In this lab, we will focus on how to create switchover, failover, and start drill plans. We will also customize the failover plan according to MuShop application requirements. The Full Stack DR service does not allow the creation of DR plans in the DRPG with a **Primary** role (Ashburn). All DR plans must be created in the DRPG with a **standby** role (Phoenix). 
 
-**DR Plans**- DR plan is an automated DR workflow (a DR runbook) created by Full Stack Disaster Recovery to perform disaster recovery for all the resources in the primary DR protection group. 
+**DR Plans**- A DR Plan represents a DR workflow associated with a pair of DR Protection Groups. A DR Plan is represented as a sequence of Plan Groups. These Plan Groups in turn consist of Plan Steps. A DR Plan can only be created at the Standby DR Protection Group.
 
 There are four types of DR plans which you can create in Full Stack DR.
 
-- Switchover Plan - Used for planned and controlled transition of services from a primary to a standby region. It involves shutting down services in the primary region and bringing them up in the standby region. 
-- Failover Plan - Used for unplanned recovery during disasters or outages. It immediately activates services in the standby region whenever the primary is entirely inaccessible.
-- Drill Plans - Performing DR drills is an essential DR service capability that allows users to exercise and validate their business continuity configuration and plans without disrupting their production stack.
-    - Start Drill - It creates a replica of your production stack without impacting production.Perform a complete dry run of a failover for validation
-    - Stop Drill - Removes the replica of your production stack created earlier by Start drill.
+- Switchover Plan:Used for planned and controlled transition of services from a primary to a standby region. It involves shutting down services in the primary region and bringing them up in the standby region. 
+- Failover Plan: Used for unplanned recovery during disasters or outages. It immediately activates services in the standby region whenever the primary is entirely inaccessible.
+- Drill Plans: Performing DR drills is an essential DR service capability that allows users to exercise and validate their business continuity configuration and plans without disrupting their production stack.
+    - Start Drill: It creates a replica of your production stack without impacting production.Perform a complete dry run of a failover for validation
+    - Stop Drill: Removes the replica of your production stack created earlier by Start drill.
  
 **Plan Group** – A group of steps in a DR Plan. A DR Plan consists of one or more Plan Groups that execute sequentially. All steps in a Plan Group execute in parallel. 
 
@@ -61,7 +61,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![drpg create plan](./images/phoenix-create-drplan-new.png)
 
-    The plan will start creating; select the plan **mushop-app-switchover**.
+    The plan will start creating; select the plan **mushop-app-switchover-iad-phx**.
 
     ![drpg creating plan](./images/phoenix-drplan-creating-new.png)
 
@@ -78,7 +78,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![drpg create plan](./images/phoenix-create-drplanfo-new.png)
 
-    The plan will start creating; select the plan **mushop-app-failover**.
+    The plan will start creating; select the plan **mushop-app-failover-iad-phx**.
 
     ![drpg creating plan](./images/phoenix-drplan-creatingfo-new.png)
 
@@ -123,7 +123,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![dr plans summary](./images/phoenix-drplans-summary.png)
 
-13. For the rest of the tutorial, we are going to use **mushop-app-failover-iad-phx** plan.
+13. For the rest of the tutorial, we are going to use **mushop-app-failover-iad-phx** plan. Based on the required you can add respective user-defined plan groups for other DR plans.
 
 ## Task 2: Customize the Failover plan-Restore Database Wallet group
 

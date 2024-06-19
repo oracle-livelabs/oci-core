@@ -2,9 +2,11 @@
 
 ## About the Workshop
 
-In this workshop, we will create various DR plans (Switchover,Failover,Start Drill) and execute failover plan for a Cloud-native Application (MuShop) deployed in OCI across two OCI regions.
+In this workshop, we will use OCI Full Stack DR to create various DR plans (Switchover, Failover, Start Drill) and execute a failover plan for a cloud-native application (MuShop) deployed in OCI across two OCI regions. 
 
-- MuShop is a demo application designed to showcase various interoperable cloud services on Oracle Cloud Infrastructure. It is an e-commerce website offering a variety of cat products and is a 3-tier web application.
+MuShop is a demo application designed to showcase various interoperable cloud services on Oracle Cloud Infrastructure. It is an e-commerce website offering a variety of cat products and is a 3-tier web application.
+
+For more details you can refer [MuShop Application](https://github.com/oracle-quickstart/oci-cloudnative/tree/master/deploy/basic).
 
 ![MuShop webpage](./images/mushop.png)
 
@@ -28,7 +30,7 @@ Below are some of the critical functionalities of Full Stack Disaster Recovery S
 - Perform pre-checks before the DR execution plan.
 - Provide a framework to customize DR operations.
 
-### Benefits of OCI Full Stack Disaster Recovery
+###Benefits of OCI Full Stack Disaster Recovery
 
 Full Stack Disaster Recovery provides multiple benefits in the area of business continuity.
 
@@ -43,7 +45,7 @@ Full Stack Disaster Recovery provides multiple benefits in the area of business 
 
 ### Estimated Workshop Time
 
-Approximately 2 hrs
+**120 minutes** 
 
 ### Workshop Architecture
 
@@ -53,7 +55,7 @@ Approximately 2 hrs
 
 - **Ashburn** is the Primary region, and **Phoenix** is the Standby region.
 - Pre-requisites for using Full Stack DR is to create various infrastructure resources and configure replication
-- For this lab, LiveLabs provisions various resources like ATP-S Primary and Standby, Compute instances,Setup block volume replication,Load Balancers, Object storage etc as per the workshop Architecture diagram shown above.
+- For this lab, LiveLabs provisions various resources like Autonomous DB (Primary and Standby),Compute instances,Setup block volume replication,Load Balancers, Object storage etc as per the workshop Architecture diagram shown above.
 
 ### Workshop Objectives
 
@@ -70,13 +72,11 @@ Approximately 2 hrs
 
 ### Reference links
 
-- [MuShop Application](https://github.com/oracle-quickstart/oci-cloudnative/tree/master/deploy/basic)
+[Full Stack Disaster Recovery product page](https://www.oracle.com/cloud/full-stack-disaster-recovery/)
 
+[Full Stack Disaster Recovery User Guide](https://docs.oracle.com/en-us/iaas/disaster-recovery/index.html)
+  
 You may now [Proceed to the next lab](#next)
-
-### Disclaimer
-
-The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remains at the sole discretion of Oracle.
 
 ## Acknowledgements
 
