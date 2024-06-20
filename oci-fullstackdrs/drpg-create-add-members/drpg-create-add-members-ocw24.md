@@ -273,7 +273,7 @@ Watch the video below for a quick walk-through of the lab.
 
 4.  In the Phoenix region DRPG page, add the members required in the **mushop-phoenix** DRPG. *We will be adding ATP Standby Database and Load Balancer*. Let's add those details.  **We don't need to add compute and volume groups as we VM's are designed in cold VM DR pattern and those VM's will be created automatically during the DR switchover process by Full Stack DR**
 
-6.  Add ATP Standby Database. Select **mushop-phoenix** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
+5.  Add ATP Standby Database. Select **mushop-phoenix** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
     ![drpg add member](./images/phoenix-add-member-new.png)
 
@@ -290,7 +290,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-7. Add Load Balancer as member.
+6. Add Load Balancer as member.
 
     It will show various resource types and select **Load Balancer**
     ![drpg resource type](./images/phoenix-resource-new-members.png)
@@ -311,7 +311,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active. **Make sure all the required members are added to the DRPG.**
 
-8.  Now, we have added all the required members in the **mushop-phoenix** DRPG. It should ADB (Standby) Database and a Load Balancer. DRPG status will show as active.
+7.  Now, we have added all the required members in the **mushop-phoenix** DRPG. It should ADB (Standby) Database and a Load Balancer. DRPG status will show as active.
 
     ![drpg members phoenix](./images/phoenix-allmembers-new1.png)
 
