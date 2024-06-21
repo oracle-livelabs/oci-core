@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Disaster Strikes? Be a Disaster Recovery hero in 120 min using OCI Full Stack DR",
+  "workshoptitle": "Disaster Strikes? Be a DR Hero in 120 Minutes Using OCI Full Stack DR",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -10,32 +10,37 @@
     {
       "title": "Introduction",
       "description": "Introduction to Full Stack DR Service and workshop",
-      "filename": "../../introduction/introduction.md"
+      "filename": "../../introduction/introduction-ocw24.md"
     },
     {
       "title": "Lab 1: Prepare your environments",
       "description": "Prepare your environments",
-      "filename": "../../pre-switchover/pre-switchover.md"
+      "filename": "../../pre-switchover/pre-switchover-ocw24.md"
     },
     {
-      "title": "Lab 2: Creation of DRPG and Switchover plan",
-      "description": "Create DRPG and Switchover plan",
-      "filename": "../../drpg-plan-setup/drpg-plan-setup.md"
+      "title": "Lab 2: Create DR Protection groups and add members",
+      "description": "Create DR Protection groups and add members",
+      "filename": "../../drpg-create-add-members/drpg-create-add-members-ocw24.md"
     },
     {
-      "title": "Lab 3: Perform prechecks and break MuShop app" ,
-      "description": "Perform prechecks and break MuShop app",
-      "filename": "../../switchover-prechecks/switchover-prechecks.md"
+      "title": "Lab 3: Create DR plans and customize Failover plan",
+      "description": "Create DR plans and customize Failover plan",
+      "filename": "../../drpg-plan-setup/drpg-plan-customize-ocw24.md"
     },
     {
-      "title": "Lab 4: Perform Switchover",
-      "description": "Perform Switchover",
-      "filename": "../../switchover-execute/switchover-execute.md"
+      "title": "Lab 4: Perform prechecks and break the MuShop app" ,
+      "description": "Perform prechecks and break the MuShop app",
+      "filename": "../../failover-prechecks/failover-prechecks-ocw24.md"
     },
     {
-      "title": "Lab 5: Post Switchover tasks",
-      "description": "Post Switchover tasks",
-      "filename": "../../post-switchover/post-switchover.md"
+      "title": "Lab 5: Run Failover DR plan",
+      "description": "Run Failover DR plan",
+      "filename": "../../failover-execute/failover-execute-ocw24.md"
+    },
+    {
+      "title": "Lab 6: Post Failover tasks",
+      "description": "Post Failover tasks",
+      "filename": "../../post-failover/post-failover-ocw24.md"
     },
     {
         "title": "Need Help?",
