@@ -133,7 +133,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active. In case if you don't see the ATP DB member, add it again.
 
-6.  Add first Compute instance **mushop-xxxxx-0** as member,select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
+3.  Add first Compute instance **mushop-xxxxx-0** as member,select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
     It will show various resource types and select **Compute**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
@@ -162,7 +162,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-7.  Add second Compute instance **mushop-xxxxx-1** as member,select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
+4.  Add second Compute instance **mushop-xxxxx-1** as member,select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
     It will show various resource types and select **Compute**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
@@ -191,7 +191,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-8.  Add the first volume group  **mushop-volume-group-0**. This volume group consists of the boot volume of mushop-xxxx-0 VM and has cross-region replication configured to the phoenix region.
+5.  Add the first volume group  **mushop-volume-group-0**. This volume group consists of the boot volume of mushop-xxxx-0 VM and has cross-region replication configured to the phoenix region.
 
     Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
@@ -211,7 +211,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-9. Add the second volume group **mushop-volume-group-1**. This volume group consists of the boot volume of mushop-xxxx-1 VM and has cross-region replication configured to the phoenix region.
+6. Add the second volume group **mushop-volume-group-1**. This volume group consists of the boot volume of mushop-xxxx-1 VM and has cross-region replication configured to the phoenix region.
 
     Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
 
@@ -231,7 +231,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-10. Add Load Balancer as member.
+7. Add Load Balancer as member.
 
     It will show various resource types and select **Load Balancer**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
@@ -252,7 +252,7 @@ Watch the video below for a quick walk-through of the lab.
 
     Navigate back to the DR Protection group page; the status of DRPG should be active. In case if you don't see the Load Balancer member, add it again. **Make sure all the required members are added to the DRPG.**
 
-10. We have added all the required members in the **mushop-ashburn** DRPG. It should show ADB (Primary) Database, two Compute Instances, two Volume groups and a Load Balancer.DRPG status should show as active.
+8. We have added all the required members in the **mushop-ashburn** DRPG. It should show ADB (Primary) Database, two Compute Instances, two Volume groups and a Load Balancer.DRPG status should show as active.
 
     ![drpg members ashburn](./images/ashburn-allmembers-new.png)
 
