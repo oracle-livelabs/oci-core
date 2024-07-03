@@ -39,11 +39,14 @@ This lab assumes you have:
       - **VCN Name**: Provide a name
       - **Compartment**: Ensure your assigned compartment is selected
       - **VCN CIDR Block**: Provide a CIDR block (10.0.0.0/16)
+
+    ![](images/file-s1p4.png " ")
+
       - **Public Subnet CIDR Block**: Provide a CIDR block (10.0.1.0/24)
       - **Private Subnet CIDR Block**: Provide a CIDR block (10.0.2.0/24)
       - Click **Next**
 
-    ![](images/file-s1p4.png " ")
+    ![](images/file-s1p41.png " ")
 
 5. Verify all the information and click **Create**.
 
@@ -143,13 +146,13 @@ You are assumed to have generated your SSH Keys in the *Cloud Shell*.
 
     ![](images/quickstart-s2p4.png " ")
 
-    Under **Networking**:
-     - **Virtual cloud network Compartment**: Choose the compartment in which you created your VCN
-     - **Virtual cloud network**: Choose the VCN you created in Task 1
-     - **Subnet Compartment:** Choose the compartment in which you created your VCN
-     - **Subnet:** Choose the Public Subnet (Public Subnet-Name\_of\_VCN) under **Public Subnets**
-     - **Public IP address**: check **Assign a public IPv4 address**
-     - **Use network security groups to control traffic** : Leave un-checked
+    Under **Primary VNIC information**:
+     - **Primary network Compartment**: Check "Select existing virtual cloud network" to select the compartment in which you created your VCN
+     - **VNC in your compartment**: Choose the VCN you created in Task 1
+     - **Subnet Compartment:** Check "Select existing subnet" to select the compartment in which you created your VCN
+     - **Subnet in your compartment:** Choose the Public Subnet (Public Subnet-Name\_of\_VCN) under **Public Subnets**
+     - **Primary VNIC IP addresses**: Check **Automatically assign private IPv4 address**
+     - **Public IPv4 address** : Check **Automatically assign public IPv4 address**
     
     ![](images/configure-networking.png " ")
 
@@ -162,16 +165,20 @@ You are assumed to have generated your SSH Keys in the *Cloud Shell*.
 
     > **Note:** If 'Service limit' error is displayed, choose a different shape from VM.Standard2.1, VM.Standard.E2.1, VM.Standard1.1, VM.Standard.B1.1, or choose a different Availability Domain.
 
-4.  Wait for instance to be in **Running** state. Go to the directory where you created you SSH Keys.
+4.  Wait for instance to be in **Running** state. Save the public IP address.
+
+    ![](images/compute-public-ip.png " ")
+
+5. Go to the directory where you created you SSH Keys.
 
    For example, in Cloud Shell, enter command:
     ```
 	<copy>cd .ssh</copy>
 	```
 
-5.  Enter **ls** to verify your SSH key file exists.
+6.  Enter **ls** to verify your SSH key file exists.
 
-6.  Enter command
+7.  Enter command
     ```
     <copy>bash</copy>
     ```
@@ -182,21 +189,25 @@ You are assumed to have generated your SSH Keys in the *Cloud Shell*.
 
     *Hint: If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command.*
 
-7.  Enter 'yes' when prompted for security message.
+8.  Enter 'yes' when prompted for security message.
 
      ![](images/connect-instance.png " ")
 
-8.  Verify opc@COMPUTE\_INSTANCE\_NAME appears on the prompt.
+9.  Verify opc@COMPUTE\_INSTANCE\_NAME appears on the prompt.
 
 ## Task 4: Mount the File System Storage to Compute Instance
 
 Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance) can use the command line to connect to a file system and write files. Mount targets serve as file system network access points. After your mount target is assigned an IP address, you can use it to mount the file system. You need to install an NFS client and create a mount point. When you mount the file system, the mount point effectively represents the root directory of the File Storage system, allowing you to write files to the file system from the instance.
 
-1. Click the navigation button, click **Storage**, under **File Storage**, click **File Systems**. Click your File System. Under **Exports**, click the mount target name under **Mount Target**. Click Action icon on the right, and select **Mount Commands**. Execute the three commands in Mount Commands in your Cloud shell / Terminal. *If you finish this part, you can skip step 2-4 in this Task.*
+1. Click the navigation button, click **Storage**, under **File Storage**, click **File Systems**. Click your File System. Under **Exports**, you'll see the mount target name under **Mount Target**. Click on the mount target name and then on the Action icon on the right, and select **View Details**.
 
-    ![](images/fss-006.png " ")
+    ![](images/mount-view-details.png " ")
+
+2. Click on **Mount commands** to see the commands.
+
     ![](images/mount-commands.png " ")  
-2. After you ssh to your compute instance, enter command:
+
+3. After you, restore your cloud shell and enter command:
 
     ```
     <copy>sudo yum install nfs-utils</copy>
@@ -204,14 +215,14 @@ Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance
     (This is just to ensure nfs-utils is installed)
 
 
-3. Enter command:
+4. Enter command:
 
     ```
     <copy>sudo mkdir -p /mnt/nfs-data</copy>
     ```
     to create a mount point.
 
-4. Mount the file system, enter command:
+5. Mount the file system, enter command:
 
     ```
     <copy>bash</copy>
@@ -222,7 +233,7 @@ Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance
     ```
     > **Note:** The 10.x.x.x should be replaced with the IP of File System Storage. EXPORT\_PATH\_NAME should be replaced with Export path name used earlier. (Example: If 10.0.0.3 is the IP of File System Storage, and '/' is the EXPORT\_PATH\_NAME, then **sudo mount 10.0.0.3:/ /mnt/nfs-data**).
 
-5. Enter command:
+6. Enter command:
 
     ```
     <copy>df -h</copy>
@@ -239,7 +250,7 @@ Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance
 
      ![](images/fss-008.png " ")
 
-6. Go to your VCN instance, click **Security Lists** and then **Default Security List for YOUR\_VCN\_NAME**. If you do NOT see any Ingress Rule with *ICMP* as IP Protocal and want to ping the mount point, then you can add an Ingress Rule:
+7. Go to your VCN instance, click **Security Lists** and then **Default Security List for YOUR\_VCN\_NAME**. If you do NOT see any Ingress Rule with *ICMP* as IP Protocal and want to ping the mount point, then you can add an Ingress Rule:
 
       - Source CIDR: 0.0.0.0/0
       - IP Protocol: ICMP
@@ -247,7 +258,7 @@ Users of Ubuntu and Linux operating systems (we launched a Oracle Linux instance
 
     > **Note:** If you already had one or multiple ICMP Ingress Rules, you can skip this step.
 
-7. **Optional:** Second compute instance can be created and have the same file system mounted on it, following Step 3 and Step 4.
+8. **Optional:** Second compute instance can be created and have the same file system mounted on it, following Step 3 and Step 4.
 
 You have now mounted Enterprise grade File System Storage created in OCI to your compute instance. You can place files in this file system. All other VM instances that have mounted this file system will have access to it.
 
@@ -266,9 +277,12 @@ In this section, we will delete all the resources we created in this lab.
 
 4. Click **File Systems** on the top of the page, click the action icon next to your File System, and click **Delete**.
 
-5. From OCI Services menu, click **Mount Targets**. **Delete** your mount target.
-     ![](images/delete-mount-target.png " ")
+### Delete Mount Targets Storage from Storage menu
+1. From OCI Services menu, click **Mount Targets**, then click your Mount target name.
 
+2. Click on **Delete**, and confirm **Delete**.
+
+     ![](images/mount-delete-fss.png " ")
 
 ### Delete Compute Instance
 
@@ -282,13 +296,43 @@ In this section, we will delete all the resources we created in this lab.
 
      ![](images/terminate-instance.png " ")
 
+### Delete Security list
+
+2. Under Resources, select **Subnets**. Select **private-subnet-YourVNC**. Click on **Terminate**.
+
+
+3. Under Resources, select **Route Tables**. Select the one for your private subnet, then click **Terminate**. Go back, select the *default route table for YourVNC*. Click the action icon next to the route rules, and click **Remove**.
+
+7. Under Resources, select **Subnets**. Select **public-subnet-YourVNC**. Click on **Delete**.
+
+    ![](images/terminate-subnet-list.png " ")
+
+6. Under Resources, select **NAT Gateways**. Click the action icon next to the internet gateway, and click **Terminate**.
+
+5. Under Resources, select **Service Gateways**. Click the action icon next to the internet gateway, and click **Terminate**.
+
+4. Under Resources, select **Internet Gateways**. Click the action icon next to the internet gateway, and click **Terminate**.
+
+    ![](images/terminate-internet-gateway.png " ")
+
+
+1. From OCI services menu, under **Networking > Virtual cloud networks > Your VNC**, click **Security Lists**. Select **security-list-for-private-subnet-YourVNC**. Click on **Terminate**.
+
+    ![](images/delete-subnet-list.png " ")
+
+
 ### Delete VCN
 
 1. From OCI services menu, under **Networking**, click **Virtual Cloud Networks**. A list of all VCNs will appear.
 
-2. Locate your VCN, click Action icon, and then **Terminate**. Click **Terminate All** in the Confirmation window. Click **Close** once VCN is deleted.
+    a. You can choose to check for all resources by clicking on **Search compartments for resources associated with this VCN**, then on **Delete All**.
 
-     ![](images/delete-vcn.png " ")
+     ![](images/scan-delete-vcn.png " ")
+
+    b. Unclick the **Search compartments for resources associated with this VCN** and delete directly.
+
+     ![](images/scan-resources.png " ")
+     ![](images/noscan-delete-all.png " ")
 
 *Congratulations! You have successfully completed the lab.*
 
@@ -297,5 +341,5 @@ In this section, we will delete all the resources we created in this lab.
 - **Author** - Flavio Pereira, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
 - **Contributors** - Isa Kessinger, QA Intern, LiveLabs QA Team
-- **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, November 2021
+- **Last Updated By/Date** - Ramona Magadan, Technical Product Manager, Database Product Management, July 2024
 
