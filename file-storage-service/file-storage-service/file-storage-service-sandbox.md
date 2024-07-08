@@ -19,77 +19,7 @@ This lab assumes you have:
 
 > **Note:** OCI UI is being updated, thus some screenshots in the instructions may be different from the actual UI.
 
-## Task 1: Sign in to OCI Console and Create VCN
-
-1. Sign in using your cloud tenant name, user name, and password. Use the login option under **Oracle Cloud Infrastructure**.
-
-2. In your OCI Console (homepage), click navigation menu on the top-left corner. From OCI Services menu, under **Networking**, click **Virtual Cloud Networks**.
-    ![](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
-
-    Select the compartment assigned to you from drop-down menu on left, and click **Start VCN Wizard**.
-
-    ![](images/vcn-wizard.png " ")
-    > **Note:** Ensure the correct Compartment is selected under *Compartment* list.
-
-3. Click **Create VCN with Internet Connectivity** and click **Start VCN Wizard**.
-   ![](images/quickstart-s1p3.png " ")
-
-4. Fill out the dialog box:
-
-      - **VCN Name**: Provide a name
-      - **Compartment**: Ensure your assigned compartment is selected
-      - **VCN CIDR Block**: Provide a CIDR block (10.0.0.0/16)
-
-    ![](images/file-s1p4.png " ")
-
-      - **Public Subnet CIDR Block**: Provide a CIDR block (10.0.1.0/24)
-      - **Private Subnet CIDR Block**: Provide a CIDR block (10.0.2.0/24)
-      - Click **Next**
-
-    ![](images/file-s1p41.png " ")
-
-5. Verify all the information and click **Create**.
-
-6. This will create a VCN with the following components:
-
-    *VCN, Public subnet, Private subnet, Internet gateway (IG), NAT gateway (NAT), Service gateway (SG)*
-
-7. Click **View Virtual Cloud Network** to display your VCN details.
-	![](images/quickstart-s1p7.png " ")
-
-8. In your VCN Details page, click **Security Lists** and then **Default Security list for YOUR\_VCN\_NAME**.
-
-	![](images/file-s1p7.png " ")
-
-9. In Security List Details page, click **Add Ingress Rules**.
-    ![](images/file-s1p8.png " ")
-    Click **+Another Ingress Rule** and add below two rules:
-
-    > **Note:** You will be adding **TWO** Ingress Rules, so do not click the blue confirm **Add Ingress Rules** button until you finish adding Two Ingress Rules.
-
-    Rule # 1 for access of NFS and NLM traffic with Destination Port Range of 2048-2050. (Type the values).
-
-    - **Make sure STATELESS Flag in un-checked**
-    - **SOURCE TYPE:** CIDR
-    - **SOURCE CIDR:** 10.0.0.0/16
-    - **IP PROTOCOL:** TCP
-    - **SOURCE PORT RANGE:** All
-    - **DESTINATION PORT RANGE:** 2048-2050
-
-    Rule #2 for allowing traffic to a Destination Port Range of 111 for the NFS rpcbind utility.
-
-    - **Make sure STATELESS Flag in un-checked**
-    - **SOURCE TYPE:** CIDR
-    - **SOURCE CIDR:** 10.0.0.0/16
-    - **IP PROTOCOL:** TCP
-    - **SOURCE PORT RANGE:** All
-    - **DESTINATION PORT RANGE:** 111
-
-    ![](images/ingress-rules.png " ")
-
-10. Click **Add Ingress Rules**.
-
-## Task 2: Create File System Storage
+## Task 1: Create File System Storage
 
 In this section, we will create File System Storage.
 
@@ -298,26 +228,28 @@ In this section, we will delete all the resources we created in this lab.
 
 ### Delete Security list
 
-1. Under Resources, select **Subnets**. Select **private-subnet-YourVNC**. Click on **Terminate**.
+2. Under Resources, select **Subnets**. Select **private-subnet-YourVNC**. Click on **Terminate**.
 
 
-2. Under Resources, select **Route Tables**. Select the one for your private subnet, then click **Terminate**. Go back, select the *default route table for YourVNC*. Click the action icon next to the route rules, and click **Remove**.
+3. Under Resources, select **Route Tables**. Select the one for your private subnet, then click **Terminate**. Go back, select the *default route table for YourVNC*. Click the action icon next to the route rules, and click **Remove**.
 
-3. Under Resources, select **Subnets**. Select **public-subnet-YourVNC**. Click on **Delete**.
+7. Under Resources, select **Subnets**. Select **public-subnet-YourVNC**. Click on **Delete**.
 
     ![](images/terminate-subnet-list.png " ")
 
-4. Under Resources, select **NAT Gateways**. Click the action icon next to the internet gateway, and click **Terminate**.
+6. Under Resources, select **NAT Gateways**. Click the action icon next to the internet gateway, and click **Terminate**.
 
 5. Under Resources, select **Service Gateways**. Click the action icon next to the internet gateway, and click **Terminate**.
 
-6. Under Resources, select **Internet Gateways**. Click the action icon next to the internet gateway, and click **Terminate**.
+4. Under Resources, select **Internet Gateways**. Click the action icon next to the internet gateway, and click **Terminate**.
 
     ![](images/terminate-internet-gateway.png " ")
 
-7. From OCI services menu, under **Networking > Virtual cloud networks > Your VNC**, click **Security Lists**. Select **security-list-for-private-subnet-YourVNC**. Click on **Terminate**.
+
+1. From OCI services menu, under **Networking > Virtual cloud networks > Your VNC**, click **Security Lists**. Select **security-list-for-private-subnet-YourVNC**. Click on **Terminate**.
 
     ![](images/delete-subnet-list.png " ")
+
 
 ### Delete VCN
 
