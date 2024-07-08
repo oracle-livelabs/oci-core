@@ -33,7 +33,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![drpg failover plan](./images/phoenix-drplanfo-created-new.png)
 
-5.  Navigate to the **Execute DR Plan** section, which will be right below the **mushop-app-switchover** plan, and select
+5.  Navigate to the **Execute DR Plan** section, which will be right below the **mushop-app-failover-iad-phx** plan, and select
 
     ![drpg execute plan](./images/phoenix-executefo-plan-new.png)
 
@@ -91,4 +91,4 @@ Refer to the **Troubleshooting tips** section for known failures and corrective 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,June 2024
+- **Last Updated By/Date** - Suraj Ramesh,July 2024
