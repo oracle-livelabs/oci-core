@@ -123,7 +123,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![dr plans summary](./images/phoenix-drplans-summary.png)
 
-13. For the rest of the tutorial, we are going to use **mushop-app-failover-iad-phx** plan. Based on the required you can add respective user-defined plan groups for other DR plans.
+13. For the rest of the tutorial, we are going to use **mushop-app-failover-iad-phx** plan. Based on the requirements, you can add respective user-defined plan groups for other DR plans.
 
 ## Task 2: Customize the Failover plan-Restore Database Wallet group
 
@@ -135,7 +135,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![add plan group](./images/phoenix-plangroup-add-new.png)
 
-2.  Add **Restore Database Wallet** in the Group name, select **Add after** radio button, select **Update Destination Load Balancers' Backend Sets** in the Group and Click **Add Step**
+2.  Add **Restore Database Wallet** in the Group name, select **Add after** radio button, select **Load Balancers - Update Destination Backend Sets** in the Group and Click **Add Step**
 
     ![add dbrestore plangroup](./images/phoenix-dbrestore-plangroup-new.png)
 
