@@ -7,7 +7,7 @@ We will verify the DR Protection Group (DRPG) status and MuShop Application post
 Estimated Time: 5 Minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Post Switchover tasks](videohub:)
+[Post Failover tasks](videohub:)
 
 ### Objectives
 
@@ -72,9 +72,9 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Conclusion
 
-Using OCI Full Stack DR, we have seen the complete automation of failing over the MuShop application (Full Stack) from the Ashburn region to the Phoenix region with just one click! 
+You are a Disaster Recovery Hero Now!!!! Using OCI Full Stack DR, we have seen the complete automation of failing over the MuShop application (Full Stack) from the Ashburn region to the Phoenix region with just one click! 
 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,November June 2024
+- **Last Updated By/Date** - Suraj Ramesh,November August 2024
