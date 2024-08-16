@@ -66,9 +66,9 @@ Watch the video below for a quick walk-through of the lab.
 
     ![drpg execute monitor progress](./images/phoenix-executefo-moving-new.png)
 
-6.  Keep monitoring the rest of the groups and steps; each step will complete depending on the actual task (DB Failover, Launch VM, Execute scripts ), etc.). For example, Autonomous DB Failover will take more time when comparing to Launching VMs. You can verify the start and end of each step, total duration, logs, etc.
+6.  Keep monitoring the rest of the groups and steps; each step will complete depending on the actual task (DB Failover, Launch VM,Update Load Balancer, Execute scripts ), etc.). For example, Autonomous DB Failover will take more time when comparing to Launching VMs. You can verify the start and end of each step, total duration, logs, etc.
 
-    ![drpg execute monitor progress1 ](./images/phoenix-executefo-moving1-new.png)
+    ![drpg execute monitor progress1 ](./images/phoenix-executefo-moving-new.png)
 
 7.  Wait for all the steps to complete successfully.  It is important to monitor the progress of each step and take necessary actions in case of any failures.
 
@@ -76,7 +76,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 3: Validate the Failover plan
 
-1.  From the plan execution details, verify the duration of each step, status, duration of the entire failover plan, etc. *It is essential to have successful completion of all steps*. In this example it took around **25 minutes** to complete.These timings will vary as it has depending factors like ATP Data Guard failover, compute launch,script execution etc.Use the **Expand all** button to expand all the steps and the **Collapse all** button for collapsing. Use the view or download log option to see step execution details.
+1.  From the plan execution details, verify the duration of each step, status, duration of the entire failover plan, etc. *It is essential to have successful completion of all steps*. In this example it took around **12 minutes** to complete.These timings will vary as it has depending factors like ATP Data Guard failover,compute launch,update load balancer,script execution etc.Use the **Expand all** button to expand all the steps and the **Collapse all** button for collapse. Use the view or download log option to see step execution details.
 
     ![drpg execution done](./images/phoenix-executefo-done-new.png)
 
@@ -91,4 +91,4 @@ Refer to the **Troubleshooting tips** section for known failures and corrective 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,July 2024
+- **Last Updated By/Date** - Suraj Ramesh,August 2024
