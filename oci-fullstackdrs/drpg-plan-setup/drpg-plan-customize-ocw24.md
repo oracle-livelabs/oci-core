@@ -266,7 +266,7 @@ Watch the video below for a quick walk-through of the lab.
 
 2.  Let's review the **mushop-app-failover-iad-ph** failover plan 
 
-    -  Built-in Prechecks - These are the built-in prechecks groups for all the Plan groups (Built-in and User defined).
+    -  Prechecks-Built in - These are the built-in prechecks groups for all the Plan groups (Built-in and User defined).
     -  Based on the members we have added in both Primary DRPG and Standby DRPG, Full Stack DR created **four** Built-in plan groups for the failover plan.
     -  We have manually created **two** user-defined groups as per the Mushop application failover requirements.
     -  In summary, the **mushop-app-failover-iad-phx** failover plan has created with *one*- Built-in prechecks plan group, *four*- Built-in Plan groups,*two*- User defined Plan groups
@@ -282,4 +282,4 @@ Watch the video below for a quick walk-through of the lab.
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,June 2024
+- **Last Updated By/Date** -  Suraj Ramesh,August 2024
