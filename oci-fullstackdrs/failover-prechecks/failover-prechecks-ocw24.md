@@ -99,8 +99,9 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
     Wait for a few seconds and refresh the browser tab of the MuShop application. You should see that the MuShop site can't be reached or Error: Request failed with status code 502. 
 
     ![reverify mushop app](./images/mushop-broken-new.png)
+    ![reverify mushop app](./images/mushop-broken-new1.png)
 
-    We have created an outage to a working MuShop application; in the next lab, we will use the Full Stack DR service to initiate the  failover plan of the Full Stack (App VM's/Database/Application Customization) from Ashburn to the Phoenix region.
+    We have created an outage to a working MuShop application; in the next lab, we will use the Full Stack DR service to initiate the failover plan of the Full Stack (App VM's/Database/Load Balancer/Application Customization) from Ashburn to the Phoenix region.
 
     You may now [Proceed to the next lab](#next)
 
@@ -113,4 +114,4 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh, June 2024
+- **Last Updated By/Date** - Suraj Ramesh, August 2024
