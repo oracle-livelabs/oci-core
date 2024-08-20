@@ -189,7 +189,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Add dbrestore steps](./images/phoenix-dbrestore-bothsteps-new.png)
 
-    **mushop-phoenix** DRPG will go into updating state, and after a few seconds, it will return to the active state. Refresh the DRPG page if required. You should be able to see that the *Restore Database Wallet* Plan group is created successfully with both steps. **Restore Database Wallet** plan group will be added after **Update Destination Load Balancers' Backend Sets** plan group.
+    **mushop-phoenix** DRPG will go into updating state, and after a few seconds, it will return to the active state. Refresh the DRPG page if required. You should be able to see that the *Restore Database Wallet* Plan group is created successfully with both steps. **Restore Database Wallet** plan group will be added after **Load Balancers - Update Destination Backend Sets** plan group.
 
     ![added dbrestore plangroup](./images/phoenix-dbrestore-addedpg-new.png)
  
