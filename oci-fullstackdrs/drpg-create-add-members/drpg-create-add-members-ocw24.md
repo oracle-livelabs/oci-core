@@ -8,13 +8,18 @@ In this lab, we will Create and Associate Disaster Recovery Protection Groups (D
 
 **Members**- A resource type which can be added to a DRPG. Full Stack DR currently supports all the below member types. These resources can be added as member to a DRPG.
 
-- Compute Instances ( Moving and Non-moving)
-- Boot and Block Volumes (Volume Groups)
-- Oracle Exadata Database Service
-- Oracle Base Database Service
-- Oracle Autonomous Database on Shared Exadata Infrastructure (Serverless)
-- Load Balancer
+- Compute ( Standard Compute and Dedicated VM Host (DVH))
+- Block Storage (Volume Groups)
+- Oracle Autonomous Database Serverless (ADB-S)
+- Oracle Autonomous Database on Dedicated Exadata Infrastructure (ADB-D)
+- Autonomous Database on Exadata Cloud@Customer (ADB-C@C)
+- Oracle Base Database Service (BaseDB/DBCS)
+- Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D/ExaCS)
+- Oracle Exadata Database Service on Cloud@Customer (ExaCC)
+- Oracle Exadata Database Service on Exascale Infrastructure (ExaDB-XS)
+- Load Balancer and Network Load Balancer 
 - File Storage Service
+- Object Storage Bucket
 
 Estimated Time: 25 Minutes
 
