@@ -24,7 +24,7 @@ In this lab, we will Create and Associate Disaster Recovery Protection Groups (D
 Estimated Time: 25 Minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Creation of DR protection group and switchover plan](videohub:)
+[Creation of DR protection group and switchover plan](videohub:1_bsr4qru5)
 
 ### Objectives
 
@@ -329,4 +329,4 @@ Watch the video below for a quick walk-through of the lab.
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,August 2024
+- **Last Updated By/Date** -  Suraj Ramesh,September 2024
