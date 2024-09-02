@@ -6,6 +6,9 @@ In this lab, we will execute prechecks for the **mushop-app-failover-iad-phx** f
 
 Estimated Time: 10 Minutes
 
+Watch the video below for a quick walk-through of the lab.
+[Failover Prechecks](videohub:1_sbpe8nrp)
+
 ### Objectives
 
 - Perform Run prechecks for the Mushop application failover plan
@@ -114,4 +117,4 @@ Refer to the **Troubleshooting tips** section for known failures and correction 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh, August 2024
+- **Last Updated By/Date** - Suraj Ramesh, September 2024

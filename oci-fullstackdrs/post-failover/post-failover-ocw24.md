@@ -7,7 +7,7 @@ We will verify the DR Protection Group (DRPG) status and MuShop Application post
 Estimated Time: 5 Minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Post Failover tasks](videohub:)
+[Post Failover tasks](videohub:1_rc5k9ftv)
 
 ### Objectives
 
@@ -77,4 +77,4 @@ You are a Disaster Recovery Hero Now!!!! Using OCI Full Stack DR, we have seen t
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,November August 2024
+- **Last Updated By/Date** - Suraj Ramesh,September 2024

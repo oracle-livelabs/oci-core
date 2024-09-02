@@ -7,7 +7,7 @@ In this lab, we will run the actual failover plan for the **mushop-app-failover-
 Estimated Time: 30 Minutes
 
 Watch the video below for a quick walk-through of the lab.
-[Perform Failover](videohub:)
+[Perform Failover](videohub:1_sul2dd1i)
 
 ### Objectives
 
@@ -91,4 +91,4 @@ Refer to the **Troubleshooting tips** section for known failures and corrective 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,August 2024
+- **Last Updated By/Date** - Suraj Ramesh,September 2024
