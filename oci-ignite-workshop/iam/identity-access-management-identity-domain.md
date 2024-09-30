@@ -134,7 +134,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    ![Reset password](images/id-domains-resetpw.png)
 
-1. Now, let’s create a security policy that gives your group permissions in your assigned compartment. For example, create a policy that gives permission to members of group **Sandbox-admin** in compartment **Sandbox**:
+1. Now, let’s create a security policy that gives your group permissions in your assigned compartment and another one that allows users to use the CloudShell tool.
 
    a) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Policies**.
 
@@ -165,6 +165,12 @@ For IAM with Identity Domains, what was identified before as IAM users and group
    g) Click **Create**.
 
    ![Click on Create](images/create-policy.png)
+
+   For the CloudShell policy, please follow again the steps above, set a name for your policy (for example, "Policy for CloudShell use") and paste the following policy in the textbox:
+
+   ```
+     <copy>Allow group Sandbox-admin to use cloud-shell-public-network in tenancy</copy>
+     ```
 
 8. Verify user permissions.
 
@@ -224,4 +230,4 @@ _Congratulations! You have successfully completed the lab._
 
 - **Author** - Cristian Manea
 - **Contributors** - Cristian Manea
-- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, September 2024
