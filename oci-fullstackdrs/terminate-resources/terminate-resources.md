@@ -120,5 +120,5 @@ This concludes the lab Protect your business using Oracle Full Stack Disaster Re
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,November 2023
+- **Last Updated By/Date** - Suraj Ramesh,November 2024
 
