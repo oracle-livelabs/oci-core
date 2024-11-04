@@ -128,7 +128,11 @@ Watch the video below for a quick walk-through of the lab.
     It will show various resource types and select **Autonomous Database**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
 
-    Select the Database in your compartment; it will have MushopDB-XXXXX. Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
+    Select the Database in your compartment; it will have MushopDB-XXXXX. 
+    
+    Default option for standby type of DR Drill is "Refreshable clone", so we will select this.
+
+    Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
 
     ![drpg add atp](./images/ashburn-atp-add-new.png)
 
@@ -285,7 +289,11 @@ Watch the video below for a quick walk-through of the lab.
     It will show various resource types and select **Autonomous Database**
     ![drpg resource type](./images/phoenix-resource-new-members.png)
 
-    Select the Database in your compartment; it will have **MushopDB-XXXXX**. Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
+    Select the Database in your compartment; it will have **MushopDB-XXXXX**. 
+    
+    Default option for standby type of DR Drill is "Refreshable clone", so we will select this.
+
+    Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
 
     ![drpg add atp](./images/phoenix-atp-add-new.png)
 
