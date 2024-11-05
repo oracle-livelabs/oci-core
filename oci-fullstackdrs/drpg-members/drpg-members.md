@@ -4,6 +4,21 @@
 
 In this lab, we will add members to the DR Protection groups created and associated in the previous lab. Ashburn is a primary region, and Phoenix is the standby region. This is an optional lab, in case if you want to destroy all the OCI resources.
 
+**Members**- A resource type which can be added to a DRPG. Full Stack DR currently supports all the below member types. These resources can be added as member to a DRPG.
+
+- Compute ( Standard Compute and Dedicated VM Host (DVH))
+- Block Storage (Volume Groups)
+- Oracle Autonomous Database Serverless (ADB-S)
+- Oracle Autonomous Database on Dedicated Exadata Infrastructure (ADB-D)
+- Autonomous Database on Exadata Cloud@Customer (ADB-C@C)
+- Oracle Base Database Service (BaseDB/DBCS)
+- Oracle Exadata Database Service on Dedicated Infrastructure (ExaDB-D/ExaCS)
+- Oracle Exadata Database Service on Cloud@Customer (ExaCC)
+- Oracle Exadata Database Service on Exascale Infrastructure (ExaDB-XS)
+- Load Balancer and Network Load Balancer 
+- File Storage Service
+- Object Storage Bucket
+
 Estimated Time: 15 Minutes
 
 ### Objectives
@@ -38,7 +53,11 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
     It will show various resource types and select **Autonomous Database**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
 
-    Select the Database in your compartment; it will have MushopDB-XXXXX. Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
+    Select the Database in your compartment; it will have MushopDB-XXXXX. 
+    
+    Default option for standby type of DR Drill is "Refreshable clone", so we will select this.
+
+    Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
 
     ![drpg add atp](./images/ashburn-atp-add-new.png)
 
@@ -193,7 +212,11 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
     It will show various resource types and select **Autonomous Database**
     ![drpg resource type](./images/phoenix-resource-new-members.png)
 
-    Select the Database in your compartment; it will have **MushopDB-XXXXX**. Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
+    Select the Database in your compartment; it will have **MushopDB-XXXXX**.
+    
+    Default option for standby type of DR Drill is "Refreshable clone", so we will select this.
+
+    Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
 
     ![drpg add atp](./images/phoenix-atp-add-new.png)
 
@@ -237,4 +260,4 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,November 2023
+- **Last Updated By/Date** -  Suraj Ramesh,November 2024

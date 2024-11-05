@@ -110,9 +110,9 @@ Watch the video below for a quick walk-through of the lab.
     Download the private key for connecting to MuShop compute VM's using the below command in the Cloud Shell.
 
     ````
-    <copy>wget https://bit.ly/mushoppk</copy>
+    <copy>wget https://c4u04.objectstorage.us-ashburn-1.oci.customer-oci.com/p/EcTjWk2IuZPZeNnD_fYMcgUhdNDIDA6rt9gaFj_WZMiL7VvxPBNMY60837hu5hga/n/c4u04/b/livelabsfiles/o/labfiles/mushoppk</copy>
     ````
-
+    
     ![Mushop privatekey](./images/mushoppk-key.png)
 
 10. Change the permission of the private key to `0600` in in the Cloud Shell
@@ -199,5 +199,5 @@ You may now [Proceed to the next lab](#next)
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh, March 2024
+- **Last Updated By/Date** - Suraj Ramesh, November 2024
 
