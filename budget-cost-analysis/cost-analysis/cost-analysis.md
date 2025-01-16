@@ -52,5 +52,5 @@ This concludes this lab.
 
 ## Acknowledgements
 * **Authors/Contributors** - Harshit Kumar, Constantin Sebe, EMEA Hub Sales
-* **Last Updated By/Date** - Harshit Kumar, August 2020
+* **Last Updated By/Date** - Uma Kumar, January 2025
 
