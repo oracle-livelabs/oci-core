@@ -17,9 +17,15 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![Cloud shell open.](./images/cloudshellopen.png " ")
 
+
+
     ![Cloud shell setup.](./images/cloudshellsetup.png " ")
 
+
+
     ![Cloud shell.](./images/cloudshell.png " ")
+
+    <br>
 
 2.  Once the cloud shell has started, enter the following command. Choose the key name you can remember. This will be the keyname you will use to connect to any compute instances you create. Press Enter twice for no passphrase.
 

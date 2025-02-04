@@ -14,8 +14,8 @@ In this workshop, you will:
 - Understand and create your first compartment
 - Learn how to grant access to users
 - Create a Virtual Cloud Network
-- Create a Compute instance
 - Generate a pair of SSH keys
+- Create a Compute instance
 - Create and attach a Block Volume
 
 **<font color="blue">Optional</font>**:
@@ -40,8 +40,8 @@ This video briefly outlines the benefits of Oracle Cloud Infrastructure console:
 Click on the next lab in this workshop to get started.
 
 ## Acknowledgements
-- **Author** - Birsan Radu
+- **Author** - Cristian Manea, Radu Chiru
 - **Contributors** - Oracle DCX team (Birsan Radu, Alexandra Iancu,Cristian Manea, Radu Chiru)
-- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, February 2025
 
 

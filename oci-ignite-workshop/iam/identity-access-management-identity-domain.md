@@ -28,8 +28,9 @@ In this lab, you will:
 - Create a compartment
 - Create a user
 - Create a group
-- Create a policy associated to the group
 - Add user to the group
+- Create a policy associated to the group
+
 
 ### Prerequisites
 
@@ -47,6 +48,8 @@ A compartment is a collection of cloud assets, like compute instances, load bala
  ![Navigation Menu](images/id-compartments.png " ")
 
 1. Click **Create Compartment**.
+
+
    ![Create a compartment](images/create-compartment3.png)
 
 1. Name the compartment **Sandbox** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
@@ -128,13 +131,32 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
       ![Reset password](images/id-domains-user-resetpw.png)
 
-   After clicking in the reset button, your will prompted for confirmation before the reset link is sent.
+   After clicking in the reset button, your will be prompted for confirmation before the reset link is sent.
 
-1. Check the messges in the email account you used for the new user. Open the activation link (password reset will take to a similar screen)
+1. Add User to a Group.
 
-   ![Reset password](images/id-domains-resetpw.png)
+     
+
+      a) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Domains**. From the **Users** list, click the user account that you just created (for example, `Test User`)  to go to the User Details page.
+         ![Navigate to Identity Domains](images/id-domains.png)
+
+      b) Select the default domain.
+         ![Select the Default](images/id-domains-default.png " ")
+
+      c) Under the **Resources** menu on the left, click **Users**, if it's not already selected.
+         ![Select Users](images/id-domains-users.png)
+
+      d) Click **Assign User to groups**.
+         ![Click on Assign User to groups](images/id-domains-users-assign-group.png)
+
+      e) From the **Groups** list, click the group that you just created (for example, `Sandbox-admin`)  to go to the User Details page.
+
+      f) Click **Add**.
+         ![Press the Assign button](images/id-add-user-to-group.png)
+  
 
 1. Now, let’s create a security policy that gives your group permissions in your assigned compartment and another one that allows users to use the CloudShell tool.
+
 
    a) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Policies**.
 
@@ -172,55 +194,12 @@ For IAM with Identity Domains, what was identified before as IAM users and group
      <copy>Allow group Sandbox-admin to use cloud-shell-public-network in tenancy</copy>
      ```
 
-8. Verify user permissions.
 
-   a) Click the **Navigation Menu** in the upper left. Click **Compute** and then click **Instances**.
 
-   ![Navigate to Compute Instances](images/compute-instances.png " ")
 
-   b) Try to select any compartment from the left menu.
+    
 
-   c) The message “**You don’t have permission to view these resources**” appears. This is normal as you did not add the user to the group where you associated the policy.
-      ![Error message can be ignored](images/no-permission.png)
 
-   d) Sign out of the Console.
-
-9. Add User to a Group.
-
-      a) Sign back in with the ***admin*** account.
-
-      b) Click the **Navigation Menu** in the upper left. Navigate to **Identity & Security** and select **Domains**. From the **Users** list, click the user account that you just created (for example, `Test User`)  to go to the User Details page.
-         ![Navigate to Identity Domains](images/id-domains.png)
-
-      C) Select the default domain.
-         ![Select the Default](images/id-domains-default.png " ")
-
-      d) Under the **Resources** menu on the left, click **Users**, if it's not already selected.
-         ![Select Users](images/id-domains-users.png)
-
-      e) Click **Assign User to groups**.
-         ![Click on Assign User to groups](images/id-domains-users-assign-group.png)
-
-      f) From the **Groups** list, click the group that you just created (for example, `Sandbox-admin`)  to go to the User Details page.
-
-      g) Click **Add**.
-         ![Press the Assign button](images/id-add-user-to-group.png)
-
-      h) Sign out of the Oracle Cloud website.
-
-10. Verify user permissions when a user belongs to a specific group.
-
-      a) Sign in with the local **Test User** account you created. Remember to use the latest password you assigned to this user.
-
-      b) Click the **Navigation Menu**. Click **Compute** and then click **Instances**.
-
-      c) Select compartment **Sandbox** from the list of compartments on the left.
-
-      ![Select ***Sandbox***](images/select-demo.png)
-
-      d) There is no message related to permissions and you are allowed to create new instances.  
-
-      e) Sign out.
 
 </if>
 
@@ -229,5 +208,5 @@ _Congratulations! You have successfully completed the lab._
 ## Acknowledgements
 
 - **Author** - Cristian Manea
-- **Contributors** - Cristian Manea
-- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, September 2024
+- **Contributors** - Cristian Manea, Birsan Radu, Alexandra Iancu
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, February 2025
