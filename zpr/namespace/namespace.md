@@ -40,7 +40,7 @@ Take note of the names of these resources and the IP addresses so that your can 
 
 1. Navigate to ZPR Security Attribute Namespace
 
-  ![ZPR menu](images/zpr_menu.png =20%x*)
+  ![ZPR menu](images/zpr-menu.png =20%x*)
 
   ![Create a new name space](images/zpr-attribute-namespace.png)
 

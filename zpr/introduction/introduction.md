@@ -12,16 +12,16 @@ These labs provide a step-by-step guide to deploying ZPR security policies and a
 
 There is a recording of the instructor going through this lab here:
 XXXXX REPLACE link  *******
-[Replaced this  with ZPR video](youtube:wQU9mb9yX7o)
+[Replaced this with ZPR video](youtube:wQU9mb9yX7o)
 
 ### Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:
-  - Tenant, User name and Password
-  - URL for the Console: [https://cloud.oracle.com](https://cloud.oracle.com)
+  1) Tenant, User name and Password
+  2) URL for the Console: [https://cloud.oracle.com](https://cloud.oracle.com)
 
-### Objectives
+### Task Lab Overview
 
 In this workshop, you will learn how to:
 

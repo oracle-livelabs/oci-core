@@ -38,9 +38,11 @@ Let's ssh from your computer into both instances and then also ssh into instance
 * Copy the ssh key for instance two to instance one
 
  ```
+  <copy>
   smith@smith-mac keys % scp -i ssh-key-instance-one.key ssh-key-instance-two.key opc@xxx.xxx.xxx.xxx:/home/opc/two.key
 
   ssh-key-instance-two.key              100% 1675    22.3KB/s   00:00
+  </copy>
   ```
 
 * ssh into instance two and then exit that session.

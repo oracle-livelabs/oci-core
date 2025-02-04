@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Zero Trust Packet Routing: Protection for your resources",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "variables": ["../../variables/variables.json",
         "../../variables/variables-in-another-file.json"],
@@ -27,7 +27,7 @@
             "filename": "../../db-access/db-access.md"
         },
         {
-            "title": "Lab 4: Compare ZPR Policies with Traditional Networking Configurations",
+            "title": "Lab 4: Save time with ZPR",
             "filename": "../../compare/compare.md"
         },
         {

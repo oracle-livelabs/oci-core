@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Zero Trust Packet Routing to protect your sensitive resources",
+    "workshoptitle": "Zero Trust Packet Routing: Protection for your resources",
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
@@ -33,7 +33,7 @@
             "filename": "../../db-access/db-access.md"
         },
         {
-            "title": "Lab 4: ZPR - the simple solution to control access to your sensitive resources",
+            "title": "Lab 4: Save time with ZPR",
             "filename": "../../compare/compare.md"
         },
         {

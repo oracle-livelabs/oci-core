@@ -20,33 +20,32 @@ Estimated Lab Time: 2 minutes
 
 ## Task 1: Create a ZPR Namespace
 
- ![Namespaces](images/zpr_attribute_namespace.png)
- ![Namespace creation](images/zpr_create_namespace.png =40%x*)
+ ![Namespaces](images/zpr-attribute-namespace.png)
+
+ ![Namespace creation](images/zpr-create-namespace.png =40%x*)
 
 ## Task 2: Create ZPR Attributes
 
- ![ZPR Attributes](images/sec_attrs.png =50%x*)
+ ![ZPR Attributes](images/sec-attrs.png =50%x*)
 
 ## Task 3: Tagging Resources to protect them
 
- ![Assign an attribute to a resource](images/zpr_protected.png =55%x*)
- ![Select resource to protect](images/protect_vm.png =55%x*)
+ ![Assign an attribute to a resource](images/zpr-protected.png =55%x*)
+ ![Select resource to protect](images/protect-vm.png =55%x*)
 
 
 ## Task 4: Creating Policies
 
- ![Assign an attribute to a resource](images/db_connection_policy.png =55%x*)
- ![Select resource to protect](images/policy_for_pe.png =55%x*)
+ ![Assign an attribute to a resource](images/db-connection-policy.png =55%x*)
+ ![Select resource to protect](images/policy-for-pe.png =55%x*)
 
 
 ## Task 5: Private Endpoint use
 
- ![Assign an attribute to a resource](images/db_pe_fqdn.png =55%x*) 
+ ![Assign an attribute to a resource](images/db-pe-fqdn.png =55%x*)
 
 
 ## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
 
 * [OCI Zero Trust Packet Routing](https://www.oracle.com/security/cloud-security/zero-trust-packet-routing/)
 * [ZPR Help documents](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/overview.htm)
