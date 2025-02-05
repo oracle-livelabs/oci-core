@@ -123,6 +123,7 @@ _Congratulations! You have successfully completed the lab._
 ## Acknowledgements
 
 - **Author** - Flavio Pereira, Larry Beausoleil 
-- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru
-- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
+- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru, Birsan Radu, Alexandra Iancu
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, February 2025
+
 
