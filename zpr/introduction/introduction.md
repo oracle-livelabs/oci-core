@@ -6,7 +6,7 @@ Estimated workshop time: 30 minutes
 
 ### Zero Trust Packet Routing
 
-This workshop introduces Oracle Cloud Infrastructure (OCI) Zero Trust Packet Routing (ZPR) for securing databases and compute instances using simple policies and attributes. It demonstrates how ZPR simplifies access control by requiring fewer configuration steps compared to traditional virtual network setups and security policies. You'll learn how to protect your resources and exposing your sensitive data in the event of routing changes or network misconfigurations.
+This workshop introduces Oracle Cloud Infrastructure (OCI) Zero Trust Packet Routing (ZPR) for securing databases and compute instances using simple policies and attributes. It demonstrates how ZPR simplifies access control by requiring fewer configuration steps compared to traditional virtual network setups and security policies. You'll learn how to protect your resources and prevent exposure of your sensitive data in the event of routing changes or network misconfigurations.
 
 These labs provide a step-by-step guide to deploying ZPR security policies and attributes in the Oracle Console, OCI CLI, and Terraform, helping you secure your critical resources efficiently.
 
@@ -18,7 +18,7 @@ XXXXX REPLACE link  *******
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:
-  1) Tenant, User name and Password
+  1) Tenant, User name and Password 
   2) URL for the Console: [https://cloud.oracle.com](https://cloud.oracle.com)
 
 ### Task Lab Overview
