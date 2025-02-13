@@ -52,7 +52,6 @@ In this lab, you will:
 
 ## Acknowledgements
 
-* **Author** - Jim Smith, Principle Product Manager OCI
-
-* **Contributors** - Dmitry Erastov, Consulting Member of Technical Staff OCI
-* **Last Updated By/Date** - Jim Smith, January 2025
+- **Author** - Jim Smith, Principle Product Manager OCI
+- **Contributors** - Dmitry Erastov, Consulting Member of Technical Staff OCI
+- **Last Updated By/Date** - Jim Smith, February 2025

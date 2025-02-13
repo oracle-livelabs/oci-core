@@ -86,6 +86,6 @@ Now ssh into your instance so that you can access the database and run the Ncat 
 
 ## Acknowledgements
 
-* **Author** - Jim Smith, Principle Product Manager OCI
-* **Contributors** - Dmitry Erastov, Consulting Member of Technical Staff OCI
-* **Last Updated By/Date** - Jim Smith, January 2025
+- **Author** - Jim Smith, Principle Product Manager OCI
+- **Contributors** - Dmitry Erastov, Consulting Member of Technical Staff OCI
+- **Last Updated By/Date** - Jim Smith, February 2025

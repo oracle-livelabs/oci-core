@@ -10,15 +10,13 @@ This workshop introduces Oracle Cloud Infrastructure (OCI) Zero Trust Packet Rou
 
 These labs provide a step-by-step guide to deploying ZPR security policies and attributes in the Oracle Console, OCI CLI, and Terraform, helping you secure your critical resources efficiently.
 
-There is a recording of the instructor going through this lab here:
-XXXXX REPLACE link  *******
-[Replaced this with ZPR video](youtube:wQU9mb9yX7o)
+[Replace this with ZPR video soon -- (youtube:wQU9mb9yX7o) ]
 
 ### Prerequisites
 
 - Oracle Cloud Infrastructure account credentials (User, Password, and Tenant)
 - To sign in to the Console, you need the following:
-  1) Tenant, User name and Password 
+  1) Tenant, User name and Password
   2) URL for the Console: [https://cloud.oracle.com](https://cloud.oracle.com)
 
 ### Task Lab Overview
@@ -39,4 +37,4 @@ In this workshop, you will learn how to:
 
 - **Author** - Jim Smith, Principle Product Manager OCI
 - **Contributors** - Dmitry Erastov, Consulting Member of Technical Staff OCI
-- **Last Updated By/Date** - Jim Smith, January 2025
+- **Last Updated By/Date** - Jim Smith, February 2025
