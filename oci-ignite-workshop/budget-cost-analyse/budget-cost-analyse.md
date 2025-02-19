@@ -125,5 +125,5 @@ There are multiple ways to visualize and manage costs such as:
 ## Acknowledgements
 
 - **Author** - Radu Birsan, Alexandra Iancu
-- **Contributors** - Cristian Manea, Radu Chiru
-- **Last Updated By/Date** - Radu Birsan, Alexandra Iancu, April 2024
+- **Contributors** - Cristian Manea, Radu Chiru, Birsan Radu, Alexandra Iancu
+- **Last Updated By/Date** - Radu Birsan, Alexandra Iancu, February 2025
