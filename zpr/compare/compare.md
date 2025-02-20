@@ -29,23 +29,21 @@ Estimated Lab Time: 2 minutes
 
  ![ZPR Attributes](images/sec-attrs.png =50%x*)
 
-## Task 3: Assiging Security Attributes to Resources to protect them
+## Task 3: Assigning Security Attributes to Resources to protect them
 
  ![Assign an attribute to a resource](images/zpr-protected.png =55%x*)
  ![Select resource to protect](images/protect-vm.png =55%x*)
 
-
 ## Task 4: Creating ZPR Policies
 
- ![Assign an attribute to a resource](images/db-connection-policy.png =55%x*)
- ![Select resource to protect](images/policy-for-pe.png =55%x*)
-
+ ![Assign an attribute to a resource](images/zpr-db-policy.png =55%x*)
+ ![Select resource to protect](images/zpr-instance-policy.png =55%x*)
 
 ## Task 5: Private Endpoint use
 
-<!-- I would make it clear that private endpoints has nothing to do with ZPR. A DB can have a private endpoint with out without ZPR. Your explanation makes the two sounds intrisincly linked, when they aren't.-->
- ![Assign an attribute to a resource](images/db-pe-fqdn.png =55%x*)
+Remember that currently you must use a private endpoint for the database to allow ZPR to protect access to this specific endpoint. In the future you will be able to allow access to a database without a private endpoint and still be able to leverage ZPR to protect your database's network connections.
 
+ ![Assign an attribute to a resource](images/db-pe-fqdn.png =55%x*)
 
 ## Learn More
 

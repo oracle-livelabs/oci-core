@@ -5,8 +5,8 @@
 Estimated Lab Time: -- 10 minutes
 
 ### About Zero Trust Packet Routing Protection
-<!-- I don't like this paragraph. It is just a repeat from the introduction. For me, this paragraph should be about what this particular lab is going to do, i.e., explain in detail, as well as why you are doing it, and at the end of this lab, what you will have done.-->
-Prevent unauthorized access to an instance by managing network security policy separately from the underlying network architecture with Oracle Cloud Infrastructure (OCI) Zero Trust Packet Routing.
+
+In this lab we show that you can connect to your compute instances and run ssh command lines andd then after applying ZPR attribute on one or more compute instances you will not be able to connect again until after you create a ZPR policy to allow access to the resource.
 
 ### Objectives
 
@@ -76,7 +76,9 @@ Let's ssh from your computer into both instances and then also ssh into instance
 
 ## Task 2: Navigate to the ZPR policy screen and protect instance two
 
-1. Navigate to ZPR Protected Resources
+Now we will apply an attribute to your instance two. This will protect your instance from networking connections until you create a policy to allow a connection to your newly protected resource.
+
+1. Navigate to the ZPR Protected Resources screen.
 
   ![Add an attribute to protect your resource](images/zpr-protected.png)
 
@@ -88,7 +90,8 @@ Let's ssh from your computer into both instances and then also ssh into instance
 
 ## Task 3: Try to ssh into instance 2
 
-Try to ssh from your laptop and also try from your first compute instance.
+Try to ssh from your laptop and also try from your first compute instance. Your connection attempt should be refused because the security attribute has been applied and you haven’t yet written ZPR policy to allow the connection.
+
 ```
   <copy>smith@smith-mac keys % ssh -i ssh-key-instance-two.key  opc@xxx.xxx.xxx.two
     ssh: connect to host xxx.xxx.xxx.two port 22: Connection refused
@@ -110,20 +113,19 @@ Try to ssh from your laptop and also try from your first compute instance.
 
 ## Task 4: Navigate to the ZPR policy screen and configure access to instance two
 
-<!-- The step below is what I would expect every step to look like, with a detailed explanation -->
 1. Navigate to ZPR policies screen and create a policy to allow instance one to connect to instance two. This will allow just this one instance to connect to instance two. This is how you can control who/what can access your compute instances. Reviewing these policies allow you to know exactly what's going to be able to communicate with a given instance.
-**Note:** Currently - you must allow the security rule to allow ingress for at least port 22. In later releases we will not need to worry about this setting as ZPR will fully control this access.
+**Note:** Currently - you must allow the networking security rule to allow ingress for at least port 22. Security list configurations are evaluated in addition to ZPR policy. They must both permit the connection. In later ZPR releases we will not need to worry about this setting as ZPR will fully control this access.
 
-<!-- As a security practicioner, even for a lab I wouldn't be advocating the creation of a 0.0.0.0/0 Any Protocols inbound rule. I would limit it to 22 at least.-->
+**Note** You would never use 0.0.0.0/0 in production but you would normally use something to limit it to your specific laptop's IP address or something very close to it like 192.1.223.0/12 So try to limit the ingress to a much smaller foot print then all possible IP addresses as done in this screen shot. You should also limit the traffic to port 22 for ssh only to limit someone from trying to attack your server using other tools/ports.
+
   ![Allow traffic into network](images/ingress-rules.png)
 
-<!-- Wrong screenshot. You need a policy screenshot-->
-  ![ZPR protect resources](images/zpr-protected.png)
+  ![Allow traffic out from your network](images/egress-rules.png)
 
-<!-- Wrong step. You have already added the sec attr, now you are defining the policy-->
-1. Select the resource - instance two and then select the security attribute that you want to add to your resource.
+-- Add a security attribute to the instance
+  ![ZPR protect a resource](images/zpr-protect-resource.png)
 
-  ![Protect a specific instance](images/protect-vm.png)
+  ![ZPR protect instance by adding a security attribute](images/zpr-protect-instance-two.png)
 
 ## Task 5: Try to ssh into instance 2
 

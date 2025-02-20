@@ -1,4 +1,4 @@
-# Create 2 Instances and a autonomous database
+# Create 2 Instances and an autonomous database
 
 ## Introduction
 
@@ -28,7 +28,7 @@ In this lab, you will:
 
   ![Image alt text](images/create-compute.png)
 
-  > **Note:** Make sure that you store the ssh key for the instance
+  **Note:** Make sure that you store the ssh key for the instance
 
   ![Image alt text](images/compute-ssh.png)
 

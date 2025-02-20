@@ -18,22 +18,22 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
         },
         {
-            "title": "Create Needed Resources",
+            "title": "Lab 1: Create Needed Resources",
             "filename": "../../setup/setup.md"
         },        {
-            "title": "Lab 1: Create ZPR Namespaces and Attributes",
+            "title": "Lab 2: Create ZPR Namespaces and Attributes",
             "filename": "../../namespace/namespace.md"
         },
         {
-            "title": "Lab 2: Limit Access to a compute instance",
+            "title": "Lab 3: Limit Access to a compute instance",
             "filename": "../../vm-access/vm-access.md"
         },
         {
-            "title": "Lab 3: Limit Access to a Database",
+            "title": "Lab 4: Limit Access to a Database",
             "filename": "../../db-access/db-access.md"
         },
         {
-            "title": "Lab 4: Save time with ZPR",
+            "title": "Lab 5: Save time with ZPR",
             "filename": "../../compare/compare.md"
         },
         {
