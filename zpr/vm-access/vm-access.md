@@ -86,8 +86,6 @@ Now we will apply an attribute to your instance two. This will protect your inst
 
   ![Select the resource to protect](images/protect-vm.png)
 
-<!-- I think you need screenshots for all steps of the flow and the final screenshot to show that instance two is not listed under Protected Resources -->
-
 ## Task 3: Try to ssh into instance 2
 
 Try to ssh from your laptop and also try from your first compute instance. Your connection attempt should be refused because the security attribute has been applied and you haven’t yet written ZPR policy to allow the connection.

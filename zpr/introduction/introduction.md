@@ -10,7 +10,7 @@ This workshop introduces Oracle Cloud Infrastructure (OCI) Zero Trust Packet Rou
 
 These labs provide a step-by-step guide to deploying ZPR security policies and attributes in the Oracle Console, OCI CLI, and Terraform, helping you secure your critical resources efficiently.
 
-[Replace this with ZPR video soon -- (youtube:wQU9mb9yX7o) ]
+<!-- Put in ZPR video soon -- (youtube:wQU9mb9yX7o) -->
 
 ### Prerequisites
 
