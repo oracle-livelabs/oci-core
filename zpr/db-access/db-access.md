@@ -33,7 +33,8 @@ This lab assumes you have:
 
 ## Task 1: Verify that you can connect to your database
 
-1. While you would use Oracle SQLPlus to be able to perform administration on the database, we will simply verify that we can or cannot connect to the database for these tests using the Ncat command. Remember that you downloaded and stored the ssh keys when you created each compute instance. You will now upload the key to instance two to your instance one. This will allow you to use the key from the instance one command line to connect to instance two. If you forgot to download the ssh key or lost the key -- you will need to create a new instance where you make sure to download and store the private key while creating the instance.
+1. While you would use Oracle SQLPlus to be able to perform administration on the database, we will simply verify that we can or cannot connect to the database for these tests using the Ncat command.
+Remember that you downloaded and stored the ssh keys when you created each compute instance. You will now upload the key to instance two to your instance one. This will allow you to use the key from the instance one command line to connect to instance two. If you forgot to download the ssh key or lost the key -- you will need to create a new instance where you make sure to download and store the private key while creating the instance.
 
 -- Store the ssh key onto your laptop
 ![Make sure that you have the ssh key for the instance](images/download-ssh-private-key.png)
@@ -41,10 +42,10 @@ This lab assumes you have:
 * Get the fully qualified domain name (FQDN) of the private endpoint and not the local IP address.
 ![Get the FQDN of the database's private endpoint](images/db-pe-fqdn.png =500x*)
 
-* Make sure that your have allowed traffic to the database and the compute instance. In this test we open it up to all to make this lab simple. In production you would normally set the specific IP addresses only or a IP address address range. Its also a good idea to limit the protocol to port 22 for only ssh use.
+* Make sure that you have allowed traffic to the database and the compute instance. In this test we open it up to all to make this lab simple. In production you would normally set the specific IP addresses only or a IP address range. It is also a good idea to limit the protocol to port 22 for only ssh use.
 ![Allow all IP addresses or at least your IPs](images/ingress-rules.png)
 
-* Test the connection by running the Ncat command from one of your compute instances. Since the database has a private endpoint you can't connect to that from your laptop. Private endpoints are only available inside your tenancy.
+* Test the connection by running the Ncat command from one of your compute instances. Since the database has a private endpoint you can't connect to that from your laptop.
 ```nc -v <your private endpoint for DB>.oraclecloud.com  1521```
 ![Run the Ncat command from your compute instance](images/terminal-test-connect-instance.png)
 
@@ -52,7 +53,8 @@ This lab assumes you have:
 
 <!-- I think for this tutorial use case you should be more specific with your sec attrs naming and value. For example, you will have seen in my tutorial (https://docs.oracle.com/en/learn/config-oci-zpr/index.html), I was quite prescriptive and meaningful with the sec attrs names and values. -->
 
-1. Now go to ZPR and protect this autonomous database. Select the database and the private endpoint and then select a security attribute to assign to these resources. You can put another string value into the security attribute value, but remember what you enter as you will need to match that value in your policies.
+1. Now go to ZPR and protect this autonomous database. Select the database and the private endpoint and then select the database security attribute to assign to these resources.
+Let's choose to use the "Production" security attribute value. Remember what you enter or choose here will need to match the value in your policy statement later.
 ![Protect the database and the private endpoint](images/protect-resource.png)
 ![Assign a security attribute to the resources](images/protect-resource-2.png)
 
@@ -63,13 +65,13 @@ This lab assumes you have:
 
 1. Create a policy to only allow access to the database from one of your compute instances.
 ![Create new policy](images/zpr-db-policy.png)
-You will need to allow your instances and their associated VNICs to access your endpoint on the database. In this example we say that the VCN will allow the safe instances to connect to the database and only with the database connection port of 1521. This assumes that you have also protected your compute instance with a security attribute of safe-instances with a value of 'vm', the database with the attribute auto_db with value of 1 and then finally the VCN with attribute of safe-vcn and value of yes. As we mentioned earlier, you can store any string value in these attributes but now in the policy statements they must match to make the policy work. You can also used pre-defined values within your security attributes to limit the allowed valued.
+You will need to allow your instances to access the private endpoint on the database. In this example we say that the VCN will allow the safe instances to connect to the database over the SQLNET port 1521. This assumes that you have also protected your compute instance with a security attribute of safe-instances with a value of 'vm', the database with the attribute auto_db with value of 1 and then finally the VCN with attribute of safe-vcn and value of yes.
 
 ![Create new policy](images/zpr-db-policy.png)
 
-## Task 4: Remember that you must have a policy to the compute instance
+## Task 4: Create ZPR policy allowing SSH access to the compute instances
 
-Remember that the compute instance in the above example must be associated with a ZPR attribute so that you can then use that attribute in the policy for database access. This means that you must make sure that you have access to the instance from your laptop. In this policy example we cheated and allowed access to all IP addresses. You would normally only allow access to your computer or your network.
+The compute instance in the above example must be associated with a ZPR attribute so that you may reference it in a ZPR policy to allow access to the database. You also need to write ZPR policy allowing access to the compute instance from all IP addresses to make sure that you can access that host from your laptop. In this policy example we cheated and allowed access to all IP addresses. You would normally only allow access to your computer or your network.
 
 ![Image alt text](images/zpr-ssh-policy.png)
 
