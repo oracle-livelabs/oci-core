@@ -82,9 +82,11 @@ Now we will apply an attribute to your instance two. This will protect your inst
 
   ![Add an attribute to protect your resource](images/zpr-protected.png)
 
-1. Add a security attribute to a resource. In this case we will choose instance two and associate that with the safe_instance attribute. Once this is completed it will then block connections from everywhere to instance two.
+1. Add a security attribute to a resource. In this case we will choose instance two and associate that with the Safe-Instances attribute and a value of 'ProductionAllowed'. Once this is completed it will then block connections from everywhere to instance two.
 
   ![Select the resource to protect](images/protect-vm.png)
+
+  ![ZPR protect instance by adding a security attribute](images/zpr-protect-instance-two.png)
 
 ## Task 3: Try to ssh into instance 2
 
@@ -120,10 +122,12 @@ Try to ssh from your laptop and also try from your first compute instance. Your 
 
   ![Allow traffic out from your network](images/egress-rules.png)
 
--- Add a security attribute to the instance
+-- Add a security attribute to the instance one
   ![ZPR protect a resource](images/zpr-protect-resource.png)
 
-  ![ZPR protect instance by adding a security attribute](images/zpr-protect-instance-two.png)
+-- Add a security policy to allow us to ssh into instance two from instance one. Normally you might not allow access from a development instance to a production instance, but this example is to show you how the different security attribute values can be used.
+  ![ZPR policy to allow ssh access into instance two](images/zpr-policy-i1-to-i2.png)
+
 
 ## Task 5: Try to ssh into instance 2
 

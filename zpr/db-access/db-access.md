@@ -69,9 +69,13 @@ You will need to allow your instances to access the private endpoint on the data
 
 ![Create new policy](images/zpr-db-policy.png)
 
-## Task 4: Create ZPR policy allowing SSH access to the compute instances
+## Task 4: Optional Step - Create ZPR policy allowing SSH access to the compute instances
 
-The compute instance in the above example must be associated with a ZPR attribute so that you may reference it in a ZPR policy to allow access to the database. You also need to write ZPR policy allowing access to the compute instance from all IP addresses to make sure that you can access that host from your laptop. In this policy example we cheated and allowed access to all IP addresses. You would normally only allow access to your computer or your network.
+If you created the policy in the prior lab that allowed instance one to ssh into instance two then you can just ssh into instance one now, ssh into instance two and then run the ncat commend from instance two.
+
+If for some reason you skipped that step then you would need to allow access from the internet to your instance two so that you can log into that instance and then run the ncat command. Of course, you can understand the benefit of only allowing internal OCI instances to access your production instances and you would not normally do this step. This is only to highlight another method to show the connection to the database.
+
+The compute instance in the above example must be associated with a ZPR attribute so that you may reference it in a ZPR policy to allow access to the database. Hence instance two becomes protected just from that step. You must then allow access to instance two from either other instances that meet some security attribute value or from a computer inside say you private network. In this policy example we cheated and allowed access to all IP addresses. You would normally only allow access to your specific computer, your private network or some set of OCI instances that you are running.
 
 ![Image alt text](images/zpr-ssh-policy.png)
 
