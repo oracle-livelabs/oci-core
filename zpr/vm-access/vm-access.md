@@ -88,6 +88,7 @@ Now we will apply an attribute to your instance two. This will protect your inst
 
   ![ZPR protect instance by adding a security attribute](images/zpr-protect-instance-two.png)
 
+
 ## Task 3: Try to ssh into instance 2
 
 Try to ssh from your laptop and also try from your first compute instance. Your connection attempt should be refused because the security attribute has been applied and you haven’t yet written ZPR policy to allow the connection.
@@ -127,7 +128,6 @@ Try to ssh from your laptop and also try from your first compute instance. Your 
 
 -- Add a security policy to allow us to ssh into instance two from instance one. Normally you might not allow access from a development instance to a production instance, but this example is to show you how the different security attribute values can be used.
   ![ZPR policy to allow ssh access into instance two](images/zpr-policy-i1-to-i2.png)
-
 
 ## Task 5: Try to ssh into instance 2
 
