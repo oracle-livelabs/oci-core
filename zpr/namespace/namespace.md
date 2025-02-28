@@ -30,7 +30,7 @@ This lab assumes you have:
 
 Take note of the names and IP addresses of your resources so you can successfully ssh into them.
 
-![Instances](images/instances.png)
+![Instances](images/instances.png =50%x*)
 
 ![Databases](images/autodb.png =50%x*)
 
