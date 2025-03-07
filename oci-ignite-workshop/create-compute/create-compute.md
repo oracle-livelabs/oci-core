@@ -33,6 +33,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 2. Select the *Sandbox* Compartment that you created in *"Create a Compartment" Lab*. Then click **Create Instance**. We will launch a VM instance for this lab.
 
+ 
   ![Click on Create instance](images/create-compute1.png)
 
 
@@ -40,9 +41,11 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 3. The *Create Compute Instance* wizard will launch.
     Enter **Sandbox-VM** as the name of the server. 
         
+   
     ![Fill the Name of the Instance](images/create-compute2.png)
        
 4. Click *Change Shape* to choose a VM shape.
+
 
     ![Change Shape of the instance](images/create-compute4.png)
 
@@ -50,19 +53,22 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Select AMD E4 Flex shape](images/create-compute-shapes.png)
 
-7. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
+    
+    ![Select 1 OCPU and 16GB of memory](images/create-compute-shapes-1.png)
+
+7. Click on **Next**. The Security section does not need any changes. Click **Next** again. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
  
     ![Assign a public IPv4 address ](images/create-compute4b.png)
 
     >**Note:** You need a public IP address, so that you can SSH into the running instance later in this lab.
 
-8. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
+8. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in ***Generate SSH Keys*** Lab. Click on **Next**. The Storage options remain unchanged. Click again on **Next**. Review the information and press the **Create** button to create your instance.
 
     ![Paste the content public key](images/ssh-keys.png)
 
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute, and the instance state will change from *PROVISIONING* to *RUNNING*.
 
-9. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*.
+9. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Security* on the Instance information page. 
 
     
     ![Copy the Public IP address](images/public-ip.png " ")
@@ -89,5 +95,5 @@ _Congratulations! You have successfully completed the lab._
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
-- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru
-- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
+- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru, Alexandra Iancu, Radu Birsan
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, February 2025
