@@ -37,15 +37,19 @@ You are running this workshop in a LiveLabs environment. Our LiveLabs environmen
 <if type="freetier">
 To create a VCN on Oracle Cloud Infrastructure:
 
-1. On the Oracle Cloud Infrastructure Console Home page, under the **Launch Resources** header, click **Set up a network with a wizard**.
+1. On the Oracle Cloud Infrastructure Console Home page scroll down and click **Set up a network with a wizard** under the Build section of the page.
 
     ![Setup a Network with a Wizard](images/setup-vcn.png " ")
 
-2. Select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
+2. Select **Actions** drop-down menu and **Start VCN Wizard**.
 
-    ![Start VCN Wizard](images/start-wizard.png " ")
+   ![Actions drop-down menu](images/actions-dropdown.png " ")
 
-3. Complete the following fields:
+   **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
+
+   ![Start VCN Wizard](images/start-wizard.png " ")
+
+4. Complete the following fields:
 
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
@@ -53,23 +57,25 @@ To create a VCN on Oracle Cloud Infrastructure:
     |Compartment |  Choose the ***Demo*** compartment you created in the ***Identity and Access Management Lab***
     |VCN CIDR Block|10.0.0.0/16|
     |Public Subnet CIDR Block|10.0.2.0/24|
-    |Private Subnet CIDR Block|10.0.1.0/24|
     |Use DNS Hostnames In This VCN| Checked|
+    |Private Subnet CIDR Block|10.0.1.0/24|
 
+  
     Your screen should look similar to the following:
 
     ![Create a VCN Configuration|Foobar](images/vcn-configuration.png " ")
 
      Click the **Next** button at the bottom of the screen.
 
-4. Review your settings to be sure they are correct. Click the **Create** button to create the VCN. 
+6. Review your settings to be sure they are correct. Click the **Create** button to create the VCN. 
     ![Review CV Configuration](images/review-vcn.png " ")
+    ![Review CV Configuration](images/review-vcn1.png " ")
 
-5. It will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
+8. It will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
 
     ![Workflow](images/workflow.png " ")
 
-6. Once you see that the creation is complete (see previous screenshot), click the **View Virtual Cloud Network** button.
+9. Once you see that the creation is complete (see previous screenshot), click the **View Virtual Cloud Network** button.
 </if>
 
 ### Summary
