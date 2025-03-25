@@ -37,7 +37,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Compute**, and select **Instances**.
 
-	![](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
+	![](images/compute-instances.png)
 
 <if type="livelabs">
 2. Select the Compartment that you were assigned when the reservation was created.
@@ -45,11 +45,11 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
   ![](images/create-compute-livelabs-1.png)
 </if>
 
-2. Then click **Create Instance**. We will launch a VM instance for this lab.
+2. Then click **Create Instance**. We will launch a VM instance for this lab. You will create this compute instance in the same region that you created the VCN.
   ![](images/create-instance.png)
 
 3. The Create Compute Instance wizard will launch.
-    <if type="freetier">Enter **Web-Server** as the name of the server. Click **Edit** on the **Networking** area of the page.</if>
+    <if type="freetier">Enter **Web-Server** as the name of the server. Click **Next** twice on the bottom right of the screen to get to the **Networking** section.</if>
     <if type="livelabs">Enter your username + *-Instance* as the name of the server.</if>
 
     <if type="freetier">
@@ -69,7 +69,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![](images/livelabs-create-compute-4.png)
     ![](images/create-compute-livelabs-4b.png)</if>
 
-3. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
+4. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
 
     <if type="freetier">
     ![Create step 2](images/assign-ip.png " ")</if>
@@ -77,15 +77,15 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <if type="livelabs">
     ![](images/assign-ip.png)</if>
 
-    >**Note:** You need a public IP address, so that you can SSH into the running instance later in this lab.
+    >**Note:** If it is already selected by default, that is good. You need a public IP address, so that you can SSH into the running instance later in this lab.
 
-4. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
+5. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in ***Generate SSH Keys*** Lab, as pictured below. Then, press the **Next** button twice on the bottom right and then the **Create** button to create your instance.
 
     ![](images/ssh-keys.png)
 
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute, and the instance state will change from *PROVISIONING* to *RUNNING*.
 
-5. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*.
+6. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*.
 
     <if type="freetier">
     ![Create step 3](images/public-ip.png " ")</if>
