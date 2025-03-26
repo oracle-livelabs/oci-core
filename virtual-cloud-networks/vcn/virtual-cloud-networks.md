@@ -37,13 +37,17 @@ You are running this workshop in a LiveLabs environment. Our LiveLabs environmen
 <if type="freetier">
 To create a VCN on Oracle Cloud Infrastructure:
 
-1. On the Oracle Cloud Infrastructure Console Home page, under the **Launch Resources** header, click **Set up a network with a wizard**.
+1. On the Oracle Cloud Infrastructure Console Home page scroll down and click **Set up a network with a wizard** under the Build section of the page.
 
     ![Setup a Network with a Wizard](images/setup-vcn.png " ")
 
-2. Select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
+2. Select **Actions** drop-down menu and **Start VCN Wizard**.
 
-    ![Start VCN Wizard](images/start-wizard.png " ")
+   ![Actions drop-down menu](images/actions-dropdown.png " ")
+
+   **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
+
+   ![Start VCN Wizard](images/start-wizard.png " ")
 
 3. Complete the following fields:
 
@@ -52,10 +56,11 @@ To create a VCN on Oracle Cloud Infrastructure:
     |VCN Name |OCI\_HOL\_VCN|
     |Compartment |  Choose the ***Demo*** compartment you created in the ***Identity and Access Management Lab***
     |VCN CIDR Block|10.0.0.0/16|
+    |Use DNS Hostnames In This VCN| Checked|
     |Public Subnet CIDR Block|10.0.2.0/24|
     |Private Subnet CIDR Block|10.0.1.0/24|
-    |Use DNS Hostnames In This VCN| Checked|
 
+  
     Your screen should look similar to the following:
 
     ![Create a VCN Configuration|Foobar](images/vcn-configuration.png " ")
@@ -64,6 +69,7 @@ To create a VCN on Oracle Cloud Infrastructure:
 
 4. Review your settings to be sure they are correct. Click the **Create** button to create the VCN. 
     ![Review CV Configuration](images/review-vcn.png " ")
+    ![Review CV Configuration](images/review-vcn1.png " ")
 
 5. It will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
 
@@ -78,7 +84,7 @@ This VCN will contain all of the other assets that you will create during this s
 
 ## Acknowledgements
 
-- **Author** - Rajeshwari Rai, Prasenjit Sarkar 
-- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Arabella Yao, December 2021
+- **Author** - Rajeshwari Rai, Prasenjit Sarkar, Brandon Alarie 
+- **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management, Brandon Alarie)
+- **Last Updated By/Date** - Brandon Alarie, March 2025
 
