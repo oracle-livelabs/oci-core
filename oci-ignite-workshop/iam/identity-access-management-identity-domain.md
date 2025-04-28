@@ -143,6 +143,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
       b) Select the default domain.
          ![Select the Default](images/id-domains-default.png " ")
 
+
       c) Under the **Resources** menu on the left, click **Users**, if it's not already selected.
          ![Select Users](images/id-domains-users.png)
 
@@ -151,7 +152,16 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
       e) From the **Groups** list, click the group that you just created (for example, `Sandbox-admin`)  to go to the User Details page.
 
-      f) Click **Add**.
+      f) Under the **Resources** menu on the left, click **Users**, if it's not already selected.
+         ![Select Users](images/id-domains-users.png)
+
+     g) Click **Assign User to groups**.
+         ![Click on Assign User to groups](images/id-domains-users-assign-group.png)
+
+      h) From the **Groups** list, click the group that you just created (for example, `Sandbox-admin`)  to go to the User Details page.
+
+
+      i) Click **Add**.
          ![Press the Assign button](images/id-add-user-to-group.png)
   
 
@@ -188,13 +198,18 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    ![Click on Create](images/create-policy.png)
 
-   For the CloudShell policy, please follow again the steps above, set a name for your policy (for example, "Policy for CloudShell use") and paste the following policy in the textbox:
+   For the CloudShell policy, please create a new one, set a name for it (for example, "Policy for CloudShell use") and make sure it's created inside the root compartment. Paste the following policy statements in the textbox:
 
    ```
-     <copy>Allow group Sandbox-admin to use cloud-shell-public-network in tenancy</copy>
+     <copy>Allow group Sandbox-admin to use cloud-shell-public-network in tenancy
+      Allow group Sandbox-admin to use cloud-shell in tenancy</copy>
      ```
 
 
+   ![Click on Create](images/create-policy_cloudshell.png)
+
+
+Note : Please keep in mind that Cloud Shell does not support policies at the compartment level, only at the tenancy level.
 
 
     
