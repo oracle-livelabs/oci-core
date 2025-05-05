@@ -4,7 +4,11 @@ In this workshop, we will cover Virtual Cloud Networks (VCN), Database 23ai and 
 
 These labs also provide some of the foundational skills and knowledge you will need to attempt the Oracle Cloud Infrastructure Architect Associate Certification offered by Oracle University.
 
-The labs in this workshop cover a level 100 set of skills for **Oracle Cloud Infrastructure (OCI) Core Services**, including Virtual Cloud Networks (VCN), Autonomous Database, Oracle Kubernetes Engine (OKE). These labs also provide some of the foundational skills and knowledge you will need to attempt the [Oracle Cloud Infrastructure Architect Associate Certification](https://education.oracle.com/oracle-cloud-infrastructure-2022-architect-associate/pexam_1Z0-1072-22) offered by Oracle University.
+In this workshop, we will cover Virtual Cloud Networks (VCN), Database 23ai and Oracle APEX. These are skills you will use when deploying applications/services.
+
+These labs also provide some of the foundational skills and knowledge you will need to attempt the Oracle Cloud Infrastructure Architect Associate Certification offered by Oracle University.
+
+The labs in this workshop cover a level 100 set of skills for **Oracle Cloud Infrastructure (OCI) Core Services**, including Virtual Cloud Networks (VCN), Autonomous Database, Oracle APEX. These labs also provide some of the foundational skills and knowledge you will need to attempt the [Oracle Cloud Infrastructure Architect Associate Certification](https://education.oracle.com/oracle-cloud-infrastructure-2022-architect-associate/pexam_1Z0-1072-22) offered by Oracle University.
 
 The Oracle Cloud Infrastructure Architect Associate exam is designed for individuals who possess a strong foundational knowledge of architecting infrastructure using Oracle Cloud Infrastructure (OCI) services. The certification is intended for candidates with technical backgrounds who want to validate their understanding of Oracle Cloud Infrastructure.
 
@@ -27,9 +31,6 @@ In this workshop, you will:
 - Create a Virtual Cloud Network
 - Deploy and configure Autonomous Database with Oracle Database 23ai
 - Deploy APEX Service on Oracle Database 23ai
-
-Optional
- - Create a Kubernetes Cluster
 
 ### Prerequisites
 * [Familiarity with OCI console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm)
