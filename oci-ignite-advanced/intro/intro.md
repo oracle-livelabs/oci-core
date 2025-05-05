@@ -32,8 +32,6 @@ In this workshop, you will:
 - Deploy and configure Autonomous Database with Oracle Database 23ai
 - Deploy APEX Service on Oracle Database 23ai
 
-Optional
- - Create a Kubernetes Cluster
 ### Prerequisites
 * [Familiarity with OCI console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm)
 * [Overview of Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/overview.htm)
