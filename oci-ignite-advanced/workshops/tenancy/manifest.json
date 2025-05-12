@@ -20,13 +20,13 @@
             "filename": "../../../oci-ignite-advanced/create-vcn/create-vcn.md"
         },
         {
-            "title": "Lab 3: Create an Autonomous Database",
+            "title": "Lab 3: Create an Autonomous Database with Oracle Database 23ai",
             "filename": "../../../oci-ignite-advanced/create-adw/create-adw.md"
-        },        
+        }, 
         {
-            "title": "Lab 4 (Optional): Create a Kubernetes Cluster",
-            "filename": "../../../oci-ignite-advanced/create-oke/create-oke.md"
-        },       
+            "title": "Lab 4: Deploy APEX Service",
+            "filename": "../../../oci-ignite-advanced/configure-apex/configure-apex.md"
+        },                 
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
