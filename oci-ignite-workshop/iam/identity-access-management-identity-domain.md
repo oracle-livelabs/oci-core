@@ -76,7 +76,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    ![Select the Default Domain](images/id-domains-default.png)
 
-1. Select **Groups**
+1. Select **User Management** and scroll down to **Groups**
 
    ![Navigato to Groups](images/id-domains-groups.png)
 
@@ -96,7 +96,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
 1. Create a New User
 
-   a) In the bread crumb, click on **Default Domain**
+   a) Click on **<- Groups**
 
    ![Select Default domain in the bread crumb](images/id-domains-bc-default-domain.png)
 
@@ -114,12 +114,17 @@ For IAM with Identity Domains, what was identified before as IAM users and group
       - **Last NameName** - your last name
       - **Email:**  Preferably use a personal email address to which you have access (GMail, Yahoo, etc) and different from any email already in use in the tenancy.
       - **Use the email address as the username:** Leave checked unless if you want to use an username that is not the email. It can be used if you want to use the same email already in use in the tenancy.
-      - **Assign cloud account administrator role:** Leave unchecked.
       - Check the box besides **Sandbox-admin**
 
     Click **Create**.
 
       ![New user form](images/id-domains-create-user.png)
+      
+      - Scroll lower, check the box besides **Sandbox-admin**
+
+    Click **Create**.
+
+      ![New user form](images/id-domains-create-user-group.png)
 
    After creating the user, you will be directed to the user details.
 
@@ -144,25 +149,12 @@ For IAM with Identity Domains, what was identified before as IAM users and group
          ![Select the Default](images/id-domains-default.png " ")
 
 
-      c) Under the **Resources** menu on the left, click **Users**, if it's not already selected.
-         ![Select Users](images/id-domains-users.png)
+      c) Go to **User Management** and scroll down to your **Sandbox-admin** group.
+         ![Select Users](images/id-domains-users-user_management.png)
 
-      d) Click **Assign User to groups**.
+      d) Select **Users** and click on **Assign user to group**.
          ![Click on Assign User to groups](images/id-domains-users-assign-group.png)
 
-      e) From the **Groups** list, click the group that you just created (for example, `Sandbox-admin`)  to go to the User Details page.
-
-      f) Under the **Resources** menu on the left, click **Users**, if it's not already selected.
-         ![Select Users](images/id-domains-users.png)
-
-     g) Click **Assign User to groups**.
-         ![Click on Assign User to groups](images/id-domains-users-assign-group.png)
-
-      h) From the **Groups** list, click the group that you just created (for example, `Sandbox-admin`)  to go to the User Details page.
-
-
-      i) Click **Add**.
-         ![Press the Assign button](images/id-add-user-to-group.png)
   
 
 1. Now, let’s create a security policy that gives your group permissions in your assigned compartment and another one that allows users to use the CloudShell tool.
@@ -172,7 +164,7 @@ For IAM with Identity Domains, what was identified before as IAM users and group
 
    ![IAM Policy](images/iam-policies.png)
 
-   b) On the left side, select **Sandbox** compartment. After you have selected the **Sandbox** compartment, click **Create Policy**.
+   b) Select **Sandbox** compartment. After you have selected the **Sandbox** compartment, click **Create Policy**.
 
    ![Click on Create Policy](images/id-domain-create-policy.png)
 
@@ -205,11 +197,12 @@ For IAM with Identity Domains, what was identified before as IAM users and group
       Allow group Sandbox-admin to use cloud-shell in tenancy</copy>
      ```
 
-
    ![Click on Create](images/create-policy_cloudshell.png)
 
 
 Note : Please keep in mind that Cloud Shell does not support policies at the compartment level, only at the tenancy level.
+
+
 
 
     

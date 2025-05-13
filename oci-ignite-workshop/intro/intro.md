@@ -49,6 +49,9 @@ https://cloud.oracle.eu/?region=eu-frankfurt-2
 https://cloud.oracle.eu/?region=eu-madrid-2
 
 
+http://cloud.oracle.eu/
+
+
 ### Let's get Started!
 
 Click on the next lab in this workshop to get started.
