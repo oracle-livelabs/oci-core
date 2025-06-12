@@ -13,7 +13,7 @@ In this workshop, you will:
 - Generate SSH keys
 - Use Identity and Access Management to control users' access to resources
 - Create virtual cloud networks
-- Create a compute service
+- Create a compute instance
 - Create and attach a Block Volume
 - Create an Object Storage
 
