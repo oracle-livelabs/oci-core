@@ -40,8 +40,8 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
-    |VCN Name |VCN-Workshop|
-    |Compartment |  Choose the ***Workshop*** compartment
+    |VCN Name |KO2_VCN|
+    |Compartment |  Choose the ***Sandbox*** compartment
     |VCN CIDR Block|10.0.0.0/16|
     |Public Subnet CIDR Block|10.0.0.0/24|
     |Private Subnet CIDR Block|10.0.1.0/24|
@@ -56,6 +56,8 @@ To create a VCN on Oracle Cloud Infrastructure:
 
 4. Review your settings to be sure they are correct. Click the **Create** button to create the VCN. 
     ![Review CV Configuration](images/review-vcn.png " ")
+    ![Review CV Configuration2](images/review-vcn2.png " ")
+    ![Review CV Configuration3](images/review-vcn3.png " ")
 
 5. It will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
 
@@ -70,13 +72,14 @@ To create a VCN on Oracle Cloud Infrastructure:
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
     | Name |RT_ADB|
-    |Compartment |  Choose the ***Workshop*** compartment
+    |Compartment |  Choose the ***Sandbox*** compartment
     |Target Type|NAT Gateway|
     |Destination CIDR Block|0.0.0.0/0|
     |Compartment|Workshop|
-    |Target NAT Gateway| NAT Gateway-VCN-Workshop|
+    |Target NAT Gateway| NAT Gateway-KO2_VCN|
 
     ![Configure the Route Table](images/create-rt1-adb.png " ")
+    ![Configure the Route Table2](images/create-rt1-adb2.png " ")
 
 
     Then add Another Route Table and complete the following fields:
@@ -86,7 +89,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     | Target Type|Service Gateway|
     |Destination Service |  Choose "all ***Region_name*** services in Oracle Service Network"
     |Compartment|Workshop|
-    |Target Service Gateway| Service Gateway-VCN-Workshop|
+    |Target Service Gateway| Service Gateway-KO2_VCN|
 
     ![Configure the Route Table](images/create-rt2-adb.png " ")
 
@@ -104,12 +107,13 @@ To create a VCN on Oracle Cloud Infrastructure:
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
     | Name |SL_ADB|
-    |Compartment |  Choose the ***Workshop*** compartment
+    |Compartment |  Choose the ***Sandbox*** compartment
     |Source CIDR Block|10.0.0.0/16|
     |IP Protocol|TCP
     |Destination Port Range|ALL|
 
       ![Configure the Security List](images/create-securitylist-ingress-adb.png " ")
+      ![Configure the Security List2](images/create-securitylist-ingress-adb2.png " ")
 
     Then add Another Egress Rule and complete the following fields
 
@@ -133,7 +137,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
     | Name |Subnet_ADB|
-    |Compartment |  Choose the ***Workshop*** compartment
+    |Compartment |  Choose the ***Sandbox*** compartment
     |Subnet Type|Regional|
     |IPv4 CIDR Block|10.0.3.0/24|
     |Route Table|RT_ADB
@@ -143,6 +147,8 @@ To create a VCN on Oracle Cloud Infrastructure:
     ![Create a Private Subnet](images/create-subnet-adb.png " ")
 
     ![Create a Private Subnet](images/create-subnet-adb2.png " ")
+
+    ![Create a Private Subnet](images/create-subnet-adb3.png " ")
 
     Then go with **Create Subnet**. 
 
@@ -158,7 +164,7 @@ Please *proceed to the next lab*.
 ## Acknowledgements
 
 - **Author** - Radu Chiru
-- **Last Updated By/Date** - Radu Chiru, Cristian Manea, August 2023
+- **Last Updated By/Date** - Radu Chiru, Cristian Manea, May 2025
 
 
 
