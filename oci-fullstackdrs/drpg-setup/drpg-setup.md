@@ -2,11 +2,15 @@
 
 ## Introduction
 
-In this lab, we will Create and Associate Disaster Recovery Protection Groups (DRPG). Ashburn is a primary region, and Phoenix is the standby region.
+In this lab, we will create and associate **Disaster Recovery Protection Groups (DRPGs)**. **Ashburn** is the primary region, and **Phoenix** is the standby region.
 
-What is DRPG – A resource type used by Full Stack DR.  A DR Protection Group represents a consistency grouping defined for the purposes of disaster recovery.  It is a collection of different OCI resources that comprise an application and must be treated as a combined group when performing disaster recovery operations.  For example, a DR Protection Group may consist of application servers (compute instances), associated block storage (grouped as volume groups), and databases.
+**What is a Disaster Recovery Protection Groups?**  
 
-Estimated Time: 5 Minutes
+-   A **Disaster Recovery Protection Group (DRPG)** is a resource type used by **OCI Full Stack DR**. It represents a consistency group of related OCI resources that must be recovered together during a disaster recovery operation.  
+
+-   A DRPG can include resources like **compute instances**, **volume groups**, **databases** ,**loadbalancer** ,**OKE clusters** etc that form an application stack and should be treated as a single unit during switchover, failover, or drill operations.
+
+**Estimated Time**: 10 Minutes
 
 ### Objectives
 
@@ -15,7 +19,7 @@ Estimated Time: 5 Minutes
 
 ## Task 1: Create DRPG in Ashburn and Phoenix regions
 
-1.  Login into OCI Console with your provided Credentials. The primary region should be **Ashburn**.
+1.  Login into OCI Console with your Credentials. The primary region should be **Ashburn**.
 
     ![Ashburn OCI Console](./images/ashburn-region-new.png)
 
@@ -98,4 +102,4 @@ Estimated Time: 5 Minutes
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,May 2023
+- **Last Updated By/Date** -  Suraj Ramesh, July 2025
