@@ -18,6 +18,7 @@ In this lab, we will add members to the DR Protection groups created and associa
 - Load Balancer and Network Load Balancer 
 - File Storage Service
 - Object Storage Bucket
+- Oracle Kubernetes Engine (OKE)
 
 Estimated Time: 15 Minutes
 
@@ -30,23 +31,31 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 
 ## Task 1: Add members to Ashburn DRPG (Primary)
 
-1.  Login into OCI Console with your provided Credentials. The primary region should be **Ashburn**.
+1.  Login into OCI Console with your Credentials. The primary region should be **Ashburn**.
 
-    ![oci console ashburn](./images/ashburn-region-new.png)
+    ![Ashburn OCI Console](./images/ashburn-region-new.png)
+    
+2. Open the **Hamburger menu (☰)** and select **Migration and Disaster Recovery**. Then go to **Disaster Recovery → DR Protection Groups** and Confirm that the **region is set to Ashburn**.
 
-2.  Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region in **Ashburn**
-
-    ![drpg navigation page](./images/ashburn-drpgpage-new.png)
+    ![DRPG from ashburn](./images/ashburn-drpgpage-new.png)
 
 3.  You will land on the Disaster Recovery Protection group home page; make sure you have selected *the Ashburn* region.
 
     ![drpg landing page](./images/drpg-status-ashburn-new.png)
 
-4.  In the Ashburn region DRPG page, add the members required in the **mushop-ashburn** DRPG. *We will add ATP Primary Database, two mushop compute VMs,two-volume groups for the boot volumes of mushop compute VMs and Load Balancer*. Let's add those details.
+4. In the **Ashburn region**, open the **mushop-ashburn** DR Protection Group page.Add the following members:
 
-5.  Add ATP Primary Database. 
+    - **Autonomous Transaction Processing (ATP) Primary Database**
+    - **Two mushop Compute VMs**
+    - **Two Volume Groups** (for the boot volumes of the mushop Compute VMs)
+    - **Load Balancer**
 
-    Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
+> 💡 Tip: Ensure each resource is added from the correct compartment and region.
+
+
+5.  Add ATP Primary Database to DRPG.In the **Ashburn region**, open the **mushop-ashburn-xxxxx** DR Protection Group. Navigate to **Members** tab.
+Click **Add Member** to begin adding resources.
+
 
     ![drpg add member](./images/ashburn-add-member-new.png)
 
@@ -260,4 +269,4 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,November 2024
+- **Last Updated By/Date** -  Suraj Ramesh, July 2025
