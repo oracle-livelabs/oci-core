@@ -59,74 +59,81 @@ Click **Add Member** to begin adding resources.
 
     ![drpg add member](./images/ashburn-add-member-new.png)
 
-    It will show various resource types and select **Autonomous Database**
+-   It will show various resource types and select **Autonomous Database**
+    
     ![drpg resource type](./images/ashburn-resource-new-members.png)
 
-    Select the Database in your compartment; it will have MushopDB-XXXXX. 
+-   Select the Database in your compartment; it will have MushopDB-XXXXX. 
     
-    Default option for standby type of DR Drill is "Refreshable clone", so we will select this.
+-   Default option for standby type of DR Drill is "Refreshable clone", so we will select this.
 
-    Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
+-  Verify it and click add. Make sure to check the box **"I understand that I must referesh and verify all the existing plans"**
 
     ![drpg add atp](./images/ashburn-atp-add-new.png)
 
-    **mushop-ashburn** DRPG status will change to updating; wait for a few seconds. You should see that the ATP database is added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** section under Resources.
+-   **mushop-ashburn-xxxxx** DRPG status will change to updating; wait for a few seconds. You should see that the ATP database is added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** tab and select the latest **Update DR protection group** operation.
 
     ![drpg atp added](./images/ashburn-atp-added-new.png)
 
     Navigate back to the DR Protection group page; the status of DRPG should be active. In case if you don't see the ATP DB member, add it again.
 
-6.  Add first Compute instance **mushop-xxxxx-0** as member,select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
+6.  Add first Compute instance **mushop-xxxxx-0** as member,select **mushop-ashburn** DRPG, Navigate to **Members** tab. Click **Add Member** to begin adding resources.
 
     It will show various resource types and select **Compute**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
 
     - Resource Type as **Compute**
-    - Make sure to check the box **"I understand that all existing plans will be deleted"**
+    - Make sure to check the box **"I understand that I must referesh and verify all the existing plans"**
     - Instances in Compartment, select **mushop-xxxxx-0**
     - Compute instance type, select **Moving instance**
     - Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
+
+    ![drpg resource type](./images/ashburn-resource-add-compute0.png)
+
     - Select VNIC as *primaryvnic*
     - Destination subnet as *mushop-main-xxxxx (regional)*
-    - No need to input any values for *Destination primary private IP address* and *Destination primary private IP hostname label*
+    - No need to input any values for *Destination reserved public ip*, *Destination primary private IP address*,*Destination primary private IP hostname label*
     - Ignore Network security groups
     - Click Add
 
     ![drpg compute vnic](./images/ashburn-vnic-node0-new.png)
 
-    -You should be able to able to add VNIC details, verify and click Add
+    - You should be able to see the added VNIC details, verify and click Add
 
     ![drpg vnic added](./images/ashburn-compute-node0-new.png)
 
-    **mushop-ashburn** DRPG status will change to updating; wait for a few seconds. DRPG status will change to active.You should be able to see that compute instance **mushop-xxxxx-0** has been added as a member. Refresh the DRPG page if required. You can monitor the status in the *Work requests* section under Resources.
+    **mushop-ashburn-xxxxx** DRPG status will change to updating; wait for a few seconds. DRPG status will change to active.You should be able to see that compute instance **mushop-xxxxx-0** has been added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** tab and select the latest **Update DR protection group** operation.
 
     ![drpg compute added](./images/ashburn-node0-added-new.png)
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-7.  Add second Compute instance **mushop-xxxxx-1** as member,select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
+7.  Add second Compute instance **mushop-xxxxx-1** as member,select **mushop-ashburn** DRPG.Navigate to **Members** tab.Click **Add Member** to begin adding resources.
 
     It will show various resource types and select **Compute**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
 
     - Resource Type as **Compute**
-    - Make sure to check the box **"I understand that all existing plans will be deleted"**
+    - Make sure to check the box **"I understand that I must referesh and verify all the existing plans"**
     - Instances in Compartment, select **mushop-xxxxx-1**
     - Compute instance type, select **Moving instance**
     - Click Add VNIC mapping. This will pop up inputs for Add VNIC mapping
+
+    ![drpg resource type](./images/ashburn-resource-add-compute1.png)
+
     - Select VNIC as *primaryvnic*
     - Destination subnet as *mushop-main-xxxxx (regional)*
-    - No need to input any values for *Destination primary private IP address* and *Destination primary private IP hostname label*
+    - No need to input any values for *Destination reserved public ip*, *Destination primary private IP address*,*Destination primary private IP hostname label*
     - Ignore Network security groups
     - Click Add
 
     ![drpg compute vnic](./images/ashburn-vnic-node1-new.png)
 
-    - You should be able to able to add VNIC details, verify and click Add
+    - You should be able to see the added VNIC details, verify and click Add
 
     ![drpg vnic added](./images/ashburn-compute-node1-new.png)
 
-    **mushop-ashburn** DRPG status will change to updating; wait for a few seconds. DRPG status will change to active.You should be able to see that compute instance **mushop-xxxxx-1** has been added as a member. Refresh the DRPG page if required. You can monitor the status in the *Work requests* section under Resources.
+    **mushop-ashburn-xxxxx** DRPG status will change to updating; wait for a few seconds. DRPG status will change to active.You should be able to see that compute instance **mushop-xxxxx-1** has been added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** tab and select the latest **Update DR protection group** operation.
 
     ![drpg compute added](./images/ashburn-node1-added-new.png)
 
