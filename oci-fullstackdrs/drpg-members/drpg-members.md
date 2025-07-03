@@ -43,7 +43,7 @@ As part of the MuShop architecture,Virtual machines are deployed as Cold VM or P
 
     ![drpg landing page](./images/drpg-status-ashburn-new.png)
 
-4. In the **Ashburn region**, open the **mushop-ashburn** DR Protection Group page.Add the following members:
+4. In the **Ashburn region**, open the **mushop-ashburn-xxxxx** DR Protection Group page.Add the following members:
 
     - **Autonomous Transaction Processing (ATP) Primary Database**
     - **Two mushop Compute VMs**
@@ -63,9 +63,11 @@ Click **Add Member** to begin adding resources.
     
     ![drpg resource type](./images/ashburn-resource-new-members.png)
 
--   Select the Database in your compartment; it will have MushopDB-XXXXX. 
+-   Select the Database in your compartment; it will have MushopDB-XXXXX. This is the primary ATP database.
     
 -   Default option for standby type of DR Drill is "Refreshable clone", so we will select this.
+
+-   Leave the remaining values as default
 
 -  Verify it and click add. Make sure to check the box **"I understand that I must referesh and verify all the existing plans"**
 
@@ -141,19 +143,20 @@ Click **Add Member** to begin adding resources.
 
 8.  Add the first volume group  **mushop-volume-group-0**. This volume group consists of the boot volume of mushop-xxxx-0 VM and has cross-region replication configured to the phoenix region.
 
-    Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
+    Select **mushop-ashburn-xxxxx** DRPG, Navigate to **Members** tab.Click **Add Member** to begin adding resources.
 
     It will show various resource types and select **Volume group**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
 
-    - Resource Type as Volume Group
-    - Make sure to check the box **"I understand that all existing plans will be deleted"**
+    - Resource Type as **Volume group**
+    - Make sure to check the box **"I understand that I must referesh and verify all the existing plans"**
     - Select volume group **mushop-volume-group-0**
+    - Leave the remaining values as default
     - Verify and add
 
     ![drpg add volume group](./images/ashburn-add-vg0-new.png)
 
-    **mushop-ashburn** DRPG status will change to updating; wait for a few seconds. DRPG status will change to active.You should be able to see that volume group **mushop-volume-group-0** has been added as a member. Refresh the DRPG page if required. You can monitor the status in the *Work requests* section under Resources.
+    **mushop-ashburn-xxxxx** DRPG status will change to updating; wait for a few seconds. DRPG status will change to active.You should be able to see that volume group **mushop-volume-group-0** has been added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** tab and select the latest **Update DR protection group** operation.
 
     ![drpg volume group added](./images/ashburn-vg0-added-new.png)
 
@@ -161,46 +164,49 @@ Click **Add Member** to begin adding resources.
 
 9. Add the second volume group **mushop-volume-group-1**. This volume group consists of the boot volume of mushop-xxxx-1 VM and has cross-region replication configured to the phoenix region.
 
-    Select **mushop-ashburn** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
+    Select **mushop-ashburn-xxxxx** DRPG, Navigate to **Members** tab.Click **Add Member** to begin adding resources.
 
     It will show various resource types and select **Volume group**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
 
-    - Resource Type as Volume Group
-    - Make sure to check the box **"I understand that all existing plans will be deleted"**
+    - Resource Type as **Volume group**
+    - Make sure to check the box **"I understand that I must referesh and verify all the existing plans"**
     - Select volume group **mushop-volume-group-1**
+    - Leave the remaining values as default
     - Verify and add
 
     ![drpg add volume group](./images/ashburn-add-vg1-new.png)
 
-    **mushop-ashburn** DRPG status will change to updating; wait for a few seconds. DRPG status will change to active.You should be able to see that volume group **mushop-volume-group-1** has been added as a member. Refresh the DRPG page if required. You can monitor the status in the *Work requests* section under Resources.
+    **mushop-ashburn-xxxxx** DRPG status will change to updating; wait for a few seconds. DRPG status will change to active.You should be able to see that volume group **mushop-volume-group-1** has been added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** tab and select the latest **Update DR protection group** operation.
 
     ![drpg volume group added](./images/ashburn-vg1-added-new.png)
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-10. Add Load Balancer as member.
+10. Add **Load Balancer** as member.
 
     It will show various resource types and select **Load Balancer**
     ![drpg resource type](./images/ashburn-resource-new-members.png)
      
-    - Resource Type as Load Balancer
-    - Make sure to check the box **"I understand that all existing plans will be deleted"**
+    - Resource Type as **Load balancer**
+    - Make sure to check the box **"I understand that I must referesh and verify all the existing plans"**
     - Select Load balancer **mushop-xxxxx**
     - Select Destination load balancer **mushop-xxxxx**
-    - Select Source backend set **mushop-xxxxx**
-    - Select Destination backend set **mushop-xxxxx**
+    - Select Source backend set **mushop-iad-xxxxx**
+    - Select Destination backend set **mushop-phx-xxxxx**
+    - Leave the remaining values as default
     - Verify and add
 
     ![drpg add lbr](./images/ashburn-lbr-add-new.png)
 
-    **mushop-ashburn** DRPG status will change to updating; wait for a few seconds. You should see that the Load Balancer is added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** section under Resources.
+    **mushop-ashburn-xxxxx** DRPG status will change to updating; wait for a few seconds. You should see that the Load Balancer is added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** tab and select the latest **Update DR protection group** operation.
+
 
     ![drpg lbr added](./images/ashburn-lbr-added-new.png)
 
     Navigate back to the DR Protection group page; the status of DRPG should be active. In case if you don't see the Load Balancer member, add it again.
 
-10. We have added all the required members in the **mushop-ashburn** DRPG. It should show a ATP Database, two Compute Instances, two Volume groups and a Load Balancer.DRPG status should show as active.
+10. We have added all the required members in the **mushop-ashburn-xxxxx** DRPG. It should show a ATP Database, two Compute Instances, two Volume groups and a Load Balancer.DRPG status should show as active.
 
     ![drpg members ashburn](./images/ashburn-allmembers-new.png)
 
@@ -211,7 +217,7 @@ Click **Add Member** to begin adding resources.
 
     ![oci console phoenix](./images/phoenix-region-new.png)
 
-2.  Select **Migration and Disaster Recovery** from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups** Verify the region in **Phoenix**
+2. Open the **Hamburger menu (☰)** and select **Migration and Disaster Recovery**. Then go to **Disaster Recovery → DR Protection Groups** and Confirm that the **region is set to Phoenix**.
 
     ![drpg navigation page](./images/phoenix-drpgpage-new.png)
 
@@ -219,59 +225,71 @@ Click **Add Member** to begin adding resources.
 
     ![drpg landing page](./images/drpg-status-phoenix-new.png)
 
-4.  In the Phoenix region DRPG page, add the members required in the **mushop-phoenix** DRPG. *We will be adding ATP Standby Database and Load Balancer*. Let's add those details.  **We don't need to add compute and volume groups as we VM's are designed in cold VM DR pattern and those VM's will be created automatically during the DR switchover process by Full Stack DR**
+4. On the **Phoenix region** DRPG page, add the required members to the **mushop-phoeni-xxxxxx** DRPG:
 
-6.  Add ATP Standby Database. Select **mushop-phoenix** DRPG, navigate to **Members** in the *Resources* section, and hit **Add Member**
+   - Add **ATP Standby Database**
+   - Add **Load Balancer**
+
+   > ℹ️ No need to add **Compute** and **Volume Groups**, as the VMs follow a **cold DR pattern** and will be automatically created during the DR plan execution by **Full Stack DR**.
+
+
+6.  Add ATP Standby Database. Select **mushop-phoenix-xxxxx** DRPG. Navigate to **Members** tab.
+Click **Add Member** to begin adding resources.
 
     ![drpg add member](./images/phoenix-add-member-new.png)
 
-    It will show various resource types and select **Autonomous Database**
+-   It will show various resource types and select **Autonomous Database**
     ![drpg resource type](./images/phoenix-resource-new-members.png)
 
-    Select the Database in your compartment; it will have **MushopDB-XXXXX**.
+-   Select the Database in your compartment; it will have MushopDB-XXXXX. This is the standby ATP database.
     
-    Default option for standby type of DR Drill is "Refreshable clone", so we will select this.
+-   Default option for standby type of DR Drill is "Refreshable clone", so we will select this.
 
-    Verify it and hit add. Make sure to check the box **"I understand that all existing plans will be deleted"**
+-   Leave the remaining values as default
+
+-  Verify it and click add. Make sure to check the box **"I understand that I must referesh and verify all the existing plans"**
 
     ![drpg add atp](./images/phoenix-atp-add-new.png)
 
-    **mushop-phoenix** DRPG status will change to updating; wait for a few seconds. You should be able to see ATP database has been added as Member. Refresh the DRPG page if required. You can monitor the status in the *Work requests* section under Resources.
+    **mushop-phoenix-xxxxx** DRPG status will change to updating; wait for a few seconds. You should be able to see ATP database has been added as Member. Refresh the DRPG page if required. You can monitor the status in the *Work requests* section under Resources.
 
     ![drpg atp added](./images/phoenix-atp-added-new.png)
 
     Navigate back to the DR Protection group page; the status of DRPG should be active.
 
-7. Add Load Balancer as member.
+7. Add **Load Balancer** as member.
 
     It will show various resource types and select **Load Balancer**
     ![drpg resource type](./images/phoenix-resource-new-members.png)
      
-    - Resource Type as Load Balancer
-    - Make sure to check the box **"I understand that all existing plans will be deleted"**
+    - Resource Type as **Load balancer**
+    - Make sure to check the box **"I understand that I must referesh and verify all the existing plans"**
     - Select Load balancer **mushop-xxxxx**
     - Select Destination load balancer **mushop-xxxxx**
-    - Select Source backend set **mushop-xxxxx**
-    - Select Destination backend set **mushop-xxxxx**
+    - Select Source backend set **mushop-phx-xxxxx**
+    - Select Destination backend set **mushop-iad-xxxxx**
+    - Leave the remaining values as default
     - Verify and add
 
     ![drpg add lbr](./images/phoenix-lbr-add-new.png)
 
-    **phoenix-ashburn** DRPG status will change to updating; wait for a few seconds. You should see that the Load Balancer is added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** section under Resources.
+    **mushop-phoenix-xxxxx** DRPG status will change to updating; wait for a few seconds. You should see that the Load Balancer is added as a member. Refresh the DRPG page if required. You can monitor the request's status in the **Work requests** tab and select the latest **Update DR protection group** operation.
+
 
     ![drpg lbr added](./images/phoenix-lbr-added-new.png)
 
     Navigate back to the DR Protection group page; the status of DRPG should be active. In case if you don't see the Load Balancer member, add it again.
 
-8.  Now, we have added all the required members in the **mushop-phoenix** DRPG. It should show ATP Database and Load Balancer. DRPG status will show as active.
+8.  Now, we have added all the required members in the **mushop-phoenix-xxxxx** DRPG. It should show ATP Database and Load Balancer. DRPG status will show as active.
 
-    ![drpg members phoenix](./images/phoenix-allmembers-new1.png)
+    ![drpg members phoenix](./images/phoenix-allmembers-new.png)
 
     You may now [Proceed to the next lab](#next)
 
-## Troubleshooting tips
+## Troubleshooting Tips
 
-1. After adding the member, in case if the member is not showing up. Re-add the member again.
+1. If a member doesn't appear after adding, try **re-adding the member**.
+2. Check the **Work Request** status and review any **error messages** for further details.
 
 ## Acknowledgements
 

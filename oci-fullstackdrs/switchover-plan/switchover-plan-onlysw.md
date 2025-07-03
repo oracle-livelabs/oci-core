@@ -1,39 +1,26 @@
-# Create and Customize DR plans
+# Create and Customize the DR Switchover Plan
 
 ## Introduction
-In this lab, you'll learn how to create **Switchover**, **Failover**, and **Drill Plans** in Oracle Full Stack DR. You will also customize these DR Plans using **user-defined plan groups** tailored to the MuShop application's requirements.
 
-⚠️ **Note:**  
-Full Stack DR does **not** allow the creation of DR Plans in a **Primary** role DR Protection Group (e.g., Ashburn).All DR Plans **must** be created in the **Standby** role DRPG (e.g., Phoenix).
+In this lab, we will create a DR Switchover plan and customize the plan with additional steps. Ashburn is a primary region, and Phoenix is the standby region. Full Stack DR support the below plan types
 
-**DR Plans**- A DR Plan represents a DR workflow associated with a pair of DR Protection Groups. A DR Plan is represented as a sequence of Plan Groups. These Plan Groups in turn consist of Plan Steps. A DR Plan can only be created at the Standby DR Protection Group.
+- Switchover: Shutdown at primary, then transition to standby
+- Failover: Recover at standby
+- Start Drill: Perform a complete dry run of a failover for validation
+- Stop Drill: Tear down workload (created or converted during Start Drill plan) at standby
 
-There are four types of DR plans which you can create in Full Stack DR.
-
-- Switchover Plan:Used for planned and controlled transition of services from a primary to a standby region. It involves shutting down services in the primary region and bringing them up in the standby region. 
-- Failover Plan: Used for unplanned recovery during disasters or outages. It immediately activates services in the standby region whenever the primary is entirely inaccessible.
-- Drill Plans: Performing DR drills is an essential DR service capability that allows users to exercise and validate their business continuity configuration and plans without disrupting their production stack.
-    - Start Drill: It creates a replica of your production stack without impacting production.Perform a complete dry run of a failover for validation
-    - Stop Drill: Removes the replica of your production stack created earlier by Start drill.
- 
-**Plan Group** – A group of steps in a DR Plan. A DR Plan consists of one or more Plan Groups that execute sequentially. All steps in a Plan Group execute in parallel. 
-
-There are two types of plan groups
-
-- Built-In Groups or Steps – A type of Plan Group or Step that is generated automatically by FSDR when a DR Plan is created. Examples of Built-in Plan Steps are: Launch Compute Instance, Switchover Database, etc.
-
-- User-Defined Groups or Steps– A type of Plan Group or Step that is added by the user to a DR Plan after the DR plan is created by FSDR. 
+This lab will focus on how to create a Switchover plan and customize the plan as per MuShop application requirements. DR Plan *must* be created in the standby region (Phoenix). It is because, in the case of the worst-case scenario, the entire primary region outside the Full Stack DR will not be accessible from the primary region.
 
 Estimated Time: 20 Minutes
 
 ### Objectives
 
-- Create DR plans (Switchover,Failover and Start drill)
-- Customize the DR plans - Restore Database Wallet group
-- Customize the DR plans - Restore the Application Group
-- Verify the DR plans and plan groups
+- Create a Switchover plan
+- Customize the Switchover plan- Restore Database Wallet group
+- Customize the Switchover plan- Restore the Application Group
+- Verify the Switchover plan and plan groups
 
-## Task 1: Create DR plans
+## Task 1: Create a Switchover plan
 
 1.  Login into OCI Console with your provided Credentials. Select region as **Phoenix**.
 
@@ -240,4 +227,4 @@ Estimated Time: 20 Minutes
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh, July 2025
+- **Last Updated By/Date** -  Suraj Ramesh,May 2024

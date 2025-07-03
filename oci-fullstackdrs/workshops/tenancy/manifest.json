@@ -23,18 +23,18 @@
         "filename": "../../pre-switchover/pre-switchover-tenancy.md"
       },
       {
-        "title": "Lab 3: Create and Associate DRPG",
+        "title": "Lab 3: Create and Associate DR protection groups",
         "description": "Create and Associate DRPG",
         "filename": "../../drpg-setup/drpg-setup.md"
       },
       {
-        "title": "Lab 4: Add members to DRPG",
+        "title": "Lab 4: Add members to the DR Protection groups",
         "description": "Add members to DRPG",
         "filename": "../../drpg-members/drpg-members.md"
       },
       {
-        "title": "Lab 5: Create DR Switchover plan",
-        "description": "Create DR Switchover plan",
+        "title": "Lab 5: Create and customize DR plans",
+        "description": "Create and customize DR plans",
         "filename": "../../switchover-plan/switchover-plan.md"
       },
       {
