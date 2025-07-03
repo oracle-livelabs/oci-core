@@ -4,7 +4,7 @@
 In this lab, you'll learn how to create **Switchover**, **Failover**, and **Drill Plans** in Oracle Full Stack DR. You will also customize these DR Plans using **user-defined plan groups** tailored to the MuShop application's requirements.
 
 ⚠️ **Note:**  
-Full Stack DR does **not** allow the creation of DR Plans in a **Primary** role DR Protection Group (e.g., Ashburn).All DR Plans **must** be created in the **Standby** role DRPG (e.g., Phoenix).
+Full Stack DR does **not** allow the creation of DR Plans in a **Primary** role DR Protection Group.All DR Plans **must** be created in the **Standby** role DRPG.
 
 **DR Plans**- A DR Plan represents a DR workflow associated with a pair of DR Protection Groups. A DR Plan is represented as a sequence of Plan Groups. These Plan Groups in turn consist of Plan Steps. A DR Plan can only be created at the Standby DR Protection Group.
 
@@ -20,9 +20,9 @@ There are four types of DR plans which you can create in Full Stack DR.
 
 There are two types of plan groups
 
-- Built-In Groups or Steps – A type of Plan Group or Step that is generated automatically by FSDR when a DR Plan is created. Examples of Built-in Plan Steps are: Launch Compute Instance, Switchover Database, etc.
+- Built-In Groups or Steps – A type of Plan Group or Step that is generated automatically by Full Stack DR when a DR Plan is created. Examples of Built-in Plan Steps are: Launch Compute Instance, Switchover Database, etc.
 
-- User-Defined Groups or Steps– A type of Plan Group or Step that is added by the user to a DR Plan after the DR plan is created by FSDR. 
+- User-Defined Groups or Steps– A type of Plan Group or Step that is added by the user to a DR Plan after the DR plan is created by Full Stack DR. 
 
 Estimated Time: 20 Minutes
 
@@ -39,7 +39,7 @@ Estimated Time: 20 Minutes
 
     ![phoenix region](./images/phoenix-region-new.png)
 
-2.  Select Migration and Disaster Recovery from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region is **Phoenix**
+2.  Open the **Hamburger menu (☰)** and select **Migration and Disaster Recovery**. Then go to **Disaster Recovery → DR Protection Groups** and Confirm that the **region is set to Phoenix**.
 
     ![phoenix region drpg](./images/phoenix-drpgpage-new.png)
 
@@ -47,45 +47,53 @@ Estimated Time: 20 Minutes
 
     ![drpg home](./images/drpg-status-phoenix-new.png)
 
-4. Select the **mushop-phoenix** DRPG and navigate to Plans under the resources section.
+4. Select the **mushop-phoenix-xxxxx** DRPG and navigate to the **Plans** tab
 
     ![drpg dr plan](./images/phoenix-drplan-new.png)
 
     - Create plan
-    - Name as **mushop-app-switchover**
+    - Name as **mushop-app-switchover-iad-phx** ( Provider any other names which is meaningful and see to understand)
     - Plan type as **Switchover (planned)**
     - Hit Create
 
-    ![drpg create plan](./images/phoenix-create-drplan-new.png)
+    ![drpg create plan](./images/phoenix-create-so-drplan-new.png)
 
     The plan will start creating; select the plan **mushop-app-switchover**.
 
-    ![drpg creating plan](./images/phoenix-drplan-creating-new.png)
+    ![drpg creating plan](./images/phoenix-so-drplan-creating-new.png)
 
-    Refresh the DR Plan page if required. You can monitor the request's status in the **Work requests** section under Resources. Within a minute, the plan will get created, and it should be in *active* State.
+    Refresh the DR Plan page if required. You can monitor the request's status in the **Work requests** tab and select the work request details. Within a minute, the plan will get created, and it should be in *active* State.
 
-    ![drpg plan created](./images/phoenix-drplan-created-new.png)
+    ![drpg plan created](./images/phoenix-so-drplan-created-new.png)
 
-    Select the **mushop-app-switchover** plan, and you should be able to various built-in plan groups.
+    Select the **mushop-app-switchover** plan, navigate to **Plan groups** tab and you should be able to various built-in plan groups.
 
-    ![drpg plan details](./images/phoenix-drplan-details-new.png)
+    ![drpg plan details](./images/phoenix-so-drplan-details-new.png)
 
     Based on the members we added in both primary and standby DRPG, Full Stack DR created these built-in plans. You can navigate the plan groups to see the various steps created.
 
-    ![drpg plan more details](./images/phoenix-drplan-moredetails-new.png)
+    ![drpg plan more details](./images/phoenix-so-drplan-moredetails-new.png)
 
-    - **Built-in Prechecks** - These are prechecks for the app, DB, volume groups and Load balancer switchover.
-    - **Update Source Load Balancers' Backend Sets** - Remove backend servers from the Load balancer backend set in the Ashburn region. 
-    - **Stop Compute Instances** - Stop app virtual machines in the Ashburn region.
-    - **Switchover Volume Groups** - Switchover volume groups in the phoenix region.
-    - **Switchover Autonomous Databases** - Switchover ATP DB from Ashburn to Phoenix region
-    - **Launch Compute Instances** - Create virtual machines in the phoenix region.
-    - **Reverse Volume Groups' Replication** - Set up reverse volume group replication from Phoenix to Ashburn region.
-    - **Terminate Compute Instances** - Terminate compute instances in the Ashburn region. By default the plan group is disabled, it can be enabled depending on the requirements.
-    - **Remove Compute Instances From DR Protection Group** - Remove compute instances from the Ashburn DRPG.
-    - **Terminate Volume Groups** - Terminate volume groups in the Ashburn region. By default the plan group is disabled, it can be enabled depending on the requirements.
-    - **Remove Volume Groups From DR Protection Group** - Remove volume group from the Ashburn DRPG
-    - **Update Destination Load Balancers' Backend Sets** - Add backend servers to the load balancer backend set in the Phoenix region. Backend servers IP will be mapped based on the launched VM's in the Phoenix region.
+    - **Built-in Prechecks** - These are prechecks for the compute, DB, volume groups and Load balancer switchover.
+    - **Load Balancers - Update Source Backend Setss** - Remove backend servers from the Load balancer backend set in the Ashburn region. 
+    - **Compute Instances - Stop** - Stop app virtual machines in the Ashburn region.
+    - **Volume Groups - Switchover** - Switchover volume groups in the phoenix region.
+    - **Autonomous Databases - Switchover** - Switchover ATP DB from Ashburn to Phoenix region
+    - **Compute Instances - Launch** - Create virtual machines in the phoenix region.
+    - **Load Balancers - Update Destination Backend Sets** - Add backend servers to the load balancer backend set in the Phoenix region. Backend servers IP will be mapped based on the launched VM's in the Phoenix region.
+    - **Volume Groups - Reverse Replication** - Set up reverse volume group replication from Phoenix to Ashburn region.
+    - **Compute Instances - Terminate** - Terminate compute instances in the Ashburn region. By default the plan group is disabled, it can be enabled depending on the requirements.
+    - **Compute Instances - Remove from DR Protection Group** - Remove compute instances from the Ashburn DRPG.
+    - **Volume Groups - Terminate** - Terminate volume groups in the Ashburn region. By default the plan group is disabled, it can be enabled depending on the requirements.
+    - **Volume Groups - Remove from DR Protection Group** - Remove volume group from the Ashburn DRPG
+
+**Note:** **Compute Instances - Terminate* and **Volume Groups - Terminate** plan groups are disabled by default; to enable them, click the **`...`** menu at the end of the plan groups and select **Enable all steps**. This step is optional but recommended.
+
+5. Follow the same process as part Step 4 to create the *Failover* and *Start Drill* plans — please make sure to select the correct **Plan Type** while creating them. Once the plans are created it will look like.
+
+
+
+
   
 ## Task 2: Customize the Switchover plan-Restore Database Wallet group
 
