@@ -51,8 +51,12 @@ Estimated Time: 5 Minutes
 3. Open a tab in your browser and verify the Mushop Application using the gathered public IP address. You should be able to see that the application is working as expected from the Phoenix region.
 
     ![mushop app verification](./images/phoenix-mushop-app-new.png)
-*
-    You may now [Proceed to the next lab](#next)
+
+    **Mushop application is accessible from the new primary region (Phoenix)**
+
+
+This concludes the lab **Protect Your Business Using Oracle Full Stack Disaster Recovery Service**.We’ve seen how the MuShop application (Full Stack) can be seamlessly switched over from the **Ashburn** region to the **Phoenix** region with just a single click! 
+
 
 ## Acknowledgements
 
