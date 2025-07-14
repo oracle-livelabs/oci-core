@@ -87,28 +87,37 @@ Estimated Time: 20 Minutes
     - **Volume Groups - Terminate** - Terminate volume groups in the Ashburn region. By default the plan group is disabled, it can be enabled depending on the requirements.
     - **Volume Groups - Remove from DR Protection Group** - Remove volume group from the Ashburn DRPG
 
-**Note:** **Compute Instances - Terminate* and **Volume Groups - Terminate** plan groups are disabled by default; to enable them, click the **`...`** menu at the end of the plan groups and select **Enable all steps**. This step is optional but recommended.
+**Note:** **Compute Instances - Terminate* and **Volume Groups - Terminate** plan groups are disabled by default; to enable them, click the **`...`** menu at the end of the plan groups and select **Enable all steps**. This step is optional but recommended. In case if you leave it disabled, you might need to clean up the compute and volume groups in the Ashburn region manually.
 
-5. Follow the same process as part Step 4 to create the *Failover* and *Start Drill* plans — please make sure to select the correct **Plan Type** while creating them. Once the plans are created it will look like.
+5. Follow the same process described in Step 4 to create the **Failover** and **Start Drill** plans. Please ensure you select the correct **Plan Type** when creating each plan. Once the plans are created, they will appear as shown below.
 
+    ![FO and Start drill created ](./images/phoenix-fo-dr-drplans-created-new.png)
 
+6. Check the **Failover** and **Start Drill** plan groups. Based on the members added to both the primary and standby DR Protection Groups, Full Stack DR automatically created these built-in plans. You can navigate through the plan groups to review the various steps included.
 
+    ![FO plan groups ](./images/phoenix-fo-drplan-moredetails-new.png)
+
+    ![Start drill plan groups ](./images/phoenix-sd-drplan-moredetails-new.png)
+
+7. Full Stack DR allows creating a Stop Drill plan only after the Start Drill has been executed and the DR Protection Group is no longer in an Active state. You cannot create a Stop Drill plan at this point and will receive a warning if you attempt to do so, so we cannot create stop drill plan at the moment.
+
+    ![Stop drill error ](./images/phoenix-stopdrill-drplans-creation-new.png)
 
   
-## Task 2: Customize the Switchover plan-Restore Database Wallet group
+## Task 2: Customize the DR plans with user defined plan group for restoring Database wallet
 
-1.  Create a user-defined group for **Restore Database Wallet**.This can be done by selecting **Add group** in the *mushop-app-switchover* plan
+1.  Create a User-Defined Group for **Restore Database Wallet**. Select the **mushshop-app-switchover** plan, navigate to the **Plan groups** tab, and click **Add Group** to create a new user-defined group for restoring the database wallet.
 
     ![add plan group](./images/phoenix-plangroup-add-new.png)
 
-2.  Add **Restore Database Wallet** in the Group name, select **Add after** radio button, select **Update Destination Load Balancers' Backend Sets** in the Group and Click **Add Step**
+2.  Add **Restore Database Wallet** in the Group name, select the Position **Add after** radio button, select **Load Balancers - Update Destination Backend Sets** in the Group and Click **Add Step**
 
     ![add dbrestore plangroup](./images/phoenix-dbrestore-plangroup-new.png)
 
     - Add *Restore Database Wallet on Node-0* in Step name
-    - In the region, select "US East (Ashburn)"
     - Select the "Run local script" option
-    - Select "mushop-xxxxx-0" instance in "Target instance in compartment"
+    - In the Instance region, select "US East (Ashburn)"
+    - Select the correct compartment and select "mushop-xxxxx-0" instance
     - In script parameters, add the below script
 
     ````
@@ -117,8 +126,8 @@ Estimated Time: 20 Minutes
     - Leave the field blank in "Run as user"
     - Select Error mode as "Stop on error."
     - Leave the default "3600" seconds in Timeout in seconds
-    - Leave the enable step tick mark
-    - Verify all the details and hit Add Step
+    - Leave the Enable step as default
+    - Verify all the details and hit **Add Step**
     
     ![create dbrestore plangroup](./images/phoenix-dbrestore-node0-new.png)
 
@@ -131,9 +140,9 @@ Estimated Time: 20 Minutes
     ![added dbrestore newstep](./images/phoenix-dbrestore-newstep.png)
 
     - Add *Restore Database Wallet on Node-1* in Step name
-    - In the region, select "US East (Ashburn)"
     - Select the "Run local script" option
-    - Select "mushop-xxxxx-1" instance in "Target instance in compartment"
+    - In the Instance region, select "US East (Ashburn)"
+    - Select the correct compartment and select "mushop-xxxxx-1" instance
     - In script parameters, add the below script
 
     ````
@@ -142,8 +151,8 @@ Estimated Time: 20 Minutes
     - Leave the field blank in "Run as user"
     - Select Error mode as "Stop on error."
     - Leave the default "3600" seconds in Timeout in seconds
-    - Leave the enable step tick mark
-    - Verify all the details and hit Add Step
+    - Leave the Enable step as default
+    - Verify all the details and hit **Add Step**
     
     ![add dbrestore](./images/phoenix-dbrestore-node1-new.png)
 
