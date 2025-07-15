@@ -8,7 +8,7 @@ In this lab, you will run **Prechecks** for the **mushop-app-switchover** plan t
 > ⚠️ **Note:** Running prechecks does **not** initiate the actual switchover. It only performs *validation steps*.
 > Successfully completing the prechecks is a **critical prerequisite** for executing the switchover plan.
 
-Estimated Time: 10 Minutes
+**Estimated Time**: 10 Minutes
 
 ### Objectives
 

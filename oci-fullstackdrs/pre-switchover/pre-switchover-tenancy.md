@@ -2,12 +2,10 @@
 
 ## Introduction
 
-In this lab, download the Autonomous Database Wallets and prepare the MuShop application virtual machines, which are required to work with the Full Stack DR Service.
+In this lab, you will download the **Autonomous Database Wallets** and prepare the **MuShop application virtual machines**, which are essential for working with the **Full Stack DR Service**.
 
-Estimated Time: 15 Minutes
+**Estimated Time**: 15 Minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Prepare your environments](videohub:1_yenhmts3)
 
 ### Objectives
 

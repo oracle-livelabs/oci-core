@@ -4,7 +4,7 @@
 
 In this lab, we will verify the status of the **DR Protection Group (DRPG)** and confirm that the **MuShop Application** is functioning correctly after the switchover.
 
-Estimated Time: 5 Minutes
+**Estimated Time**: 5 Minutes
 
 ### Objectives
 

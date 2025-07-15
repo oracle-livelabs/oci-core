@@ -1,10 +1,10 @@
-# Perform pre-checks for the DR Switchover Plan
+# Execute the DR Switchover plan
 
 ## Introduction
 
 In this lab, we will execute the actual **switchover** using the **mushop-app-switchover** plan created in the previous lab.The switchover plan will carry out a predefined series of steps to transition the application environment as part of the switchover process.
 
-Estimated Time: 30 Minutes
+**Estimated Time**: 30 Minutes
 
 ### Objectives
 
@@ -84,7 +84,7 @@ Refer to the **Troubleshooting tips** section for known failures and corrective 
 ## Troubleshooting tips
 
 1. If any of the Step fails, verify the log and take necessary actions.
-2. If required cancel the plan and run prechecks as per Lab 5.1, verify for successful execution.
+2. If you cancel the plan, the DR protection groups goes to need attention, then you must reset the DR protection groups in both regions. Refer to [Full Stack DR documentation](https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/cancel-dr-plan-executions.html) for more details. 
 
 ## Acknowledgements
 

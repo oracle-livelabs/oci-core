@@ -20,7 +20,7 @@ In this lab, we will add members to the DR Protection groups created and associa
 - Object Storage Bucket
 - Oracle Kubernetes Engine (OKE)
 
-Estimated Time: 15 Minutes
+**Estimated Time**: 15 Minutes
 
 ### Objectives
 
