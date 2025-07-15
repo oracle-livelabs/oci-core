@@ -55,7 +55,13 @@ Estimated Time: 5 Minutes
     **Mushop application is accessible from the new primary region (Phoenix)**
 
 
-This concludes the lab **Protect Your Business Using Oracle Full Stack Disaster Recovery Service**.We’ve seen how the MuShop application (Full Stack) can be seamlessly switched over from the **Ashburn** region to the **Phoenix** region with just a single click! 
+## Lab Complete!
+
+You did it! This concludes the lab **Protect Your Business Using Oracle Full Stack Disaster Recovery Service**.
+
+In this lab, you witnessed the **seamless, fully automated switchover** of a **MuShop application (Full Stack)** from the **Ashburn** region to the **Phoenix** region — all with just **one click**!  
+
+An impressive demonstration of the power and simplicity of **Oracle Full Stack DR**!
 
 
 ## Acknowledgements
