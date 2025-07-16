@@ -1,13 +1,10 @@
-# Perform pre-checks for the DR Switchover Plan
+# Execute the DR Switchover plan
 
 ## Introduction
 
-In this lab, we will execute the actual switchover plan for the **mushop-app-switchover** switchover plan, which we have created in lab 4. The switchover plan will execute the series of steps per the switchover plan.
+In this lab, we will execute the actual **switchover** using the **mushop-app-switchover** plan created in the previous lab.The switchover plan will carry out a predefined series of steps to transition the application environment as part of the switchover process.
 
-Estimated Time: 30 Minutes
-
-Watch the video below for a quick walk-through of the lab.
-[Perform Switchover](videohub:1_0gkqcad2)
+**Estimated Time**: 30 Minutes
 
 ### Objectives
 
@@ -15,40 +12,40 @@ Watch the video below for a quick walk-through of the lab.
 - Monitor the executed switchover plan
 - Verify the executed switchover plan
 
-## Task 1: Execute switchover for mushop-app-switchover plan
+## Task 1: Execute the switchover plan
 
-1.  Login into OCI Console with your provided Credentials. Select region as **Pheonix**.
+1.  Login into OCI Console with your provided Credentials. Select region as **Phoenix**.
 
-    ![oci console phoenix](./images/phoenix-region-new.png)
+    ![phoenix region](./images/phoenix-region-new.png)
 
-2.  Select Migration and Disaster Recovery from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region is **Phoenix**
+2.  Open the **Hamburger menu (☰)** and select **Migration and Disaster Recovery**. Then go to **Disaster Recovery → DR Protection Groups** and Confirm that the **region is set to Phoenix**.
 
-    ![drpg navigation](./images/phoenix-drpgpage-new.png)
+    ![phoenix region drpg](./images/phoenix-drpgpage-new.png)
 
-3.  You will land on the Disaster Recovery Protection group home page; make sure you have selected the Phoenix region.
+3.  You will land on the Disaster Recovery Protection group home page; make sure you have selected the Phoenix region. **DR Plans always be created and executed in the Standby DRPG (Phoenix region)**
 
-    ![drpg landing page](./images/drpg-status-phoenix-new.png)
+    ![drpg home](./images/drpg-status-phoenix-new.png)
 
-4.  Select the **mushop-phoenix** DRPG and select **mushop-app-switchover** plan
+4.  Select the **mushop-phoenix-xxxxx** DRPG, navigate to the **Plans** tab, and select the **mushop-app-switchover** plan.
 
     ![drpg switchover plan](./images/phoenix-drplan-created-new.png)
 
-5.  Navigate to the **Execute DR Plan** section, which will be right below the **mushop-app-switchover** plan, and select
+5.  Use the **Actions** button and click **Execute Plan**
 
     ![drpg execute plan](./images/phoenix-execute-plan-new.png)
 
 6.  In the **Execute DR Plan** window
 
-    - Provide the Plan execution name as **mushop-app-switchover-execute**
-    - Uncheck the **Enable prechecks**  (Prechecks was executed successfully in previous lab)
+    - Toggle the **Enable prechecks** button (Prechecks was executed successfully in previous lab)
     - Leave the **Ignore warnings** as it is
+    - Provide the Plan execution name as **mushop-app-switchover-execute**
     - Verify and hit **Execute Plan**
 
-    ![drpg execute confirm](./images/phoenix-execute-run-1-new.png)
+    ![drpg execute confirm](./images/phoenix-execute-run-new.png)
 
-## Task 2: Monitor the executed mushop-app-switchover Plan
+## Task 2: Monitor the executed switchover plan
 
-1.  Navigate to **Plan executions** section under **Resources** and select the **mushop-app-switchover-execute** plan execution.Initially, it will show all the steps as *Queued*
+1.  Navigate to the **Plan Executions** section and select the **mushop-app-switchover-execute** plan execution. Then, go to the **Plan Execution Group** tab.Initially, you will see all the **Built-in Prechecks** listed with the status *Queued*.
 
     ![drpg execute monitor](./images/phoenix-execute-queued-new.png)
 
@@ -58,27 +55,27 @@ Watch the video below for a quick walk-through of the lab.
 
 3.  All the *plan groups* will run serially, but steps inside each *plan group* will run in parallel.
 
-4.  Monitor the various plan group and steps which are running. Navigate to the three dots section for the respective plan group step and click. You get the option to view the log and download the log. These logs are stored in the object storage bucket provided during the DRPG creation. You can monitor the Progress and download the log if necessary for troubleshooting.
+4.  Monitor the various plan group and steps which are running.To do this, navigate to the **three dots (...)** next to the respective built-in step and click on it. You will see options to **View Log** and **Download Log**. These logs are stored in the **Object Storage bucket** that was provided during the DRPG creation. Downloading the logs can be helpful for **troubleshooting**, if needed.
 
     ![drpg execute monitor log](./images/phoenix-execute-viewlog-new.png)
 
-5.  Once each plan group is executed successfully, it will move on to the next groups for execution. Here you can see plan groups *Update Source Load Balancers' Backend Sets* and *Stop Compute Instances* are completed successfully (State-Succeeded), and the next group **Switchover Volume Groups** started running (State: In progress).
-
-    ![drpg execute monitor progress](./images/phoenix-execute-moving-new.png)
-
-6.  Keep monitoring the rest of the groups and steps; each step will complete depending on the actual task (DB Switchover, VM Stop, Script execution ), etc.). For example, ATP DB Switchover will take more time when comparing to stopping the VM. You can verify the start and end of each step, total duration, logs, etc.
+5.  Keep monitoring the rest of the groups and steps; each step will complete depending on the actual task (DB Switchover, VM Stop, Script execution ), etc.). For example, ATP DB Switchover will take more time when comparing to stopping the VM. You can verify the start and end of each step, total duration, logs, etc.
 
     ![drpg execute monitor progress1 ](./images/phoenix-execute-moving1-new.png)
 
-7.  Wait for all the steps to complete successfully.  It is important to monitor the progress of each step and take necessary actions in case of any failures.
+6.  Wait for all the steps to complete successfully.  It is important to monitor the progress of each step and take necessary actions in case of any failures.
 
     **Approximately it will take *20-30* mins to for successful switchover plan execution**
 
 ## Task 3: Verify the executed switchover plan
 
-1.  From the plan execution details, verify the duration of each step, status, duration of the entire switchover plan, etc. *It is essential to have successful completion of all steps*. In this example it took around **27 minutes** to complete.These timings will vary as it has depending factors like ATP Data Guard switchover, compute stop/launch,script execution etc. Use the **Expand all** button to expand all the steps and the **Collapse all** button for collapsing. Use the view or download log option to see step execution details.
+1. From the **Plan Execution Group** details, verify the **duration of each step**, overall **status**, and **total execution time** of the switchover plan. *It is essential to have successful completion of all steps.* 
+
+   In this example, the overall switchover plan execution took approximately **22 minutes** to complete.Timings may vary depending on factors such as **Autonomous Database switchover**, **Compute stop/launch**, and **Custom script execution**. Use the **Expand All** button to view all steps and **Collapse All** to minimize them. Click **View Log** or **Download Log** to examine step execution details.  
 
     ![drpg execution done](./images/phoenix-execute-done-new.png)
+
+    ![drpg execution done](./images/phoenix-execute-done-new-1.png)
 
 You may now [Proceed to the next lab](#next)
 
@@ -87,9 +84,9 @@ Refer to the **Troubleshooting tips** section for known failures and corrective 
 ## Troubleshooting tips
 
 1. If any of the Step fails, verify the log and take necessary actions.
-2. If required cancel the plan and run prechecks as per Lab 5.1, verify for successful execution.
+2. If you cancel the plan, the DR protection groups goes to need attention, then you must reset the DR protection groups in both regions. Refer to [Full Stack DR documentation](https://docs.oracle.com/en-us/iaas/disaster-recovery/doc/cancel-dr-plan-executions.html) for more details. 
 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,November 2023
+- **Last Updated By/Date** - Suraj Ramesh, July 2025

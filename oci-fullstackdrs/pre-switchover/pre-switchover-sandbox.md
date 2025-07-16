@@ -2,9 +2,10 @@
 
 ## Introduction
 
-In this lab, download Autonomous Database Wallets and prepare the MuShop application virtual machines, which are required to work with Full Stack DR Service.
+In this lab, you will download the **Autonomous Database Wallets** and prepare the **MuShop application virtual machines**, which are essential for working with the **Full Stack DR Service**.
 
-Estimated Time: 15 Minutes
+
+**Estimated Time**: 15 Minutes
 
 ### Objectives
 
@@ -196,5 +197,5 @@ You may now [Proceed to the next lab](#next)
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,November 2024
+- **Last Updated By/Date** - Suraj Ramesh,November July 2025
 

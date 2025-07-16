@@ -2,17 +2,17 @@
 
 ## About the Workshop
 
-In this workshop, we will see how easily Full Stack Disaster Recovery will help to orchestrate DR switchover operations for a Cloud-native Application deployed in OCI across two OCI regions.
+In this workshop, you'll learn how the **OCI Full Stack Disaster Recovery** service can easily orchestrate a **disaster recovery (DR) switchover** for a cloud-native application deployed across two OCI regions.
 
-- We will use the MuShop application and its underlying resources to perform the Switchover operations across regions.
+- We will use the **MuShop** application and its underlying resources to perform the switchover operations between regions.
 
-- MuShop is a demo application purpose-built to showcase interoperable various cloud services on Oracle Cloud Infrastructure. The premise of MuShop is an e-commerce website offering a variety of cat products, and it is a 3-tier web application.
+- **MuShop** is a demo application purpose-built to showcase the interoperability of various cloud services on **Oracle Cloud Infrastructure (OCI)**. It simulates an e-commerce website offering a variety of cat products, and follows a **3-tier web application architecture**.
 
 ![MuShop webpage](./images/mushop.png)
 
 ## Overview of OCI Full Stack Disaster Recovery
 
-OCI Full Stack Disaster Recovery (Full Stack DR) provides a fully automated and comprehensive disaster recovery orchestration solution for all the layers of a full-stack cloud application, including infrastructure, database, and application. Using Full Stack DR, you can recover your full stack applications across OCI regions, or across availability domains within the same region.
+**Oracle Cloud Infrastructure Full Stack Disaster Recovery (OCI Full Stack DR)** orchestrates the transition of compute, database, and applications between Oracle Cloud Infrastructure (OCI) regions from around the globe with a single click. Customers can automate the steps needed to recover one or more business systems without redesigning or re-architecting existing infrastructure, databases, or applications and without needing specialized management or conversion servers.
 
 Throughout this workshop, we will use Full Stack DR to denote OCI Full Stack Disaster recovery.
 
@@ -30,11 +30,11 @@ Below are some of the critical functionalities of Full Stack Disaster Recovery S
 - Perform pre-checks before the DR execution plan.
 - Provide a framework to customize DR operations.
 
-### Benefits of OCI Full Stack Disaster Recovery
+### **Benefits of OCI Full Stack Disaster Recovery**
 
 Full Stack Disaster Recovery provides multiple benefits in the area of business continuity.
 
-- Provides comprehensive disaster protection for the entire Application( Oracle/Non-Oracle) stack, including databases, VMs, attached volumes, storage, and applications across different OCI regions.
+- Provides comprehensive disaster protection for the entire Application( Oracle/Non-Oracle) stack, including databases, VMs, attached volumes, storage, kubernetes and applications across different OCI regions.
 - Minimizes Recovery Time Objectives (RTO).
 - Automates disaster recovery operations.
 - Eliminates the need for domain specialists and dedicated administrators for disaster recovery.
@@ -43,44 +43,42 @@ Full Stack Disaster Recovery provides multiple benefits in the area of business 
 - Executes scalable and reliable complete stack switchover and failover operations with a button.
 - Operates at the service level instead of requiring the customer to manually failover VMs, databases, middleware, applications, storage, and load balancers.
 
-### Estimated Workshop Time
+### **Estimated Workshop Time**
 
-Approximately 3 hrs
+**Approximately 3 hrs**
 
-### Workshop Architecture
+### **Workshop Architecture**
 
 ![MuShop Full Stack DR Architecture](./images/mushop-fsdrs.png)
 
-### Environment details
+### **Environment details**
 
 - **Ashburn** is the Primary region, and **Phoenix** is the Standby region.
 - Pre-requisites for using Full Stack DR is to create various infrastructure resources and configure replication
 - For this lab, LiveLabs provisions various resources like ATP-S Primary and Standby, Compute instances,Setup block volume replication,Load Balancers, Object storage etc as per the workshop Architecture diagram shown above.
 
-### Workshop Objectives
+### **Workshop Objectives**
 
 - Prepare the environments in Ashburn (Primary) for using the Full Stack DR
 - Create DR Protection groups (DRPG) in Ashburn (Primary) and Phoenix (Standby) regions.
 - Associate Ashburn DRPG as Primary and Phoenix DRPG as Standby.
-- Add members to Ashburn DRPG. Application Virtual machines, Volume groups, and Primary ATP database.
-- Add members to Phoenix DRPG. Standby ATP Database.
+- Add members to Ashburn DRPG. Application Virtual machines, Volume groups, Load Balancer and Primary ATP database.
+- Add members to Phoenix DRPG. Standby ATP Database and Load Balancer.
 - Create and Customize DR Switchover Plan in Phoenix( Standby) DRPG
 - Run DR Switchover Pre-checks in Phoenix( Standby) DRPG
 - Verify and create an outage to the MuShop application from Ashburn (Primary) region.
 - Run DR Switchover Plan in Phoenix( Standby) DRPG
 - Verify the MuShop application from Phoenix (New Primary) region.
 
-### Reference links
+### **Reference links**
 
 - [MuShop Application](https://github.com/oracle-quickstart/oci-cloudnative/tree/master/deploy/basic)
+- [Full Stack DR product page](https://www.oracle.com/cloud/full-stack-disaster-recovery/)
+- [Full Stack DR documentation](https://docs.oracle.com/en-us/iaas/disaster-recovery/index.html)
 
 You may now [Proceed to the next lab](#next)
-
-### Disclaimer
-
-The following is intended to outline our general product direction. It is intended for information purposes only, and may not be incorporated into any contract. It is not a commitment to deliver any material, code, or functionality, and should not be relied upon in making purchasing decisions. The development, release, and timing of any features or functionality described for Oracle’s products remains at the sole discretion of Oracle.
 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,November 2023
+- **Last Updated By/Date** - Suraj Ramesh, July 2025
