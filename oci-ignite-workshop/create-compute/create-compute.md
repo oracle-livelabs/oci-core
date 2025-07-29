@@ -90,10 +90,52 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![Connect to the machine using the command](images/ssh.png)
 
 
+
+## Task 3 (Optional): Create a notification
+
+The Observability and Management platform in Oracle Cloud Infrastructure (OCI) provides a suite of services that support cross stack visibility and rapid performance insights for any technology, deployed anywhere.
+Oracle Cloud Infrastructure Monitoring for the Observability and Management platform is used to track the performance of the resources in your tenancy.
+
+Today, we will create a **Notification** that will monitor our network activity.
+
+1. Click the **Navigation Menu** in the upper left. Navigate to **Compute**, and select **Instances**.
+
+	![Navigate to Compute Instances](images/compute-instances.png)
+
+
+2. Select the *Sandbox-VM* instance that you created in previous steps. Then click **Monitoring**.
+
+ 
+  ![Click on Monitoring](images/compute-monitoring.png)
+
+
+
+3. Scroll until you see **Notifications** and click on **Create Notification** 
+        
+   
+    ![Find Notification](images/compute-notification.png)
+
+4. Click on **Template selection** and select **Average network transmit bytes are 0 over the past 5 minutes** 
+        
+   
+    ![Select template](images/notification-template.png)
+
+5. Provide a name for the **Alarm** and name it **Sandbox Alarm** 
+
+    ![Provide a name for the Alarm](images/notification-alarm.png)
+
+6. Create a new **topic** and name it **Sandbox Topic** 
+
+    ![Create a new topic](images/notification-topic.png)
+
+7. Add the email of the user that you want to be notified then click on **Create notification**. 
+
+    ![Create Notification](images/notification-create.png)
+
 _Congratulations! You have successfully completed the lab._
 
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru, Alexandra Iancu, Radu Birsan
-- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, February 2025
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, Jully 2025
