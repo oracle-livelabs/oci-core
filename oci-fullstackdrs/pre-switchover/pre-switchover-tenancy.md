@@ -2,27 +2,25 @@
 
 ## Introduction
 
-In this lab, download Autonomous Database Wallets and prepare the MuShop application virtual machines, which are required to work with Full Stack DR Service.
+In this lab, you will download the **Autonomous Database Wallets** and prepare the **MuShop application virtual machines**, which are essential for working with the **Full Stack DR Service**.
 
-Estimated Time: 15 Minutes
+**Estimated Time**: 15 Minutes
 
-Watch the video below for a quick walk-through of the lab.
-[Prepare your environments](videohub:1_yenhmts3)
 
 ### Objectives
 
-- Download Autonomous Database Wallets using Cloud Shell and transfer the wallets to application VM instances
-- Connect to application VM instances and execute application change script
+- Download the Autonomous Database (Autonomous Transaction Processing-ATP) Wallets using Cloud Shell and transfer the wallets to the application VM instances.  
+- Connect to the application VM instances and execute the application change script
 
 ## Task 1: Download Autonomous Database Wallets using Cloud Shell and transfer the Wallets to application VM instances
 
-1.  If you have provisioned your OCI resources in different regions (Primary and Standby),you should select those regions throughout the labs. We will use **ASHBURN** as primary region and **PHOENIX** as standby region. Login into OCI Console with your provided Credentials. Select **ASHBURN** region.
+1.  If you have provisioned your OCI resources in different regions (Primary and Standby), make sure to select those regions consistently throughout the labs. We will use **ASHBURN** as the primary region and **PHOENIX** as the standby region. Log in to the OCI Console using your provided credentials and select the **ASHBURN** region.
 
-    ![ashburn console](./images/ashburn-region-new.png " ")
+    ![ashburn console](./images/ashburn-region-new.png "Ashburn Region")
 
-2. Gather the OCID( Oracle Cloud Identifier) of the ATP database in Ashburn.
+> 📌 **Note:** Make sure to complete the steps in the correct region context to avoid resource mismatch
 
-    From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
+2. We need to gather the OCID (Oracle Cloud Identifier) of the ATP database in Ashburn. From the Hamburger menu, select **Oracle Database**, then **Autonomous Database**.
 
     ![ATP menu](./images/atp-menu-new.png)
 
@@ -32,16 +30,13 @@ Watch the video below for a quick walk-through of the lab.
 
     ![ATP OCID](./images/atp-ocid-new.png)
 
-3.  Open the **Cloud Shell** using the icon next to the **Ashburn** region.  
+3.  Open the **Cloud Shell** using the icon next to the **Ashburn** region. The Cloud Shell will open after a few seconds and display the **prompt**; enter **N** to quit the tutorial.The cloudshell prompt should show **us-ashburn-1** region.
 
     ![open cloud shell](./images/cloud-shell-new.png)
-    ![open cloud shell](./images/cloud-shell-1-new.png)
 
-    The Cloud Shell will open after a few seconds and shows the **prompt**. Input **N** for quitting the tutorial.
 
-4. Download the ATP database wallet running in Ashburn using the Cloud Shell.In case if the Cloud Shell got disconnected, reconnect it again.
+4. Download the ATP database wallet running in Ashburn using the Cloud Shell. If the Cloud Shell gets disconnected, reconnect it. You can maximize or restore the Cloud Shell view as needed for better visibility.
 
-    You can maximize the Cloud Shell view and restore it as your requirements. For better viewing, you can use maximize option.
 
     ![Cloud Shell Maximize](./images/cloud-max-new.png)
 
@@ -51,19 +46,22 @@ Watch the video below for a quick walk-through of the lab.
      <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_ashburn.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.iad.anuwcljt5h22avqazns5ncswf4jc7owrzb6nug53xxxxxxxxxxxx</copy>
     ````
 
-    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet file which was downloaded. Verify that using the list command ls -ltr atpwallet_ashburn.zip as provided in the screenshot.
+    Copy the command and execute it in the Cloud Shell prompt. You should see the downloaded wallet file; verify it using the command.
 
+    ````
+     <copy>ls -ltr atpwallet_ashburn.zip</copy>
+    ````
     ![ATP Wallet](./images/atp-wallet-cs-new.png)
 
-5. Open a new tab in the browser, login to OCI console and select **PHOENIX** region.
+5. Open a new tab in your browser, log in to the OCI Console, and select the **PHOENIX** region.Ensure that you are working in the **PHOENIX** region before proceeding with the next steps. Duplicating the browser tab, from the previous step will have cloud shell assigned to **ASHBURN** region, so its recommended to Open a new tab in your browser, log in to the OCI Console.
 
-    ![phoenix console](./images/phoenix-region-new.png " ")
+    ![phoenix console](./images/phoenix-region-new.png))
 
-6. Gather the OCID( Oracle Cloud Identifier) of the ATP database in Phoenix.
+> 📌 **Note:** Make sure to complete the steps in the correct region context to avoid resource mismatch
 
-    From the Hamburger menu, select **Oracle Database**, then **Autonomous Transaction Processing**.
+6.  We need to gather the OCID (Oracle Cloud Identifier) of the ATP database in Phoenix. From the Hamburger menu, select **Oracle Database**, then **Autonomous Database**.
 
-    ![ATP menu](./images/atp-menu-new.png)
+    ![ATP menu](./images/atp-menu-new-phx.png)
 
     ![ATP database](./images/atp-database-phx-new.png)
 
@@ -71,12 +69,9 @@ Watch the video below for a quick walk-through of the lab.
 
     ![ATP OCID](./images/atp-ocid-phx-new.png)
 
-7.  Open the **Cloud Shell** using the icon next to the **Phoenix** region.  
-
+7.  Open the **Cloud Shell** using the icon next to the **Phoenix** region.  The Cloud Shell will open after a few seconds and shows the **prompt**. Input **N** for quitting the tutorial. The cloudshell prompt should show **us-phoenix-1** region.
+  
     ![open cloud shell](./images/cloud-shell-phx-new.png)
-    ![open cloud shell](./images/cloud-shell-1-phx-new.png)
-
-    The Cloud Shell will open after a few seconds and shows the **prompt**. Input **N** for quitting the tutorial.
 
 8. Download the ATP database wallet running in Phoenix using the Cloud Shell.In case if the Cloud Shell got disconnected, reconnect it again.
 
@@ -90,13 +85,17 @@ Watch the video below for a quick walk-through of the lab.
      <copy>oci db autonomous-database generate-wallet --generate-type ALL --file atpwallet_phoenix.zip --password Fsdrs@123 --autonomous-database-id ocid1.autonomousdatabase.oc1.phx.anyhqljt5h22avqaw32nmjoi7d5zhxbkt6txxxxxxxxxxxxx</copy>
     ````
 
-    Copy the command and execute in Cloud Shell prompt.You should be able to see the Wallet which was downloaded. Verify that using the list command ls -ltr atpwallet_phoenix.zip as provided in the screenshot.
+    Copy the command and execute it in the Cloud Shell prompt. You should see the downloaded wallet file; verify it using the command.
+
+    ````
+     <copy>ls -ltr atpwallet_phoenix.zip</copy>
+    ````
 
     ![ATP Wallet](./images/atp-wallet-cs-phx-new.png)
 
-    In case if you are getting "NotAuthorizedOrNotFound" error, make sure you are running the command in the Phoenix region and Cloud Shell shows phoenix region in the prompt.  
+> 📌 **Note:** In case if you are getting "NotAuthorizedOrNotFound" error, make sure you are running the command in the Phoenix region and Cloud Shell shows phoenix region in the prompt.  
 
-9. **Switchback to the Ashburn region Cloud Shell tab and rest of the Lab 1 will be done in Ashburn region**.
+9.  Switch back to the **Ashburn** region Cloud Shell tab; the rest of Lab 1 will be completed in the **Ashburn** region.Rest of the Lab 1 steps must continue in the **Ashburn** region only.
 
     Download the private key for connecting to MuShop compute VM's using the below command in the Cloud Shell.
 
@@ -112,7 +111,7 @@ Watch the video below for a quick walk-through of the lab.
     <copy>chmod 0600 mushoppk</copy>
     ````
 
-11. Use the other tab of the browser, From the Hamburger menu, select **Compute**, then **Instances**. Verify the region as **Ashburn**
+11. Use the other tab of the browser, open the Hamburger menu, select **Compute**, then **Instances**, and verify that the selected region is **Ashburn**.
 
     ![Compute navigation](./images/compute-navigate-new.png)
 
@@ -120,7 +119,7 @@ Watch the video below for a quick walk-through of the lab.
 
     ![Copy publicip](./images/compute-publicip-new.png)
 
-12. Navigate to the Cloud Shell browser tab and scp (Secure copy) the ATP wallets(Ashburn and Phoenix) to MuShop Application compute instances (both mushop-xxxxx-0 and mushop-xxxxx-1 )
+12. Navigate to the Cloud Shell browser tab in **Ashburn** region and use `scp` (Secure Copy) to transfer the ATP wallet files (Ashburn and Phoenix) to both MuShop application compute instances: `mushop-xxxxx-0` and `mushop-xxxxx-1`.
 
     ````
     <copy>scp -i mushoppk atpwallet_ashburn.zip atpwallet_phoenix.zip opc@publicipnode0:/home/opc</copy>
@@ -130,9 +129,10 @@ Watch the video below for a quick walk-through of the lab.
     <copy>scp -i mushoppk atpwallet_ashburn.zip atpwallet_phoenix.zip opc@publicipnode1:/home/opc</copy>
     ````
 
-    Replace `publicipnode0` and `publicipnode1` with the public IP address(step 11) of both mushop-xxxxx-0 and mushop-xxxxx-1 respectively in the scp commands.
+    Replace `publicipnode0` and `publicipnode1` with the public IP addresses (from Step 11) of `mushop-xxxxx-0` and `mushop-xxxxx-1` respectively in the `scp` commands.  
 
-    Execute the scp commands in the cloud shell and while it prompts for confirmation key in as yes. Make sure the ATP wallets for both **Ashburn and Phoenix** are transferred successfully to both muShop application compute instances.
+    Execute the `scp` commands in the Cloud Shell; when prompted for confirmation, type **yes**. Verify that the ATP wallets for both **Ashburn** and **Phoenix** are successfully transferred to both MuShop application compute instances.
+
 
     ![Wallet copytovm](./images/wallet-compute-new.png)
 
@@ -190,5 +190,5 @@ You may now [Proceed to the next lab](#next)
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,November 2024
+- **Last Updated By/Date** - Suraj Ramesh, July 2025
 

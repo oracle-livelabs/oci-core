@@ -30,7 +30,7 @@
     {
       "title": "Lab 4: Create DR Switchover plan",
       "description": "Create DR Switchover plan",
-      "filename": "../../switchover-plan/switchover-plan.md"
+      "filename": "../../create-dr-plans/switchover-plan.md"
     },
     {
       "title": "Lab 5: Perform prechecks and break MuShop app" ,

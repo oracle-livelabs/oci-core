@@ -107,6 +107,7 @@ There are multiple ways to visualize and manage costs such as:
 - **Day of the month to begin budget processing:** 1
 
   ![Create a Budget](images/budgets_creation.png " ")
+  ![Create a Budget](images/budgets_creation_amount.png " ")
 
 
 4. **Do not click on create yet.** Scroll lower and set up an **Budget Alert Rule**.
@@ -119,6 +120,7 @@ There are multiple ways to visualize and manage costs such as:
 - After you configured your **Budget Alert Rule**, click on **Create**
 
     ![Create a Budget](images/alert_creation.png " ") 
+    ![Create a Budget](images/alert_creation_email.png " ") 
 
 </if>
 
