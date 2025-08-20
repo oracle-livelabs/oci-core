@@ -42,4 +42,4 @@ You may now [Proceed to the next lab](#next)
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh, Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** -  Suraj Ramesh,August 2023
+- **Last Updated By/Date** -  Suraj Ramesh, Jul 2025

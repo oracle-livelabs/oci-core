@@ -5,7 +5,7 @@
     {
         "title": "Get Started",
         "description": "Prerequisites for LiveLabs (Oracle-owned tenancies)",
-        "filename": "../../sandbox-login/sandbox-login.md"
+        "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
       },
     {
       "title": "Introduction",
@@ -18,19 +18,19 @@
       "filename": "../../pre-switchover/pre-switchover-sandbox.md"
     },
     {
-      "title": "Lab 2: Create and Associate DRPG",
+      "title": "Lab 2: Create and Associate DR protection groups",
       "description": "Create and Associate DRPG",
       "filename": "../../drpg-setup/drpg-setup.md"
     },
     {
-      "title": "Lab 3: Add members to DRPG",
+      "title": "Lab 3: Add members to the DR Protection groups",
       "description": "Add members to DRPG",
       "filename": "../../drpg-members/drpg-members.md"
     },
     {
-      "title": "Lab 4: Create DR Switchover plan",
-      "description": "Create DR Switchover plan",
-      "filename": "../../switchover-plan/switchover-plan.md"
+      "title": "Lab 4: Create and customize DR plans",
+      "description": "Create and customize DR plans",
+      "filename": "../../create-dr-plans/switchover-plan.md"
     },
     {
       "title": "Lab 5: Perform prechecks and break MuShop app" ,

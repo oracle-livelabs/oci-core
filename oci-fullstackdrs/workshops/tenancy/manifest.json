@@ -3,14 +3,14 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
-        "title": "Introduction",
-        "description": "Introduction to OCI Full Stack Disaster Recovery and workshop",
-        "filename": "../../introduction/introduction.md"
-      },
-      {
         "title": "Get Started",
         "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
         "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+      },
+      {
+        "title": "Introduction",
+        "description": "Introduction to OCI Full Stack Disaster Recovery and workshop",
+        "filename": "../../introduction/introduction.md"
       },
       {
         "title": "Lab 1: Provision OCI resources",
@@ -23,19 +23,19 @@
         "filename": "../../pre-switchover/pre-switchover-tenancy.md"
       },
       {
-        "title": "Lab 3: Create and Associate DRPG",
+        "title": "Lab 3: Create and Associate DR protection groups",
         "description": "Create and Associate DRPG",
         "filename": "../../drpg-setup/drpg-setup.md"
       },
       {
-        "title": "Lab 4: Add members to DRPG",
+        "title": "Lab 4: Add members to the DR Protection groups",
         "description": "Add members to DRPG",
         "filename": "../../drpg-members/drpg-members.md"
       },
       {
-        "title": "Lab 5: Create DR Switchover plan",
-        "description": "Create DR Switchover plan",
-        "filename": "../../switchover-plan/switchover-plan.md"
+        "title": "Lab 5: Create and customize DR plans",
+        "description": "Create and customize DR plans",
+        "filename": "../../create-dr-plans/switchover-plan.md"
       },
       {
         "title": "Lab 6: Perform prechecks and break MuShop app" ,

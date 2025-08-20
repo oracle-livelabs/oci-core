@@ -33,6 +33,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 2. Select the *Sandbox* Compartment that you created in *"Create a Compartment" Lab*. Then click **Create Instance**. We will launch a VM instance for this lab.
 
+ 
   ![Click on Create instance](images/create-compute1.png)
 
 
@@ -40,9 +41,11 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 3. The *Create Compute Instance* wizard will launch.
     Enter **Sandbox-VM** as the name of the server. 
         
+   
     ![Fill the Name of the Instance](images/create-compute2.png)
        
 4. Click *Change Shape* to choose a VM shape.
+
 
     ![Change Shape of the instance](images/create-compute4.png)
 
@@ -50,19 +53,22 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Select AMD E4 Flex shape](images/create-compute-shapes.png)
 
-7. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
+    
+    ![Select 1 OCPU and 16GB of memory](images/create-compute-shapes-1.png)
+
+7. Click on **Next**. The Security section does not need any changes. Click **Next** again. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
  
     ![Assign a public IPv4 address ](images/create-compute4b.png)
 
     >**Note:** You need a public IP address, so that you can SSH into the running instance later in this lab.
 
-8. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
+8. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in ***Generate SSH Keys*** Lab. Click on **Next**. The Storage options remain unchanged. Click again on **Next**. Review the information and press the **Create** button to create your instance.
 
     ![Paste the content public key](images/ssh-keys.png)
 
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute, and the instance state will change from *PROVISIONING* to *RUNNING*.
 
-9. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*.
+9. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Security* on the Instance information page. 
 
     
     ![Copy the Public IP address](images/public-ip.png " ")
@@ -84,10 +90,52 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![Connect to the machine using the command](images/ssh.png)
 
 
+
+## Task 3 (Optional): Create a notification
+
+The Observability and Management platform in Oracle Cloud Infrastructure (OCI) provides a suite of services that support cross stack visibility and rapid performance insights for any technology, deployed anywhere.
+Oracle Cloud Infrastructure Monitoring for the Observability and Management platform is used to track the performance of the resources in your tenancy.
+
+Today, we will create a **Notification** that will monitor our network activity.
+
+1. Click the **Navigation Menu** in the upper left. Navigate to **Compute**, and select **Instances**.
+
+	![Navigate to Compute Instances](images/compute-instances.png)
+
+
+2. Select the *Sandbox-VM* instance that you created in previous steps. Then click **Monitoring**.
+
+ 
+  ![Click on Monitoring](images/compute-monitoring.png)
+
+
+
+3. Scroll until you see **Notifications** and click on **Create Notification** 
+        
+   
+    ![Find Notification](images/compute-notification.png)
+
+4. Click on **Template selection** and select **Average network transmit bytes are 0 over the past 5 minutes** 
+        
+   
+    ![Select template](images/notification-template.png)
+
+5. Provide a name for the **Alarm** and name it **Sandbox Alarm** 
+
+    ![Provide a name for the Alarm](images/notification-alarm.png)
+
+6. Create a new **topic** and name it **Sandbox Topic** 
+
+    ![Create a new topic](images/notification-topic.png)
+
+7. Add the email of the user that you want to be notified then click on **Create notification**. 
+
+    ![Create Notification](images/notification-create.png)
+
 _Congratulations! You have successfully completed the lab._
 
 ## Acknowledgements
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
-- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru
-- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
+- **Contributors** - Arabella Yao, Rajeshwari Rai, Prasenjit Sarkar, Cristian Manea, Radu Chiru, Alexandra Iancu, Radu Birsan
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, Jully 2025

@@ -14,8 +14,8 @@ In this workshop, you will:
 - Understand and create your first compartment
 - Learn how to grant access to users
 - Create a Virtual Cloud Network
-- Create a Compute instance
 - Generate a pair of SSH keys
+- Create a Compute instance
 - Create and attach a Block Volume
 
 **<font color="blue">Optional</font>**:
@@ -35,13 +35,30 @@ This video briefly outlines the benefits of Oracle Cloud Infrastructure console:
 
 [Oracle Cloud Infrastructure Console: Overview](youtube:m-VtWwpJ5OY)
 
+## About Oracle EU Sovereign Cloud
+
+Oracle EU Sovereign Cloud regions are logically and physically separate from the existing Oracle commercial cloud regions in the European Union (EU). Both private companies and public sector organizations can use Oracle EU Sovereign Cloud regions to host data and applications that are sensitive, regulated, or of strategic regional importance.
+
+The isolation of the Oracle EU Sovereign Cloud realm from the commercial public cloud realm allows Oracle to restrict support and operations personnel to EU residents, including physical and logical access to the realm. The hardware and assets used to provide these cloud regions are owned, operated, and managed by EU legal entities that are separate from the existing global Oracle entities, including those in the EU. This design provides added assurance that all aspects of managing and hosting data in the Oracle EU Sovereign Cloud stays within the EU.
+
+**<font color="red">To sign in to the Oracle EU Sovereign Cloud, enter the following URL in a supported browser:</font>**
+
+https://cloud.oracle.eu/?region=eu-frankfurt-2
+
+
+https://cloud.oracle.eu/?region=eu-madrid-2
+
+
+http://cloud.oracle.eu/
+
+
 ### Let's get Started!
 
 Click on the next lab in this workshop to get started.
 
 ## Acknowledgements
-- **Author** - Birsan Radu
+- **Author** - Cristian Manea, Radu Chiru
 - **Contributors** - Oracle DCX team (Birsan Radu, Alexandra Iancu,Cristian Manea, Radu Chiru)
-- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, April 2024
+- **Last Updated By/Date** - Birsan Radu, Alexandra Iancu, February 2025
 
 

@@ -1,13 +1,10 @@
-# Verify the DR Protection group status and MuShop Application post switchover
+# Verify the DR Protection Group Status and MuShop Application Post-Switchover
 
 ## Introduction
 
-We will verify the DR Protection Group (DRPG) status and MuShop Application post switchover.
+In this lab, we will verify the status of the **DR Protection Group (DRPG)** and confirm that the **MuShop Application** is functioning correctly after the switchover.
 
-Estimated Time: 5 Minutes
-
-Watch the video below for a quick walk-through of the lab.
-[Post Switchover tasks](videohub:1_tktqsgu1)
+**Estimated Time**: 5 Minutes
 
 ### Objectives
 
@@ -16,15 +13,15 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 1: Verify the DRPG status
 
-1.  Login into OCI Console with your provided Credentials. Select region as **Pheonix**.
+1.  Login into OCI Console with your provided Credentials. Select region as **Phoenix**.
 
-    ![oci console phoenix](./images/phoenix-region-new.png)
+    ![phoenix region](./images/phoenix-region-new.png)
 
-2.  Select Migration and Disaster Recovery from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region is **Phoenix**
+2.  Open the **Hamburger menu (☰)** and select **Migration and Disaster Recovery**. Then go to **Disaster Recovery → DR Protection Groups** and Confirm that the **region is set to Phoenix**.
 
-    ![drpg navigation page](./images/phoenix-drpgpage-new.png)
+    ![phoenix region drpg](./images/phoenix-drpgpage-new.png)
 
-3.  Notice the *Role* of the **mushop-phoenix** DRPG; it has automatically changed to *Primary*. Now we have our new primary region as *Phoenix region*
+3.  On the Disaster Recovery Protection Group home page, you will see that the *Role* of **`mushop-phoenix-xxxxx`** has changed to *Primary*, indicating that the Phoenix region is now the new primary.
 
     ![phoenix drpg status](./images/phoenix-drpg-status-new.png)
 
@@ -32,11 +29,11 @@ Watch the video below for a quick walk-through of the lab.
 
     ![oci console ashburn](./images/ashburn-region-new.png)
 
-5.  Select Migration and Disaster Recovery from the Hamburger menu, then **Disaster Recovery** -> **DR Protection Groups**. Verify the region is **Ashburn**
+5.  Open the **Hamburger menu (☰)** and select **Migration and Disaster Recovery**. Then go to **Disaster Recovery → DR Protection Groups** and Confirm that the **region is set to Ashburn**.
 
     ![drpg navigation page](./images/ashburn-drpgpage-new.png)
 
-6.  Notice the *Role* of the **mushop-ashburn** DRPG; it has automatically changed to *Standby*. Now we have our new standby region as *Ashburn region*
+6.  On the Disaster Recovery Protection Group home page, you will see that the *Role* of **`mushop-ashburn-xxxxx`** has changed to *Standby*, indicating that the Ashburn region is now the new standby.
 
     ![ashburn drpg status](./images/ashburn-drpg-status-new.png)
 
@@ -47,19 +44,17 @@ Watch the video below for a quick walk-through of the lab.
   
     ![phoenix load balancer navigation](./images/phoenix-loadbalancer-navigate-new.png)
 
-    Gather the Public IP address of the Load Balancer
+2. Gather the Public IP address of the Load Balancer
 
     ![phoenix load balancer ip](./images/phoenix-loadbalancer-ip-new.png)
 
-    Open a tab in your browser and verify the Mushop Application using the gathered public IP address. You should be able to see that the application is working as expected from the Phoenix region.
+3. Open a tab in your browser and verify the Mushop Application using the gathered public IP address. You should be able to see that the application is working as expected from the Phoenix region.
 
     ![mushop app verification](./images/phoenix-mushop-app-new.png)
-
-    **Mushop application is accessible from the new primary region (Phoenix)**
-
+*
     You may now [Proceed to the next lab](#next)
 
 ## Acknowledgements
 
 - **Author** - Suraj Ramesh,Principal Product Manager,Oracle Database High Availability (HA), Scalability and Maximum Availability Architecture (MAA)
-- **Last Updated By/Date** - Suraj Ramesh,November 2023
+- **Last Updated By/Date** - Suraj Ramesh, July 2025
