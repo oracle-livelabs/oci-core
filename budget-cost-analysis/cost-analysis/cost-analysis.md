@@ -33,7 +33,7 @@ Estimated Lab Time: 30 minutes
 
 1. Under this view, there is the possibility to create specific filters from different time periods. You can choose a particular start date and end date that you would want to view the consumption from. By default it will show the first day of the month and current date
 2. Granularity allows you to choose between showing the cost on a daily or monthly view
-3. In the Show view you can toggle between showing cost, usage, and attributed cost or usage.
+3. In the **Show** view you can toggle between showing cost, usage, and attributed cost or attributed usage.
 4. **Show Forecast** allows estimating future usage and consumption information, based on past usage data
 5. You can also add filters on several options to display cost or usage data based on the options that you have specified. 
 6. Explore grouping dimensions, with different values, for example Availability Domain, Compartment, Service, etc
@@ -43,7 +43,7 @@ Estimated Lab Time: 30 minutes
 ## Task 3: Overview of the Cost Analysis Diagram
 
 1. Below we would be able to see a detailed overview of the Cost Analysis Diagram, and in detail which service generated which costs:
-  ![](./images/Step5.png " ")
+  ![](./images/cost-chart.png " ")
 
 This concludes this lab.
 
@@ -52,5 +52,5 @@ This concludes this lab.
 
 ## Acknowledgements
 * **Authors/Contributors** - Harshit Kumar, Constantin Sebe, EMEA Hub Sales
-* **Last Updated By/Date** - Uma Kumar, January 2025
+* **Last Updated By/Date** - Uma Kumar, August 2025
 
