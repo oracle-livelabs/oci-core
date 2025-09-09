@@ -13,7 +13,7 @@ Click on the next lab in this workshop to get started.
 
 ## Acknowledgements
 
-- **Author** - Flavio Pereira, Larry Beausoleil 
+- **Author** - Flavio Pereira, Larry Beausoleil
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager Intern, DB Product Management)
 - **Last Updated By/Date** - Madhusudhan Rao, Apr 2022
 
