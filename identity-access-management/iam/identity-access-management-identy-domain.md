@@ -34,14 +34,14 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
  ![](https://oracle-livelabs.github.io/common/images/console/id-compartment.png " ")
 
-1. Click **Create Compartment**.
+2. Click **Create Compartment**.
    ![Create a compartment](images/create-compartment.png)
 
-1. Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
+3. Name the compartment **Demo** and provide a short description. Be sure your root compartment is shown as the parent compartment. Press the blue **Create Compartment** button when ready.
 
    ![Create compartment](images/compartment-details.png)
 
-1. You have just created a compartment for all of your work in this Test Drive.
+4. You have just created a compartment for all of your work in this Test Drive.
 
 ## Task 2: Manage Users, Groups, and Policies to Control Access
 
