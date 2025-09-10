@@ -174,7 +174,7 @@ For IAM with Identity Domains, what was previously identified as IAM users and g
       c) Under the **User Management** page, click **Groups**.
 
       d) Click **Assign User to Group**.
-         ![](images/Users-Groups-AddUser.png)
+         ![](images/users-groups-adduser.png)
 
       e) From the **Groups** drop-down list, select the **oci-group** that you created.
 
