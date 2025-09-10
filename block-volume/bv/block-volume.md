@@ -75,20 +75,29 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
      - **Paravirtualized:** Paravirtualized attachments are now an option when attaching volumes to VM instances. For VM instances launched from Oracle-Provided Images, you can select this option for Linux-based images published. Once you attach a volume using the paravirtualized attachment type, it is ready to use. You do not need to run any additional commands. However, due to the overhead of virtualization, this reduces the maximum IOPS performance for larger block volumes. See [Paravirtualized Attachment Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#paraPerf) for more information.
 
-2. Go to the Compute Instances Menu, and navigate to the VM instance you created before. Click **Attached block volumes**.
+2. On the Block Volume you just created, click the **Attached instances** tab on the top menu.
 
     <if type="freetier">
-    ![Attached block volumes](images/attached-bv.png " ")</if>
+    ![Attached block volumes](images/click-attached-instances-tab.png " ")</if>
     <if type="livelabs">
     ![Attached block volumes](images/livelabs-attach.png)</if>
 
-3. Click **Attach block volume**.
+3. Click **Attach to instance**.
 
-4. Click **Select volume** and choose the following options:
+    ![](images/click-attach-instance-button.png " ")
 
-     - **Volume:** Select the volume created
+4. Choose the following options:
+
+     - **Attachment type:** ISCSI
+     - **Access type:** Read/Write - Shareable
+     - Check the required checkbox 
+     - Select **Enter OCID**
+     - **Choose Instance:** Demo
+     - In the next box, paste the OCID for the instance you created in Lab 4
+
+        ![](images/copy-instance-ocid.png " ")
+
      - **Device Path:** Select `/dev/oracleoci/oraclevdb`
-     - **Attachment mode:** iSCSI
      - Click **Attach**
 
    <if type="freetier">
@@ -99,11 +108,11 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 5. Once the volume is attached, you can click on the ellipsis and then click **iSCSI commands and information**.
 
     <if type="freetier">
-    ![iSCSI commands](images/command.png " ")</if>
+    ![iSCSI commands](images/livelabs-iscsi-link.png " ")</if>
     <if type="livelabs">
     ![iSCSI commands](images/livelabs-iscsi-link.png)</if>
 
-6. Connect to the instance through SSH and **run the iSCSI Connect Commands**. 
+6. Connect to the instance through SSH and **run the iSCSI Attach Commands**. 
     Click **Copy** to copy all connect commands. Run all these commands by pasting them in the cloud shell:
 
     ![](images/iscsi-commands.png " ")
