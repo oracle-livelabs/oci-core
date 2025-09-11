@@ -87,20 +87,20 @@ A common use of Block Volumes is to add storage capacity to an Oracle Cloud Infr
 
 
 4. Click **Select instance** and choose the following options:
-=======
+
     ![](images/click-attach-instance-button.png " ")
 
 4. Choose the following options:
 
      - **Attachment type:** ISCSI
      - **Access type:** Read/Write - Shareable
-     - Check the required checkbox 
+     - Check the required checkbox
      - Select **Enter OCID**
      - **Choose Instance:** Demo
      - In the next box, paste the OCID for the instance you created in Lab 4
 
         ![](images/copy-instance-ocid.png " ")
-        
+
 
      - **Device Path:** Select `/dev/oracleoci/oraclevdb`
      - Click **Attach**
