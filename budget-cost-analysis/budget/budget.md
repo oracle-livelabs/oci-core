@@ -19,7 +19,7 @@ Estimated Lab Time: 30 minutes
 ## Task 2: Create budgets
 1. Click **Create Budget** at the top of the budgets list. The Create Budget dialog is displayed.
 
-  ![](./images/budget_2.png " ")
+  ![create a budget](./images/budget_2.png " ")
 
 ## Task 3: Enter budget name
 1. Enter a name for your budget in the **Name** text field. The name can only contain alphanumeric characters, dashes, and the underscore character, and can’t begin with a number.
@@ -28,14 +28,20 @@ Estimated Lab Time: 30 minutes
   ![](./images/budget_3.png " ")
 
 ## Task 4: Select Budget Scope
-1. For budgets targeting a compartment select a target compartment for your budget from the **Target Compartment** drop-down list.
-2. For budgets targeting a **Tag**:
+1. For budgets targeting a **Tag**:
     - Select a tag namespace
     - Select a target tag key.
     - Enter a value for the tag.
-3. For budgets targeting a child tenancy select a target tenancy for your budget from the **Target Tenancy** drop-down list.
+  
+  For this lab, we will not be creating a budget based off a tag, but please view example below. 
 
-3. In this workshop we have selected **Budget Scope** as Compartment.
+  ![](./images/budget_tag.png " ")
+
+2. For budgets targeting a child tenancy select a target tenancy for your budget from the **Target Tenancy** drop-down list. For this lab, we will not be creating a budget based off a child tenancy, but please view example below. 
+
+  ![](./images/budget-tenancy.png " ")
+
+3. For budgets targeting a compartment select a target compartment for your budget from the **Target Compartment** drop-down list. In this workshop we have selected Budget Scope as **Compartment**.
 
   ![](./images/budget_4.png " ")
   *Note: While the budget tracks spending in the specified target compartment, but you need to have permissions to manage budgets in the root compartment of the tenancy to create and use budgets.*
@@ -70,22 +76,33 @@ Estimated Lab Time: 30 minutes
 ## Task 8: Email Recipients and Message
 1. In the **Email Recipients** field, enter one or more email addresses to receive the alerts. Multiple addresses can be separated using a comma, semicolon, space, tab, or new line.
 2. Enter the body of your email alert in the **Email Message** field. The text of the email message cannot exceed 1000 characters.
-  ![](./images/budgetscreenshot3.png " ")
+  ![](./images/budget-email.png " ")
 Click the Create button to create your budget and alert.
 
 ## Task 9: To view or edit a budget alert rule
 1. After creation of budget you can see your newly created budget in the Budgets dashboard.
-2. In the list of budget alert rules, click the menu icon at the right side of the list and select View/Edit from the context menu.
+
+  ![](./images/view_budget.png " ")
+
+2. Click **Budget Alert Rules** to view and edit alert rules.
+
+  ![](./images/budget-details.png " ")
+
 3. Edit your alert rule.
+
+  ![](./images/edit-alerts.png " ")
+
 4. Confirm your changes by clicking Save Changes, or dismiss the dialog without saving by clicking the Cancel button.
 
-  ![](./images/budget_6.png " ")
+  ![](./images/save-alert.png " ")
 
-You can Create additional Alert Rule by clicking **Create Budget Alert Rule**
+5. You can Create additional Alert Rule by clicking **Create Budget Alert Rule**
   ![](./images/budgetscreenshot5.png " ")
 
 ## Task 10: To delete a budget alert rule
 1. In the list of budget alert rules, click the menu icon at the right side of the list and select Delete from the context menu.
+  ![](./images/delete-budget.png " ")
+
 2. Confirm the delete operation in the Confirm Delete dialog by clicking Confirm button.
   ![](./images/budgetscreenshot6.png " ")
 
@@ -97,5 +114,5 @@ You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Authors/Contributors** - Harshit Kumar, Constantin Sebe, EMEA Hub Sales
-* **Last Updated By/Date** - Uma Kumar, January 2025
+* **Last Updated By/Date** - Uma Kumar, September 2025
 

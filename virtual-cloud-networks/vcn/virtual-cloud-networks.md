@@ -41,11 +41,15 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     ![Setup a Network with a Wizard](images/setup-vcn.png " ")
 
-2. Select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
+2. Click the **Actions** dropdown and select **Start VCN Wizard**.
+
+    ![Setup a Network with a Wizard](images/actions-dropdown.png " ")
+
+3. Select **Create VCN with Internet Connectivity**, and then click **Start VCN Wizard**.
 
     ![Start VCN Wizard](images/start-wizard.png " ")
 
-3. Complete the following fields:
+4. Complete the following fields:
 
     |                  **Field**              |    **Value**  |
     |----------------------------------------|:------------:|
@@ -62,14 +66,14 @@ To create a VCN on Oracle Cloud Infrastructure:
 
      Click the **Next** button at the bottom of the screen.
 
-4. Review your settings to be sure they are correct. Click the **Create** button to create the VCN. 
+5. Review your settings to be sure they are correct. Click the **Create** button to create the VCN. 
     ![Review CV Configuration](images/review-vcn.png " ")
 
-5. It will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
+6. It will take a moment to create the VCN and a progress screen will keep you apprised of the workflow.
 
     ![Workflow](images/workflow.png " ")
 
-6. Once you see that the creation is complete (see previous screenshot), click the **View Virtual Cloud Network** button.
+7. Once you see that the creation is complete (see previous screenshot), click the **View Virtual Cloud Network** button.
 </if>
 
 ### Summary
@@ -80,5 +84,5 @@ This VCN will contain all of the other assets that you will create during this s
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Arabella Yao, December 2021
+- **Last Updated By/Date** - Sania Bolla, September 2025
 
