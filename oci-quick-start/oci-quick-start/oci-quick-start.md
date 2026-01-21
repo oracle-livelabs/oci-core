@@ -12,7 +12,7 @@ In this lab we will create a compute instance, install httpd server, attach bloc
 
 ## Task 1: Create VCN
 
-1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select the compartment assigned to you from drop down menu on left part of the screen 
+1. From the OCI Services menu, click **Virtual Cloud Networks** under **Networking**. Select the compartment assigned to you from drop down menu on left part of the screen
 2. Click **Start VCN Wizard**.
 
    **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list.

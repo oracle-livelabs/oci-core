@@ -1,14 +1,14 @@
 # Introduction
 
-In this workshop, we will cover Virtual Cloud Networks (VCN), Database 23ai and Oracle APEX. These are skills you will use when deploying applications/services.
+In this workshop, we will cover Virtual Cloud Networks (VCN), Database 26ai and Oracle APEX. These are skills you will use when deploying applications/services.
 
 These labs also provide some of the foundational skills and knowledge you will need to attempt the Oracle Cloud Infrastructure Architect Associate Certification offered by Oracle University.
 
-In this workshop, we will cover Virtual Cloud Networks (VCN), Database 23ai and Oracle APEX. These are skills you will use when deploying applications/services.
+In this workshop, we will cover Virtual Cloud Networks (VCN), Autnomous AI Database 26ai and Oracle APEX Development service. These are skills you will use when deploying applications/services.
 
 These labs also provide some of the foundational skills and knowledge you will need to attempt the Oracle Cloud Infrastructure Architect Associate Certification offered by Oracle University.
 
-The labs in this workshop cover a level 100 set of skills for **Oracle Cloud Infrastructure (OCI) Core Services**, including Virtual Cloud Networks (VCN), Autonomous Database, Oracle APEX. These labs also provide some of the foundational skills and knowledge you will need to attempt the [Oracle Cloud Infrastructure Architect Associate Certification](https://education.oracle.com/oracle-cloud-infrastructure-2022-architect-associate/pexam_1Z0-1072-22) offered by Oracle University.
+The labs in this workshop cover a level 100 set of skills for **Oracle Cloud Infrastructure (OCI) Core Services**, including Virtual Cloud Networks (VCN), Autonomous AI Database, Oracle APEX. These labs also provide some of the foundational skills and knowledge you will need to attempt the [Oracle Cloud Infrastructure Architect Associate Certification](https://mylearn.oracle.com/ou/learning-path/become-an-oci-architect-associate-2025/147631) offered by Oracle University.
 
 The Oracle Cloud Infrastructure Architect Associate exam is designed for individuals who possess a strong foundational knowledge of architecting infrastructure using Oracle Cloud Infrastructure (OCI) services. The certification is intended for candidates with technical backgrounds who want to validate their understanding of Oracle Cloud Infrastructure.
 
@@ -29,8 +29,8 @@ In this workshop, you will:
 - Get introduced to the regions available on Oracle Cloud
 - Apply the Kick Off Part 1 Basics knowledge
 - Create a Virtual Cloud Network
-- Deploy and configure Autonomous Database with Oracle Database 23ai
-- Deploy APEX Service on Oracle Database 23ai
+- Deploy and configure Autonomous AI Database with Oracle AI Database 26ai
+- Deploy APEX Service on Oracle AI Database 26ai
 
 ### Prerequisites
 * [Familiarity with OCI console](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/console.htm)
@@ -48,6 +48,6 @@ You may now proceed to the next lab.
 
 - **Author** - Cristian Manea, Radu Chiru, March 2023
 - **Contributors** - DCX Team (Violeta Blendea, Tom Goulding)
-- **Last Updated By/Date** - Cristian Manea, Radu Chiru, May 2025
+- **Last Updated By/Date** - Cristian Manea, Radu Birsan, December 2025
 
 

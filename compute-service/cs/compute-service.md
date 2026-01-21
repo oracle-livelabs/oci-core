@@ -49,7 +49,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
   ![](images/create-instance.png)
 
 3. The Create Compute Instance wizard will launch.
-    <if type="freetier">Enter **Web-Server** as the name of the server. Click **Edit** on the **Networking** area of the page.</if>
+    <if type="freetier">Enter **Web-Server** as the name of the server. Click **Next** to get to the **Networking** section.</if>
     <if type="livelabs">Enter your username + *-Instance* as the name of the server.</if>
 
     <if type="freetier">
@@ -69,7 +69,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![](images/livelabs-create-compute-4.png)
     ![](images/create-compute-livelabs-4b.png)</if>
 
-3. In the Networking section, most of the defaults are perfect for our purposes. However, you will need to scroll down and select the **Assign a public IPv4 address** option.
+3. In the Networking section, most of the defaults are perfect for our purposes. However, ensure that the **Automatically assign a public IPv4 address** option is selected.
 
     <if type="freetier">
     ![Create step 2](images/assign-ip.png " ")</if>
@@ -79,7 +79,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     >**Note:** You need a public IP address, so that you can SSH into the running instance later in this lab.
 
-4. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
+4. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in the ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
 
     ![](images/ssh-keys.png)
 
@@ -108,7 +108,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![](images/ssh.png)
 
 <if type="freetier">    
-2. For this lab, we are going to install an Apache HTTP Webserver and try to connect to it over the public Internet. *Make sure you have SSH'ed into the Linux instance* and run following commands:
+2. For this lab, we are going to install an Apache HTTP Webserver and try to connect to it over the public Internet. *Make sure you have SSH'ed into the Linux instance* and run the following commands:
 
     >**Note:** Apache HTTP Server is an open-source web server developed by the Apache Software Foundation. The Apache server hosts web content, and responds to requests for this content from web browsers such as Chrome or Firefox.
 
@@ -152,13 +152,21 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 	![](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
 
-5. Now click **Security Lists** on the left navigation bar for the VCN.
+5. Now click **Security** on the top navigation bar for the VCN.
 
-    ![Click on Security Lists](images/security-list.png " ")
+    ![Click on Security Lists](images/security-list1.png " ")
 
 6. Click on the **Default Security List**.
 
-7. Here you need to open port 80. Click **Add Ingress Rules** and add the following values as shown below:
+7. Now click **Security rules** on the top navigation bar.
+
+    ![Click on Security Lists](images/security-list2.png " ")
+
+8. Click **Add Ingress Rules**
+
+    ![Click on Security Lists](images/security-list3.png " ")
+
+9. Here you need to open port 80. Add the following values as shown below:
 
     - **Source Type:** CIDR
     - **Source CIDR**: 0.0.0.0/0
@@ -169,7 +177,8 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Add Ingress Rule](images/ingress-rule.png " ")
 
-8. Navigate to `http://<public_ip_address>` (the IP address of the Linux VM) in your browser. And now you should see the index page of the web server we created above.
+
+10. Navigate to `http://<public_ip_address>` (the IP address of the Linux VM) in your browser. And now you should see the index page of the web server we created above.
 
     ![Open you browser to the public IP address](images/browser.png " ")
 
@@ -194,4 +203,4 @@ You have completed this lab. You may now **proceed to the next lab**.
 
 - **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
-- **Last Updated By/Date** - Arabella Yao, March 2022
+- **Last Updated By/Date** - Sania Bolla, September 2025

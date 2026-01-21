@@ -8,19 +8,19 @@ Estimated Time: 5 minutes
 ### Objectives
 
 In this lab, you will:
-- Deploy the APEX service on the Autonomous Database.
+- Deploy the APEX service on the Autonomous AI Database.
 
 ### Prerequisites
 
-- This lab requires completion of the **Create an Autonomous Database with Oracle Database 23ai** section in the Contents menu on the left.
+- This lab requires completion of the **Create an Autonomous AI Database with Oracle AI Database 26ai** section in the Contents menu on the left.
 
-- Have an Autonomous Database with its admin password (i.e. *Oracle123!!!*).
+- Have an Autonomous AI Database with its admin password (i.e. *Oracle123!!!*).
 
 ## Task 1: Configure APEX 
 
-1. Click the navigation menu on the upper left to show top-level navigation choices and then click **Oracle Database > Autonomous Database**.
+1. Click the navigation menu on the upper left to show top-level navigation choices and then click **Oracle AI Database > Autonomous AI Database**.
 
-    ![Autonomous Database](./images/navigate-adb.png)
+    ![Autonomous AI Database](./images/navigate-adb.png)
 
 2. Click on *KO2_ADB* database name.
 
@@ -66,10 +66,10 @@ In this lab, you will:
 _Congratulations! You have successfully completed the lab._
 
 ## Learn More
-- [Autonomous Database Documentation](https://docs.oracle.com/en-us/iaas/digital-assistant/getting-started.htm)
+- [Getting Started with Oracle APEX in Oracle Cloud](https://docs.oracle.com/en/cloud/paas/apex/gsadd/index.html)
 
 ## Acknowledgements
 
 * **Author** - Cristian Manea - May 2025
 
-* **Last Updated By/Date** - Cristian Manea - May 2025
+* **Last Updated By/Date** - Cristian Manea - December 2025

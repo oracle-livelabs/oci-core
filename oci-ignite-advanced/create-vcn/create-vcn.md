@@ -128,7 +128,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     Then go with **Create Security List**. 
 
 
-## Task 4: Create a Subnet to access Autonomous Database
+## Task 4: Create a Subnet to access Autonomous AI Database
 
 1. In the VCN, navigate to the Subnets menu, and click **Create Subnet**.
 2. Complete the following fields:
@@ -164,7 +164,7 @@ Please *proceed to the next lab*.
 ## Acknowledgements
 
 - **Author** - Radu Chiru
-- **Last Updated By/Date** - Radu Chiru, Cristian Manea, May 2025
+- **Last Updated By/Date** - Cristian Manea, December 2025
 
 
 

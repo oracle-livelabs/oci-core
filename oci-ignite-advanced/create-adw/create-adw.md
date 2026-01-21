@@ -1,21 +1,24 @@
-# Create an Autonomous Database with Oracle Database 23ai
+# Create an Autonomous AI Database with Oracle AI Database 26ai
 
 ## Introduction
 
-Oracle Autonomous Data Warehouse Cloud provides an easy-to-use, fully autonomous database that scales elastically, delivers fast query performance, and requires no database administration. 
-The purpose of this lab is to get familiar with Oracle Autonomous Data Warehouse primitives. 
+Autonomous AI Database supports different workload types, including: Lakehouse, Transaction Processing, JSON Database, and APEX Service. 
 
-At the end of this lab, you will be familiar with launching an Autonomous Data Warehouse database, using a secure network access control list, and connecting to the instance via the SQL Developer tool.
+Autonomous AI Database is designed to support all standard business applications and deliver scalable query performance.
 
-Autonomous Database with Oracle Database 23ai offers many new innovative autonomous features and provides developer-oriented functionality.
+The purpose of this lab is to help you get familiar with Oracle Autonomous AI Database and its primitives. 
 
-If you use Autonomous Database with Oracle Database 23ai, then many of the concepts and features of this service are further documented here:
+At the end of this lab, you will be familiar with launching an Autonomous Transaction Processing (ATP) database, using a secure network access control list, and connecting to the instance via the SQL Developer tool.
 
-- [Oracle Database 23ai](https://docs.oracle.com/en/database/oracle/oracle-database/23/index.html)
+Autonomous AI Database with Oracle AI Database 26ai offers many new innovative autonomous features and provides developer-oriented functionality.
 
-- [Oracle Database New Features](https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/introduction.html#GUID-about141)
+If you use Autonomous AI Database with Oracle AI Database 26ai, then many of the concepts and features of this service are further documented here:
 
-**Parent** topic: [Autonomous Database with Oracle Database 23ai](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/autonomous-always-free-23ai.html#GUID-8C78E94F-917D-4F66-B020-2A0E9342EC80)
+- [Oracle AI Database 26ai](https://docs.oracle.com/en/database/oracle/oracle-database/26/index.html)
+
+- [Oracle AI Database New Features](https://docs.oracle.com/en/database/oracle/oracle-database/26/nfcoa/introduction.html#GUID-about141)
+
+**Parent** topic: [Autonomous AI Database with Oracle AI Database 26ai](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/autonomous-always-free-23ai.html#GUID-8C78E94F-917D-4F66-B020-2A0E9342EC80)
 
 Estimated Time: 30 minutes
 
@@ -23,8 +26,8 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 
--   Provision a new Autonomous Database instance with Oracle Database 23ai
--   Connect to the Autonomous Database instance via SQL Developer
+-   Provision a new Autonomous AI Database instance with Oracle AI Database 26ai
+-   Connect to the Autonomous AI Database instance via SQL Developer
 ### Prerequisites
 
 * This lab requires completion of the **Get Started** section in the Contents menu on the left.
@@ -33,23 +36,23 @@ In this lab, you will:
 * [Oracle Cloud basics](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/concepts.htm)
 * Your **Oracle Cloud Account** - During this workshop, we will create a Level 100 environment for you to use on your tenancy.
 
-## Task 1: Choose Autonomous Database from the Services Menu
+## Task 1: Choose Autonomous AI Database from the Services Menu
 
 1. Log in to the [Oracle Cloud Console](https://cloud.oracle.com/).
-2. Once you log in, you arrive at the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top-level navigation choices and then click **Autonomous Database**.
+2. Once you log in, you arrive at the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top-level navigation choices and then click **Autonomous AI Database**.
 
     ![Oracle home page.](images/navigate-adb.png " ")
 
-## Task 2: Create the Autonomous Database instance
+## Task 2: Create the Autonomous AI Database instance
 
-1. Click **Create Autonomous Database** to start the instance creation process.
+1. Click **Create Autonomous AI Database** to start the instance creation process.
 
-    ![Click Create Autonomous Database.](images/click-create-adb.png " ")
+    ![Click Create Autonomous AI Database.](images/click-create-adb.png " ")
 
-2.  This brings up the __Create Autonomous Database__ screen where you will specify the configuration of the instance.
+2.  This brings up the __Create Autonomous AI Database__ screen where you will specify the configuration of the instance.
 
  
-3. Give basic information for the Autonomous Database:
+3. Give basic information for the Autonomous AI Database:
 
     - __Choose a compartment__ - Choose the compartment **Sandbox** created in __Kick off your Oracle Cloud - Part 1__. See [the documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm) if you want to learn more about compartments.
     - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __KO2_ADB__.
@@ -64,13 +67,13 @@ In this lab, you will:
 
 5. Configure the database:
 
-    - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always-free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
-    - __Choose database version__ - Select __23ai__ as the database version.
+    - __Always Free__ - If your Cloud Account is an Always Free account, you can select this option to create an always free Autonomous AI Database. An always-free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
+    - __Choose database version__ - Select __26ai__ as the database version.
     - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__. If you choose an Always Free database, it comes with 1 CPU.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. Or, if you choose an Always Free database, it comes with 20 GB of storage.
     - __Auto Scaling__ - For this lab, keep auto-scaling enabled, to enable the system to automatically use up to three times more CPU and IO resources to meet workload demand.
     
-    >**Note:** You cannot scale up/down an Always Free autonomous database.
+    >**Note:** You cannot scale up/down an Always Free Autonomous AI Database.
 
     ![Choose the remaining parameters.](images/configure-adb.png " ")
 
@@ -92,7 +95,7 @@ In this lab, you will:
     - If you want to allow traffic from everywhere, select **Secure access from everywhere**.
     - If you want to allow traffic only from the IP addresses and VCNs you specify - where access to the database from all public IPs or VCNs is blocked, select **Secure access from allowed IPs and VCNs only** in the Choose network access area.
     - If you want to restrict access to a private endpoint within an OCI VCN, select **Private endpoint access only** in the Choose network access area.
-    - If the **Require mutual TLS (mTLS) authentication** option is selected, mTLS will be required to authenticate connections to your Autonomous Database. TLS connections allow you to connect to your Autonomous Database without a wallet if you use a JDBC thin driver with JDK8 or above. See the [documentation for network options](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5) for options to allow TLS, or to require only mutual TLS (mTLS) authentication.
+    - If the **Require mutual TLS (mTLS) authentication** option is selected, mTLS will be required to authenticate connections to your Autonomous AI Database. TLS connections allow you to connect to your Autonomous AI Database without a wallet if you use a JDBC thin driver with JDK8 or above. See the [documentation for network options](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/support-tls-mtls-authentication.html#GUID-3F3F1FA4-DD7D-4211-A1D3-A74ED35C0AF5) for options to allow TLS, or to require only mutual TLS (mTLS) authentication.
 
     - For this lab, select, **Secure access from allowed IPs and VCNs only**. Then under the __IP notation type__ choose **Virtual Cloud Network** and select the **KO2_VCN** created in *Lab 1: Create a Virtual Cloud Network*. 
     - Check **Add my IP address(_your IP address_) to IP value** to connect to the database from your machine.
@@ -101,11 +104,11 @@ In this lab, you will:
 
 8. For this lab, do not provide a contact email address. The "Contact Email" field allows you to list contacts to receive operational notices and announcements as well as unplanned maintenance notifications.
 
-9. Click __Create Autonomous Database__.
+9. Click __Create Autonomous AI Database__.
 
- ![Click on Create Autonomous Database](images/click-create-adb2.png " ")
+ ![Click on Create Autonomous AI Database](images/click-create-adb2.png " ")
 
-10.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+10.  Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous AI Database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
     ![Database instance homepage.](images/adb-state.png " ")
 
@@ -124,19 +127,19 @@ In this lab, you will:
     Choose a location to save the *wallet.zip* file.
 
     Click the **Cancel** button at the bottom of the screen.
-## Task 3: Connect to the Autonomous Database instance via SQL Developer
+## Task 3: Connect to the Autonomous AI Database instance via SQL Developer
 
-Oracle SQL Developer is a free integrated development environment that simplifies the development and management of an Autonomous Database.
+Oracle SQL Developer is a free integrated development environment that simplifies the development and management of an Autonomous AI Database.
 
-SQL Developer can connect to Autonomous Database and contains enhancements for key Autonomous Database features. You can download the latest version of Oracle SQL Developer for your platform from the Download link on this page: [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html).
+SQL Developer can connect to Autonomous AI Database and contains enhancements for key Autonomous AI Database features. You can download the latest version of Oracle SQL Developer for your platform from the Download link on this page: [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html).
     ![Access SQL Developer](images/download-sqldeveloper.png " ")
 
 
-For connecting with mTLS authentication, Oracle SQL Developer provides support for wallet files using the Cloud Wallet Connection Type. Oracle recommends that you use version 18.2 (or later); however, earlier versions of SQL Developer will work with Autonomous Database using an Oracle Wallet.
+For connecting with mTLS authentication, Oracle SQL Developer provides support for wallet files using the Cloud Wallet Connection Type. Oracle recommends that you use version 18.2 (or later); however, earlier versions of SQL Developer will work with Autonomous AI Database using an Oracle Wallet.
 
 For connecting with TLS authentication, Oracle SQL Developer provides support using the Custom JDBC Connection Type. See [Connect with Oracle SQL Developer with TLS Authentication](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/connect-sqldev-tls.html#GUID-811258A7-E975-4854-A37F-CF268EA99C82) for details on connecting using TLS authentication.
 
-To create a new mTLS connection to Autonomous Database, do the following:
+To create a new mTLS connection to Autonomous AI Database, do the following:
 
 
 1. Open the SQL Developer tool, and click on the **green cross** to add a new/select database connection:
@@ -158,7 +161,7 @@ To create a new mTLS connection to Autonomous Database, do the following:
 
     ![Configure the database connection parameters.](images/configure-connection-sqldeveloper.png " ")
 
-## Task 4: Run a Sample Query on the Autonomous Database instance via SQL Developer
+## Task 4: Run a Sample Query on the Autonomous AI Database instance via SQL Developer
 
 
 1. Click on the **"+"** next to the database connection *KO2_ADB* on the left side to expand the database content and start testing it.
@@ -197,11 +200,11 @@ Please *proceed to the next lab*.
 
 ## Learn more
 
-See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-workflow.html#GUID-5780368D-6D40-475C-8DEB-DBA14BA675C3) on the typical workflow for using Autonomous Data Warehouse.
+See the [documentation](https://docs.oracle.com/en-us/iaas/autonomous-database-serverless/doc/autonomous-provision.html#GUID-0B230036-0A05-4CA3-AF9D-97A255AE0C08) on the typical workflow for provisioning an Autonomous AI Database.
 
 
 ## Acknowledgements
 
 - **Author** - Cristian Manea
-- **Last Updated By/Date** - Cristian Manea, May 2025
+- **Last Updated By/Date** - Cristian Manea, December 2025
 

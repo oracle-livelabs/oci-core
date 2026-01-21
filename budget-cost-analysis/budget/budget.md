@@ -19,7 +19,7 @@ Estimated Lab Time: 30 minutes
 ## Task 2: Create budgets
 1. Click **Create Budget** at the top of the budgets list. The Create Budget dialog is displayed.
 
-  ![](./images/budget_2.png " ")
+  ![create a budget](./images/budget_2.png " ")
 
 ## Task 3: Enter budget name
 1. Enter a name for your budget in the **Name** text field. The name can only contain alphanumeric characters, dashes, and the underscore character, and can’t begin with a number.
@@ -114,5 +114,5 @@ You may now *proceed to the next lab*.
 
 ## Acknowledgements
 * **Authors/Contributors** - Harshit Kumar, Constantin Sebe, EMEA Hub Sales
-* **Last Updated By/Date** - Uma Kumar, August 2025
+* **Last Updated By/Date** - Uma Kumar, September 2025
 

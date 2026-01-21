@@ -86,8 +86,6 @@ Now we will apply an attribute to your instance two. This will protect your inst
 
   ![Select the resource to protect](images/protect-vm.png)
 
-  ![ZPR protect instance by adding a security attribute](images/zpr-protect-instance-two.png)
-
 
 ## Task 3: Try to ssh into instance 2
 
@@ -119,9 +117,9 @@ Try to ssh from your laptop and also try from your first compute instance. Your 
 
 **Note** You would never use 0.0.0.0/0 in production but you would normally use something to limit it to your specific laptop's IP address or something very close to it like 192.1.223.0/12 So try to limit the ingress to a much smaller foot print then all possible IP addresses as done in this screen shot. You should also limit the traffic to port 22 for ssh only to limit someone from trying to attack your server using other tools/ports.
 
-  ![Allow traffic into network](images/ingress-rules.png)
+  ![Allow traffic into network](images/zpr-ingress.png)
 
-  ![Allow traffic out from your network](images/egress-rules.png)
+  ![Allow traffic out from your network](images/zpr-egress.png)
 
 -- Add a security attribute to the instance one
   ![ZPR protect a resource](images/zpr-protect-resource.png)
