@@ -45,4 +45,4 @@ You may now **proceed to the next lab**.
 - **Author** - Kay Malcolm, Director, Product Management
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer, NA Cloud
 - **Contributors** - LiveLabs QA Team (Arabella Yao, Product Manager | Isa Kessinger, QA Intern)
-- **Last Updated By/Date** - Eli Schilling, Cloud Archtiect, Lab Experience Team, February 2026
+- **Last Updated By/Date** - Eli Schilling, Cloud Architect, Lab Experience Team, February 2026

@@ -158,4 +158,4 @@ Estimated Time: 25 minutes
 
 - **Author** - Umair Siddiqui, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Eli Schilling, Cloud Archtiect, Lab Experience Team, February 2026
+- **Last Updated By/Date** - Eli Schilling, Cloud Architect, Lab Experience Team, February 2026

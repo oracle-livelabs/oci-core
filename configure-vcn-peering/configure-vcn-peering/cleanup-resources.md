@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is an optional lab. If you'd like guidance for deleting all resources created as part of this workshop, you can proceed with the following tasks.
+This is an optional lab. If you'd like guidance for deleting all of the resources created as part of this workshop, you can proceed with the following tasks.
 
 Estimated Time: 10 minutes
 
@@ -53,4 +53,4 @@ Estimated Time: 10 minutes
 
 - **Author** - Umair Siddiqui, Larry Beausoleil
 - **Adapted by** -  Yaisah Granillo, Cloud Solution Engineer
-- **Last Updated By/Date** - Eli Schilling, Cloud Archtiect, Lab Experience Team, February 2026
+- **Last Updated By/Date** - Eli Schilling, Cloud Architect, Lab Experience Team, February 2026
