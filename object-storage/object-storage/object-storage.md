@@ -10,10 +10,6 @@ Object Storage is a regional service and is not tied to any specific compute ins
 
 Estimated time: 15 minutes
 
-Watch the video below for a quick walkthrough of the lab.
-
-[Create an Object Storage Service](videohub:1_696khzi5)
-
 **Object Storage offers two tiers:**
 
 1. Use *Standard* for data that requires fast, immediate, and frequent access. Data accessibility and performance justify a higher price point for storing data in Object Storage.
