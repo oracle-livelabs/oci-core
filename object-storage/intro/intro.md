@@ -32,5 +32,5 @@ You may now **proceed to the next lab**.
 
 - **Author** - Flavio Pereira, Larry Beausoleil 
 - **Contributors** - Arabella Yao, Prasenjit Sarkar, Rajeswari Rai
-- **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, December 2021
+- **Last Updated By/Date** - Uma Kumar, February 2026
 

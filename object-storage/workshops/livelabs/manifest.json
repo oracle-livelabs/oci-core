@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Create an Object Storage Service",
+    "workshoptitle": "Create an Object Storage Bucket",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -13,7 +13,7 @@
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Lab 1: Create an Object Storage Service",
+            "title": "Lab 1: Create an Object Storage Bucket",
             "type": "livelabs",
             "filename": "./../../object-storage/object-storage.md"
         },
