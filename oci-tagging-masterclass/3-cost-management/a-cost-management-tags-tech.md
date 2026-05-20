@@ -203,7 +203,7 @@ In this task, we are going to generate a cost analysis report using filters and 
 
     > **Note:** FOCUS Reports are organized by year, month, day, and multiple time stamps during the day.
 
-    ![Screenshot showing how to expand FOCUS reports](./images/cost-report-FOCUS.png)
+    ![Screenshot showing how to expand FOCUS reports](./images/cost-report-focus.png)
 
 11. Once you have decided on a FOCUS cost report to download, click on the 3 dots to the right side of the report. Click Download Report to download your FOCUS cost report to your local machine.
 
@@ -217,7 +217,7 @@ The FOCUS report contains data on resource usage and consumption costs in your t
 
 We have included an example of a FOCUS cost report would look like for an OCI tenancy. The FOCUS cost report has many columns but here are some important ones to note: UsageQuantity, Tags, PricingUnit, ListUnitPrice, BilledCost.
 
-   ![Screenshot showing an example of a FOCUS report](./images/FOCUS-report-example-final.png)
+   ![Screenshot showing an example of a FOCUS report](./images/focus-report-example-final.png)
 
 You have now generated your first cost analysis report and downloaded a FOCUS cost report.
 
