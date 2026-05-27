@@ -8,7 +8,7 @@ Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Co
 
 [](youtube:mIYSgeX5FkM)
 
-Estimated Time: 15 minutes
+Estimated Time: 30 minutes
 
 Here is an instructional video, going through the process of making a VCN:
 
@@ -47,7 +47,7 @@ In this lab, you will:
     <if type="freetier">
 To create a VCN on Oracle Cloud Infrastructure:
 
-1. On the Oracle Cloud Infrastructure Console Home page, under the **Launch Resources** header, click **Set up a network with a wizard**.
+1. On the Oracle Cloud Infrastructure Console Home page, under the **Build** header, click **Set up a network with a wizard**.
 
     ![Setup a Network with a Wizard](images/setup-vcn.png " ")
 

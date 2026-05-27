@@ -1,0 +1,34 @@
+{
+    "workshoptitle": "OCI Tagging - Advanced Features",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Tagging Review",
+            "filename": "../../0-tagging-basics/introduction-to-tagging-advanced.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Tag-based access control in IAM",
+            "filename": "../../4-tag-based-access-control/control-iam-access.md"
+        },
+        {
+            "title": "Lab 2: Automating resource updates",
+            "filename": "../../5-automated-resource-updates/automated-resource-updates.md"
+        },
+        {
+            "title": "Lab 3: The Reaper",
+            "filename": "../../6-advanced-resource-control/enforcing-tagging-compliance.md"
+        },
+        {
+            "title": "Cleanup",
+            "filename": "../../7 - cleanup/cleanup-advanced.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
