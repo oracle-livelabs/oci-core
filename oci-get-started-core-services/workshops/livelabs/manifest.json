@@ -55,6 +55,16 @@
             "filename": "./../../cleanup/clean-up.md"
         },
         {
+            "title": "Lab 8: Intro to Observability and Management",
+            "type": "freetier",
+            "filename": "../../observability/observability-intro.md"
+        },
+        {
+            "title": "Lab 9: Clean Up Resources",
+            "type": "freetier",
+            "filename": "../../cleanup/clean-up.md"
+        },
+        {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
