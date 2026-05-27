@@ -1,0 +1,38 @@
+{
+    "workshoptitle": "OCI Tagging - Core Capabilities",
+    "help": "livelabs-help-oci_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction to tagging on OCI",
+            "filename": "../../0-tagging-basics/introduction-to-tagging-core.md"
+        },
+        {
+            "title": "Get Started",
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Working with tag defaults",
+            "filename": "../../1-tag-defaults/working-with-tag-defaults.md"
+        },
+        {
+            "title": "Lab 2: Using tags to apply bulk changes",
+            "filename": "../../2-making-bulk-changes/bulk-changes-with-oci-cli.md"
+        },
+        {
+            "title": "Lab 3a (Tech): Cost management tags",
+            "filename": "../../3-cost-management/a-cost-management-tags-tech.md"
+        },
+        {
+            "title": "Lab 3b (Business): Cost management strategies",
+            "filename": "../../3-cost-management/b-cost-management-tags-biz.md"
+        },
+        {
+            "title": "Cleanup",
+            "filename": "../../7 - cleanup/cleanup-core.md"
+        },
+        {
+            "title": "Need Help?",
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
