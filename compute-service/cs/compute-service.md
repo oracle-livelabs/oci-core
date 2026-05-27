@@ -13,41 +13,40 @@ Watch the video below for a quick walk-through of the lab.
 [Create a Compute Service](videohub:1_zvp51wx4)
 
 ### Objectives
-
 In this lab, you will:
 - Create a compute instance
 - Connect to the compute instance
-- Manage the instance lifecycle (start, stop, reboot, and terminate)
+<if type="freetier">- Install Apache HTTP server</if>
 
 ### Prerequisites
 
 * An Oracle Cloud Account - please view this workshop's LiveLabs landing page to see which environments are supported.
 
->**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+>**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. 
 
 **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-
+  
 ## Task 1: Create <if type="freetier">a Web Server on </if>a Compute Instance
 
-Oracle Cloud Infrastructure offers both Bare Metal and Virtual Machine instances:
+Oracle Cloud Infrastructure  offers both Bare Metal and Virtual Machine instances:
 
-- **Bare Metal** - A bare metal compute instance gives you dedicated physical server access for highest performance and strong isolation. Choose Bare Metal for workloads that require maximum CPU or GPU performance, or strict hardware isolation between tenants.
-- **Virtual Machine** - A Virtual Machine (VM) is an independent computing environment that runs on top of physical bare metal hardware. The virtualization makes it possible to run multiple VMs that are isolated from each other. VMs are ideal for running applications that do not require the performance and resources (CPU, memory, network bandwidth, storage) of an entire physical machine.
-
-For most workloads, development environments, and this lab, a Virtual Machine is the right choice.
+- **Bare Metal**  - A bare metal compute instance gives you dedicated physical server access for highest performance and strong isolation.
+- **Virtual Machine**  - A Virtual Machine (VM) is an independent computing environment that runs on top of physical bare metal hardware. The virtualization makes it possible to run multiple VMs that are isolated from each other. VMs are ideal for running applications that do not require the performance and resources (CPU, memory, network bandwidth, storage) of an entire physical machine.
 
 An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as a Bare Metal instance, leveraging the same cloud-optimized hardware, firmware, software stack, and networking infrastructure.
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Compute**, and select **Instances**.
 
-    ![](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
 
 <if type="livelabs">
-2. Select the Compartment that you were assigned when the reservation was created. Then click **Create Instance**. We will launch a VM instance for this lab.
+2. Select the Compartment that you were assigned when the reservation was created.
 
-    ![](images/create-compute-livelabs-1.png)
+  ![](images/create-compute-livelabs-1.png)
 </if>
 
+2. Then click **Create Instance**. We will launch a VM instance for this lab.
+  ![](images/create-instance.png)
 
 3. The Create Compute Instance wizard will launch.
     <if type="freetier">Enter **Web-Server** as the name of the server. Click **Next** to get to the **Networking** section.</if>
@@ -68,106 +67,90 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 5. Select *Specialty and previous generation*, then select **VM.Standard.2.1** as the shape, and click **Select Shape**.
 
     ![](images/livelabs-create-compute-4.png)
-    ![](images/compute-livelabs-4b.png)
-</if>
+    ![](images/create-compute-livelabs-4b.png)</if>
 
-6. In the Security Section, no changes needed. Click Next.
-
-    ![](images/create-compute-livelabs-5.png)
-
-7. In the Networking section, most of the defaults are perfect for our purposes. However, ensure that the **Automatically assign a public IPv4 address** option is selected.
+3. In the Networking section, most of the defaults are perfect for our purposes. However, ensure that the **Automatically assign a public IPv4 address** option is selected.
 
     <if type="freetier">
-    ![Create step 2](images/assign-ip.png " ")
-    </if>
+    ![Create step 2](images/assign-ip.png " ")</if>
+
     <if type="livelabs">
-    ![](images/assign-ip.png)
-    </if>
+    ![](images/assign-ip.png)</if>
 
-    >**Note:** You need a public IP address so that you can SSH into the running instance later in this lab.
+    >**Note:** You need a public IP address, so that you can SSH into the running instance later in this lab.
 
-8. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in the ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
+4. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in the ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
 
     ![](images/ssh-keys.png)
 
-9. Storage Section - Click Next. We will attach Block volumes in the next lab.
-
-    ![](images/create-compute-livelabs-7.png)
-
-    ![](images/create-compute-livelabs-8.png)
-
-
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute, and the instance state will change from *PROVISIONING* to *RUNNING*.
 
-10. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*.
+5. Once the instance state changes to *RUNNING*, you can SSH to the Public IP address of the instance. The Public IP address is noted under *Instance Access*.
 
     <if type="freetier">
-    ![Create step 3](images/public-ip.png " ")
-    </if>
+    ![Create step 3](images/public-ip.png " ")</if>
+
     <if type="livelabs">
-    ![](images/compute-livelabs-running.png)
-    </if>
+    ![](images/compute-livelabs-running/png)</if>
 
 ## Task 2: Connect to the Instance <if type="freetier">and Install Apache HTTP Server</if>
 
->**Note:** You may need to log in as the *admin* user to use cloud shell.
+>**Note**: You may need to log in as the *admin* user to use cloud shell.
 
 1. To connect to the instance, use Cloud Shell and enter the following command:
 
     >**Note:** For Oracle Linux VMs, the default username is **opc**
+
     ```
-    <copy>
-    ssh -i <private_ssh_key> opc@<public_ip_address>
-    </copy>
+    <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
 
     ![](images/ssh.png)
 
-<if type="freetier">
+<if type="freetier">    
 2. For this lab, we are going to install an Apache HTTP Webserver and try to connect to it over the public Internet. *Make sure you have SSH'ed into the Linux instance* and run the following commands:
 
     >**Note:** Apache HTTP Server is an open-source web server developed by the Apache Software Foundation. The Apache server hosts web content, and responds to requests for this content from web browsers such as Chrome or Firefox.
 
     - Install Apache http
-    ```
-        <copy>
-        sudo yum install httpd -y
-        </copy>
-    ```
+
+        ```
+        <copy>sudo yum install httpd -y</copy>
+        ```
 
     - Start the apache server and configure it to start after system reboots
+
         ```
-        <copy>
-        sudo apachectl start
-        sudo systemctl enable httpd
-        </copy>
+        <copy>sudo apachectl start
+        sudo systemctl enable httpd</copy>
         ```
 
-    - Run a quick check on apache configurations. You should see `Syntax OK` in the output before continuing.
+    - Run a quick check on apache configurations
+
         ```
-        <copy>
-        sudo apachectl configtest
-        </copy>
+        <copy>sudo apachectl configtest</copy>
         ```
 
-    - Create firewall rules to allow access to the ports on which the HTTP server listens. Note that there are two separate layers of firewall in play: this command opens port 80 on the OS-level firewall (`firewalld`). You will open the same port at the OCI network level (the Security List) in the steps below.
-    ```
+    - Create firewall rules to allow access to the ports on which the HTTP server listens
+
+        ```
         <copy>sudo firewall-cmd --permanent --zone=public --add-service=http
         sudo firewall-cmd --reload</copy>
-```
+        ```
 
     - Create an index file for your web server
-```
+
+        ```
         <copy>sudo bash -c 'echo This is my Web-Server running on Oracle Cloud Infrastructure >> /var/www/html/index.html'</copy>
-```
+        ```
 
-3. Open your browser and navigate to `http://<public_ip_address>` (the IP address of the Linux VM).
+3. Open your browser and navigate to `http://<public_ip_address>` (the IP address of the Linux VM)
 
-    >**Note:** Your browser will not return anything yet — this is expected. Port 80 has been opened on the OS firewall, but it has not yet been opened in the OCI Security List. You will do that in the next steps.
+    >**Note:** Your browser will not return anything because port 80 was not opened into the Security Lists
 
 4. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. Then click on the VCN name you created for this practice.
 
-    ![](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
 
 5. Now click **Security** on the top navigation bar for the VCN.
 
@@ -179,7 +162,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Click on Security Lists](images/security-list2.png " ")
 
-8. Click **Add Ingress Rules**.
+8. Click **Add Ingress Rules**
 
     ![Click on Security Lists](images/security-list3.png " ")
 
@@ -194,25 +177,25 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
     ![Add Ingress Rule](images/ingress-rule.png " ")
 
-10. Navigate to `http://<public_ip_address>` (the IP address of the Linux VM) in your browser. You should now see the index page of the web server we created above.
 
-    ![Open your browser to the public IP address](images/browser.png " ")
+10. Navigate to `http://<public_ip_address>` (the IP address of the Linux VM) in your browser. And now you should see the index page of the web server we created above.
+
+    ![Open you browser to the public IP address](images/browser.png " ")
 
 ## Troubleshooting
 
 1. If you are unable to see the webserver on your browser, possible scenarios include:
 
-    - VCN Security Lists is blocking traffic. Check VCN Security List for an ingress rule for port 80.
-    - Firewall on the Linux instance is blocking traffic.
+    - VCN Security Lists is blocking traffic, Check VCN Security List for ingress rule for port 80
+    - Firewall on the linux instance is blocking traffic
 
         - `# sudo firewall-cmd --zone=public --list-services` (this should show http service as part of the public zone)
-        - `# sudo netstat -tulnp | grep httpd` (an httpd service should be listening on port 80; if it's a different port, open up that port on your VCN Security List)
+        - `# sudo netstat -tulnp | grep httpd` (an httpd service should be listening on the port 80, if it’s a different port, open up that port on your VCN SL)
 
-    - Your company VPN is blocking traffic.
+    - Your company VPN is blocking traffic
 
 2. If you cannot successfully run the `sudo` commands, please make sure you have SSH'ed into your compute instance by following Task 2 -> Step 1.
 </if>
-<if type="livelabs">
 
 ## Task 3: Basic Instance Lifecycle (Start, Stop, Reboot, and Terminate)
 

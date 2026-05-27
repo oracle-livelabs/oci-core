@@ -12,10 +12,13 @@ Estimated Workshop Time: 2 hours and 30 minutes
 In this workshop, you will:
 - Generate SSH keys
 - Use Identity and Access Management to control users' access to resources
-- Create virtual cloud networks
-- Create a compute instance
-- Create and attach a Block Volume
+- Create Virtual Cloud Networks
+- Create a Compute Instance
+- Create and Attach a Block Volume
 - Create an Object Storage
+- Provision an ADB Instance
+- Intro to Observability and Management
+- Clean up Resources
 
 ### Prerequisites
 * An Oracle Cloud Account - please view this workshop's LiveLabs landing page to see which environments are supported.

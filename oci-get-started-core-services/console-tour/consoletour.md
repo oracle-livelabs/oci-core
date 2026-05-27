@@ -64,7 +64,17 @@ In this lab, you will:
 
     ![manage regions](images/manage-regions.png)
 
-3. From this page, click the developer tools icon and click cloud shell.
+3. You first need to switch to the compartment assigned to you. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
+
+   ![Compute Instances](https://oracle-livelabs.github.io/common/images/console/compute-instances.png)
+
+    Select the compartment you are assigned to (check which compartment you are assigned to on the LiveLabs *Login Info* page). Expand the **root** compartment and then the **Livelabs** compartment. Select the compartment assigned to you.
+
+   ![View Login Info](https://oracle-livelabs.github.io/common/labs/need-help/images/view-login-info.png)
+
+   ![Select Compartment](images/compute-instance-compartment.png)
+
+ From this page, click the developer tools icon and click cloud shell.
 
     ![Open Cloud shell](images/open-cloudshell.png)
 
