@@ -70,7 +70,6 @@ In this lab, you will:
 
     Select the compartment you are assigned to (check which compartment you are assigned to on the LiveLabs *Login Info* page). Expand the **root** compartment and then the **Livelabs** compartment. Select the compartment assigned to you.
 
-   ![View Login Info](https://oracle-livelabs.github.io/common/labs/need-help/images/view-login-info.png)
 
    ![Select Compartment](images/compute-instance-compartment.png)
 

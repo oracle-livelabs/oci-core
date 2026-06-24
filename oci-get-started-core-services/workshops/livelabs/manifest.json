@@ -50,17 +50,12 @@
             "filename": "https://oracle-livelabs.github.io/common/building-blocks/blocks/adb/provision/provision-console.md"
         },
         {
-            "title": "Lab 7: Clean Up Resources",
-            "type": "freetier",
-            "filename": "./../../cleanup/clean-up.md"
-        },
-        {
-            "title": "Lab 8: Intro to Observability and Management",
+            "title": "Lab 7: Intro to Observability and Management",
             "type": "freetier",
             "filename": "../../observability/observability-intro.md"
         },
         {
-            "title": "Lab 9: Clean Up Resources",
+            "title": "Lab 8: Clean Up Resources",
             "type": "freetier",
             "filename": "../../cleanup/clean-up.md"
         },

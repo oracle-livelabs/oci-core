@@ -110,7 +110,9 @@ Private subnets does not allow public IP assignment to instances. Resources typi
 
 ### Creating a Subnet
 
-1. To create subnets, navigate to the Subnet tab for your VCN. Click **Create Subnet**.
+1. To create subnets, navigate Virtual Cloud Network. Then to the Subnet tab for your VCN. Click **Create Subnet**.
+    ![Screenshot showing where to find VCN](./images/vcn.png)
+    ![Screenshot showing to select VCN](./images/select-vcn.png)
     ![Screenshot showing where to find subnets](./images/subnet-homepage.png)
 
 2. You will need to provide specifications for your subnet including name, compartment, regional or AD specific, IPv4 CIDR, public or private, DNS details, and optionally, associating security lists or enabling logging.

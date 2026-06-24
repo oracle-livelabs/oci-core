@@ -138,20 +138,20 @@ A common use of Block Volumes is to add storage capacity to an Oracle Cloud Infr
 
 8. Once the disk is attached, you can run the following commands to format the disk and mount it.
      ```
-     # <copy>ls -l /dev/oracleoci/oraclevd*</copy>
+     <copy>ls -l /dev/oracleoci/oraclevd*</copy>
      ```
      ```
-     # <copy>sudo mkfs -t ext4 /dev/oracleoci/oraclevdb</copy>
-     Press y when prompted
+     <copy>sudo mkfs -t ext4 /dev/oracleoci/oraclevdb</copy>
+     # Press y if/when prompted
      ```
      ```
-     # <copy>sudo mkdir /mnt/disk1</copy>
+     <copy>sudo mkdir /mnt/disk1</copy>
      ```
      ```
-     # <copy>sudo mount /dev/oracleoci/oraclevdb /mnt/disk1</copy>
+     <copy>sudo mount /dev/oracleoci/oraclevdb /mnt/disk1</copy>
      ```
      ```
-     # <copy>df -h</copy>
+     <copy>df -h</copy>
      ```
 
     ![](images/format-mount.png " ")

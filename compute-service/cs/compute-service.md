@@ -197,7 +197,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 2. If you cannot successfully run the `sudo` commands, please make sure you have SSH'ed into your compute instance by following Task 2 -> Step 1.
 </if>
 
-## Task 3: Basic Instance Lifecycle (Start, Stop, Reboot, and Terminate)
+## (Optional) Task 3: Basic Instance Lifecycle (Start, Stop, Reboot, and Terminate)
 
 OCI gives you full control over the power state of your compute instances. Understanding these lifecycle actions helps you manage costs and perform maintenance safely.
 
@@ -259,7 +259,7 @@ OCI gives you full control over the power state of your compute instances. Under
 
 ### Terminate an Instance
 
->**Warning:** Termination is **permanent and irreversible**. Ensure you no longer need the instance and have backed up any data stored on the boot volume before proceeding.
+>**Warning:** Termination is **permanent and irreversible**. Ensure you no longer need the instance and have backed up any data stored on the boot volume before proceeding. **DO NOT terminate instance until lab 8**
 
 1. From the instance details page, click **More Actions** and select **Terminate**.
 
