@@ -1,5 +1,5 @@
 <!-- Not tested -->
-# Create and Attach a Block Volume Service
+# Create and Attach a Block Volume
 
 ## Introduction
 

@@ -125,11 +125,11 @@ If you created a reserved public IP in Lab 4, complete these steps to remove it.
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **IP Management**, then click **Reserved Public IPs**.
 
-    ![Reserved Public IPs](images/reserved-ip-nav.png " ")
+    ![Reserved Public IPs](images/reserved-ip-nav.png)
 
 2. Locate the reserved IP you created (for example, `web-server-reserved-ip`). Click the three-dot action menu (⋮) and select **Terminate**.
 
-    ![Terminate reserved IP](images/terminate-reserved-ip.png " ")
+    ![Terminate reserved IP](images/terminate-reserved-ip.png)
 
 3. Click **Terminate** in the confirmation dialog.
 
