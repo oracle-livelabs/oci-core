@@ -26,7 +26,7 @@ Block volumes must be detached from a compute instance before they can be delete
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Compute**, and select **Instances**.
 
-    ![](https://oracle-livelabs.github.io/common/images/console/compute-instances.png)
+    ![Compute Instances page](https://oracle-livelabs.github.io/common/images/console/compute-instances.png)
 
 2. Click the name of your compute instance (**Web-Server**) to open the instance details page.
 
@@ -44,7 +44,7 @@ Block volumes must be detached from a compute instance before they can be delete
 
 6. Click the **Navigation Menu** in the upper left. Navigate to **Storage**, and select **Block Volumes**.
 
-    ![](https://oracle-livelabs.github.io/common/images/console/storage-block-volume.png)
+    ![Block Volumes page](https://oracle-livelabs.github.io/common/images/console/storage-block-volume.png)
 
 7. Confirm you are in the correct compartment. Locate your block volume in the list. Click the three-dot action menu (⋮) on the right and select **Terminate**.
 
@@ -62,7 +62,7 @@ An object storage bucket must be empty before it can be deleted. You will delete
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Storage**, and select **Buckets**.
 
-    ![](https://oracle-livelabs.github.io/common/images/console/storage-buckets.png)
+    ![Buckets page](https://oracle-livelabs.github.io/common/images/console/storage-buckets.png)
 
 2. Confirm you are in the correct compartment. Click the name of the bucket you created in Lab 6.
 
@@ -99,7 +99,7 @@ An object storage bucket must be empty before it can be deleted. You will delete
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Compute**, and select **Instances**.
 
-    ![](https://oracle-livelabs.github.io/common/images/console/compute-instances.png)
+    ![Compute Instances page](https://oracle-livelabs.github.io/common/images/console/compute-instances.png)
 
 2. Click the name of your instance (**Web-Server**) to open the instance details page.
 

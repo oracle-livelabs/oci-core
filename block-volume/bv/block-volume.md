@@ -1,4 +1,3 @@
-<!-- Not tested -->
 # Create and Attach a Block Volume
 
 ## Introduction
@@ -31,11 +30,11 @@ A common use of Block Volumes is to add storage capacity to an Oracle Cloud Infr
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Storage** and click **Block Storage**.
 
-    ![](https://oracle-livelabs.github.io/common/images/console/storage-block-storage.png " ")
+    ![Block Storage service navigation](https://oracle-livelabs.github.io/common/images/console/storage-block-storage.png " ")
 
 2. In the Block Volume service, click **Create Block Volume** and provide the following details:
 
-    ![](images/create-bv.png " ")
+    ![Create Block Volume form](images/create-bv.png " ")
 
     <if type="freetier">
      - **Name:** BV-DEMO
@@ -65,12 +64,12 @@ A common use of Block Volumes is to add storage capacity to an Oracle Cloud Infr
 3. Leave the encryption and tags options as their default values and click **Create Block Volume**. The volume will be ready to attach once its icon no longer lists it as **PROVISIONING** in the volume list.
 
    <if type="freetier">
-   ![](images/block-volume.png " ")
-   ![](images/available.png " ")
+   ![Block volume provisioning status](images/block-volume.png " ")
+   ![Block volume available status](images/available.png " ")
    </if>
    <if type="livelabs">
-   ![](images/create-bv2.png " ")
-   ![](images/create-bv-avail.png " ")
+   ![Create Block Volume form](images/create-bv2.png " ")
+   ![Block volume available status](images/create-bv-avail.png " ")
    </if>
 
 ## Task 2: Attach a Block Volume to an Instance
@@ -94,7 +93,7 @@ A common use of Block Volumes is to add storage capacity to an Oracle Cloud Infr
 
 4. Click **Select instance** and choose the following options:
 
-    ![](images/click-attach-instance-button.png)
+    ![Attach to instance button](images/click-attach-instance-button.png)
 
 5. Choose the following options:
 
@@ -106,8 +105,8 @@ A common use of Block Volumes is to add storage capacity to an Oracle Cloud Infr
 
         <if type="livelabs">
    
-           ![](images/copy-instance-ocid.png)
-           ![](images/paste-instance-ocid.png)
+           ![Copy instance OCID](images/copy-instance-ocid.png)
+           ![Paste instance OCID](images/paste-instance-ocid.png)
 
    </if>
      - **Choose Instance:** Demo
@@ -117,7 +116,7 @@ A common use of Block Volumes is to add storage capacity to an Oracle Cloud Infr
      - Click **Attach**
 
    <if type="freetier">
-   ![Volume Details](images/attach-bv.png)
+    ![Volume Details](images/attach-bv.png)
    </if>
    
     ![Attach to instance](images/attach-confirmation.png)
@@ -134,7 +133,7 @@ A common use of Block Volumes is to add storage capacity to an Oracle Cloud Infr
 
     Click **Copy** to copy all connect commands. Run all these commands by pasting them in the cloud shell:
 
-    ![](images/iscsi-commands.png " ")
+    ![iSCSI attach commands](images/iscsi-commands.png " ")
 
 8. Once the disk is attached, you can run the following commands to format the disk and mount it.
      ```
@@ -154,7 +153,7 @@ A common use of Block Volumes is to add storage capacity to an Oracle Cloud Infr
      <copy>df -h</copy>
      ```
 
-    ![](images/format-mount.png " ")
+    ![Formatted and mounted block volume](images/format-mount.png " ")
 
     >**Note:** When mounting a storage volume for the first time, you can format the storage volume and create a single, primary partition that occupies the entire volume by using fdisk command (Caution: Using fdisk to format the disk deletes any data on the disk).
 

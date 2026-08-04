@@ -221,7 +221,7 @@ Network Security Groups also control traffic allowed in and out. However, NSGs s
 2. You will need to provide information including name, compartment, as well as specifications for ingress and egress rules.
 
     ![Screenshot showing how to create a security list](./images/creating-security-list-1.png)
-For ingress and egress rules, you will need to provide destination type and information, IP protocol, source and destination port range, and a description. You can also enable stateless rules.
+    For ingress and egress rules, you will need to provide destination type and information, IP protocol, source and destination port range, and a description. You can also enable stateless rules.
     ![Screenshot showing how to create a security list](./images/creating-security-list-2.png)
 
 ### **Creating Network Security Groups and Rules**

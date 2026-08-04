@@ -77,7 +77,7 @@ Many core cloud infrastructure services have built-in logging capabilities.  Now
 
     ![Create capture filter dialog](images/create-capture-filter-dialog.png)
 
-4.  Once the new Capture Filter status shows **Avaialble**, click the **Flow logs** navigation link in the left-hand Nav menu.
+4. Once the new Capture Filter status shows **Avaialble**, click the **Flow logs** navigation link in the left-hand Nav menu.
 
     ![Network command center - capture filters](images/nav-networking-flow-logs.png)
 
@@ -123,15 +123,15 @@ Many core cloud infrastructure services have built-in logging capabilities.  Now
 
 2. Click inside the **SELECT LOGS TO SEARCH** box to bring up the pop-up search panel.  
 
-3.  Select Demo **COMPARTMENT**, LogServiceLg **Log Groups** and both the custom and service log listed in the **LOGS** section.
+3. Select Demo **COMPARTMENT**, LogServiceLg **Log Groups** and both the custom and service log listed in the **LOGS** section.
 
-   This may take some time and a few extra clicks to become familiar with the log selection process.  In the end, your selection screen should look similar to the image below.  As long as **customlog01** and **servicelog01** are showing in the **SELECT LOGS TO SEARCH** box you're good to proceed.
+    This may take some time and a few extra clicks to become familiar with the log selection process.  In the end, your selection screen should look similar to the image below.  As long as **customlog01** and **servicelog01** are showing in the **SELECT LOGS TO SEARCH** box you're good to proceed.
 
     ![Log Search](images/select-logs-to-search.png)
 
-4.  Click **Continue** to close the panel and return to the search landing page.
+4. Click **Continue** to close the panel and return to the search landing page.
 
-5.  On the log search page, click the **Search** button and review the results in the panel below.  
+5. On the log search page, click the **Search** button and review the results in the panel below.
 
     ![Log search dashboard](images/dash-log-search.png)
 
@@ -191,7 +191,7 @@ Log content archived to Object Storage is aggregated via batches (default every 
 
     ![Object storage - buckets dashboard](images/buckets-dashboard.png)
 
-3.   Click the **Objects** tab to view archive content in timestamped gzip format.
+3. Click the **Objects** tab to view archive content in timestamped gzip format.
 
     ![Object storage - bucket contents](images/log-archive.png)
 
@@ -213,5 +213,3 @@ Log content archived to Object Storage is aggregated via batches (default every 
 ## Acknowledgements
 * **Author** - Eli Schilling, Cloud Archtiect
 * **Last Updated Date** - Eli Schilling, May 2026
-
-

@@ -37,16 +37,16 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 1. Click the **Navigation Menu** in the upper left. Navigate to **Compute**, and select **Instances**.
 
-	![](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
+    ![Compute Instances page](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
 
 <if type="livelabs">
 2. Select the Compartment that you were assigned when the reservation was created.
 
-  ![](images/create-compute-livelabs-1.png)
+    ![Select assigned compartment](images/create-compute-livelabs-1.png)
 </if>
 
 2. Then click **Create Instance**. We will launch a VM instance for this lab.
-  ![](images/create-instance.png)
+    ![Create Instance button](images/create-instance.png)
 
 3. The Create Compute Instance wizard will launch.
     <if type="freetier">Enter **Web-Server** as the name of the server. Click **Next** to get to the **Networking** section.</if>
@@ -56,18 +56,18 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![Create step 1](images/instance-name.png " ")
     </if>
     <if type="livelabs">
-    ![](images/create-compute-livelabs-2.png)
+    ![Compute instance name field](images/create-compute-livelabs-2.png)
     </if>
 
 <if type="livelabs">
 4. Click *Change Shape* to choose a VM shape.
 
-    ![](images/create-compute-livelabs-3.png)
+    ![Change Shape option](images/create-compute-livelabs-3.png)
 
 5. Select *Specialty and previous generation*, then select **VM.Standard.2.1** as the shape, and click **Select Shape**.
 
-    ![](images/livelabs-create-compute-4.png)
-    ![](images/create-compute-livelabs-4b.png)</if>
+    ![Specialty and previous generation shape category](images/livelabs-create-compute-4.png)
+    ![VM.Standard.2.1 shape selection](images/create-compute-livelabs-4b.png)</if>
 
 3. In the Networking section, most of the defaults are perfect for our purposes. However, ensure that the **Automatically assign a public IPv4 address** option is selected.
 
@@ -75,13 +75,13 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![Create step 2](images/assign-ip.png " ")</if>
 
     <if type="livelabs">
-    ![](images/assign-ip.png)</if>
+    ![Public IPv4 assignment option](images/assign-ip.png)</if>
 
     >**Note:** You need a public IP address, so that you can SSH into the running instance later in this lab.
 
 4. Scroll down to the **Add SSH keys** area of the page. Select **Paste public keys** and paste the SSH key that you created earlier in the ***Generate SSH Keys*** Lab. Press the **Create** button to create your instance.
 
-    ![](images/ssh-keys.png)
+    ![Paste SSH public key option](images/ssh-keys.png)
 
     Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute, and the instance state will change from *PROVISIONING* to *RUNNING*.
 
@@ -91,7 +91,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![Create step 3](images/public-ip.png " ")</if>
 
     <if type="livelabs">
-    ![](images/compute-livelabs-running/png)</if>
+    ![Running compute instance details](images/compute-livelabs-running/png)</if>
 
 ## Task 2: Connect to the Instance <if type="freetier">and Install Apache HTTP Server</if>
 
@@ -105,9 +105,9 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     <copy>ssh -i <private_ssh_key> opc@<public_ip_address></copy>
     ```
 
-    ![](images/ssh.png)
+    ![SSH connection command](images/ssh.png)
 
-<if type="freetier">    
+    <if type="freetier">
 2. For this lab, we are going to install an Apache HTTP Webserver and try to connect to it over the public Internet. *Make sure you have SSH'ed into the Linux instance* and run the following commands:
 
     >**Note:** Apache HTTP Server is an open-source web server developed by the Apache Software Foundation. The Apache server hosts web content, and responds to requests for this content from web browsers such as Chrome or Firefox.
@@ -150,7 +150,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
 
 4. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **Virtual Cloud Networks**. Then click on the VCN name you created for this practice.
 
-	![](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
+    ![Virtual Cloud Networks page](https://oracle-livelabs.github.io/common/images/console/networking-vcn.png " ")
 
 5. Now click **Security** on the top navigation bar for the VCN.
 

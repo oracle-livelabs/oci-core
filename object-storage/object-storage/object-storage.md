@@ -38,25 +38,25 @@ In this lab, you will:
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
 
-	![](https://oracle-livelabs.github.io/common/images/console/storage-buckets.png " ")
+    ![Buckets page](https://oracle-livelabs.github.io/common/images/console/storage-buckets.png " ")
 
-2.  <if type="freetier">
+2. <if type="freetier">
     Select the compartment that you want to create your bucket in.
     </if>
     <if type="livelabs">
     Select the compartment that you are assigned to. Expand **c4u04 (root)**, **Livelabs**, then click **your\_user\_name-COMPARTMENT**.
     ![Select Compartment](images/select-compartment.png " ")</if>
     Click **Create Bucket**.
-    ![](images/create-bucket.png " ")
+    ![Create Bucket button](images/create-bucket.png " ")
 
 3. Fill out the dialog box:
 
     - Bucket Name: Provide a name
     - Default Storage Tier: Standard
 
-4.  Click **Create**.
+4. Click **Create**.
 
-  ![](images/bucket-details.png " ")
+    ![Bucket details](images/bucket-details.png " ")
 
 
 ## Task 2: Upload Object and Create Pre-Authenticated Link
@@ -65,18 +65,18 @@ In this lab, you will:
 
 2. Switch to OCI window and click the Bucket Name.
 
-  ![](images/buckets.png " ")
+    ![Object storage bucket list](images/buckets.png " ")
 
 3. Bucket detail window should be visible. Click **Upload objects**.
 
-  ![](images/upload.png " ")
+    ![Upload objects button](images/upload.png " ")
 
 4. Click **select files** and select the *sample-file.txt* you just downloaded. Click **Next**. A review page will show you the files being uploaded to object store, Click **Upload Objects**, then click **Close**.
-  ![](images/upload-sample-file.png)
+    ![Upload sample file dialog](images/upload-sample-file.png)
 
 5. The file should be visible under Objects. Click Action icon and click **Create Pre-Authenticated Request**. This will create a web link that can be used to access the object without requiring any additional authentication.
 
-  ![](images/create-par.png " ")
+    ![Create pre-authenticated request action](images/create-par.png " ")
 
 6. Fill out the dialog box:
 
@@ -87,19 +87,19 @@ In this lab, you will:
 
 7. Click **Create Pre-Authenticated Request**.
 
-  ![](images/par-details.png " ")
+    ![Pre-authenticated request details](images/par-details.png " ")
 
 8. Click **Copy** to copy the link.
 
     >**Note:** The link must be copied and saved before you close the window. The link cannot be retrieved again.
 
-    ![](images/copy-par.png " ")
+    ![Copy pre-authenticated request link](images/copy-par.png " ")
 
 9. Click **Close**.
 
 10. Open a new browser window and paste the pre-authenticated link.
 
-  ![](images/open-par.png " ")
+    ![Open pre-authenticated request link](images/open-par.png " ")
 
 11. Because this is a text file, it will open in your browser.
 
@@ -107,11 +107,11 @@ In this lab, you will:
 
 1. Navigate back to your object storage bucket. Click the three dots and select **delete**.
 
-  ![](images/delete-bucket.png " ")
+    ![Delete bucket action](images/delete-bucket.png " ")
 
 2. Enter bucket name and click **Delete**.
 
-  ![](images/confirm.png " ")
+    ![Confirm bucket deletion](images/confirm.png " ")
 
 
 

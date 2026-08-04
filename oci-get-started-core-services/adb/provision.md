@@ -92,7 +92,7 @@ In this lab, you will:
 
     ![Enter the required details.](./images/adb-create-screen-names.png =65%x*)
 
-> **Note:** Ensure that you use the suggested database names as instructed in this step, and not those shown in the screenshots.
+    > **Note:** Ensure that you use the suggested database names as instructed in this step, and not those shown in the screenshots.
 </if>
 
 3. In the **Workload type** section, choose a workload type. Select the workload type for your database from the following choices:
@@ -157,9 +157,9 @@ In this lab, you will:
 
 9. Click **Create**.
 
-10.  The **Autonomous AI Database details** page is displayed. The status of your ADB instance is **`Provisioning`**.
+10. The **Autonomous AI Database details** page is displayed. The status of your ADB instance is **`Provisioning`**.
 
-   ![Database Provisioning message.](./images/adb-create-provisioning-message-new.png =75%x*)
+    ![Database Provisioning message.](./images/adb-create-provisioning-message-new.png =75%x*)
 
     A **Check database lifecycle state** informational box is displayed. You can navigate through this tour or choose to skip it. Click **Skip tour**. A **Skip guided tour** dialog box is displayed. Click **Skip**.
 
@@ -192,4 +192,4 @@ In this lab, you will:
 ## Acknowledgements
 
 - **Author:** Lauran K. Serhal, Consulting User Assistance Developer
-- **Last Updated By/Date:** Uma Kumar April 
+- **Last Updated By/Date:** Uma Kumar April
