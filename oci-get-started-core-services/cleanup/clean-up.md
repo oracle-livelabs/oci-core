@@ -119,20 +119,6 @@ An object storage bucket must be empty before it can be deleted. You will delete
 
     >**Note:** If you provisioned a **reserved public IP** in Lab 4, it is not deleted when the instance terminates — it is returned to **Available** status in your tenancy and continues to accrue a small hourly charge. Follow the steps in Task 4 below to delete it.
 
-### Optional: Delete the Reserved Public IP
-
-If you created a reserved public IP in Lab 4, complete these steps to remove it.
-
-1. Click the **Navigation Menu** in the upper left. Navigate to **Networking**, and select **IP Management**, then click **Reserved Public IPs**.
-
-    ![Reserved Public IPs](images/reserved-ip-nav.png)
-
-2. Locate the reserved IP you created (for example, `web-server-reserved-ip`). Click the three-dot action menu (⋮) and select **Terminate**.
-
-    ![Terminate reserved IP](images/terminate-reserved-ip.png)
-
-3. Click **Terminate** in the confirmation dialog.
-
 ## Task 4: Verify Cleanup with Tenancy Explorer
 
 Tenancy Explorer gives you a single, region-aware view of every resource in your tenancy across all compartments. Use it as a final check to confirm nothing has been left running.

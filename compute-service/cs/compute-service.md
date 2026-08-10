@@ -91,7 +91,7 @@ An Oracle Cloud Infrastructure VM compute instance runs on the same hardware as 
     ![Create step 3](images/public-ip.png " ")</if>
 
     <if type="livelabs">
-    ![Running compute instance details](images/compute-livelabs-running/png)</if>
+    ![Running compute instance details](images/compute-livelabs-running.png)</if>
 
 ## Task 2: Connect to the Instance <if type="freetier">and Install Apache HTTP Server</if>
 
