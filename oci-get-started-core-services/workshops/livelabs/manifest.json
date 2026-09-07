@@ -22,7 +22,7 @@
         },
         {
             "title": "Lab 1: Generate SSH Keys",
-            "filename": "https://livelabs.oracle.com/cdn/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+            "filename": "https://livelabs.oracle.com/cdn/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell-sandbox.md"
         },
         {
             "title": "Lab 2: Create Virtual Cloud Networks",
