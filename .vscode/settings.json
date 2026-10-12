@@ -3,5 +3,7 @@
         "FSDRS",
         "prechecks"
     ],
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "markdown.extension.completion.enabled": false,
+    "markdown.extension.tableFormatter.enabled": false
 }
